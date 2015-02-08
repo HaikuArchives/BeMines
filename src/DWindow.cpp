@@ -53,7 +53,7 @@ DWindow::Show(void)
 {
 	if (fCenterOnShow)
 		MoveToCenter();
-	
+
 	BWindow::Show();
 }
 
@@ -76,7 +76,7 @@ void
 DWindow::MoveToCenter(void)
 {
 	BRect r(Frame());
-	
+
 	MoveTo( (fScreenFrame.right - r.Width()) / 2.0,
 			(fScreenFrame.bottom - r.Height()) / 2.0);
 }
@@ -134,7 +134,7 @@ DWindow::ConstrainToScreen(void)
 		MoveTo(pt.x,fScreenFrame.bottom + 1);
 		pt.y = fScreenFrame.bottom + 1;
 	}
-	
+
 	if (pt.x > fScreenFrame.right - 35)
 		MoveTo(fScreenFrame.right - 35,pt.y);
 	else if (pt.x < 0)
@@ -155,7 +155,7 @@ DWindow::Zoom(BPoint origin, float width, float height)
 	BDeskbar bar;
 	deskbar_location loc = bar.Location();
 	BRect barframe(bar.Frame());
-	
+
 	switch (loc)
 	{
 		case B_DESKBAR_BOTTOM:
@@ -168,4 +168,3 @@ DWindow::Zoom(BPoint origin, float width, float height)
 	}
 	*/
 }
-

@@ -20,27 +20,27 @@ CustomWindow::CustomWindow(void)
 								B_NOT_MINIMIZABLE)
 {
 	AddCommonFilter(new EscapeCancelFilter());
-	
+
 	BView *top = GetBackgroundView();
-	
+
 	BRect r(Bounds().InsetByCopy(10,10));
-	
+
 	BString s;
-	
+
 	s << (int)gCustomWidth;
 	fWidth = new BTextControl(r,"width","Width: ",s.String(),
 								new BMessage(M_CHECK_VALUE),
 								B_FOLLOW_LEFT_RIGHT | B_FOLLOW_TOP);
 	top->AddChild(fWidth);
-	
+
 	float w,h;
 	fWidth->GetPreferredSize(&w,&h);
 	fWidth->ResizeTo(Bounds().Width() - 20.0, h);
 	fWidth->SetDivider(fWidth->StringWidth("Height: ") + 5.0);
 	MakeNumberBox(fWidth);
-	
+
 	r = fWidth->Frame();
-	
+
 	s = "";
 	s << (int)gCustomHeight;
 	r.OffsetBy(0,r.Height() + 10.0);
@@ -50,7 +50,7 @@ CustomWindow::CustomWindow(void)
 	top->AddChild(fHeight);
 	fHeight->SetDivider(fWidth->Divider());
 	MakeNumberBox(fHeight);
-	
+
 	s = "";
 	s << (int)gCustomMines;
 	r.OffsetBy(0,r.Height() + 10.0);
@@ -60,7 +60,7 @@ CustomWindow::CustomWindow(void)
 	top->AddChild(fMines);
 	fMines->SetDivider(fWidth->Divider());
 	MakeNumberBox(fMines);
-	
+
 	// Initially set label to Cancel so that the buttons are the same size
 	BButton *ok = new BButton(BRect(0,0,1,1),"ok","Cancel",new BMessage(M_SET_CUSTOM),
 								B_FOLLOW_RIGHT | B_FOLLOW_BOTTOM);
@@ -70,7 +70,7 @@ CustomWindow::CustomWindow(void)
 	ok->MoveTo(Bounds().Width() - 10.0 - ok->Bounds().Width(),
 				Bounds().Height() - 10.0 - ok->Bounds().Height());
 	ok->MakeDefault(true);
-	
+
 	BButton *cancel = new BButton(BRect(0,0,1,1),"cancel","Cancel",
 								new BMessage(B_QUIT_REQUESTED),
 								B_FOLLOW_RIGHT | B_FOLLOW_BOTTOM);
@@ -78,9 +78,9 @@ CustomWindow::CustomWindow(void)
 	cancel->ResizeToPreferred();
 	cancel->MoveTo(ok->Frame().left - 10.0 - cancel->Bounds().Width(),
 					ok->Frame().top);
-	
+
 	ResizeTo(Bounds().Width(), fMines->Frame().bottom + 20.0 + ok->Frame().Height());
-	
+
 	MakeCenteredOnShow(true);
 	fWidth->MakeFocus(true);
 }
@@ -97,7 +97,7 @@ CustomWindow::MessageReceived(BMessage *msg)
 			gCustomWidth = atoi(fWidth->Text());
 			gCustomHeight = atoi(fHeight->Text());
 			gCustomMines = atoi(fMines->Text());
-			
+
 			for (int32 i = 0; i < be_app->CountWindows(); i++)
 			{
 				if (strcmp(be_app->WindowAt(i)->Title(),"BeMines") == 0)
@@ -108,9 +108,9 @@ CustomWindow::MessageReceived(BMessage *msg)
 					break;
 				}
 			}
-			
+
 			PostMessage(B_QUIT_REQUESTED);
-			
+
 			break;
 		}
 		case M_CHECK_VALUE:
@@ -144,13 +144,13 @@ CustomWindow::CheckValues(void)
 	BRect screen = BScreen().Frame();
 	BRect trect = gGameStyle->TileSize();
 	uint16 maxTileWidth = uint16((screen.Width() * .9) / trect.Width());
-	
+
 	// Also compensate for stuff like the menu, smiley button, and titlebar height
-	
+
 	float usableHeight = (screen.Height() * .9) - 20 - 20 -
 							gGameStyle->SmileyUp()->Bounds().Height();
 	uint16 maxTileHeight = uint16(usableHeight / trect.Height());
-	
+
 	uint16 width,height;
 	BString s = fWidth->Text();
 	if (s.CountChars() < 1)
@@ -158,7 +158,7 @@ CustomWindow::CheckValues(void)
 		fWidth->SetText("6");
 		s = "6";
 	}
-	
+
 	width = atoi(s.String());
 	if (width < 6)
 	{
@@ -177,14 +177,14 @@ CustomWindow::CheckValues(void)
 		fWidth->SetText(s.String());
 		width = maxTileWidth;
 	}
-	
+
 	s = fHeight->Text();
 	if (s.CountChars() < 1)
 	{
 		fHeight->SetText("6");
 		s = "6";
 	}
-	
+
 	height = atoi(s.String());
 	if (height < 6)
 	{
@@ -203,7 +203,7 @@ CustomWindow::CheckValues(void)
 		fHeight->SetText(s.String());
 		height = maxTileHeight;
 	}
-	
+
 	uint16	count = 0,
 			maxMines = ((width * height) - 1);
 	s = fMines->Text();
@@ -223,6 +223,5 @@ CustomWindow::CheckValues(void)
 		s << (int)maxMines;
 		fMines->SetText(s.String());
 	}
-	
-}
 
+}

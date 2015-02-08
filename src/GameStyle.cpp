@@ -29,10 +29,10 @@ GameStyle::GameStyle(const char *path)
 	int32 i;
 	for (i = 0; i < 8; i++)
 		fNumbers[i] = NULL;
-		
+
 	for (i = 0; i < 10; i++)
 		fLEDNumbers[i] = NULL;
-	
+
 	ScanStyles();
 	if (!path || !SetStyle(path))
 		SetStyle(NULL);
@@ -65,7 +65,7 @@ GameStyle::SetStyle(const char *stylename)
 {
 	StyleData *data = NULL;
 	entry_ref ref;
-	
+
 	BString name;
 	if (stylename)
 	{
@@ -78,7 +78,7 @@ GameStyle::SetStyle(const char *stylename)
 				break;
 			}
 		}
-		
+
 		if (data)
 		{
 			BEntry entry(data->path.String());
@@ -91,7 +91,7 @@ GameStyle::SetStyle(const char *stylename)
 			return false;
 		}
 	}
-	
+
 	MakeEmpty();
 	fBoxSprite = GetStyleBitmap(ref,"unmarked.png");
 	fBoxDownSprite = GetStyleBitmap(ref,"down.png");
@@ -101,7 +101,7 @@ GameStyle::SetStyle(const char *stylename)
 	fNotMineSprite = GetStyleBitmap(ref,"notmine.png");
 	fFlagSprite = GetStyleBitmap(ref,"flag.png");
 	fQuestionSprite = GetStyleBitmap(ref,"question.png");
-	
+
 	fSmileyUp = GetStyleBitmap(ref,"smileybase.png");
 	fSmileyDown = GetStyleBitmap(ref,"smileybasedown.png");
 	fWinUp = GetStyleBitmap(ref,"smiley-win.png");
@@ -109,7 +109,7 @@ GameStyle::SetStyle(const char *stylename)
 	fLoseUp = GetStyleBitmap(ref,"smiley-lose.png");
 	fLoseDown = GetStyleBitmap(ref,"smiley-losedown.png");
 	fWorry = GetStyleBitmap(ref,"smiley-worry.png");
-	
+
 	int32 i;
 	for (i = 1; i < 9; i++)
 	{
@@ -117,15 +117,16 @@ GameStyle::SetStyle(const char *stylename)
 		bmpname << i << ".png";
 		fNumbers[i - 1] = GetStyleBitmap(ref,bmpname.String());
 	}
-	
+
 	for (i = 0; i < 10; i++)
 	{
 		BString ledname = "led";
 		ledname << i << ".png";
 		fLEDNumbers[i] = GetStyleBitmap(ref,ledname.String());
 	}
-	
+
 	fStyleName = data ? data->name : BString("Default");
+
 	return true;
 }
 
@@ -220,7 +221,7 @@ GameStyle::NumberSprite(uint8 count)
 {
 	if (count < 1 || count > 8)
 		debugger("Bad number sprite value");
-	
+
 	return fNumbers[count - 1];
 }
 
@@ -273,7 +274,7 @@ GameStyle::Worry(void)
 	return fWorry;
 }
 
-	
+
 BBitmap **
 GameStyle::LEDSprites(void)
 {
@@ -299,11 +300,11 @@ GameStyle::MakeEmpty(void)
 	delete fNotMineSprite;
 	delete fFlagSprite;
 	delete fQuestionSprite;
-	
+
 	int32 i;
 	for (i = 0; i < 8; i++)
 		delete fNumbers[i];
-		
+
 	for (i = 0; i < 10; i++)
 		delete fLEDNumbers[i];
 }
@@ -322,7 +323,7 @@ GameStyle::ScanStyles(void)
 		"question.png",
 		"flag.png",
 		"hit.png",
-		
+
 		"smileybase.png",
 		"smileybasedown.png",
 		"smiley-worry.png",
@@ -332,13 +333,13 @@ GameStyle::ScanStyles(void)
 		"smiley-losedown.png",
 		NULL
 	};
-	
+
 	app_info ai;
 	be_app->GetAppInfo(&ai);
 	BPath path(&ai.ref);
 	path.GetParent(&path);
 	path.Append("themes");
-	
+
 	BDirectory dir(path.Path());
 	dir.Rewind();
 	BEntry entry;
@@ -346,17 +347,17 @@ GameStyle::ScanStyles(void)
 	{
 		if (!entry.IsDirectory())
 			continue;
-		
+
 		BString styleName,stylePath;
 		bool is_broken = false;
-		
+
 		entry_ref ref;
 		entry.GetRef(&ref);
-		
+
 		styleName = ref.name;
 		path.SetTo(&ref);
 		stylePath = path.Path();
-		
+
 		// Scan for the existence of all the necessary files. We can function without
 		// a style being complete, but the user should be notified about the problems
 		BPath temppath;
@@ -370,7 +371,7 @@ GameStyle::ScanStyles(void)
 				break;
 			}
 		}
-		
+
 		int32 i;
 		if (!is_broken)
 		{
@@ -389,7 +390,7 @@ GameStyle::ScanStyles(void)
 
 			}
 		}
-		
+
 		if (!is_broken)
 		{
 			for (i = 0; i < 10; i++)
@@ -406,9 +407,9 @@ GameStyle::ScanStyles(void)
 				}
 			}
 		}
-		
+
 		fStyleList.AddItem(new StyleData(styleName.String(),stylePath.String(),is_broken));
-		
+
 	} // end style directory scanning loop
 }
 
@@ -418,13 +419,13 @@ GameStyle::GetStyleBitmap(entry_ref dir, const char *name)
 {
 	BPath path(&dir);
 	path.Append(name);
-	
+
 	BBitmap *bmp = NULL;
-	
+
 	bmp = BTranslationUtils::GetBitmap(path.Path());
 	if (!bmp)
 		bmp = BTranslationUtils::GetBitmap(B_PNG_FORMAT,name);
-	
+
 	return bmp;
 }
 

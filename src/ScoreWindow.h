@@ -12,7 +12,7 @@ public:
 
 private:
 	void	UpdateLabels(void);
-	
+
 	BStringView	*fBegScore,
 				*fIntScore,
 				*fExpScore;
