@@ -125,7 +125,7 @@ GameStyle::SetStyle(const char *stylename)
 		fLEDNumbers[i] = GetStyleBitmap(ref,ledname.String());
 	}
 
-	fStyleName = data ? data->name : "Default";
+	fStyleName = data ? data->name : BString("Default");
 	return true;
 }
 
