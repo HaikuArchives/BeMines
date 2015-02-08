@@ -24,17 +24,17 @@ public:
 										B_ANY_SOURCE,B_KEY_DOWN)
 					{
 					}
-					
+
 					~EscapeCancelFilter(void)
 					{
 					}
-					
+
 	filter_result	Filter(BMessage *msg, BHandler **target)
 	{
 		int32 rawchar,mod;
 		msg->FindInt32("raw_char",&rawchar);
 		msg->FindInt32("modifiers",&mod);
-		
+
 		if (rawchar == B_ESCAPE && (mod & (B_SHIFT_KEY | B_COMMAND_KEY | 
 				B_OPTION_KEY | B_CONTROL_KEY)) == 0) {
 			BLooper *loop = (*target)->Looper();
@@ -51,4 +51,3 @@ public:
 
 
 #endif
-

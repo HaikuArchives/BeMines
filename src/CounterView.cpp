@@ -9,7 +9,7 @@ CounterView::CounterView(void)
 {
 	if (!fBitmaps)
 		debugger("BUG: empty counter theme");
-	
+
 	BBitmap *zero = fBitmaps[0];
 	ResizeTo(zero->Bounds().Width() * 3,zero->Bounds().Height());
 }
@@ -20,7 +20,7 @@ CounterView::SetCount(uint16 count)
 {
 	if (count > 999)
 		count = 999;
-	
+
 	fCount = count;
 	Draw(Bounds());
 }
@@ -38,7 +38,7 @@ CounterView::Draw(BRect update)
 {
 	char countstr[5];
 	sprintf(countstr,"%.3d",fCount);
-	
+
 	BPoint pt(0,0);
 	DrawBitmap(fBitmaps[countstr[0] - 48],pt);
 	pt.x += fBitmaps[0]->Bounds().Width();
@@ -56,4 +56,3 @@ CounterView::StyleChanged(void)
 	ResizeTo(zero->Bounds().Width() * 3,zero->Bounds().Height());
 	Invalidate();
 }
-

@@ -38,7 +38,7 @@ private:
 	void	ResetLayout(void);
 	void	LoadSettings(void);
 	void	SaveSettings(void);
-	
+
 	BitmapButton	*fSmileyButton;
 	int8			fSmileyState;
 	TimerView		*fTimerView;

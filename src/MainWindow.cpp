@@ -33,7 +33,7 @@ MainWindow::MainWindow(BRect frame)
 		fSmileyState(FACE_NORMAL)
 {
 	LoadSettings();
-	
+
 	BView *top = new BView(Bounds(),"back",B_FOLLOW_ALL,B_WILL_DRAW);
 	top->SetViewColor(ui_color(B_PANEL_BACKGROUND_COLOR));
 	AddChild(top);
@@ -41,50 +41,50 @@ MainWindow::MainWindow(BRect frame)
 	BRect r(Bounds());
 	r.bottom = 20;
 	fMenuBar = new BMenuBar(r, "menubar");
-	
+
 	BMenu *menu = new BMenu("Game");
 	menu->AddItem(new BMenuItem("New",new BMessage(M_NEW_GAME),'N'));
 	menu->AddSeparatorItem();
-	
+
 	BMenu *submenu = NULL;
-	
+
 	menu->AddItem(new BMenuItem("Pause Game",new BMessage(M_PAUSE_GAME),'P',
 								B_COMMAND_KEY));
-	
+
 	menu->AddSeparatorItem();
 
 	menu->AddItem(new BMenuItem("High Scores…",new BMessage(M_SHOW_SCORES)));
-	
+
 	menu->AddSeparatorItem();
 
 	menu->AddItem(new BMenuItem("About BeMines…",new BMessage(B_ABOUT_REQUESTED)));
-	
+
 	fMenuBar->AddItem(menu);
-	
+
 	menu = new BMenu("Settings");
-	
+
 	submenu = new BMenu("Difficulty");
-	
+
 	BMessage *menumsg = new BMessage(M_SET_DIFFICULTY);
 	menumsg->AddInt32("level",DIFFICULTY_BEGINNER);
 	submenu->AddItem(new BMenuItem("Beginner",menumsg));
-	
+
 	menumsg = new BMessage(M_SET_DIFFICULTY);
 	menumsg->AddInt32("level",DIFFICULTY_INTERMEDIATE);
 	submenu->AddItem(new BMenuItem("Intermediate",menumsg));
-	
+
 	menumsg = new BMessage(M_SET_DIFFICULTY);
 	menumsg->AddInt32("level",DIFFICULTY_EXPERT);
 	submenu->AddItem(new BMenuItem("Expert",menumsg));
-	
+
 	menumsg = new BMessage(M_SHOW_CUSTOM);
 	submenu->AddItem(new BMenuItem("Custom…",menumsg));
 	menu->AddItem(submenu);
-	
+
 	BMenuItem *item = submenu->ItemAt(gDifficulty);
 	if (item)
 		item->SetMarked(true);
-	
+
 	submenu = new BMenu("Theme");
 	for (int32 i = 0; i < gGameStyle->CountStyles(); i++)
 	{
@@ -97,35 +97,35 @@ MainWindow::MainWindow(BRect frame)
 	item = submenu->FindItem(gGameStyle->StyleName());
 	if (item)
 		item->SetMarked(true);
-	
+
 	menu->AddSeparatorItem();
-	
+
 	item = new BMenuItem("Play Sounds",new BMessage(M_TOGGLE_SOUNDS));
 	menu->AddItem(item);
 	item->SetMarked(gPlaySounds);
-	
+
 	fMenuBar->AddItem(menu);
-	
+
 	top->AddChild(fMenuBar);
-	
+
 	fCounterView = new CounterView();
 	fCounterView->MoveTo(10,fMenuBar->Frame().bottom + 5);
 	top->AddChild(fCounterView);
-	
+
 	r = gGameStyle->SmileyUp()->Bounds();
 	fSmileyButton = new BitmapButton(r,"smiley",gGameStyle->SmileyUp(),
 									gGameStyle->SmileyDown(), new BMessage(M_NEW_GAME),false,
 									B_FOLLOW_TOP | B_FOLLOW_H_CENTER);
 	top->AddChild(fSmileyButton);
-	
+
 	fTimerView = new TimerView();
 	fTimerView->SetResizingMode(B_FOLLOW_RIGHT | B_FOLLOW_TOP);
 	top->AddChild(fTimerView);
-	
+
 	fFieldView = new FieldView(gDifficulty);
 	top->AddChild(fFieldView);
 	fFieldView->MakeFocus(true);
-	
+
 	fCounterView->SetCount(fFieldView->MineCount());
 	ResetLayout();
 }
@@ -196,15 +196,15 @@ MainWindow::MessageReceived(BMessage *msg)
 			int32 level;
 			if (msg->FindInt32("level",&level) != B_OK)
 				break;
-			
+
 			BMenuItem *item = fMenuBar->FindItem("Beginner");
 			BMenu *menu = item ? item->Menu() : NULL;
-			
+
 			item = menu->FindMarked();
 			if (item)
 				item->SetMarked(false);
 			menu->ItemAt(level)->SetMarked(true);
-			
+
 			gDifficulty = level;
 			SetupGame();
 			break;
@@ -241,7 +241,7 @@ MainWindow::MessageReceived(BMessage *msg)
 			BString name;
 			if (msg->FindString("name",&name) == B_OK)
 				SetTheme(name.String());
-			
+
 			break;
 		}
 		case M_TOGGLE_SOUNDS:
@@ -266,7 +266,7 @@ MainWindow::WindowActivated(bool active)
 {
 	if (fFieldView->GetGameState() != GAME_STARTED)
 		return;
-	
+
 	BMenuItem *item = fMenuBar->FindItem(M_PAUSE_GAME);
 	if (!item->IsMarked())
 		PostMessage(M_PAUSE_GAME);
@@ -322,7 +322,7 @@ void
 MainWindow::HighScoreCheck(void)
 {
 	uint16 seconds = fTimerView->GetTime();
-	
+
 	if (seconds < gBestTimes[gDifficulty].time && !gCheatMode)
 	{
 		NewScoreWindow *win = new NewScoreWindow(seconds,gDifficulty);
@@ -338,7 +338,7 @@ MainWindow::SetTheme(const char *name)
 	fFieldView->StyleChanged();
 	fCounterView->StyleChanged();
 	fTimerView->StyleChanged();
-	
+
 	switch (fSmileyState)
 	{
 		case FACE_LOSE:
@@ -357,9 +357,9 @@ MainWindow::SetTheme(const char *name)
 			break;
 		}
 	}
-	
+
 	ResetLayout();
-	
+
 	BMenuItem *item = fMenuBar->FindItem(gGameStyle->StyleName());
 	if (item)
 		item->SetMarked(true);
@@ -371,12 +371,12 @@ MainWindow::ResetLayout(void)
 {
 	fTimerView->MoveTo(Bounds().right - 10 - fTimerView->Bounds().Width(),
 						fCounterView->Frame().top);
-	
+
 	BRect r = gGameStyle->SmileyUp()->Bounds();
 	fSmileyButton->ResizeTo(r.Width(),r.Height());
 	fSmileyButton->MoveTo( (Bounds().Width() - r.Width()) / 2.0,
 							fCounterView->Frame().top);
-	
+
 	float bottom  = MAX(fCounterView->Frame().bottom,
 						fSmileyButton->Frame().bottom);
 	fFieldView->MoveTo(10, bottom + 10);
@@ -390,7 +390,7 @@ MainWindow::LoadSettings(void)
 	BFile file("/boot/home/config/settings/BeMines", B_READ_ONLY);
 	if (file.InitCheck() != B_OK)
 		return;
-	
+
 	BMessage settings;
 	if (settings.Unflatten(&file) == B_OK)
 	{
@@ -400,34 +400,34 @@ MainWindow::LoadSettings(void)
 			gThemeName = s;
 			gGameStyle->SetStyle(gThemeName.String());
 		}
-		
+
 		int32 diff;
 		if (settings.FindInt32("level",&diff) == B_OK)
 			gDifficulty = diff;
-		
+
 		bool b;
 		if (settings.FindBool("playsounds",&b) == B_OK)
 			gPlaySounds = b;
-		
+
 		uint16 seconds;
 		if (settings.FindInt16("begbest",(int16*)&seconds) == B_OK)
 			gBestTimes[DIFFICULTY_BEGINNER].time = seconds;
-		
+
 		if (settings.FindInt16("intbest",(int16*)&seconds) == B_OK)
 			gBestTimes[DIFFICULTY_INTERMEDIATE].time = seconds;
-		
+
 		if (settings.FindInt16("expbest",(int16*)&seconds) == B_OK)
 			gBestTimes[DIFFICULTY_EXPERT].time = seconds;
 
 		if (settings.FindString("begname",&s) == B_OK)
 			gBestTimes[DIFFICULTY_BEGINNER].name = s;
-		
+
 		if (settings.FindString("intname",&s) == B_OK)
 			gBestTimes[DIFFICULTY_INTERMEDIATE].name = s;
-		
+
 		if (settings.FindString("expname",&s) == B_OK)
 			gBestTimes[DIFFICULTY_EXPERT].name = s;
-		
+
 		uint16 size;
 		if (settings.FindInt16("customwidth",(int16*)&size) == B_OK)
 			gCustomWidth = size;
@@ -435,7 +435,7 @@ MainWindow::LoadSettings(void)
 			gCustomHeight = size;
 		if (settings.FindInt16("customcount",(int16*)&size) == B_OK)
 			gCustomMines = size;
-		
+
 	}
 }
 
@@ -453,15 +453,14 @@ MainWindow::SaveSettings(void)
 	settings.AddString("begname",gBestTimes[DIFFICULTY_BEGINNER].name);
 	settings.AddString("intame",gBestTimes[DIFFICULTY_INTERMEDIATE].name);
 	settings.AddString("expname",gBestTimes[DIFFICULTY_EXPERT].name);
-	
+
 	settings.AddInt16("customwidth",gCustomWidth);
 	settings.AddInt16("customheight",gCustomHeight);
 	settings.AddInt16("customcount",gCustomMines);
-	
+
 	BFile file("/boot/home/config/settings/BeMines", B_READ_WRITE | B_ERASE_FILE |
 													B_CREATE_FILE);
 	if (file.InitCheck() != B_OK)
 		return;
 	settings.Flatten(&file);
 }
-
