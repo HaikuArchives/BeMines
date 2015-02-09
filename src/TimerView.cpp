@@ -14,7 +14,7 @@ TimerView::TimerView(void)
 {
 	if (!fBitmaps)
 		debugger("BUG: empty timer theme");
-	
+
 	BBitmap *zero = fBitmaps[0];
 	ResizeTo(zero->Bounds().Width() * 3,zero->Bounds().Height());
 }
@@ -94,7 +94,7 @@ TimerView::Draw(BRect update)
 {
 	char timestr[5];
 	sprintf(timestr,"%.3d",fTime);
-	
+
 	BPoint pt(0,0);
 	DrawBitmap(fBitmaps[timestr[0] - 48],pt);
 	pt.x += fBitmaps[0]->Bounds().Width();
@@ -125,4 +125,3 @@ TimerView::SetTime(uint16 time)
 {
 	fTime = time;
 }
-
