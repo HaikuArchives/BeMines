@@ -18,10 +18,10 @@ main(int argc, char **argv)
 {
 	if (argc == 2 && strcmp(argv[1],"-cheat") == 0)
 		gCheatMode = true;
-	
+
 	App app;
-	
+
 	app.Run();
-	
+
 	return 0;
 }

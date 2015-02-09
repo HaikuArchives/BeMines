@@ -13,7 +13,7 @@ public:
 private:
 	void	MakeNumberBox(BTextControl *box);
 	void	CheckValues(void);
-	
+
 	BTextControl	*fWidth,
 					*fHeight,
 					*fMines;

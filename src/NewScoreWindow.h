@@ -12,7 +12,7 @@ class NewScoreWindow : public DWindow
 public:
 					NewScoreWindow(uint16 time, int32 difficulty);
 	bool			QuitRequested(void);
-	
+
 private:
 	BTextView		*fTextView;
 	BTextControl	*fTextBox;

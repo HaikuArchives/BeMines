@@ -26,9 +26,9 @@ Minefield::Reset(const uint16 count)
 	uint32 bufferSize = fHeight * fWidth;
 	memset(fData,0,bufferSize);
 	memset(fDisplayData,0,bufferSize);
-	
+
 	fCount = count;
-	
+
 	uint16 left = count;
 	while (left)
 	{
@@ -76,39 +76,39 @@ Minefield::TileDigit(const uint16 &x, const uint16 &y) const
 {
 	if (x > fWidth || y > fHeight)
 		debugger("Invalid (x,y)");
-	
+
 	uint8 mineCount = 0;
-	
+
 	if (y > 0)
 	{
 		if (x > 0 && IsMine(x - 1, y - 1))
 			mineCount++;
-		
+
 		if (IsMine(x, y - 1))
 			mineCount++;
-		
+
 		if (x < (Width() - 1) && IsMine(x + 1, y - 1))
 			mineCount++;
 	}
 
 	if (x > 0 && IsMine(x - 1, y))
 		mineCount++;
-	
+
 	if (x < (Width() - 1) && IsMine(x + 1, y))
 		mineCount++;
-	
+
 	if (y < (Height() - 1))
 	{
 		if (x > 0 && IsMine(x - 1, y + 1))
 			mineCount++;
-		
+
 		if (IsMine(x, y + 1))
 			mineCount++;
-		
+
 		if (x < (Width() - 1) && IsMine(x + 1, y + 1))
 			mineCount++;
 	}
-	
+
 	return mineCount;
 }
 
@@ -126,7 +126,7 @@ Minefield::IsMine(const uint16 &x, const uint16 &y) const
 {
 	if (x > fWidth || y > fHeight)
 		debugger("Invalid (x,y)");
-	
+
 	return fData[(fWidth * y) + x] != 0;
 }
 
@@ -139,7 +139,7 @@ Minefield::TilesInState(const BoxState &state)
 	for (uint32 i = 0; i < bufferSize; i++)
 		if (fDisplayData[i] == state)
 			count++;
-	
+
 	return count;
 }
 
@@ -149,7 +149,7 @@ Minefield::SetState(const IntPoint &pt, const BoxState &s)
 {
 	if (pt.x > fWidth || pt.y > fHeight)
 		debugger("Invalid (x,y)");
-	
+
 	fDisplayData[(fWidth * pt.y) + pt.x] = s;
 }
 
@@ -159,7 +159,7 @@ Minefield::GetState(const IntPoint &pt)
 {
 	if (pt.x > fWidth || pt.y > fHeight)
 		debugger("Invalid (x,y)");
-	
+
 	return (BoxState)fDisplayData[(fWidth * pt.y) + pt.x];
 }
 
@@ -176,10 +176,10 @@ Minefield::TeleportMine(const IntPoint &pt)
 {
 	if (pt.x > fWidth || pt.y > fHeight || !IsMine(pt))
 		return;
-	
+
 	uint32 bufferSize = fHeight * fWidth;
 	fData[(fWidth * pt.y) + pt.x] = 0;
-	
+
 	bool done = false;
 	while (!done)
 	{
@@ -198,10 +198,10 @@ Minefield::FireSonar(const IntPoint &pt)
 {
 	uint16 x = pt.x;
 	uint16 y = pt.y;
-	
+
 	if (x > fWidth || y > fHeight)
 		return;
-	
+
 	IntPoint temp;
 	if (y > 0)
 	{
@@ -214,14 +214,14 @@ Minefield::FireSonar(const IntPoint &pt)
 			else
 				SetState(temp,BOX_REVEALED);
 		}
-		
+
 		temp.x = x;
 		temp.y = y - 1;
 		if (IsMine(temp))
 			SetState(temp,BOX_MARKED);
 		else
 			SetState(temp,BOX_REVEALED);
-		
+
 		if (x < (Width() - 1))
 		{
 			temp.x = x + 1;
@@ -242,12 +242,12 @@ Minefield::FireSonar(const IntPoint &pt)
 		else
 			SetState(temp,BOX_REVEALED);
 	}
-	
+
 	if (IsMine(pt))
 		SetState(pt,BOX_MARKED);
 	else
 		SetState(pt,BOX_REVEALED);
-		
+
 	if (x < (Width() - 1))
 	{
 		temp.x = x + 1;
@@ -257,7 +257,7 @@ Minefield::FireSonar(const IntPoint &pt)
 		else
 			SetState(temp,BOX_REVEALED);
 	}
-	
+
 	if (y > 0)
 	{
 		if (x > 0)
@@ -269,14 +269,14 @@ Minefield::FireSonar(const IntPoint &pt)
 			else
 				SetState(temp,BOX_REVEALED);
 		}
-		
+
 		temp.x = x;
 		temp.y = y + 1;
 		if (IsMine(temp))
 			SetState(temp,BOX_MARKED);
 		else
 			SetState(temp,BOX_REVEALED);
-		
+
 		if (x < (Width() - 1))
 		{
 			temp.x = x + 1;
@@ -318,4 +318,3 @@ IntPoint::operator=(const IntPoint &pt)
 	y = pt.y;
 	return *this;
 }
-
