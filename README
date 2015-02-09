@@ -1,4 +1,4 @@
-BeMines 1.0 Beta 2
+BeMines 1.0 Beta 3
 
 It's about time we had more than a near-exact clone of the classic Windows game, Minesweeper. If you have questions, requests, or bugs, please e-mail me at darkwyrm@gmail.com.
 
@@ -17,4 +17,4 @@ Click with both buttons: If the tile is a number and the appropriate number of m
 
 About this version
 
-This fixes a bunch of bugs, including resizing and redraw issues.
+Fixes compilation on Haiku, adds vector icon and Haiku theme.
