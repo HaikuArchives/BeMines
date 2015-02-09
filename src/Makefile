@@ -45,17 +45,14 @@ SRCS = AboutWindow.cpp \
 	DWindow.cpp \
 
 
-OP_SYSTEM=$(shell uname)
 
 #	Specify the resource definition files to use. Full or relative paths can be
 #	used.
-ifeq "$(OP_SYSTEM)" "Haiku"
 RDEFS = BeMines.rdef
-else
+
 #	Specify the resource files to use. Full or relative paths can be used.
 #	Both RDEFS and RSRCS can be utilized in the same Makefile.
-RSRCS = BeMines.rsrc
-endif
+RSRCS =
 
 # End Pe/Eddie support.
 # @<-src@
