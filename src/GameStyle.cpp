@@ -126,7 +126,6 @@ GameStyle::SetStyle(const char *stylename)
 	}
 
 	fStyleName = data ? data->name : BString("Default");
-
 	return true;
 }
 
