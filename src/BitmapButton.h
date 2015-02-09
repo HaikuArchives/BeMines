@@ -25,20 +25,20 @@ public:
 			void 		SetBitmaps(BBitmap *up, BBitmap *down);
 			BBitmap *	UpBitmap(void);
 			BBitmap *	DownBitmap(void);
-			
+
 			void 		SetDisabledBitmap(BBitmap *disabled);
 			BBitmap *	DisabledBitmap(void) const;
-			
+
 			void 		SetFocusBitmaps(BBitmap *up, BBitmap *down);
 			BBitmap *	UpFocusBitmap(void);
 			BBitmap *	DownFocusBitmap(void);
-			
+
 	virtual	void		Draw(BRect update);
-			
+
 			void 		ResizeToPreferred(void);
 private:
 	bool	fOwnBitmaps;
-	
+
 	BBitmap	*fUp,
 			*fDown,
 			*fDisabled,

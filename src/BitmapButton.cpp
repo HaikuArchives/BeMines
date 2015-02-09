@@ -43,10 +43,10 @@ BitmapButton::SetBitmaps(BBitmap *up, BBitmap *down)
 		delete fUp;
 		delete fDown;
 	}
-	
+
 	fUp = up;
 	fDown = down;
-	
+
 	if (IsEnabled())
 		Invalidate();
 }
@@ -71,9 +71,9 @@ BitmapButton::SetDisabledBitmap(BBitmap *disabled)
 {
 	if (fOwnBitmaps)
 		delete fDisabled;
-	
+
 	fDisabled = disabled;
-	
+
 	if (!IsEnabled())
 		Invalidate();
 }
@@ -94,7 +94,7 @@ BitmapButton::SetFocusBitmaps(BBitmap *up, BBitmap *down)
 		delete fFocusUp;
 		delete fFocusDown;
 	}
-	
+
 	fFocusUp = up;
 	fFocusDown = down;
 }
@@ -124,7 +124,7 @@ BitmapButton::Draw(BRect update)
 			StrokeRect(Bounds());
 		return;
 	}
-	
+
 	if (Value() == B_CONTROL_ON) {
 		if (IsFocus()) {
 			if (fFocusDown)

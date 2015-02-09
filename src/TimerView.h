@@ -19,13 +19,13 @@ public:
 				~TimerView(void);
 	void		SetState(TimerState s);
 	TimerState	GetState(void);
-	
+
 	void		MessageReceived(BMessage *msg);
 	void		Draw(BRect update);
 	void		StyleChanged(void);
 	uint16		GetTime(void);
 	void		SetTime(uint16 time);
-	
+
 private:
 	TimerState		fState;
 	BMessageRunner	*fRunner;

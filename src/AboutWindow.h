@@ -31,12 +31,12 @@ public:
 	void AttachedToWindow(void);
 	void Draw(BRect update);
 	void MouseDown(BPoint pt);
-	
+
 	BBitmap *fLogo;
-	
+
 	char version[64];
 	BPoint versionpos;
-	
+
 	uint8 fAboutFlags;
 	int32 fEntryCount;
 };

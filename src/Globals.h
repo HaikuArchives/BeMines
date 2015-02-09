@@ -37,7 +37,7 @@ public:
 		time = 999;
 		name = "Anonymous";
 	}
-	
+
 	uint16 time;
 	BString name;
 };
