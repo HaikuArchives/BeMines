@@ -3,9 +3,9 @@
 
 #include <Bitmap.h>
 #include <Entry.h>
+#include <ObjectList.h>
 #include <String.h>
 
-#include "ObjectList.h"
 
 class StyleData
 {
