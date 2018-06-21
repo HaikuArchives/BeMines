@@ -52,8 +52,6 @@ ScoreWindow::ScoreWindow(void)
 	fExpScore->ResizeToPreferred();
 	top->AddChild(fExpScore);
 
-	UpdateLabels();
-
 	BButton *reset = new BButton(BRect(0,0,1,1),"reset","Reset Times",
 								new BMessage(M_RESET_SCORES),
 								B_FOLLOW_RIGHT | B_FOLLOW_BOTTOM);
@@ -70,8 +68,7 @@ ScoreWindow::ScoreWindow(void)
 	reset->MoveTo(close->Frame().left - 10.0 - reset->Frame().Width(),
 					close->Frame().top);
 
-	ResizeTo(fBegScore->Frame().right + 10.0,
-			fExpScore->Frame().bottom + 20.0 + close->Bounds().Height());
+	UpdateLabels();
 
 	MakeCenteredOnShow(true);
 
