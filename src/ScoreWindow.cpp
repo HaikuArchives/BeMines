@@ -92,14 +92,14 @@ void
 ScoreWindow::UpdateLabels(void)
 {
 	BString scoreLabel;
-    
-	if (gBestTimes[DIFFICULTY_BEGINNER].name == "Anonymous" && 
+
+	if (gBestTimes[DIFFICULTY_BEGINNER].name == "Anonymous" &&
 		(int)gBestTimes[DIFFICULTY_BEGINNER].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
     }
     else{
 		scoreLabel << gBestTimes[DIFFICULTY_BEGINNER].name
-					<< ", " << (int)gBestTimes[DIFFICULTY_BEGINNER].time 
+					<< ", " << (int)gBestTimes[DIFFICULTY_BEGINNER].time
 					<< " seconds";
 	}
 	fBegScore->SetText(scoreLabel.String());
@@ -112,20 +112,20 @@ ScoreWindow::UpdateLabels(void)
 	}
 	else{
 		scoreLabel << gBestTimes[DIFFICULTY_INTERMEDIATE].name
-					<< ", " << (int)gBestTimes[DIFFICULTY_INTERMEDIATE].time 
+					<< ", " << (int)gBestTimes[DIFFICULTY_INTERMEDIATE].time
 					<< " seconds";
 	}
 	fIntScore->SetText(scoreLabel.String());
 	fIntScore->ResizeToPreferred();
 	scoreLabel = "";
-	
+
 	if(gBestTimes[DIFFICULTY_INTERMEDIATE].name == "Anonymous" &&
 		(int)gBestTimes[DIFFICULTY_INTERMEDIATE].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
 	}
 	else{
 		scoreLabel << gBestTimes[DIFFICULTY_EXPERT].name
-					<< ", " << (int)gBestTimes[DIFFICULTY_EXPERT].time 
+					<< ", " << (int)gBestTimes[DIFFICULTY_EXPERT].time
 					<< " seconds";
 	}
 	fExpScore->SetText(scoreLabel.String());
@@ -139,7 +139,7 @@ ScoreWindow::UpdateLabels(void)
 
 	if(right < 200)
 		right = 200;
-    
+
 	float bottom = fExpScore->Frame().bottom + 20.0;
 	bottom += (close) ? close->Bounds().Height() : 0;
 	ResizeTo(right, bottom);
