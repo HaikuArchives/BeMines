@@ -61,7 +61,8 @@ public:
 	void		TeleportMine(const IntPoint &pt);
 
 				// Reveals all mines in a 1-tile radius of the clicked tile
-	void		FireSonar(const IntPoint &pt);
+	bool		FireSonar(const IntPoint &pt);
+	bool		IsBoxBeingRevealed(const IntPoint &pt);
 
 private:
 	uint8	*fData, *fDisplayData;

@@ -314,7 +314,7 @@ FieldView::ClickBox(const IntPoint &pt)
 
 	if (fField->TileDigit(pt) == 0)
 	{
-		FloodReveal(pt); 
+		FloodReveal(pt);
 		Window()->UpdateIfNeeded();
 	}
 	else
@@ -571,9 +571,12 @@ FieldView::NumberReveal(IntPoint pt)
 void
 FieldView::DoSonar(IntPoint pt)
 {
-	fField->FireSonar(pt);
+	bool revealedNewBoxes = fField->FireSonar(pt);
 	Invalidate();
-	Window()->PostMessage(M_SONAR_PENALTY);
+
+	if(revealedNewBoxes == true)
+		Window()->PostMessage(M_SONAR_PENALTY);
+
 	fFlagCount = fField->TilesInState(BOX_MARKED);
 	Window()->PostMessage(M_UPDATE_COUNT);
 }
