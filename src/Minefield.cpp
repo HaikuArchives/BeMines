@@ -193,14 +193,15 @@ Minefield::TeleportMine(const IntPoint &pt)
 }
 
 
-void
+bool
 Minefield::FireSonar(const IntPoint &pt)
 {
+	bool revealedNewBoxes = false;
 	uint16 x = pt.x;
 	uint16 y = pt.y;
 
 	if (x > fWidth || y > fHeight)
-		return;
+		return revealedNewBoxes;
 
 	IntPoint temp;
 	if (y > 0)
@@ -209,6 +210,10 @@ Minefield::FireSonar(const IntPoint &pt)
 		{
 			temp.x = x - 1;
 			temp.y = y - 1;
+
+			if (IsBoxBeingRevealed(temp))
+				revealedNewBoxes = true;
+
 			if (IsMine(temp))
 				SetState(temp,BOX_MARKED);
 			else
@@ -217,6 +222,10 @@ Minefield::FireSonar(const IntPoint &pt)
 
 		temp.x = x;
 		temp.y = y - 1;
+
+		if (IsBoxBeingRevealed(temp))
+			revealedNewBoxes = true;
+
 		if (IsMine(temp))
 			SetState(temp,BOX_MARKED);
 		else
@@ -226,6 +235,10 @@ Minefield::FireSonar(const IntPoint &pt)
 		{
 			temp.x = x + 1;
 			temp.y = y - 1;
+
+			if (IsBoxBeingRevealed(temp))
+				revealedNewBoxes = true;
+
 			if (IsMine(temp))
 				SetState(temp,BOX_MARKED);
 			else
@@ -237,11 +250,18 @@ Minefield::FireSonar(const IntPoint &pt)
 	{
 		temp.x = x - 1;
 		temp.y = y;
+
+		if (IsBoxBeingRevealed(temp))
+			revealedNewBoxes = true;
+
 		if (IsMine(temp))
 			SetState(temp,BOX_MARKED);
 		else
 			SetState(temp,BOX_REVEALED);
 	}
+
+	if (IsBoxBeingRevealed(pt))
+		revealedNewBoxes = true;
 
 	if (IsMine(pt))
 		SetState(pt,BOX_MARKED);
@@ -252,6 +272,10 @@ Minefield::FireSonar(const IntPoint &pt)
 	{
 		temp.x = x + 1;
 		temp.y = y;
+
+		if (IsBoxBeingRevealed(temp))
+				revealedNewBoxes = true;
+
 		if (IsMine(temp))
 			SetState(temp,BOX_MARKED);
 		else
@@ -264,6 +288,10 @@ Minefield::FireSonar(const IntPoint &pt)
 		{
 			temp.x = x - 1;
 			temp.y = y + 1;
+
+			if (IsBoxBeingRevealed(temp))
+				revealedNewBoxes = true;
+
 			if (IsMine(temp))
 				SetState(temp,BOX_MARKED);
 			else
@@ -272,6 +300,10 @@ Minefield::FireSonar(const IntPoint &pt)
 
 		temp.x = x;
 		temp.y = y + 1;
+
+		if (IsBoxBeingRevealed(temp))
+			revealedNewBoxes = true;
+
 		if (IsMine(temp))
 			SetState(temp,BOX_MARKED);
 		else
@@ -281,12 +313,35 @@ Minefield::FireSonar(const IntPoint &pt)
 		{
 			temp.x = x + 1;
 			temp.y = y + 1;
+
+			if (IsBoxBeingRevealed(temp))
+				revealedNewBoxes = true;
+
 			if (IsMine(temp))
 				SetState(temp,BOX_MARKED);
 			else
 				SetState(temp,BOX_REVEALED);
 		}
 	}
+
+	return revealedNewBoxes;
+}
+
+
+bool
+Minefield::IsBoxBeingRevealed(const IntPoint &pt)
+{
+	if (GetState(pt) == BOX_MARKED
+		|| GetState(pt) == BOX_QUESTION
+		|| GetState(pt) == BOX_REVEALED
+		|| GetState(pt) == BOX_HIT
+		|| GetState(pt) == BOX_MINE
+		|| GetState(pt) == BOX_NOTMINE
+		|| GetState(pt) == BOX_INVALID){
+		return false;
+	}
+
+	return true;
 }
 
 
