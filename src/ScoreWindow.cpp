@@ -96,8 +96,7 @@ ScoreWindow::UpdateLabels(void)
 	if (gBestTimes[DIFFICULTY_BEGINNER].name == "Anonymous" &&
 		(int)gBestTimes[DIFFICULTY_BEGINNER].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
-    }
-    else{
+	} else {
 		scoreLabel << gBestTimes[DIFFICULTY_BEGINNER].name
 					<< ", " << (int)gBestTimes[DIFFICULTY_BEGINNER].time
 					<< " seconds";
@@ -109,8 +108,7 @@ ScoreWindow::UpdateLabels(void)
 	if (gBestTimes[DIFFICULTY_INTERMEDIATE].name == "Anonymous" &&
 		(int)gBestTimes[DIFFICULTY_INTERMEDIATE].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
-	}
-	else{
+	} else {
 		scoreLabel << gBestTimes[DIFFICULTY_INTERMEDIATE].name
 					<< ", " << (int)gBestTimes[DIFFICULTY_INTERMEDIATE].time
 					<< " seconds";
@@ -119,11 +117,10 @@ ScoreWindow::UpdateLabels(void)
 	fIntScore->ResizeToPreferred();
 	scoreLabel = "";
 
-	if(gBestTimes[DIFFICULTY_INTERMEDIATE].name == "Anonymous" &&
+	if (gBestTimes[DIFFICULTY_INTERMEDIATE].name == "Anonymous" &&
 		(int)gBestTimes[DIFFICULTY_INTERMEDIATE].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
-	}
-	else{
+	} else {
 		scoreLabel << gBestTimes[DIFFICULTY_EXPERT].name
 					<< ", " << (int)gBestTimes[DIFFICULTY_EXPERT].time
 					<< " seconds";
@@ -137,7 +134,7 @@ ScoreWindow::UpdateLabels(void)
 	right = MAX(right, fExpScore->Frame().right);
 	right += 20;
 
-	if(right < 200)
+	if (right < 200)
 		right = 200;
 
 	float bottom = fExpScore->Frame().bottom + 20.0;

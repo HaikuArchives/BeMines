@@ -337,8 +337,7 @@ Minefield::IsBoxBeingRevealed(const IntPoint &pt)
 		|| GetState(pt) == BOX_HIT
 		|| GetState(pt) == BOX_MINE
 		|| GetState(pt) == BOX_NOTMINE
-		|| GetState(pt) == BOX_INVALID)
-	{
+		|| GetState(pt) == BOX_INVALID){
 		return false;
 	}
 
