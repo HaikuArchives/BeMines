@@ -207,6 +207,7 @@ MainWindow::MessageReceived(BMessage *msg)
 
 			gDifficulty = level;
 			SetupGame();
+			fFieldView->SetPauseMode(false);
 			break;
 		}
 		case M_UPDATE_COUNT:
