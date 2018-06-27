@@ -1,6 +1,6 @@
 #include "ScoreWindow.h"
 #include <Button.h>
-
+#include <LayoutBuilder.h>
 #include "EscapeCancelFilter.h"
 #include "Globals.h"
 
@@ -8,62 +8,37 @@
 
 ScoreWindow::ScoreWindow(void)
 	:	DWindow(BRect(100,500,100,400),"Best Times",B_TITLED_WINDOW,
-				B_NOT_RESIZABLE | B_NOT_ZOOMABLE)
+				B_NOT_RESIZABLE | B_NOT_ZOOMABLE | B_AUTO_UPDATE_SIZE_LIMITS)
 {
 	AddCommonFilter(new EscapeCancelFilter());
 
 	BView *top = GetBackgroundView();
 
-	BStringView *begLabel = new BStringView(BRect(10,10,11,11),"beglabel",
-											"Beginner:");
+	BButton *reset = new BButton("reset","Reset Times",	new BMessage(M_RESET_SCORES));
+	BButton *close = new BButton("close","Close", new BMessage(B_QUIT_REQUESTED));
+
+	BStringView *begLabel, *intLabel, *expLabel;
+
+	BLayoutBuilder::Group<>(top, B_VERTICAL, 0)
+		.SetInsets(B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING)
+		.AddGrid()
+			.Add(begLabel = new BStringView("beglabel", "Beginner:"), 0, 0)
+			.Add(fBegScore = new BStringView("begscore",""), 1, 0)
+			.Add(intLabel = new BStringView("intlabel", "Intermediate:"), 0,1)
+			.Add(fIntScore = new BStringView("intscore",""), 1, 1)
+			.Add(expLabel = new BStringView("explabel", "Expert:"), 0, 2)
+			.Add(fExpScore = new BStringView("expscore",""), 1, 2)
+		.End()
+		.AddStrut(B_USE_DEFAULT_SPACING)
+		.AddGroup(B_HORIZONTAL, 0)
+			.AddGlue()
+			.Add(reset)
+			.Add(close)
+		.End();
+
 	begLabel->SetFont(be_bold_font);
-	begLabel->ResizeToPreferred();
-	top->AddChild(begLabel);
-
-	BStringView *intLabel = new BStringView(BRect(10,10,11,11),"intlabel",
-											"Intermediate:");
 	intLabel->SetFont(be_bold_font);
-	intLabel->ResizeToPreferred();
-	intLabel->MoveBy(0,intLabel->Bounds().Height() + 10);
-	top->AddChild(intLabel);
-
-	BStringView *expLabel = new BStringView(BRect(10,10,11,11),"explabel",
-											"Expert:");
 	expLabel->SetFont(be_bold_font);
-	expLabel->ResizeToPreferred();
-	expLabel->MoveBy(0,(expLabel->Bounds().Height() + 10) * 2);
-	top->AddChild(expLabel);
-
-	fBegScore = new BStringView(BRect(10,10,11,11),"begscore","");
-	fBegScore->MoveTo(intLabel->Frame().right + 50,begLabel->Frame().top);
-	fBegScore->ResizeToPreferred();
-	top->AddChild(fBegScore);
-
-	fIntScore = new BStringView(BRect(10,10,11,11),"intscore","");
-	fIntScore->MoveTo(intLabel->Frame().right + 50,intLabel->Frame().top);
-	fIntScore->ResizeToPreferred();
-	top->AddChild(fIntScore);
-
-	fExpScore = new BStringView(BRect(10,10,11,11),"expscore","");
-	fExpScore->MoveTo(intLabel->Frame().right + 50,expLabel->Frame().top);
-	fExpScore->ResizeToPreferred();
-	top->AddChild(fExpScore);
-
-	BButton *reset = new BButton(BRect(0,0,1,1),"reset","Reset Times",
-								new BMessage(M_RESET_SCORES),
-								B_FOLLOW_RIGHT | B_FOLLOW_BOTTOM);
-	reset->ResizeToPreferred();
-	top->AddChild(reset);
-
-	BButton *close = new BButton(reset->Frame(),"close","Close",
-								new BMessage(B_QUIT_REQUESTED),
-								B_FOLLOW_RIGHT | B_FOLLOW_BOTTOM);
-	close->MoveTo(Bounds().right - close->Bounds().Width() - 10.0,
-					Bounds().bottom - close->Bounds().Height() - 10.0);
-	top->AddChild(close);
-
-	reset->MoveTo(close->Frame().left - 10.0 - reset->Frame().Width(),
-					close->Frame().top);
 
 	UpdateLabels();
 

@@ -1,5 +1,6 @@
 #include "DWindow.h"
 #include <Deskbar.h>
+#include <LayoutBuilder.h>
 #include <Screen.h>
 #include <View.h>
 
@@ -113,8 +114,9 @@ DWindow::GetBackgroundColor(void) const
 void
 DWindow::DWindowInit(void)
 {
-	fBackgroundView = new BView(Bounds(),"background_view",B_FOLLOW_ALL, B_WILL_DRAW);
-	AddChild(fBackgroundView);
+	fBackgroundView = new BView("background_view", B_WILL_DRAW);
+	BLayoutBuilder::Group<>(this, B_VERTICAL, 0)
+		.Add(fBackgroundView);
 	fBackgroundView->SetViewColor(ui_color(B_PANEL_BACKGROUND_COLOR));
 }
 
