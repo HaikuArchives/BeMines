@@ -324,7 +324,7 @@ MainWindow::HighScoreCheck(void)
 {
 	uint16 seconds = fTimerView->GetTime();
 
-	if (seconds < gBestTimes[gDifficulty].time && !gCheatMode)
+	if (gDifficulty < DIFFICULTY_CUSTOM && seconds < gBestTimes[gDifficulty].time && !gCheatMode)
 	{
 		NewScoreWindow *win = new NewScoreWindow(seconds,gDifficulty);
 		win->Show();
