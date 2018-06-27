@@ -3,6 +3,7 @@
 #include <Alert.h>
 #include <Application.h>
 #include <Button.h>
+#include <LayoutBuilder.h>
 #include <Screen.h>
 #include <stdlib.h>
 
@@ -23,63 +24,50 @@ CustomWindow::CustomWindow(void)
 
 	BView *top = GetBackgroundView();
 
-	BRect r(Bounds().InsetByCopy(10,10));
-
 	BString s;
-
 	s << (int)gCustomWidth;
-	fWidth = new BTextControl(r,"width","Width: ",s.String(),
-								new BMessage(M_CHECK_VALUE),
-								B_FOLLOW_LEFT_RIGHT | B_FOLLOW_TOP);
-	top->AddChild(fWidth);
-
-	float w,h;
-	fWidth->GetPreferredSize(&w,&h);
-	fWidth->ResizeTo(Bounds().Width() - 20.0, h);
-	fWidth->SetDivider(fWidth->StringWidth("Height: ") + 5.0);
+	fWidth = new BTextControl("width","Width: ",s.String(),
+								new BMessage(M_CHECK_VALUE));
 	MakeNumberBox(fWidth);
-
-	r = fWidth->Frame();
 
 	s = "";
 	s << (int)gCustomHeight;
-	r.OffsetBy(0,r.Height() + 10.0);
-	fHeight = new BTextControl(r,"height","Height: ",s.String(),
-								new BMessage(M_CHECK_VALUE),
-								B_FOLLOW_LEFT_RIGHT | B_FOLLOW_TOP);
-	top->AddChild(fHeight);
-	fHeight->SetDivider(fWidth->Divider());
+	fHeight = new BTextControl("height","Height: ",s.String(),
+								new BMessage(M_CHECK_VALUE));
 	MakeNumberBox(fHeight);
 
 	s = "";
 	s << (int)gCustomMines;
-	r.OffsetBy(0,r.Height() + 10.0);
-	fMines = new BTextControl(r,"mines","Mines: ",s.String(),
-								new BMessage(M_CHECK_VALUE),
-								B_FOLLOW_LEFT_RIGHT | B_FOLLOW_TOP);
-	top->AddChild(fMines);
-	fMines->SetDivider(fWidth->Divider());
+	fMines = new BTextControl("mines","Mines: ",s.String(),
+								new BMessage(M_CHECK_VALUE));
 	MakeNumberBox(fMines);
 
 	// Initially set label to Cancel so that the buttons are the same size
-	BButton *ok = new BButton(BRect(0,0,1,1),"ok","Cancel",new BMessage(M_SET_CUSTOM),
-								B_FOLLOW_RIGHT | B_FOLLOW_BOTTOM);
-	top->AddChild(ok);
-	ok->ResizeToPreferred();
-	ok->SetLabel("OK");
-	ok->MoveTo(Bounds().Width() - 10.0 - ok->Bounds().Width(),
-				Bounds().Height() - 10.0 - ok->Bounds().Height());
+	BButton *ok = new BButton("ok","OK",new BMessage(M_SET_CUSTOM));
 	ok->MakeDefault(true);
 
-	BButton *cancel = new BButton(BRect(0,0,1,1),"cancel","Cancel",
-								new BMessage(B_QUIT_REQUESTED),
-								B_FOLLOW_RIGHT | B_FOLLOW_BOTTOM);
-	top->AddChild(cancel);
-	cancel->ResizeToPreferred();
-	cancel->MoveTo(ok->Frame().left - 10.0 - cancel->Bounds().Width(),
-					ok->Frame().top);
+	BButton *cancel = new BButton("cancel","Cancel",
+								new BMessage(B_QUIT_REQUESTED));
 
-	ResizeTo(Bounds().Width(), fMines->Frame().bottom + 20.0 + ok->Frame().Height());
+	//ResizeTo(Bounds().Width(), fMines->Frame().bottom + 20.0 + ok->Frame().Height());
+
+	BLayoutBuilder::Group<>(top, B_VERTICAL, 0)
+		.SetInsets(B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING)
+		.AddGrid()
+			.Add(fWidth->CreateLabelLayoutItem(), 0, 0)
+			.Add(fWidth->CreateTextViewLayoutItem(), 1, 0)
+			.Add(fHeight->CreateLabelLayoutItem(), 0, 1)
+			.Add(fHeight->CreateTextViewLayoutItem(), 1, 1)
+			.Add(fMines->CreateLabelLayoutItem(), 0, 2)
+			.Add(fMines->CreateTextViewLayoutItem(), 1, 2)
+		.End()
+		.AddStrut(B_USE_DEFAULT_SPACING)
+		.AddGroup(B_HORIZONTAL)
+			.AddGlue()
+			.Add(cancel)
+			.Add(ok)
+		.End();
+
 
 	MakeCenteredOnShow(true);
 	fWidth->MakeFocus(true);

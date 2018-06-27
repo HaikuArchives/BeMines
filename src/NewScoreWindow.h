@@ -14,7 +14,6 @@ public:
 	bool			QuitRequested(void);
 
 private:
-	BTextView		*fTextView;
 	BTextControl	*fTextBox;
 	BButton			*fClose;
 	int32			fDifficulty;
