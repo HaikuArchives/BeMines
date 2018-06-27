@@ -109,7 +109,7 @@ MainWindow::MainWindow(BRect frame)
 	top->AddChild(fMenuBar);
 
 	fCounterView = new CounterView();
-	fCounterView->MoveTo(10,fMenuBar->Frame().bottom + 5);
+	fCounterView->MoveTo(10,fMenuBar->Frame().bottom + 10);
 	top->AddChild(fCounterView);
 
 	r = gGameStyle->SmileyUp()->Bounds();
@@ -370,13 +370,26 @@ MainWindow::SetTheme(const char *name)
 void
 MainWindow::ResetLayout(void)
 {
-	fTimerView->MoveTo(Bounds().right - 10 - fTimerView->Bounds().Width(),
-						fCounterView->Frame().top);
+	fCounterView->MoveTo(10, fMenuBar->Frame().bottom + 10);
+	float heightCounter = fCounterView->Bounds().Height();
 
-	BRect r = gGameStyle->SmileyUp()->Bounds();
-	fSmileyButton->ResizeTo(r.Width(),r.Height());
-	fSmileyButton->MoveTo( (Bounds().Width() - r.Width()) / 2.0,
-							fCounterView->Frame().top);
+	BRect smileRect = gGameStyle->SmileyUp()->Bounds();
+
+	float smileHeight = smileRect.Height();
+	float toolBarHeight = MAX(heightCounter, smileHeight);
+
+	float offsetSmile = (toolBarHeight - smileHeight) / 2;
+	float offsetCounter = (toolBarHeight - heightCounter) / 2;
+
+	fTimerView->MoveTo(Bounds().right - 10 - fTimerView->Bounds().Width(),
+						fCounterView->Frame().top + offsetCounter);
+
+
+	fSmileyButton->ResizeTo(smileRect.Width(),smileRect.Height());
+	fSmileyButton->MoveTo( (Bounds().Width() - smileRect.Width()) / 2.0,
+							fCounterView->Frame().top + offsetSmile);
+
+	fCounterView->MoveBy(0, offsetCounter);
 
 	float bottom  = MAX(fCounterView->Frame().bottom,
 						fSmileyButton->Frame().bottom);
