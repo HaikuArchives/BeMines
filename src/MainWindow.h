@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <MessageFilter.h>
+#include <Messenger.h>
+#include <Handler.h>
 #include <Window.h>
 #include "GameStyle.h"
 
@@ -45,6 +48,42 @@ private:
 	FieldView		*fFieldView;
 	CounterView		*fCounterView;
 	BMenuBar		*fMenuBar;
+};
+
+
+
+class SpaceBarFilter : public BMessageFilter
+{
+public:
+	SpaceBarFilter(uint32 command)
+	:
+	BMessageFilter(B_PROGRAMMED_DELIVERY,
+		B_ANY_SOURCE,B_KEY_DOWN),
+	fCommand(command)
+	{
+	}
+	~SpaceBarFilter(void)
+	{
+	}
+
+	filter_result
+	Filter(BMessage *msg, BHandler **target)
+	{
+		int32 rawchar;
+		msg->FindInt32("raw_char",&rawchar);
+
+		if (rawchar == B_SPACE) {
+			BLooper *loop = (*target)->Looper();
+			if (loop) {
+				BMessenger msgr(loop);
+				msgr.SendMessage(fCommand);
+				return B_SKIP_MESSAGE;
+			}
+		}
+		return B_DISPATCH_MESSAGE;
+	}
+private:
+	uint32 fCommand;
 };
 
 #endif

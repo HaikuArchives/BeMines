@@ -128,6 +128,8 @@ MainWindow::MainWindow(BRect frame)
 
 	fCounterView->SetCount(fFieldView->MineCount());
 	ResetLayout();
+
+	AddCommonFilter(new SpaceBarFilter(M_NEW_GAME));
 }
 
 
