@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include <Application.h>
+#include <Catalog.h>
 #include <File.h>
 #include <Menu.h>
 #include <MenuBar.h>
@@ -28,8 +29,11 @@ enum
 
 GameStyle *gGameStyle = NULL;
 
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "MainWindow"
+
 MainWindow::MainWindow(BRect frame)
-	:	BWindow(frame,"BeMines",B_TITLED_WINDOW, B_NOT_RESIZABLE),
+	:	BWindow(frame,B_TRANSLATE_SYSTEM_NAME("BeMines"),B_TITLED_WINDOW, B_NOT_RESIZABLE),
 		fSmileyState(FACE_NORMAL)
 {
 	LoadSettings();
@@ -42,50 +46,50 @@ MainWindow::MainWindow(BRect frame)
 	r.bottom = 20;
 	fMenuBar = new BMenuBar(r, "menubar");
 
-	BMenu *menu = new BMenu("Game");
-	menu->AddItem(new BMenuItem("New",new BMessage(M_NEW_GAME),'N'));
+	BMenu *menu = new BMenu(B_TRANSLATE("Game"));
+	menu->AddItem(new BMenuItem(B_TRANSLATE("New"),new BMessage(M_NEW_GAME),'N'));
 	menu->AddSeparatorItem();
 
 	BMenu *submenu = NULL;
 
-	menu->AddItem(new BMenuItem("Pause Game",new BMessage(M_PAUSE_GAME),'P',
+	menu->AddItem(new BMenuItem(B_TRANSLATE("Pause Game"),new BMessage(M_PAUSE_GAME),'P',
 								B_COMMAND_KEY));
 
 	menu->AddSeparatorItem();
 
-	menu->AddItem(new BMenuItem("High Scores…",new BMessage(M_SHOW_SCORES)));
+	menu->AddItem(new BMenuItem(B_TRANSLATE("High Scores…"),new BMessage(M_SHOW_SCORES)));
 
 	menu->AddSeparatorItem();
 
-	menu->AddItem(new BMenuItem("About BeMines…",new BMessage(B_ABOUT_REQUESTED)));
+	menu->AddItem(new BMenuItem(B_TRANSLATE("About BeMines…"),new BMessage(B_ABOUT_REQUESTED)));
 
 	fMenuBar->AddItem(menu);
 
-	menu = new BMenu("Settings");
+	menu = new BMenu(B_TRANSLATE("Settings"));
 
-	submenu = new BMenu("Difficulty");
+	submenu = new BMenu(B_TRANSLATE("Difficulty"));
 
 	BMessage *menumsg = new BMessage(M_SET_DIFFICULTY);
 	menumsg->AddInt32("level",DIFFICULTY_BEGINNER);
-	submenu->AddItem(new BMenuItem("Beginner",menumsg));
+	submenu->AddItem(new BMenuItem(B_TRANSLATE("Beginner"),menumsg));
 
 	menumsg = new BMessage(M_SET_DIFFICULTY);
 	menumsg->AddInt32("level",DIFFICULTY_INTERMEDIATE);
-	submenu->AddItem(new BMenuItem("Intermediate",menumsg));
+	submenu->AddItem(new BMenuItem(B_TRANSLATE("Intermediate"),menumsg));
 
 	menumsg = new BMessage(M_SET_DIFFICULTY);
 	menumsg->AddInt32("level",DIFFICULTY_EXPERT);
-	submenu->AddItem(new BMenuItem("Expert",menumsg));
+	submenu->AddItem(new BMenuItem(B_TRANSLATE("Expert"),menumsg));
 
 	menumsg = new BMessage(M_SHOW_CUSTOM);
-	submenu->AddItem(new BMenuItem("Custom…",menumsg));
+	submenu->AddItem(new BMenuItem(B_TRANSLATE("Custom…"),menumsg));
 	menu->AddItem(submenu);
 
 	BMenuItem *item = submenu->ItemAt(gDifficulty);
 	if (item)
 		item->SetMarked(true);
 
-	submenu = new BMenu("Theme");
+	submenu = new BMenu(B_TRANSLATE("Theme"));
 	for (int32 i = 0; i < gGameStyle->CountStyles(); i++)
 	{
 		menumsg = new BMessage(M_SET_THEME);
@@ -100,7 +104,7 @@ MainWindow::MainWindow(BRect frame)
 
 	menu->AddSeparatorItem();
 
-	item = new BMenuItem("Play Sounds",new BMessage(M_TOGGLE_SOUNDS));
+	item = new BMenuItem(B_TRANSLATE("Play Sounds"),new BMessage(M_TOGGLE_SOUNDS));
 	menu->AddItem(item);
 	item->SetMarked(gPlaySounds);
 

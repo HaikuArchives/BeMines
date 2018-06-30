@@ -3,6 +3,7 @@
 #include <Alert.h>
 #include <Application.h>
 #include <Button.h>
+#include <Catalog.h>
 #include <LayoutBuilder.h>
 #include <Screen.h>
 #include <stdlib.h>
@@ -12,11 +13,14 @@
 #include "Globals.h"
 #include "MainWindow.h"
 
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "CustomWindow"
+
 #define M_SET_CUSTOM 'stcs'
 #define M_CHECK_VALUE 'ckvl'
 
 CustomWindow::CustomWindow(void)
-	:	DWindow(BRect(100,100,300,300),"Custom Level Settings",
+	:	DWindow(BRect(100,100,300,300), B_TRANSLATE("Custom Level Settings"),
 				B_TITLED_WINDOW, B_NOT_RESIZABLE | B_NOT_ZOOMABLE |
 								B_NOT_MINIMIZABLE)
 {
@@ -26,27 +30,27 @@ CustomWindow::CustomWindow(void)
 
 	BString s;
 	s << (int)gCustomWidth;
-	fWidth = new BTextControl("width","Width: ",s.String(),
+	fWidth = new BTextControl("width", B_TRANSLATE("Width:"),s.String(),
 								new BMessage(M_CHECK_VALUE));
 	MakeNumberBox(fWidth);
 
 	s = "";
 	s << (int)gCustomHeight;
-	fHeight = new BTextControl("height","Height: ",s.String(),
+	fHeight = new BTextControl("height", B_TRANSLATE("Height:"),s.String(),
 								new BMessage(M_CHECK_VALUE));
 	MakeNumberBox(fHeight);
 
 	s = "";
 	s << (int)gCustomMines;
-	fMines = new BTextControl("mines","Mines: ",s.String(),
+	fMines = new BTextControl("mines", B_TRANSLATE("Mines:"),s.String(),
 								new BMessage(M_CHECK_VALUE));
 	MakeNumberBox(fMines);
 
 	// Initially set label to Cancel so that the buttons are the same size
-	BButton *ok = new BButton("ok","OK",new BMessage(M_SET_CUSTOM));
+	BButton *ok = new BButton("ok",B_TRANSLATE("OK"),new BMessage(M_SET_CUSTOM));
 	ok->MakeDefault(true);
 
-	BButton *cancel = new BButton("cancel","Cancel",
+	BButton *cancel = new BButton("cancel", B_TRANSLATE("Cancel"),
 								new BMessage(B_QUIT_REQUESTED));
 
 	//ResizeTo(Bounds().Width(), fMines->Frame().bottom + 20.0 + ok->Frame().Height());
@@ -88,7 +92,7 @@ CustomWindow::MessageReceived(BMessage *msg)
 
 			for (int32 i = 0; i < be_app->CountWindows(); i++)
 			{
-				if (strcmp(be_app->WindowAt(i)->Title(),"BeMines") == 0)
+				if (strcmp(be_app->WindowAt(i)->Title(), B_TRANSLATE_SYSTEM_NAME("BeMines")) == 0)
 				{
 					BMessage setmsg(M_SET_DIFFICULTY);
 					setmsg.AddInt32("level",DIFFICULTY_CUSTOM);
@@ -155,10 +159,12 @@ CustomWindow::CheckValues(void)
 	}
 	else if (width > maxTileWidth)
 	{
-		BString errmsg;
-		errmsg << "For your current screen size and theme, you can have "
-				"a width of up to " << (int)maxTileWidth << " tiles.";
-		BAlert *alert = new BAlert("BeMines",errmsg.String(),"OK");
+		BString errorMessage = B_TRANSLATE("For your current screen size and theme, you can have "
+											"a width of up to %maxTileWidth% tiles.");
+		BString maxTileWidthString;
+		maxTileWidthString.SetToFormat("%d", maxTileWidth);
+		errorMessage.ReplaceAll("%maxTileWidth%", maxTileWidthString);
+		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),errorMessage.String(),B_TRANSLATE("OK"));
 		alert->Go();
 		s = "";
 		s << (int)maxTileWidth;
@@ -181,10 +187,13 @@ CustomWindow::CheckValues(void)
 	}
 	else if (height > maxTileHeight)
 	{
-		BString errmsg;
-		errmsg << "For your current screen size and theme, you can have "
-				"a height of up to " << (int)maxTileHeight << " tiles.";
-		BAlert *alert = new BAlert("BeMines",errmsg.String(),"OK");
+		BString errorMessage = B_TRANSLATE("For your current screen size and theme, you can have "
+											"a height of up to %maxTileHeight% tiles.");
+		BString maxTileHeightString;
+		maxTileHeightString.SetToFormat("%d", maxTileHeight);
+		errorMessage.ReplaceAll("%maxTileHeight%", maxTileHeightString);
+
+		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),errorMessage.String(),B_TRANSLATE("OK"));
 		alert->Go();
 		s = "";
 		s << (int)maxTileHeight;
@@ -200,12 +209,15 @@ CustomWindow::CheckValues(void)
 		fMines->SetText("1");
 		s = "1";
 	}
-	else if (count > maxMines)
+	count = atoi(s.String());
+	if (count > maxMines)
 	{
-		BString errmsg;
-		errmsg << "For your chosen width and height, you can't have more than "
-			<< (int)maxMines << " mines.";
-		BAlert *alert = new BAlert("BeMines",errmsg.String(),"OK");
+		BString errorMessage = B_TRANSLATE("For your chosen width and height, you can't have more than "
+											"%maxMines% mines.");
+		BString maxMinesString;
+		maxMinesString.SetToFormat("%d", maxMines);
+		errorMessage.ReplaceAll("%maxMines%", maxMinesString);
+		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),errorMessage.String(),B_TRANSLATE("OK"));
 		alert->Go();
 		s = "";
 		s << (int)maxMines;

@@ -1,0 +1,35 @@
+1	English	application/x-vnd.dw-BeMines	3583938090
+Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
+New	MainWindow		New
+Play Sounds	MainWindow		Play Sounds
+Expert	MainWindow		Expert
+Game	MainWindow		Game
+For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.
+Best Times	ScoreWindow		Best Times
+Close	ScoreWindow		Close
+Height:	CustomWindow		Height:
+%name%, %time% seconds 	ScoreWindow		%name%, %time% seconds 
+Custom…	MainWindow		Custom…
+You have made a new best time!	NewScoreWindow	First line text new record	You have made a new best time!
+Custom Level Settings	CustomWindow		Custom Level Settings
+Width:	CustomWindow		Width:
+About BeMines…	MainWindow		About BeMines…
+Close	NewScoreWindow		Close
+Reset Times	ScoreWindow		Reset Times
+Pause Game	MainWindow		Pause Game
+Theme	MainWindow		Theme
+Difficulty	MainWindow		Difficulty
+Beginner	MainWindow		Beginner
+Intermediate	MainWindow		Intermediate
+Best Score	NewScoreWindow		Best Score
+Expert:	ScoreWindow		Expert:
+For your chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		For your chosen width and height, you can't have more than %maxMines% mines.
+High Scores…	MainWindow		High Scores…
+Beginner:	ScoreWindow		Beginner:
+BeMines	System name		BeMines
+OK	CustomWindow		OK
+Settings	MainWindow		Settings
+Cancel	CustomWindow		Cancel
+Intermediate:	ScoreWindow		Intermediate:
+For your current screen size and theme, you can have a height of up to %maxTileHeight% tiles.	CustomWindow		For your current screen size and theme, you can have a height of up to %maxTileHeight% tiles.
+Mines:	CustomWindow		Mines:
