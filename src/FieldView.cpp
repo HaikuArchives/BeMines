@@ -354,7 +354,7 @@ FieldView::ToggleBox(const IntPoint &pt)
 			fFlagCount++;
 			Window()->PostMessage(M_UPDATE_COUNT);
 
-			if (fFlagCount == fField->MineCount() && CheckWin())
+			if (CheckWin())
 			{
 				DoWin();
 				break;
@@ -384,7 +384,11 @@ FieldView::OpenBox(const IntPoint &pt)
 			DoLose();
 		}
 		else
+		{
 			fField->SetState(pt,BOX_REVEALED);
+			if (CheckWin())
+				DoWin();
+		}
 	}
 	Invalidate(gGameStyle->TileRect(pt.x,pt.y));
 }
@@ -589,7 +593,7 @@ FieldView::CheckWin(void)
 		for (uint16 x = 0; x < fField->Width(); x++)
 		{
 			BoxState state = fField->GetState(IntPoint(x,y));
-			if (state == BOX_MARKED && !fField->IsMine(x,y))
+			if (state != BOX_REVEALED && !fField->IsMine(x,y))
 				return false;
 		}
 	return true;

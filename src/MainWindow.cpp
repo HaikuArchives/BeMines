@@ -232,6 +232,8 @@ MainWindow::MessageReceived(BMessage *msg)
 			else
 				fTimerView->SetTime(999);
 			fTimerView->SetState(TIMER_START);
+			if (fFieldView->CheckWin())
+				fFieldView->DoWin();
 			break;
 		}
 		case M_SIZE_CHANGED:
