@@ -5,6 +5,11 @@
 #include <StringView.h>
 #include "Globals.h"
 
+enum
+{
+	M_CHANGE_NAME = 'chgn'
+};
+
 #undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "NewScoreWindow"
 
@@ -20,6 +25,7 @@ NewScoreWindow::NewScoreWindow(uint16 time, int32 difficulty)
 	fTextBox = new BTextControl("scorename","",gBestTimes[difficulty].name.String(), NULL);
 	fTextBox->MakeFocus(true);
 	fTextBox->TextView()->SelectAll();
+	fTextBox->SetModificationMessage(new BMessage(M_CHANGE_NAME));
 
 	BLayoutBuilder::Group<>(top, B_VERTICAL, B_USE_SMALL_INSETS)
 		.SetInsets(B_USE_WINDOW_INSETS, B_USE_WINDOW_INSETS,
@@ -42,11 +48,33 @@ bool
 NewScoreWindow::QuitRequested(void)
 {
 	BString name = fTextBox->Text();
-	if (name.CountChars() < 1)
-		name = "Anonymous";
 
 	gBestTimes[fDifficulty].time = fSeconds;
 	gBestTimes[fDifficulty].name = name;
 
 	return true;
 }
+
+
+void
+NewScoreWindow::MessageReceived(BMessage *msg)
+{
+	switch (msg->what)
+	{
+		case M_CHANGE_NAME:
+		{
+			BString name = fTextBox->Text();
+			if (name.CountChars() < 1)
+				fClose->SetEnabled(false);
+			else
+				fClose->SetEnabled(true);
+			break;
+		}
+		default:
+		{
+			BWindow::MessageReceived(msg);
+			break;
+		}
+	}
+}
+
