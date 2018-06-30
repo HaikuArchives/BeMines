@@ -1,6 +1,7 @@
 #include "FieldView.h"
 #include <Alert.h>
 #include <Application.h>
+#include <Catalog.h>
 #include <Message.h>
 #include <Path.h>
 #include <PlaySound.h>
@@ -10,6 +11,9 @@
 #include "GameStyle.h"
 #include "Globals.h"
 #include "MainWindow.h"
+
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "FieldWindow"
 
 FieldView::FieldView(int32 level)
 	:	BView(BRect(0,0,1,1),"fieldview",B_FOLLOW_LEFT | B_FOLLOW_TOP,
@@ -52,21 +56,21 @@ FieldView::Draw(BRect update)
 	{
 		SetHighColor(128,128,128);
 		FillRect(Bounds());
-		SetHighColor(0,0,255);
+		SetHighColor(255,255,255);
 		SetDrawingMode(B_OP_ALPHA);
 
 		BFont font;
 		font.SetSize(28.0);
 		font_height fh;
 		font.GetHeight(&fh);
-		float width = font.StringWidth("PAUSED");
+		float width = font.StringWidth(B_TRANSLATE("PAUSED"));
 		SetFont(&font);
 		float y = (Bounds().Height() / 3) + fh.ascent;
-		DrawString("PAUSED",BPoint( (Bounds().Width() - width) / 2.0,y));
+		DrawString(B_TRANSLATE("PAUSED"),BPoint( (Bounds().Width() - width) / 2.0,y));
 		SetFont(be_plain_font);
 		y += fh.descent + fh.leading + 10.0;
-		width = be_plain_font->StringWidth("Click to resume");
-		DrawString("Click to resume",BPoint( (Bounds().Width() - width) / 2.0,y));
+		width = be_plain_font->StringWidth(B_TRANSLATE("Click to resume"));
+		DrawString(B_TRANSLATE("Click to resume"),BPoint( (Bounds().Width() - width) / 2.0,y));
 	}
 	else
 	{
@@ -343,9 +347,9 @@ FieldView::ToggleBox(const IntPoint &pt)
 		{
 			if (fFlagCount == fField->MineCount())
 			{
-				BAlert *alert = new BAlert("BeMines","You already have as many "
+				BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),B_TRANSLATE("You already have as many "
 									"flags as there are mines. Unflag a tile "
-									"before trying to flag another one.","OK");
+									"before trying to flag another one."),B_TRANSLATE("OK"));
 				alert->Go();
 				break;
 			}

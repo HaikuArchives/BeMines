@@ -1,6 +1,7 @@
-1	English	application/x-vnd.dw-BeMines	3583938090
+1	English	application/x-vnd.dw-BeMines	3875665837
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
 New	MainWindow		New
+Click to resume	FieldWindow		Click to resume
 Play Sounds	MainWindow		Play Sounds
 Expert	MainWindow		Expert
 Game	MainWindow		Game
@@ -8,6 +9,7 @@ For your current screen size and theme, you can have a width of up to %maxTileWi
 Best Times	ScoreWindow		Best Times
 Close	ScoreWindow		Close
 Height:	CustomWindow		Height:
+OK	FieldWindow		OK
 %name%, %time% seconds 	ScoreWindow		%name%, %time% seconds 
 Custom…	MainWindow		Custom…
 You have made a new best time!	NewScoreWindow	First line text new record	You have made a new best time!
@@ -18,6 +20,7 @@ Close	NewScoreWindow		Close
 Reset Times	ScoreWindow		Reset Times
 Pause Game	MainWindow		Pause Game
 Theme	MainWindow		Theme
+PAUSED	FieldWindow		PAUSED
 Difficulty	MainWindow		Difficulty
 Beginner	MainWindow		Beginner
 Intermediate	MainWindow		Intermediate
@@ -25,6 +28,7 @@ Best Score	NewScoreWindow		Best Score
 Expert:	ScoreWindow		Expert:
 For your chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		For your chosen width and height, you can't have more than %maxMines% mines.
 High Scores…	MainWindow		High Scores…
+You already have as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		You already have as many flags as there are mines. Unflag a tile before trying to flag another one.
 Beginner:	ScoreWindow		Beginner:
 BeMines	System name		BeMines
 OK	CustomWindow		OK

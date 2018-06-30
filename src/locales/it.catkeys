@@ -1,12 +1,15 @@
-1	English	application/x-vnd.dw-BeMines	3583938090
+1	English	application/x-vnd.dw-BeMines	3875665837
 Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome
 New	MainWindow		Nuovo
+Click to resume	FieldWindow		Clicca per riprendere
 Play Sounds	MainWindow		Effetti Sonori
 Expert	MainWindow		Esperto
 Game	MainWindow		Gioco
+For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileHeight% piastrelle.
 Best Times	ScoreWindow		Tempi migliori
 Close	ScoreWindow		Chiudi
 Height:	CustomWindow		Altezza:
+OK	FieldWindow		OK
 %name%, %time% seconds 	ScoreWindow		%name%, %time% secondi 
 Custom…	MainWindow		Personalizzato…
 You have made a new best time!	NewScoreWindow	First line text new record	Hai stabilito un nuovo record!
@@ -17,6 +20,7 @@ Close	NewScoreWindow		Chiudi
 Reset Times	ScoreWindow		Resetta i tempi
 Pause Game	MainWindow		Metti in pause il gioco
 Theme	MainWindow		Tema
+PAUSED	FieldWindow		IN PAUSA
 Difficulty	MainWindow		Difficoltà
 Beginner	MainWindow		Principiante
 Intermediate	MainWindow		Intermedio
@@ -24,7 +28,7 @@ Best Score	NewScoreWindow		Miglior punteggio
 Expert:	ScoreWindow		Esperto:
 For your chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		Per la larghezza e altezza scelta, non puoi avere più di %maxMines% mine.
 High Scores…	MainWindow		Punteggi migliori…
-For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileHeight% piastrelle.
+You already have as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Hai usato tutte le bandierine a tua disposizione. Togli una bandierina da una piestrella e possizionale su un'altra.
 Beginner:	ScoreWindow		Principiante:
 BeMines	System name		Campo Minato
 OK	CustomWindow		OK
