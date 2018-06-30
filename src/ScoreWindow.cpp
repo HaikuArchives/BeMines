@@ -92,8 +92,8 @@ ScoreWindow::UpdateLabels(void)
 	fIntScore->ResizeToPreferred();
 	scoreLabel = "";
 
-	if (gBestTimes[DIFFICULTY_INTERMEDIATE].name == "Anonymous" &&
-		(int)gBestTimes[DIFFICULTY_INTERMEDIATE].time == 999){
+	if (gBestTimes[DIFFICULTY_EXPERT].name == "Anonymous" &&
+		(int)gBestTimes[DIFFICULTY_EXPERT].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
 	} else {
 		scoreLabel << gBestTimes[DIFFICULTY_EXPERT].name
