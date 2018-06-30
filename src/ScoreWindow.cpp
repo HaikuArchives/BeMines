@@ -66,53 +66,24 @@ ScoreWindow::MessageReceived(BMessage *msg)
 void
 ScoreWindow::UpdateLabels(void)
 {
+	fBegScore->SetText(_GetLabelForDifficulty(DIFFICULTY_BEGINNER).String());
+	fIntScore->SetText(_GetLabelForDifficulty(DIFFICULTY_INTERMEDIATE).String());
+	fExpScore->SetText(_GetLabelForDifficulty(DIFFICULTY_EXPERT).String());
+}
+
+
+BString
+ScoreWindow::_GetLabelForDifficulty(uint32 difficulty) const
+{
 	BString scoreLabel;
 
-	if (gBestTimes[DIFFICULTY_BEGINNER].name == "Anonymous" &&
-		(int)gBestTimes[DIFFICULTY_BEGINNER].time == 999){
+	if (gBestTimes[difficulty].name == "Anonymous" &&
+		(int)gBestTimes[difficulty].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
 	} else {
-		scoreLabel << gBestTimes[DIFFICULTY_BEGINNER].name
-					<< ", " << (int)gBestTimes[DIFFICULTY_BEGINNER].time
+		scoreLabel << gBestTimes[difficulty].name
+					<< ", " << (int)gBestTimes[difficulty].time
 					<< " seconds";
 	}
-	fBegScore->SetText(scoreLabel.String());
-	fBegScore->ResizeToPreferred();
-	scoreLabel = "";
-
-	if (gBestTimes[DIFFICULTY_INTERMEDIATE].name == "Anonymous" &&
-		(int)gBestTimes[DIFFICULTY_INTERMEDIATE].time == 999){
-		scoreLabel = B_UTF8_ELLIPSIS;
-	} else {
-		scoreLabel << gBestTimes[DIFFICULTY_INTERMEDIATE].name
-					<< ", " << (int)gBestTimes[DIFFICULTY_INTERMEDIATE].time
-					<< " seconds";
-	}
-	fIntScore->SetText(scoreLabel.String());
-	fIntScore->ResizeToPreferred();
-	scoreLabel = "";
-
-	if (gBestTimes[DIFFICULTY_EXPERT].name == "Anonymous" &&
-		(int)gBestTimes[DIFFICULTY_EXPERT].time == 999){
-		scoreLabel = B_UTF8_ELLIPSIS;
-	} else {
-		scoreLabel << gBestTimes[DIFFICULTY_EXPERT].name
-					<< ", " << (int)gBestTimes[DIFFICULTY_EXPERT].time
-					<< " seconds";
-	}
-	fExpScore->SetText(scoreLabel.String());
-	fExpScore->ResizeToPreferred();
-
-	BView *close = FindView("close");
-
-	float right = MAX(fBegScore->Frame().right, fIntScore->Frame().right);
-	right = MAX(right, fExpScore->Frame().right);
-	right += 20;
-
-	if (right < 200)
-		right = 200;
-
-	float bottom = fExpScore->Frame().bottom + 20.0;
-	bottom += (close) ? close->Bounds().Height() : 0;
-	ResizeTo(right, bottom);
+	return scoreLabel;
 }

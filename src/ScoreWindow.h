@@ -12,6 +12,7 @@ public:
 
 private:
 	void	UpdateLabels(void);
+	BString	_GetLabelForDifficulty(uint32 difficulty) const;
 
 	BStringView	*fBegScore,
 				*fIntScore,
