@@ -741,7 +741,6 @@ FieldView::StyleChanged(void)
 	ResizeTo(((r.Width() + 1.0) * fField->Width()) - 1.0,
 			((r.Height() + 1.0) * fField->Height()) - 1.0);
 
-	gGameState = 0;
 	if (Window())
 		Window()->PostMessage(M_SIZE_CHANGED);
 	Invalidate();
