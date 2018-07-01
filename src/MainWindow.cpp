@@ -94,11 +94,11 @@ MainWindow::MainWindow(BRect frame)
 	{
 		menumsg = new BMessage(M_SET_THEME);
 		menumsg->AddString("name",gGameStyle->StyleAt(i));
-		submenu->AddItem(new BMenuItem(gGameStyle->StyleAt(i),menumsg));
+		submenu->AddItem(new BMenuItem(WellKnownTheme(gGameStyle->StyleAt(i)),menumsg));
 	}
 	menu->AddItem(submenu);
 	submenu->SetRadioMode(true);
-	item = submenu->FindItem(gGameStyle->StyleName());
+	item = submenu->FindItem(WellKnownTheme(gGameStyle->StyleName()));
 	if (item)
 		item->SetMarked(true);
 
@@ -370,9 +370,30 @@ MainWindow::SetTheme(const char *name)
 
 	ResetLayout();
 
-	BMenuItem *item = fMenuBar->FindItem(gGameStyle->StyleName());
+	BMenuItem *item = fMenuBar->FindItem(WellKnownTheme(gGameStyle->StyleName()));
 	if (item)
 		item->SetMarked(true);
+}
+
+const char*
+MainWindow::WellKnownTheme(const char *name)
+{
+	if (strcmp(name, "Be") == 0)
+		return B_TRANSLATE_COMMENT("Be", "Theme name");
+	else
+	if (strcmp(name, "Default") == 0)
+		return B_TRANSLATE_COMMENT("Default", "Theme name");
+	else
+	if (strcmp(name, "Classic") == 0)
+		return B_TRANSLATE_COMMENT("Classic", "Theme name");
+	else
+	if (strcmp(name, "Gray") == 0)
+		return B_TRANSLATE_COMMENT("Gray", "Theme name");
+	else
+	if (strcmp(name, "Gnome") == 0)
+		return B_TRANSLATE_COMMENT("Gnome", "Theme name");
+	else
+		return name;
 }
 
 

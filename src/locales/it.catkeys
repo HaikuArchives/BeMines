@@ -1,26 +1,31 @@
-1	Italian	application/x-vnd.dw-BeMines	3094749294
-Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome
-New high score	NewScoreWindow		New high score
+1	Italian	application/x-vnd.dw-BeMines	4236532337
+Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome.
+New high score	NewScoreWindow		Nuovo miglior punteggio
 New	MainWindow		Nuovo
 Click to resume	FieldWindow		Clicca per riprendere
 Expert	MainWindow		Esperto
 Game	MainWindow		Gioco
+Default	MainWindow	Theme name	Predefinito
+Gnome	MainWindow	Theme name	Gnome
 Height:	CustomWindow		Altezza:
+Classic	MainWindow	Theme name	Classico
 High scores	ScoreWindow		Punteggi migliori
 OK	FieldWindow		OK
 %name%, %time% seconds 	ScoreWindow		%name%, %time% secondi 
 About BeMines	MainWindow		Informazioni su BeMines
 Custom…	MainWindow		Personalizzato…
 You have made a new best time!	NewScoreWindow	First line text new record	Hai stabilito un nuovo record!
-Sound effects	MainWindow		Effetti Sonori
+Sound effects	MainWindow		Effetti sonori
 Width:	CustomWindow		Larghezza:
 Theme	MainWindow		Tema
-Anonymous	ScoreWindow		Anonymous
+Anonymous	ScoreWindow		Anonimo
 PAUSED	FieldWindow		IN PAUSA
-Anonymous	Globals		Anonymous
+Anonymous	Globals		Anonimo
 Difficulty	MainWindow		Difficoltà
+Gray	MainWindow	Theme name	Grigio
 Beginner	MainWindow		Principiante
 Intermediate	MainWindow		Intermedio
+Be	MainWindow	Theme name	Be
 For the chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		Per la larghezza e altezza scelta, non puoi avere più di %maxMines% mine.
 High scores	MainWindow		Punteggi migliori
 Expert:	ScoreWindow		Esperto:
@@ -29,10 +34,10 @@ OK	ScoreWindow		OK
 OK	NewScoreWindow		OK
 You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Hai usato tutte le bandierine a tua disposizione. Togli una bandierina da una piestrella e possizionale su un'altra.
 Level settings	CustomWindow		Impostazioni livello
-Pause	MainWindow		Pause
+Pause	MainWindow		Pausa
 Beginner:	ScoreWindow		Principiante:
 Reset	ScoreWindow		Reset
-BeMines	System name		Campo Minato
+BeMines	System name		BeMines
 OK	CustomWindow		OK
 Settings	MainWindow		Impostazioni
 Cancel	CustomWindow		Annulla

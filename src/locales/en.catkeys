@@ -1,11 +1,14 @@
-1	English	application/x-vnd.dw-BeMines	3094749294
+1	English	application/x-vnd.dw-BeMines	4236532337
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
 New high score	NewScoreWindow		New high score
 New	MainWindow		New
 Click to resume	FieldWindow		Click to resume
 Expert	MainWindow		Expert
 Game	MainWindow		Game
+Default	MainWindow	Theme name	Default
+Gnome	MainWindow	Theme name	Gnome
 Height:	CustomWindow		Height:
+Classic	MainWindow	Theme name	Classic
 High scores	ScoreWindow		High scores
 OK	FieldWindow		OK
 %name%, %time% seconds 	ScoreWindow		%name%, %time% seconds 
@@ -19,8 +22,10 @@ Anonymous	ScoreWindow		Anonymous
 PAUSED	FieldWindow		PAUSED
 Anonymous	Globals		Anonymous
 Difficulty	MainWindow		Difficulty
+Gray	MainWindow	Theme name	Gray
 Beginner	MainWindow		Beginner
 Intermediate	MainWindow		Intermediate
+Be	MainWindow	Theme name	Be
 For the chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		For the chosen width and height, you can't have more than %maxMines% mines.
 High scores	MainWindow		High scores
 Expert:	ScoreWindow		Expert:

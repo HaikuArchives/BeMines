@@ -38,6 +38,7 @@ public:
 	void	HighScoreCheck(void);
 	void	SetTheme(const char *name);
 private:
+	const char* WellKnownTheme(const char *name);
 	void	ResetLayout(void);
 	void	LoadSettings(void);
 	void	SaveSettings(void);
