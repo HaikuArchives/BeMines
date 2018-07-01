@@ -5,7 +5,7 @@ Click to resume	FieldWindow		Clicca per riprendere
 Play Sounds	MainWindow		Effetti sonori
 Expert	MainWindow		Esperto
 Game	MainWindow		Gioco
-For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileHeight% piastrelle.
+For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileWidth% piastrelle.
 Best Times	ScoreWindow		Tempi migliori
 Close	ScoreWindow		Chiudi
 Height:	CustomWindow		Altezza:
@@ -37,3 +37,4 @@ Cancel	CustomWindow		Annulla
 Intermediate:	ScoreWindow		Intermedio:
 For your current screen size and theme, you can have a height of up to %maxTileHeight% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una altezza massima di %maxTileHeight% piastrelle.
 Mines:	CustomWindow		Mine:
+
