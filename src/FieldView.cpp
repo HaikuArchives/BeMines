@@ -709,7 +709,7 @@ FieldView::SetDifficulty(uint8 level)
 
 
 void
-FieldView::SetBoard(uint8 width, uint8 height, uint8 count)
+FieldView::SetBoard(uint16 width, uint16 height, uint16 count)
 {
 	delete fField;
 

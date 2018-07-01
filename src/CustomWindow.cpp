@@ -136,12 +136,13 @@ CustomWindow::CheckValues(void)
 	BRect screen = BScreen().Frame();
 	BRect trect = gGameStyle->TileSize();
 	uint16 maxTileWidth = uint16((screen.Width() * .9) / trect.Width());
-
+	maxTileWidth = maxTileWidth > 80 ? 80 : maxTileWidth;
 	// Also compensate for stuff like the menu, smiley button, and titlebar height
 
 	float usableHeight = (screen.Height() * .9) - 20 - 20 -
 							gGameStyle->SmileyUp()->Bounds().Height();
 	uint16 maxTileHeight = uint16(usableHeight / trect.Height());
+	maxTileHeight = maxTileHeight > 80 ? 80 : maxTileHeight;
 
 	uint16 width,height;
 	BString s = fWidth->Text();
@@ -203,6 +204,7 @@ CustomWindow::CheckValues(void)
 
 	uint16	count = 0,
 			maxMines = ((width * height) - 1);
+	maxMines = maxMines > 999 ? 999 : maxMines;
 	s = fMines->Text();
 	if (s.CountChars() < 1)
 	{

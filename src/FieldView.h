@@ -53,7 +53,7 @@ public:
 	void		DoWin(void);
 	void		DoLose(void);
 	void		SetDifficulty(uint8 level);
-	void		SetBoard(uint8 width, uint8 height, uint8 count);
+	void		SetBoard(uint16 width, uint16 height, uint16 count);
 	void		StyleChanged(void);
 
 	void		SetPauseMode(bool paused);
