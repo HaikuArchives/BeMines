@@ -288,6 +288,7 @@ MainWindow::SetupGame(void)
 	BMenuItem *item = fMenuBar->FindItem(M_PAUSE_GAME);
 	if (item)
 		item->SetMarked(false);
+	fFieldView->SetPauseMode(false);
 	fTimerView->SetState(TIMER_RESET);
 	fFieldView->SetDifficulty(gDifficulty);
 	fCounterView->SetCount(fFieldView->MineCount());

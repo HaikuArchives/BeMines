@@ -1,8 +1,8 @@
-1	English	application/x-vnd.dw-BeMines	3875665837
-Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome
+1	Italian	application/x-vnd.dw-BeMines	3875665837
+Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome.
 New	MainWindow		Nuovo
 Click to resume	FieldWindow		Clicca per riprendere
-Play Sounds	MainWindow		Effetti Sonori
+Play Sounds	MainWindow		Effetti sonori
 Expert	MainWindow		Esperto
 Game	MainWindow		Gioco
 For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileHeight% piastrelle.
@@ -18,7 +18,7 @@ Width:	CustomWindow		Larghezza:
 About BeMines…	MainWindow		Informazioni su BeMines…
 Close	NewScoreWindow		Chiudi
 Reset Times	ScoreWindow		Resetta i tempi
-Pause Game	MainWindow		Metti in pause il gioco
+Pause Game	MainWindow		Gioco in pausa
 Theme	MainWindow		Tema
 PAUSED	FieldWindow		IN PAUSA
 Difficulty	MainWindow		Difficoltà
@@ -30,7 +30,7 @@ For your chosen width and height, you can't have more than %maxMines% mines.	Cus
 High Scores…	MainWindow		Punteggi migliori…
 You already have as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Hai usato tutte le bandierine a tua disposizione. Togli una bandierina da una piestrella e possizionale su un'altra.
 Beginner:	ScoreWindow		Principiante:
-BeMines	System name		Campo Minato
+BeMines	System name		BeMines
 OK	CustomWindow		OK
 Settings	MainWindow		Impostazioni
 Cancel	CustomWindow		Annulla
