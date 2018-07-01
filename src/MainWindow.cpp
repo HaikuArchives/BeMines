@@ -94,11 +94,11 @@ MainWindow::MainWindow(BRect frame)
 	{
 		menumsg = new BMessage(M_SET_THEME);
 		menumsg->AddString("name",gGameStyle->StyleAt(i));
-		submenu->AddItem(new BMenuItem(WellKnownTheme(gGameStyle->StyleAt(i)),menumsg));
+		submenu->AddItem(new BMenuItem(TranslateWellKnownThemes(gGameStyle->StyleAt(i)),menumsg));
 	}
 	menu->AddItem(submenu);
 	submenu->SetRadioMode(true);
-	item = submenu->FindItem(WellKnownTheme(gGameStyle->StyleName()));
+	item = submenu->FindItem(TranslateWellKnownThemes(gGameStyle->StyleName()));
 	if (item)
 		item->SetMarked(true);
 
@@ -370,13 +370,13 @@ MainWindow::SetTheme(const char *name)
 
 	ResetLayout();
 
-	BMenuItem *item = fMenuBar->FindItem(WellKnownTheme(gGameStyle->StyleName()));
+	BMenuItem *item = fMenuBar->FindItem(TranslateWellKnownThemes(gGameStyle->StyleName()));
 	if (item)
 		item->SetMarked(true);
 }
 
 const char*
-MainWindow::WellKnownTheme(const char *name)
+MainWindow::TranslateWellKnownThemes(const char *name)
 {
 	if (strcmp(name, "Be") == 0)
 		return B_TRANSLATE_COMMENT("Be", "Theme name");
