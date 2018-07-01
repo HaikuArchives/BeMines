@@ -20,7 +20,7 @@
 #define M_CHECK_VALUE 'ckvl'
 
 CustomWindow::CustomWindow(void)
-	:	DWindow(BRect(100,100,300,300), B_TRANSLATE("Custom Level Settings"),
+	:	DWindow(BRect(100,100,300,300), B_TRANSLATE("Level settings"),
 				B_TITLED_WINDOW, B_NOT_RESIZABLE | B_NOT_ZOOMABLE |
 				B_NOT_MINIMIZABLE | B_AUTO_UPDATE_SIZE_LIMITS)
 {
@@ -160,7 +160,7 @@ CustomWindow::CheckValues(void)
 	}
 	else if (width > maxTileWidth)
 	{
-		BString errorMessage = B_TRANSLATE("For your current screen size and theme, you can have "
+		BString errorMessage = B_TRANSLATE("For the current screen size and theme, you can have "
 											"a width of up to %maxTileWidth% tiles.");
 		BString maxTileWidthString;
 		maxTileWidthString.SetToFormat("%d", maxTileWidth);
@@ -188,7 +188,7 @@ CustomWindow::CheckValues(void)
 	}
 	else if (height > maxTileHeight)
 	{
-		BString errorMessage = B_TRANSLATE("For your current screen size and theme, you can have "
+		BString errorMessage = B_TRANSLATE("For the current screen size and theme, you can have "
 											"a height of up to %maxTileHeight% tiles.");
 		BString maxTileHeightString;
 		maxTileHeightString.SetToFormat("%d", maxTileHeight);
@@ -214,7 +214,7 @@ CustomWindow::CheckValues(void)
 	count = atoi(s.String());
 	if (count > maxMines)
 	{
-		BString errorMessage = B_TRANSLATE("For your chosen width and height, you can't have more than "
+		BString errorMessage = B_TRANSLATE("For the chosen width and height, you can't have more than "
 											"%maxMines% mines.");
 		BString maxMinesString;
 		maxMinesString.SetToFormat("%d", maxMines);

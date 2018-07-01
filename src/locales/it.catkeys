@@ -1,40 +1,41 @@
-1	Italian	application/x-vnd.dw-BeMines	3875665837
-Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome.
+1	Italian	application/x-vnd.dw-BeMines	3094749294
+Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome
+New high score	NewScoreWindow		New high score
 New	MainWindow		Nuovo
 Click to resume	FieldWindow		Clicca per riprendere
-Play Sounds	MainWindow		Effetti sonori
 Expert	MainWindow		Esperto
 Game	MainWindow		Gioco
-For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileWidth% piastrelle.
-Best Times	ScoreWindow		Tempi migliori
-Close	ScoreWindow		Chiudi
 Height:	CustomWindow		Altezza:
+High scores	ScoreWindow		Punteggi migliori
 OK	FieldWindow		OK
 %name%, %time% seconds 	ScoreWindow		%name%, %time% secondi 
+About BeMines	MainWindow		Informazioni su BeMines
 Custom…	MainWindow		Personalizzato…
 You have made a new best time!	NewScoreWindow	First line text new record	Hai stabilito un nuovo record!
-Custom Level Settings	CustomWindow		Impostazioni livello personalizzato
+Sound effects	MainWindow		Effetti Sonori
 Width:	CustomWindow		Larghezza:
-About BeMines…	MainWindow		Informazioni su BeMines…
-Close	NewScoreWindow		Chiudi
-Reset Times	ScoreWindow		Resetta i tempi
-Pause Game	MainWindow		Gioco in pausa
 Theme	MainWindow		Tema
+Anonymous	ScoreWindow		Anonymous
 PAUSED	FieldWindow		IN PAUSA
+Anonymous	Globals		Anonymous
 Difficulty	MainWindow		Difficoltà
 Beginner	MainWindow		Principiante
 Intermediate	MainWindow		Intermedio
-Best Score	NewScoreWindow		Miglior punteggio
+For the chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		Per la larghezza e altezza scelta, non puoi avere più di %maxMines% mine.
+High scores	MainWindow		Punteggi migliori
 Expert:	ScoreWindow		Esperto:
-For your chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		Per la larghezza e altezza scelta, non puoi avere più di %maxMines% mine.
-High Scores…	MainWindow		Punteggi migliori…
-You already have as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Hai usato tutte le bandierine a tua disposizione. Togli una bandierina da una piestrella e possizionale su un'altra.
+For the current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileHeight% piastrelle.
+OK	ScoreWindow		OK
+OK	NewScoreWindow		OK
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Hai usato tutte le bandierine a tua disposizione. Togli una bandierina da una piestrella e possizionale su un'altra.
+Level settings	CustomWindow		Impostazioni livello
+Pause	MainWindow		Pause
 Beginner:	ScoreWindow		Principiante:
-BeMines	System name		BeMines
+Reset	ScoreWindow		Reset
+BeMines	System name		Campo Minato
 OK	CustomWindow		OK
 Settings	MainWindow		Impostazioni
 Cancel	CustomWindow		Annulla
 Intermediate:	ScoreWindow		Intermedio:
-For your current screen size and theme, you can have a height of up to %maxTileHeight% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una altezza massima di %maxTileHeight% piastrelle.
+For the current screen size and theme, you can have a height of up to %maxTileHeight% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una altezza massima di %maxTileHeight% piastrelle.
 Mines:	CustomWindow		Mine:
-

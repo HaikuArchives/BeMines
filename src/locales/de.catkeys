@@ -1,0 +1,41 @@
+1	German	application/x-vnd.dw-BeMines	3094749294
+Please enter your name.	NewScoreWindow	Second line text new record	Bitte Namen eingeben.
+New high score	NewScoreWindow		Neuer Highscore
+New	MainWindow		Neu
+Click to resume	FieldWindow		Klicken zum Weiterspielen
+Expert	MainWindow		Experte
+Game	MainWindow		Spiel
+Height:	CustomWindow		Höhe:
+High scores	ScoreWindow		Highscores
+OK	FieldWindow		OK
+%name%, %time% seconds 	ScoreWindow		%name%, %time% Sekunden 
+About BeMines	MainWindow		Über BeMines
+Custom…	MainWindow		Individuell…
+You have made a new best time!	NewScoreWindow	First line text new record	Neue Bestzeit!
+Sound effects	MainWindow		Soundeffekte
+Width:	CustomWindow		Breite:
+Theme	MainWindow		Stil
+Anonymous	ScoreWindow		Anonym
+PAUSED	FieldWindow		PAUSE
+Anonymous	Globals		Anonym
+Difficulty	MainWindow		Schwierigkeitsgrad
+Beginner	MainWindow		Anfänger
+Intermediate	MainWindow		Fortgeschrittener
+For the chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		Bei der gewählten Höhe und Breite können max. %maxMines% gesetzt werden.
+High scores	MainWindow		Highscores
+Expert:	ScoreWindow		Experte:
+For the current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Die aktuelle Bildschirmauflösung erlaubt bei dem verwendeten Stil nur eine Breite von max. %maxTileWidth% Feldern.
+OK	ScoreWindow		OK
+OK	NewScoreWindow		Pause
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Es wurden bereits soviele Flaggen gesetzt wie es Minen gibt. Bevor ein weiteres Feld markiert werden kann, muss die Flagge eines anderen entfernt werden.
+Level settings	CustomWindow		Level Einstellungen
+Pause	MainWindow		Pause
+Beginner:	ScoreWindow		Anfänger:
+Reset	ScoreWindow		Reset
+BeMines	System name		BeMines
+OK	CustomWindow		OK
+Settings	MainWindow		Einstellungen
+Cancel	CustomWindow		Abbrechen
+Intermediate:	ScoreWindow		Fortgeschrittener:
+For the current screen size and theme, you can have a height of up to %maxTileHeight% tiles.	CustomWindow		Die aktuelle Bildschirmauflösung erlaubt bei dem verwendeten Stil nur eine Höhe von max. %maxTileHeight% Feldern.
+Mines:	CustomWindow		Minen:

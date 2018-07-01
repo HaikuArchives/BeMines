@@ -11,15 +11,15 @@
 #define M_RESET_SCORES 'rssc'
 
 ScoreWindow::ScoreWindow(void)
-	:	DWindow(BRect(100,500,100,400),B_TRANSLATE("Best Times"),B_TITLED_WINDOW,
+	:	DWindow(BRect(100,500,100,400),B_TRANSLATE("High scores"),B_TITLED_WINDOW,
 				B_NOT_RESIZABLE | B_NOT_ZOOMABLE | B_AUTO_UPDATE_SIZE_LIMITS)
 {
 	AddCommonFilter(new EscapeCancelFilter());
 
 	BView *top = GetBackgroundView();
 
-	BButton *reset = new BButton("reset", B_TRANSLATE("Reset Times"), new BMessage(M_RESET_SCORES));
-	BButton *close = new BButton("close", B_TRANSLATE("Close"), new BMessage(B_QUIT_REQUESTED));
+	BButton *reset = new BButton("reset", B_TRANSLATE("Reset"), new BMessage(M_RESET_SCORES));
+	BButton *close = new BButton("ok", B_TRANSLATE("OK"), new BMessage(B_QUIT_REQUESTED));
 
 	BStringView *begLabel, *intLabel, *expLabel;
 
@@ -81,7 +81,7 @@ ScoreWindow::_GetLabelForDifficulty(uint32 difficulty) const
 {
 	BString scoreLabel;
 
-	if (gBestTimes[difficulty].name == "Anonymous" &&
+	if (gBestTimes[difficulty].name == B_TRANSLATE("Anonymous") &&
 		(int)gBestTimes[difficulty].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
 	} else {

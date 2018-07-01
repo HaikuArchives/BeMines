@@ -347,7 +347,7 @@ FieldView::ToggleBox(const IntPoint &pt)
 		{
 			if (fFlagCount == fField->MineCount())
 			{
-				BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),B_TRANSLATE("You already have as many "
+				BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),B_TRANSLATE("You have already set as many "
 									"flags as there are mines. Unflag a tile "
 									"before trying to flag another one."),B_TRANSLATE("OK"));
 				alert->Go();

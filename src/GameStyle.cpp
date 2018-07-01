@@ -1,11 +1,15 @@
 #include "GameStyle.h"
 #include <TranslationUtils.h>
 #include <Application.h>
+#include <Catalog.h>
 #include <Directory.h>
 #include <Path.h>
 #include <Roster.h>
 #include <String.h>
 #include <TranslatorFormats.h>
+
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "GameStyle"
 
 GameStyle::GameStyle(const char *path)
 	:	fSmileyUp(NULL),

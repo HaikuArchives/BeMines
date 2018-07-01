@@ -14,7 +14,7 @@ enum
 #define B_TRANSLATION_CONTEXT "NewScoreWindow"
 
 NewScoreWindow::NewScoreWindow(uint16 time, int32 difficulty)
-	:	DWindow(BRect(0,0,300,300), B_TRANSLATE("Best Score"), B_TITLED_WINDOW,
+	:	DWindow(BRect(0,0,300,300), B_TRANSLATE("New high score"), B_TITLED_WINDOW,
 				B_ASYNCHRONOUS_CONTROLS | B_NOT_RESIZABLE
 				| B_AUTO_UPDATE_SIZE_LIMITS),
 		fDifficulty(difficulty),
@@ -35,7 +35,7 @@ NewScoreWindow::NewScoreWindow(uint16 time, int32 difficulty)
 		.Add(fTextBox)
 		.AddGroup(B_HORIZONTAL)
 			.AddGlue()
-			.Add(fClose = new BButton("close", B_TRANSLATE("Close"),
+			.Add(fClose = new BButton("ok", B_TRANSLATE("OK"),
 				new BMessage(B_QUIT_REQUESTED)));
 
 	fClose->MakeDefault(true);

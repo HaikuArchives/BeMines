@@ -1,39 +1,41 @@
-1	English	application/x-vnd.dw-BeMines	3875665837
+1	English	application/x-vnd.dw-BeMines	3094749294
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
+New high score	NewScoreWindow		New high score
 New	MainWindow		New
 Click to resume	FieldWindow		Click to resume
-Play Sounds	MainWindow		Play Sounds
 Expert	MainWindow		Expert
 Game	MainWindow		Game
-For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		For your current screen size and theme, you can have a width of up to %maxTileWidth% tiles.
-Best Times	ScoreWindow		Best Times
-Close	ScoreWindow		Close
 Height:	CustomWindow		Height:
+High scores	ScoreWindow		High scores
 OK	FieldWindow		OK
 %name%, %time% seconds 	ScoreWindow		%name%, %time% seconds 
+About BeMines	MainWindow		About BeMines
 Custom…	MainWindow		Custom…
 You have made a new best time!	NewScoreWindow	First line text new record	You have made a new best time!
-Custom Level Settings	CustomWindow		Custom Level Settings
+Sound effects	MainWindow		Sound effects
 Width:	CustomWindow		Width:
-About BeMines…	MainWindow		About BeMines…
-Close	NewScoreWindow		Close
-Reset Times	ScoreWindow		Reset Times
-Pause Game	MainWindow		Pause Game
 Theme	MainWindow		Theme
+Anonymous	ScoreWindow		Anonymous
 PAUSED	FieldWindow		PAUSED
+Anonymous	Globals		Anonymous
 Difficulty	MainWindow		Difficulty
 Beginner	MainWindow		Beginner
 Intermediate	MainWindow		Intermediate
-Best Score	NewScoreWindow		Best Score
+For the chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		For the chosen width and height, you can't have more than %maxMines% mines.
+High scores	MainWindow		High scores
 Expert:	ScoreWindow		Expert:
-For your chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		For your chosen width and height, you can't have more than %maxMines% mines.
-High Scores…	MainWindow		High Scores…
-You already have as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		You already have as many flags as there are mines. Unflag a tile before trying to flag another one.
+For the current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		For the current screen size and theme, you can have a width of up to %maxTileWidth% tiles.
+OK	ScoreWindow		OK
+OK	NewScoreWindow		OK
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.
+Level settings	CustomWindow		Level settings
+Pause	MainWindow		Pause
 Beginner:	ScoreWindow		Beginner:
+Reset	ScoreWindow		Reset
 BeMines	System name		BeMines
 OK	CustomWindow		OK
 Settings	MainWindow		Settings
 Cancel	CustomWindow		Cancel
 Intermediate:	ScoreWindow		Intermediate:
-For your current screen size and theme, you can have a height of up to %maxTileHeight% tiles.	CustomWindow		For your current screen size and theme, you can have a height of up to %maxTileHeight% tiles.
+For the current screen size and theme, you can have a height of up to %maxTileHeight% tiles.	CustomWindow		For the current screen size and theme, you can have a height of up to %maxTileHeight% tiles.
 Mines:	CustomWindow		Mines:

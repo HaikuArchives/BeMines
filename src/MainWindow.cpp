@@ -52,16 +52,16 @@ MainWindow::MainWindow(BRect frame)
 
 	BMenu *submenu = NULL;
 
-	menu->AddItem(new BMenuItem(B_TRANSLATE("Pause Game"),new BMessage(M_PAUSE_GAME),'P',
+	menu->AddItem(new BMenuItem(B_TRANSLATE("Pause"),new BMessage(M_PAUSE_GAME),'P',
 								B_COMMAND_KEY));
 
 	menu->AddSeparatorItem();
 
-	menu->AddItem(new BMenuItem(B_TRANSLATE("High Scores…"),new BMessage(M_SHOW_SCORES)));
+	menu->AddItem(new BMenuItem(B_TRANSLATE("High scores"),new BMessage(M_SHOW_SCORES)));
 
 	menu->AddSeparatorItem();
 
-	menu->AddItem(new BMenuItem(B_TRANSLATE("About BeMines…"),new BMessage(B_ABOUT_REQUESTED)));
+	menu->AddItem(new BMenuItem(B_TRANSLATE("About BeMines"),new BMessage(B_ABOUT_REQUESTED)));
 
 	fMenuBar->AddItem(menu);
 
@@ -82,7 +82,7 @@ MainWindow::MainWindow(BRect frame)
 	submenu->AddItem(new BMenuItem(B_TRANSLATE("Expert"),menumsg));
 
 	menumsg = new BMessage(M_SHOW_CUSTOM);
-	submenu->AddItem(new BMenuItem(B_TRANSLATE("Custom…"),menumsg));
+	submenu->AddItem(new BMenuItem(B_TRANSLATE("Custom"B_UTF8_ELLIPSIS),menumsg));
 	menu->AddItem(submenu);
 
 	BMenuItem *item = submenu->ItemAt(gDifficulty);
@@ -104,7 +104,7 @@ MainWindow::MainWindow(BRect frame)
 
 	menu->AddSeparatorItem();
 
-	item = new BMenuItem(B_TRANSLATE("Play Sounds"),new BMessage(M_TOGGLE_SOUNDS));
+	item = new BMenuItem(B_TRANSLATE("Sound effects"),new BMessage(M_TOGGLE_SOUNDS));
 	menu->AddItem(item);
 	item->SetMarked(gPlaySounds);
 

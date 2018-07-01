@@ -1,4 +1,8 @@
 #include "Globals.h"
+#include <Catalog.h>
+
+#undef B_TRANSLATION_CONTEXT
+#define B_TRANSLATION_CONTEXT "Globals"
 
 bool gCheatMode = false;
 bool gPlaySounds = true;
@@ -10,9 +14,9 @@ uint16 gBeginnerBest = 999;
 uint16 gIntermediateBest = 999;
 uint16 gExpertBest = 999;
 
-BString gBeginnerName = "Anonymous";
-BString gIntermediateName = "Anonymous";
-BString gExpertName = "Anonymous";
+BString gBeginnerName = B_TRANSLATE("Anonymous");
+BString gIntermediateName = B_TRANSLATE("Anonymous");
+BString gExpertName = B_TRANSLATE("Anonymous");
 
 int8 gGameState = GAME_STOPPED;
 
