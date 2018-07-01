@@ -22,7 +22,7 @@
 CustomWindow::CustomWindow(void)
 	:	DWindow(BRect(100,100,300,300), B_TRANSLATE("Custom Level Settings"),
 				B_TITLED_WINDOW, B_NOT_RESIZABLE | B_NOT_ZOOMABLE |
-								B_NOT_MINIMIZABLE)
+				B_NOT_MINIMIZABLE | B_AUTO_UPDATE_SIZE_LIMITS)
 {
 	AddCommonFilter(new EscapeCancelFilter());
 

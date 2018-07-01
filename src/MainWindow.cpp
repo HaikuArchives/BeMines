@@ -203,7 +203,7 @@ MainWindow::MessageReceived(BMessage *msg)
 			if (msg->FindInt32("level",&level) != B_OK)
 				break;
 
-			BMenuItem *item = fMenuBar->FindItem("Beginner");
+			BMenuItem *item = fMenuBar->FindItem(M_SET_DIFFICULTY);
 			BMenu *menu = item ? item->Menu() : NULL;
 
 			item = menu->FindMarked();
