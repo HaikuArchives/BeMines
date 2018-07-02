@@ -1,4 +1,4 @@
-1	English	application/x-vnd.dw-BeMines	4236532337
+1	English	application/x-vnd.dw-BeMines	1783412740
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
 New high score	NewScoreWindow		New high score
 New	MainWindow		New
@@ -17,6 +17,7 @@ Custom…	MainWindow		Custom…
 You have made a new best time!	NewScoreWindow	First line text new record	You have made a new best time!
 Sound effects	MainWindow		Sound effects
 Width:	CustomWindow		Width:
+Quit	MainWindow		Quit
 Theme	MainWindow		Theme
 Anonymous	ScoreWindow		Anonymous
 PAUSED	FieldWindow		PAUSED

@@ -63,6 +63,10 @@ MainWindow::MainWindow(BRect frame)
 
 	menu->AddItem(new BMenuItem(B_TRANSLATE("About BeMines"),new BMessage(B_ABOUT_REQUESTED)));
 
+	menu->AddSeparatorItem();
+
+	menu->AddItem(new BMenuItem(B_TRANSLATE("Quit"), new BMessage(B_QUIT_REQUESTED), 'Q'));
+
 	fMenuBar->AddItem(menu);
 
 	menu = new BMenu(B_TRANSLATE("Settings"));
