@@ -14,6 +14,7 @@
 #include "CustomWindow.h"
 #include "FieldView.h"
 #include "Globals.h"
+#include "HelpWindow.h"
 #include "ScoreWindow.h"
 #include "NewScoreWindow.h"
 #include "TimerView.h"
@@ -21,6 +22,7 @@
 enum
 {
 	M_NEW_GAME = 'nwgm',
+	M_SHOW_HELP = 'help',
 	M_SET_THEME = 'stth',
 	M_SHOW_SCORES = 'shsc',
 	M_TOGGLE_SOUNDS = 'tgsn',
@@ -48,7 +50,6 @@ MainWindow::MainWindow(BRect frame)
 
 	BMenu *menu = new BMenu(B_TRANSLATE("Game"));
 	menu->AddItem(new BMenuItem(B_TRANSLATE("New"),new BMessage(M_NEW_GAME),'N'));
-	menu->AddSeparatorItem();
 
 	BMenu *submenu = NULL;
 
@@ -61,6 +62,7 @@ MainWindow::MainWindow(BRect frame)
 
 	menu->AddSeparatorItem();
 
+	menu->AddItem(new BMenuItem(B_TRANSLATE("Help"),new BMessage(M_SHOW_HELP)));
 	menu->AddItem(new BMenuItem(B_TRANSLATE("About BeMines"),new BMessage(B_ABOUT_REQUESTED)));
 
 	fMenuBar->AddItem(menu);
@@ -82,7 +84,7 @@ MainWindow::MainWindow(BRect frame)
 	submenu->AddItem(new BMenuItem(B_TRANSLATE("Expert"),menumsg));
 
 	menumsg = new BMessage(M_SHOW_CUSTOM);
-	submenu->AddItem(new BMenuItem(B_TRANSLATE("Custom"B_UTF8_ELLIPSIS),menumsg));
+	submenu->AddItem(new BMenuItem(B_TRANSLATE("Custom" B_UTF8_ELLIPSIS),menumsg));
 	menu->AddItem(submenu);
 
 	BMenuItem *item = submenu->ItemAt(gDifficulty);
@@ -155,6 +157,12 @@ MainWindow::MessageReceived(BMessage *msg)
 		{
 			AboutWindow *abwin = new AboutWindow();
 			abwin->Show();
+			break;
+		}
+		case M_SHOW_HELP:
+		{
+			HelpWindow *helpwin = new HelpWindow();
+			helpwin->Show();
 			break;
 		}
 		case M_SHOW_CUSTOM:
