@@ -37,6 +37,7 @@ SRCS = \
 	FieldView.cpp \
 	GameStyle.cpp \
 	Globals.cpp \
+	HelpWindow.cpp \
 	MainWindow.cpp \
 	Minefield.cpp \
 	NewScoreWindow.cpp \
