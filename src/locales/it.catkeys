@@ -1,11 +1,14 @@
-1	Italian	application/x-vnd.dw-BeMines	4236532337
+1	Italian	application/x-vnd.dw-BeMines	2293646823
 Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome.
+OK	HelpWindow		OK
 New high score	NewScoreWindow		Nuovo miglior punteggio
 New	MainWindow		Nuovo
 Click to resume	FieldWindow		Clicca per riprendere
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Reveal what's under a tile. If it's a mine, the game is over!
 Expert	MainWindow		Esperto
 Game	MainWindow		Gioco
 Default	MainWindow	Theme name	Predefinito
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.
 Gnome	MainWindow	Theme name	Gnome
 Height:	CustomWindow		Altezza:
 Classic	MainWindow	Theme name	Classico
@@ -17,10 +20,16 @@ Custom…	MainWindow		Personalizzato…
 You have made a new best time!	NewScoreWindow	First line text new record	Hai stabilito un nuovo record!
 Sound effects	MainWindow		Effetti sonori
 Width:	CustomWindow		Larghezza:
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...
+Quit	MainWindow		Quit
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.
+Right click:	HelpWindow		Right click:
 Theme	MainWindow		Tema
 Anonymous	ScoreWindow		Anonimo
 PAUSED	FieldWindow		IN PAUSA
 Anonymous	Globals		Anonimo
+Middle click (or ALT + left click):	HelpWindow		Middle click (or ALT + left click):
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Clicking with both buttons (or SHIFT + left click):
 Difficulty	MainWindow		Difficoltà
 Gray	MainWindow	Theme name	Grigio
 Beginner	MainWindow		Principiante
@@ -28,13 +37,17 @@ Intermediate	MainWindow		Intermedio
 Be	MainWindow	Theme name	Be
 For the chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		Per la larghezza e altezza scelta, non puoi avere più di %maxMines% mine.
 High scores	MainWindow		Punteggi migliori
+Help	HelpWindow		Help
+Help	MainWindow		Help
 Expert:	ScoreWindow		Esperto:
 For the current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileHeight% piastrelle.
 OK	ScoreWindow		OK
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.
 OK	NewScoreWindow		OK
 You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Hai usato tutte le bandierine a tua disposizione. Togli una bandierina da una piestrella e possizionale su un'altra.
 Level settings	CustomWindow		Impostazioni livello
 Pause	MainWindow		Pausa
+Left click:	HelpWindow		Left click:
 Beginner:	ScoreWindow		Principiante:
 Reset	ScoreWindow		Reset
 BeMines	System name		BeMines

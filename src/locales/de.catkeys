@@ -1,11 +1,17 @@
-1	German	application/x-vnd.dw-BeMines	3094749294
+1	German	application/x-vnd.dw-BeMines	2293646823
 Please enter your name.	NewScoreWindow	Second line text new record	Bitte Namen eingeben.
+OK	HelpWindow		OK
 New high score	NewScoreWindow		Neuer Highscore
 New	MainWindow		Neu
 Click to resume	FieldWindow		Klicken zum Weiterspielen
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Zeigt was sich unter einem Feld befindet. Wenn's eine Mine ist, ist das Spiel verloren.
 Expert	MainWindow		Experte
 Game	MainWindow		Spiel
+Default	MainWindow	Theme name	Standard
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Ein Sonar Ping zeigt alle Minen in einem 3x3 Umkreis, ohne sie dabei zu auszulösen. Das kostet allerdings 20 Sekunden. Ein Sonar Ping zeigt alle Minen in einem 3x3 Umkreis, ohne sie dabei zu auszulösen. Das kostet allerdings 20 Sekunden.
+Gnome	MainWindow	Theme name	Gnome
 Height:	CustomWindow		Höhe:
+Classic	MainWindow	Theme name	Klassisch
 High scores	ScoreWindow		Highscores
 OK	FieldWindow		OK
 %name%, %time% seconds 	ScoreWindow		%name%, %time% Sekunden 
@@ -14,22 +20,34 @@ Custom…	MainWindow		Individuell…
 You have made a new best time!	NewScoreWindow	First line text new record	Neue Bestzeit!
 Sound effects	MainWindow		Soundeffekte
 Width:	CustomWindow		Breite:
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Zeigt das Feld eine Zahl und ist die entsprechende Anzahl der angrenzenden Minen richtig markiert, werden alle übrigen Felder um das Zahlenfeld herum aufgedeckt. Hat man einen Fehler gemacht, löst man natürlich unter Umständen eine Mine aus...
+Quit	MainWindow		Beenden
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Ziel des Spiels ist es alle Minen zu markieren, die auf dem Spielfeld verborgen sind. Der Zähler oben links zeigt die Anzahl der noch versteckten Minen, der rechte zählt die Zeit in Sekunden.
+Right click:	HelpWindow		Rechtsklick:
 Theme	MainWindow		Stil
 Anonymous	ScoreWindow		Anonym
 PAUSED	FieldWindow		PAUSE
 Anonymous	Globals		Anonym
+Middle click (or ALT + left click):	HelpWindow		Mittelklick (oder ALT + Linksklick):
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Klicken beider Maustasten (oder SHIFT + Linksklick):
 Difficulty	MainWindow		Schwierigkeitsgrad
+Gray	MainWindow	Theme name	Grau
 Beginner	MainWindow		Anfänger
 Intermediate	MainWindow		Fortgeschrittener
+Be	MainWindow	Theme name	Be
 For the chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		Bei der gewählten Höhe und Breite können max. %maxMines% gesetzt werden.
 High scores	MainWindow		Highscores
+Help	HelpWindow		Hilfe
+Help	MainWindow		Hilfe
 Expert:	ScoreWindow		Experte:
 For the current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Die aktuelle Bildschirmauflösung erlaubt bei dem verwendeten Stil nur eine Breite von max. %maxTileWidth% Feldern.
 OK	ScoreWindow		OK
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Markiert ein Feld als Mine, setzt ein Fragezeichen wenn mann sich unsicher ist, oder entfernt ein bereits markiertes Feld.
 OK	NewScoreWindow		Pause
 You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Es wurden bereits soviele Flaggen gesetzt wie es Minen gibt. Bevor ein weiteres Feld markiert werden kann, muss die Flagge eines anderen entfernt werden.
 Level settings	CustomWindow		Level Einstellungen
 Pause	MainWindow		Pause
+Left click:	HelpWindow		Linksklick:
 Beginner:	ScoreWindow		Anfänger:
 Reset	ScoreWindow		Reset
 BeMines	System name		BeMines
