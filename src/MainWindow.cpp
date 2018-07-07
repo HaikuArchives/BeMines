@@ -158,10 +158,10 @@ MainWindow::AboutRequested()
 	BAboutWindow* about = new BAboutWindow(
 		B_TRANSLATE_SYSTEM_NAME("BeMines"), "application/x-vnd.dw-BeMines");
 
-	const char* kCopyright = "Kevin Adams, Augustin Cavalier, Humdinger, Janus";
+	const char* kCopyright = "Kevin Adams, Humdinger, Janus";
 
 	const char* kExtraCopyrights[] = {
-		"2015 Augustin Cavalier, Justin Stressman",
+		"2015 Justin Stressman",
 		"2009 DarkWyrm",
 		NULL
 	};
@@ -169,7 +169,6 @@ MainWindow::AboutRequested()
 	const char* kAuthors[] = {
 		B_TRANSLATE("DarkWyrm (original author)"),
 		"Kevin Adams",
-		"Augustin Cavalier",
 		"Adrien Destugues",
 		"Humdinger",
 		"Janus",
