@@ -1,4 +1,4 @@
-#include "MainWindow.h"
+#include <AboutWindow.h>
 #include <Application.h>
 #include <Catalog.h>
 #include <File.h>
@@ -8,7 +8,7 @@
 #include <Message.h>
 #include <View.h>
 
-#include "AboutWindow.h"
+#include "MainWindow.h"
 #include "BitmapButton.h"
 #include "CounterView.h"
 #include "CustomWindow.h"
@@ -153,14 +153,45 @@ MainWindow::QuitRequested(void)
 
 
 void
+MainWindow::AboutRequested()
+{
+	BAboutWindow* about = new BAboutWindow(
+		B_TRANSLATE_SYSTEM_NAME("BeMines"), "application/x-vnd.dw-BeMines");
+
+	const char* kCopyright = "Kevin Adams, Augustin Cavalier, Humdinger, Janus";
+
+	const char* kExtraCopyrights[] = {
+		"2015 Augustin Cavalier, Justin Stressman",
+		"2009 DarkWyrm",
+		NULL
+	};
+
+	const char* kAuthors[] = {
+		B_TRANSLATE("DarkWyrm (original author)"),
+		"Kevin Adams",
+		"Augustin Cavalier",
+		"Adrien Destugues",
+		"Humdinger",
+		"Janus",
+		"Justin Stressman",
+		NULL
+	};
+	about->AddDescription(
+		B_TRANSLATE("A themable, open-source rendition of Minesweeper."));
+	about->AddCopyright(2018, kCopyright, kExtraCopyrights);
+	about->AddAuthors(kAuthors);
+	about->Show();
+}
+
+
+void
 MainWindow::MessageReceived(BMessage *msg)
 {
 	switch (msg->what)
 	{
 		case B_ABOUT_REQUESTED:
 		{
-			AboutWindow *abwin = new AboutWindow();
-			abwin->Show();
+			AboutRequested();
 			break;
 		}
 		case M_SHOW_HELP:
