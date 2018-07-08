@@ -1,4 +1,4 @@
-1	English	application/x-vnd.dw-BeMines	2293646823
+1	English	application/x-vnd.dw-BeMines	1917219099
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
 OK	HelpWindow		OK
 New high score	NewScoreWindow		New high score
@@ -10,6 +10,7 @@ Game	MainWindow		Game
 Default	MainWindow	Theme name	Default
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.
 Gnome	MainWindow	Theme name	Gnome
+A themable, open-source rendition of Minesweeper.	MainWindow		A themable, open-source rendition of Minesweeper.
 Height:	CustomWindow		Height:
 Classic	MainWindow	Theme name	Classic
 High scores	ScoreWindow		High scores
@@ -24,6 +25,7 @@ If the tile is a number and the appropriate number of mines around it have been 
 Quit	MainWindow		Quit
 The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.
 Right click:	HelpWindow		Right click:
+DarkWyrm (original author)	MainWindow		DarkWyrm (original author)
 Theme	MainWindow		Theme
 Anonymous	ScoreWindow		Anonymous
 PAUSED	FieldWindow		PAUSED
