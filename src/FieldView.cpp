@@ -4,7 +4,6 @@
 #include <Catalog.h>
 #include <Message.h>
 #include <Path.h>
-#include <PlaySound.h>
 #include <Roster.h>
 #include <stdio.h>
 
@@ -22,7 +21,8 @@ FieldView::FieldView(int32 level)
 		fTracking(false),
 		fFlagCount(0),
 		fMainWin(NULL),
-		fPauseMode(false)
+		fPauseMode(false),
+		fPlayer(NULL)
 {
 	SetDifficulty(level);
 	SetDrawingMode(B_OP_ALPHA);
@@ -39,6 +39,7 @@ FieldView::FieldView(int32 level)
 
 FieldView::~FieldView(void)
 {
+	delete fPlayer;
 }
 
 
@@ -277,8 +278,11 @@ FieldView::InvokeTile(const IntPoint &tilePt, uint32 button)
 		else
 		{
 			ClickBox(tilePt);
-			if (gPlaySounds)
-				play_sound(&fClickSoundRef,true,false,true);
+			if (gPlaySounds) {
+				delete fPlayer;
+				fPlayer = new BFileGameSound(&fClickSoundRef, false);
+				fPlayer->StartPlaying();
+			}
 		}
 	}
 	else if (button == B_SECONDARY_MOUSE_BUTTON)
@@ -607,8 +611,11 @@ FieldView::CheckWin(void)
 void
 FieldView::DoWin(void)
 {
-	if (gPlaySounds)
-		play_sound(&fWinSoundRef,true,false,true);
+	if (gPlaySounds) {
+		delete fPlayer;
+		fPlayer = new BFileGameSound(&fWinSoundRef, false);
+		fPlayer->StartPlaying();
+	}
 	gGameState = -1;
 	fMainWin->SetFace(FACE_WIN);
 	Invalidate();
@@ -617,8 +624,11 @@ FieldView::DoWin(void)
 void
 FieldView::DoLose(void)
 {
-	if (gPlaySounds)
-		play_sound(&fLoseSoundRef,true,false,true);
+	if (gPlaySounds) {
+		delete fPlayer;
+		fPlayer = new BFileGameSound(&fLoseSoundRef, false);
+		fPlayer->StartPlaying();
+	}
 	fMainWin->SetFace(FACE_LOSE);
 	gGameState = -1;
 

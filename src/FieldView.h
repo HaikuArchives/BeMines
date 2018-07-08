@@ -1,9 +1,11 @@
 #ifndef FIELDVIEW_H
 #define FIELDVIEW_H
 
-#include <View.h>
 #include <Entry.h>
+#include <FileGameSound.h>
 #include <String.h>
+#include <View.h>
+
 #include "Minefield.h"
 
 class GameStyle;
@@ -70,6 +72,7 @@ private:
 	MainWindow	*fMainWin;
 	BString		fThemePath;
 
+	BFileGameSound	*fPlayer;
 	entry_ref	fWinSoundRef,
 				fLoseSoundRef,
 				fClickSoundRef;
