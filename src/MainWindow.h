@@ -37,6 +37,8 @@ public:
 	void	SetFace(int32 value);
 	void	HighScoreCheck(void);
 	void	SetTheme(const char *name);
+	void	AboutRequested(void);
+
 private:
 	const char* TranslateWellKnownThemes(const char *name);
 	void	ResetLayout(void);
