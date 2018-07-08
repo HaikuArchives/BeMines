@@ -614,6 +614,7 @@ FieldView::DoWin(void)
 		fWinPlayer->StartPlaying();
 
 	gGameState = GAME_OVER;
+
 	fMainWin->SetFace(FACE_WIN);
 	Invalidate();
 }
