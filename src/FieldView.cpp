@@ -278,7 +278,7 @@ FieldView::InvokeTile(const IntPoint &tilePt, uint32 button)
 		else
 		{
 			ClickBox(tilePt);
-			if (gPlaySounds) {
+			if (gPlaySounds && gGameState != GAME_OVER) {
 				delete fPlayer;
 				fPlayer = new BFileGameSound(&fClickSoundRef, false);
 				fPlayer->StartPlaying();
