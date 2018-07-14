@@ -72,7 +72,10 @@ private:
 	MainWindow	*fMainWin;
 	BString		fThemePath;
 
-	BFileGameSound	*fPlayer;
+	BFileGameSound	*fWinPlayer,
+					*fLosePlayer,
+					*fClickPlayer;
+
 	entry_ref	fWinSoundRef,
 				fLoseSoundRef,
 				fClickSoundRef;

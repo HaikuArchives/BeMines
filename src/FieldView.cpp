@@ -22,7 +22,9 @@ FieldView::FieldView(int32 level)
 		fFlagCount(0),
 		fMainWin(NULL),
 		fPauseMode(false),
-		fPlayer(NULL)
+		fWinPlayer(NULL),
+		fLosePlayer(NULL),
+		fClickPlayer(NULL)
 {
 	SetDifficulty(level);
 	SetDrawingMode(B_OP_ALPHA);
@@ -39,7 +41,9 @@ FieldView::FieldView(int32 level)
 
 FieldView::~FieldView(void)
 {
-	delete fPlayer;
+	delete fWinPlayer;
+	delete fLosePlayer;
+	delete fClickPlayer;
 }
 
 
@@ -278,11 +282,8 @@ FieldView::InvokeTile(const IntPoint &tilePt, uint32 button)
 		else
 		{
 			ClickBox(tilePt);
-			if (gPlaySounds) {
-				delete fPlayer;
-				fPlayer = new BFileGameSound(&fClickSoundRef, false);
-				fPlayer->StartPlaying();
-			}
+			if (gPlaySounds)
+				fClickPlayer->StartPlaying();
 		}
 	}
 	else if (button == B_SECONDARY_MOUSE_BUTTON)
@@ -611,11 +612,9 @@ FieldView::CheckWin(void)
 void
 FieldView::DoWin(void)
 {
-	if (gPlaySounds) {
-		delete fPlayer;
-		fPlayer = new BFileGameSound(&fWinSoundRef, false);
-		fPlayer->StartPlaying();
-	}
+	if (gPlaySounds)
+		fWinPlayer->StartPlaying();
+
 	gGameState = -1;
 	fMainWin->SetFace(FACE_WIN);
 	Invalidate();
@@ -624,11 +623,9 @@ FieldView::DoWin(void)
 void
 FieldView::DoLose(void)
 {
-	if (gPlaySounds) {
-		delete fPlayer;
-		fPlayer = new BFileGameSound(&fLoseSoundRef, false);
-		fPlayer->StartPlaying();
-	}
+	if (gPlaySounds)
+		fLosePlayer->StartPlaying();
+
 	fMainWin->SetFace(FACE_LOSE);
 	gGameState = -1;
 
@@ -777,16 +774,22 @@ FieldView::SetSoundRefs(void)
 {
 	BPath winpath(fThemePath.String());
 	winpath.Append(gGameStyle->StyleName());
-	winpath.Append("win.ogg");
+	winpath.Append("win.wav");
 	BEntry(winpath.Path()).GetRef(&fWinSoundRef);
+	fWinPlayer = new BFileGameSound(&fWinSoundRef, false);
+	fWinPlayer->Preload();
 
 	BPath losepath(fThemePath.String());
 	losepath.Append(gGameStyle->StyleName());
-	losepath.Append("lose.ogg");
+	losepath.Append("lose.wav");
 	BEntry(losepath.Path()).GetRef(&fLoseSoundRef);
+	fLosePlayer = new BFileGameSound(&fLoseSoundRef, false);
+	fLosePlayer->Preload();
 
 	BPath clickpath(fThemePath.String());
 	clickpath.Append(gGameStyle->StyleName());
-	clickpath.Append("click.ogg");
+	clickpath.Append("click.wav");
 	BEntry(clickpath.Path()).GetRef(&fClickSoundRef);
+	fClickPlayer = new BFileGameSound(&fClickSoundRef, false);
+	fClickPlayer->Preload();
 }
