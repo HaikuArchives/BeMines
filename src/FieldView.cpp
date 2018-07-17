@@ -22,7 +22,9 @@ FieldView::FieldView(int32 level)
 		fFlagCount(0),
 		fMainWin(NULL),
 		fPauseMode(false),
-		fPlayer(NULL)
+		fWinPlayer(NULL),
+		fLosePlayer(NULL),
+		fClickPlayer(NULL)
 {
 	SetDifficulty(level);
 	SetDrawingMode(B_OP_ALPHA);
@@ -39,7 +41,9 @@ FieldView::FieldView(int32 level)
 
 FieldView::~FieldView(void)
 {
-	delete fPlayer;
+	delete fWinPlayer;
+	delete fLosePlayer;
+	delete fClickPlayer;
 }
 
 
@@ -209,6 +213,8 @@ FieldView::MouseDown(BPoint pt)
 			fField->TeleportMine(tilePt);
 		Invalidate();
 	}
+	if (gPlaySounds && gGameState != GAME_OVER)
+		fClickPlayer->StartPlaying();
 
 	SelectTile(pt);
 	fMainWin->SetFace(FACE_WORRY);
@@ -276,14 +282,7 @@ FieldView::InvokeTile(const IntPoint &tilePt, uint32 button)
 		else if (mod & B_COMMAND_KEY)
 			DoSonar(tilePt);
 		else
-		{
 			ClickBox(tilePt);
-			if (gPlaySounds && gGameState != GAME_OVER) {
-				delete fPlayer;
-				fPlayer = new BFileGameSound(&fClickSoundRef, false);
-				fPlayer->StartPlaying();
-			}
-		}
 	}
 	else if (button == B_SECONDARY_MOUSE_BUTTON)
 		ToggleBox(tilePt);
@@ -611,12 +610,10 @@ FieldView::CheckWin(void)
 void
 FieldView::DoWin(void)
 {
-	if (gPlaySounds) {
-		delete fPlayer;
-		fPlayer = new BFileGameSound(&fWinSoundRef, false);
-		fPlayer->StartPlaying();
-	}
-	gGameState = -1;
+	if (gPlaySounds)
+		fWinPlayer->StartPlaying();
+
+	gGameState = GAME_OVER;
 	fMainWin->SetFace(FACE_WIN);
 	Invalidate();
 }
@@ -624,13 +621,11 @@ FieldView::DoWin(void)
 void
 FieldView::DoLose(void)
 {
-	if (gPlaySounds) {
-		delete fPlayer;
-		fPlayer = new BFileGameSound(&fLoseSoundRef, false);
-		fPlayer->StartPlaying();
-	}
+	if (gPlaySounds)
+		fLosePlayer->StartPlaying();
+
 	fMainWin->SetFace(FACE_LOSE);
-	gGameState = -1;
+	gGameState = GAME_OVER;
 
 	// I want the animated reveal to take no more than about 1/4 to 1/3 sec and
 	// 580 usec is a rough (educated) guess of redraw time based on my own machine.
@@ -778,15 +773,24 @@ FieldView::SetSoundRefs(void)
 	BPath winpath(fThemePath.String());
 	winpath.Append(gGameStyle->StyleName());
 	winpath.Append("win.ogg");
-	BEntry(winpath.Path()).GetRef(&fWinSoundRef);
+	entry_ref winSoundRef;
+	BEntry(winpath.Path()).GetRef(&winSoundRef);
+	fWinPlayer = new BFileGameSound(&winSoundRef, false);
+	fWinPlayer->Preload();
 
 	BPath losepath(fThemePath.String());
 	losepath.Append(gGameStyle->StyleName());
 	losepath.Append("lose.ogg");
-	BEntry(losepath.Path()).GetRef(&fLoseSoundRef);
+	entry_ref loseSoundRef;
+	BEntry(losepath.Path()).GetRef(&loseSoundRef);
+	fLosePlayer = new BFileGameSound(&loseSoundRef, false);
+	fLosePlayer->Preload();
 
 	BPath clickpath(fThemePath.String());
 	clickpath.Append(gGameStyle->StyleName());
 	clickpath.Append("click.ogg");
-	BEntry(clickpath.Path()).GetRef(&fClickSoundRef);
+	entry_ref clickSoundRef;
+	BEntry(clickpath.Path()).GetRef(&clickSoundRef);
+	fClickPlayer = new BFileGameSound(&clickSoundRef, false);
+	fClickPlayer->Preload();
 }
