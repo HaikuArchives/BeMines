@@ -4,9 +4,6 @@ It's about time we had more than a near-exact clone of the classic Windows game,
 
 ![BeMines](BeMines.png "BeMines")
 
- If you have questions, requests, or bugs, please e-mail me at darkwyrm@gmail.com.
-DarkWyrm
-
 ## Controls
 
 **Left click:** Reveal a box. Clicking on a mine will lose the game.
