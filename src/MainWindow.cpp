@@ -179,6 +179,9 @@ MainWindow::AboutRequested()
 		B_TRANSLATE("A themable, open-source rendition of Minesweeper."));
 	about->AddCopyright(2018, kCopyright, kExtraCopyrights);
 	about->AddAuthors(kAuthors);
+	about->AddExtraInfo(B_TRANSLATE(
+		"Click sound by Sebastian\n"
+		"Lose and win sounds by Mike Koenig"));
 	about->Show();
 }
 
