@@ -1,4 +1,5 @@
 #include <AboutWindow.h>
+#include <Alert.h>
 #include <Application.h>
 #include <Catalog.h>
 #include <File.h>
@@ -7,6 +8,7 @@
 #include <MenuItem.h>
 #include <Message.h>
 #include <View.h>
+#include <stdio.h>
 
 #include "MainWindow.h"
 #include "BitmapButton.h"
@@ -16,6 +18,7 @@
 #include "Globals.h"
 #include "HelpWindow.h"
 #include "ScoreWindow.h"
+#include "AchievementWindow.h"
 #include "NewScoreWindow.h"
 #include "TimerView.h"
 
@@ -26,7 +29,8 @@ enum
 	M_SET_THEME = 'stth',
 	M_SHOW_SCORES = 'shsc',
 	M_TOGGLE_SOUNDS = 'tgsn',
-	M_SHOW_CUSTOM = 'shcs'
+	M_SHOW_CUSTOM = 'shcs',
+	M_SHOW_ACHIVEMENTS = 'shac'
 };
 
 GameStyle *gGameStyle = NULL;
@@ -59,6 +63,7 @@ MainWindow::MainWindow(BRect frame)
 	menu->AddSeparatorItem();
 
 	menu->AddItem(new BMenuItem(B_TRANSLATE("High scores"),new BMessage(M_SHOW_SCORES)));
+	menu->AddItem(new BMenuItem(B_TRANSLATE("Achivements"), new BMessage(M_SHOW_ACHIVEMENTS)));
 
 	menu->AddSeparatorItem();
 
@@ -217,6 +222,12 @@ MainWindow::MessageReceived(BMessage *msg)
 			scorewin->Show();
 			break;
 		}
+		case M_SHOW_ACHIVEMENTS:
+		{
+			AchievementWindow *achievementwin = new AchievementWindow();
+			achievementwin->Show();
+			break;
+		}
 		case M_PAUSE_GAME:
 		{
 			BMenuItem *item = fMenuBar->FindItem(M_PAUSE_GAME);
@@ -347,6 +358,7 @@ MainWindow::SetFace(int32 face)
 			fSmileyButton->SetBitmaps(gGameStyle->WinUp(),gGameStyle->WinDown());
 			fTimerView->SetState(TIMER_STOP);
 			HighScoreCheck();
+			AchievementCheck();
 			break;
 		}
 		case FACE_LOSE:
@@ -382,6 +394,54 @@ MainWindow::HighScoreCheck(void)
 	}
 }
 
+void
+MainWindow::AchievementCheck(void)
+{
+	uint16 seconds = fTimerView->GetTime();
+	int numAchieved = 0;
+
+	gGamesWon++;
+
+	//General achievement
+	if (gGamesWon > 0 && !gAchievements[3][0])
+		gAchievements[3][0] = true;
+		numAchieved++;
+
+	if (gGamesWon > 4 && !gAchievements[3][1])
+		gAchievements[3][1] = true;
+		numAchieved++;
+
+	//Time based achievements for each difficulty
+	if (gDifficulty < DIFFICULTY_CUSTOM && seconds < 100
+		&& !gAchievements[gDifficulty][0])
+	{
+		gAchievements[gDifficulty][0] = true;
+		numAchieved++;
+	}
+	if (gDifficulty < DIFFICULTY_CUSTOM && seconds < 50
+		&& !gAchievements[gDifficulty][0])
+	{
+		gAchievements[gDifficulty][1] = true;
+		numAchieved++;
+	}
+
+	BAlert *achievementAlert;
+
+	if (numAchieved > 1) {
+		achievementAlert = new BAlert("Achievements unlocked!",
+			"You have unlocked new achievements - Check them out!",
+			"Cancel", "Achievements");
+	} else if (numAchieved == 1) {
+		achievementAlert = new BAlert("Achievement unlocked!",
+			"You have unlocked an achievement - Check it out!",
+			"Cancel", "Achievements");
+	}
+
+	if (achievementAlert && achievementAlert->Go() == 1) {
+		AchievementWindow *achievementwin = new AchievementWindow();
+		achievementwin->Show();
+	}
+}
 
 void
 MainWindow::SetTheme(const char *name)
@@ -522,6 +582,32 @@ MainWindow::LoadSettings(void)
 		if (settings.FindInt16("customcount",(int16*)&size) == B_OK)
 			gCustomMines = size;
 
+		//Achievements
+		bool achieved;
+		if (settings.FindBool("beg0",&achieved) == B_OK)
+			gAchievements[DIFFICULTY_BEGINNER][0] = achieved;
+		if (settings.FindBool("beg1",&achieved) == B_OK)
+			gAchievements[DIFFICULTY_BEGINNER][1] = achieved;
+
+		if (settings.FindBool("int0",&achieved) == B_OK)
+			gAchievements[DIFFICULTY_INTERMEDIATE][0] = achieved;
+		if (settings.FindBool("int1",&achieved) == B_OK)
+			gAchievements[DIFFICULTY_INTERMEDIATE][1] = achieved;
+
+		if (settings.FindBool("exp0",&achieved) == B_OK)
+			gAchievements[DIFFICULTY_EXPERT][0] = achieved;
+		if (settings.FindBool("exp1",&achieved) == B_OK)
+			gAchievements[DIFFICULTY_EXPERT][1] = achieved;
+
+		if (settings.FindBool("gen0",&achieved) == B_OK)
+			gAchievements[3][0] = achieved;
+		if (settings.FindBool("gen1",&achieved) == B_OK)
+			gAchievements[3][1] = achieved;
+
+		//Games won
+		int32 num;
+		if (settings.FindInt32("gameswon",&num) == B_OK)
+			gGamesWon = num;
 	}
 }
 
@@ -543,6 +629,18 @@ MainWindow::SaveSettings(void)
 	settings.AddInt16("customwidth",gCustomWidth);
 	settings.AddInt16("customheight",gCustomHeight);
 	settings.AddInt16("customcount",gCustomMines);
+
+	settings.AddBool("beg0", gAchievements[DIFFICULTY_BEGINNER][0]);
+	settings.AddBool("beg1", gAchievements[DIFFICULTY_BEGINNER][1]);
+	settings.AddBool("int0", gAchievements[DIFFICULTY_INTERMEDIATE][0]);
+	settings.AddBool("int1", gAchievements[DIFFICULTY_INTERMEDIATE][1]);
+	settings.AddBool("exp0", gAchievements[DIFFICULTY_EXPERT][0]);
+	settings.AddBool("exp1", gAchievements[DIFFICULTY_EXPERT][1]);
+	settings.AddBool("gen0", gAchievements[3][0]);
+	settings.AddBool("gen1", gAchievements[3][1]);
+
+	settings.AddInt32("gameswon",gGamesWon);
+
 
 	BFile file("/boot/home/config/settings/BeMines", B_READ_WRITE | B_ERASE_FILE |
 													B_CREATE_FILE);
