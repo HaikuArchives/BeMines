@@ -30,7 +30,7 @@ enum
 	M_SHOW_SCORES = 'shsc',
 	M_TOGGLE_SOUNDS = 'tgsn',
 	M_SHOW_CUSTOM = 'shcs',
-	M_SHOW_ACHIVEMENTS = 'shac'
+	M_SHOW_ACHIEVEMENTS = 'shac'
 };
 
 GameStyle *gGameStyle = NULL;
@@ -63,7 +63,7 @@ MainWindow::MainWindow(BRect frame)
 	menu->AddSeparatorItem();
 
 	menu->AddItem(new BMenuItem(B_TRANSLATE("High scores"),new BMessage(M_SHOW_SCORES)));
-	menu->AddItem(new BMenuItem(B_TRANSLATE("Achivements"), new BMessage(M_SHOW_ACHIVEMENTS)));
+	menu->AddItem(new BMenuItem(B_TRANSLATE("Achievements"), new BMessage(M_SHOW_ACHIEVEMENTS)));
 
 	menu->AddSeparatorItem();
 
@@ -222,7 +222,7 @@ MainWindow::MessageReceived(BMessage *msg)
 			scorewin->Show();
 			break;
 		}
-		case M_SHOW_ACHIVEMENTS:
+		case M_SHOW_ACHIEVEMENTS:
 		{
 			AchievementWindow *achievementwin = new AchievementWindow();
 			achievementwin->Show();
