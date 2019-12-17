@@ -6,12 +6,12 @@
 
 #define M_RESET_ACHIEVEMENTS 'rsac'
 
-//#define B_TRANSLATION_CONTEXT "AchivementWindow"
+//#define B_TRANSLATION_CONTEXT "AchievementWindow"
 
 //TODO support translations
 
 AchievementWindow::AchievementWindow(void)
-	:	DWindow(BRect(100,500,100,400),"Achivements",
+	:	DWindow(BRect(100,500,100,400),"Achievements",
 		B_TITLED_WINDOW, B_NOT_RESIZABLE |B_NOT_ZOOMABLE |
 		B_AUTO_UPDATE_SIZE_LIMITS)
 
