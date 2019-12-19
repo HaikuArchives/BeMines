@@ -429,12 +429,12 @@ MainWindow::AchievementCheck(void)
 
 	if (numAchieved > 1) {
 		achievementAlert = new BAlert("Achievements unlocked!",
-			"You have unlocked new achievements - Check them out!",
-			"Cancel", "Achievements");
+			B_TRANSLATE("You have unlocked new achievements - Check them out!"),
+			B_TRANSLATE("Cancel"), B_TRANSLATE("Achievements"));
 	} else if (numAchieved == 1) {
 		achievementAlert = new BAlert("Achievement unlocked!",
-			"You have unlocked an achievement - Check it out!",
-			"Cancel", "Achievements");
+			B_TRANSLATE("You have unlocked an achievement - Check it out!"),
+			B_TRANSLATE("Cancel"), B_TRANSLATE("Achievements"));
 	}
 
 	if (achievementAlert && achievementAlert->Go() == 1) {
