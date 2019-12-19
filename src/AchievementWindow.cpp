@@ -67,10 +67,10 @@ AchievementWindow::UpdateLabels(void)
 	for (int x = 0; x < 4; x++) {
 		for (int y = 0; y < 2; y++) {
 			if (gAchievements[x][y]) {
-				labelList[x][y]->SetHighColor(1,50,32);
+				labelList[x][y]->SetHighColor(0,150,32);
 				labelList[x][y]->SetToolTip("Unlocked!");
 			} else {
-				labelList[x][y]->SetHighColor(0,0,0);
+				labelList[x][y]->SetHighColor(80,80,80);
 				labelList[x][y]->SetToolTip("Locked!");
 			}
 		}
