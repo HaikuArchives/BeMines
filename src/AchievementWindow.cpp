@@ -4,6 +4,8 @@
 #include "Globals.h"
 #include <LayoutBuilder.h>
 
+#undef B_TRANSLATION_CONTEXT
+
 #define M_RESET_ACHIEVEMENTS 'rsac'
 
 #define B_TRANSLATION_CONTEXT "AchievementWindow"
@@ -17,8 +19,8 @@ AchievementWindow::AchievementWindow(void)
 	BView *top = GetBackgroundView();
 
 	BStringView *begTitle, *intTitle, *expTitle, *genTitle;
-	BButton *close = new BButton("ok", "OK", new BMessage(B_QUIT_REQUESTED));
-	BButton *reset = new BButton("reset", "Reset", new BMessage(M_RESET_ACHIEVEMENTS));
+	BButton *close = new BButton("ok", B_TRANSLATE("OK"), new BMessage(B_QUIT_REQUESTED));
+	BButton *reset = new BButton("reset", B_TRANSLATE("Reset"), new BMessage(M_RESET_ACHIEVEMENTS));
 
 	BLayoutBuilder::Group<>(top, B_VERTICAL, 0)
 		.SetInsets(B_USE_WINDOW_INSETS)
