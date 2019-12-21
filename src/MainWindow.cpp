@@ -10,6 +10,7 @@
 #include <View.h>
 #include <stdio.h>
 
+#include "StringFormat.h"
 #include "MainWindow.h"
 #include "BitmapButton.h"
 #include "CounterView.h"
@@ -428,14 +429,15 @@ MainWindow::AchievementCheck(void)
 	}
 
 	AchievementWindow *achievementwin = new AchievementWindow();
+	BString title;
+	static BStringFormat format(B_TRANSLATE("{0, plural,"
+		"=1{New achievement unlocked!}"
+		"other{New achievements unlocked!}}"));
+	format.Format(title, numAchieved);
+	achievementwin->SetTitle(title);
 	
-	if (numAchieved > 1) {
-		achievementwin->SetTitle("New achievements unlocked!");
+	if (numAchieved > 0)
 		achievementwin->Show();
-	} else if (numAchieved == 1) {
-		achievementwin->SetTitle("New achievement unlocked!");
-		achievementwin->Show();
-	}
 }
 
 void
