@@ -357,8 +357,8 @@ MainWindow::SetFace(int32 face)
 		{
 			fSmileyButton->SetBitmaps(gGameStyle->WinUp(),gGameStyle->WinDown());
 			fTimerView->SetState(TIMER_STOP);
-			HighScoreCheck();
 			AchievementCheck();
+			HighScoreCheck();
 			break;
 		}
 		case FACE_LOSE:
@@ -403,13 +403,15 @@ MainWindow::AchievementCheck(void)
 	gGamesWon++;
 
 	//General achievement
-	if (gGamesWon > 0 && !gAchievements[3][0])
+	if (gGamesWon > 0 && !gAchievements[3][0]) {
 		gAchievements[3][0] = true;
 		numAchieved++;
+	}
 
-	if (gGamesWon > 4 && !gAchievements[3][1])
+	if (gGamesWon > 4 && !gAchievements[3][1]) {
 		gAchievements[3][1] = true;
 		numAchieved++;
+	}
 
 	//Time based achievements for each difficulty
 	if (gDifficulty < DIFFICULTY_CUSTOM && seconds < 100
@@ -425,20 +427,13 @@ MainWindow::AchievementCheck(void)
 		numAchieved++;
 	}
 
-	BAlert *achievementAlert;
-
+	AchievementWindow *achievementwin = new AchievementWindow();
+	
 	if (numAchieved > 1) {
-		achievementAlert = new BAlert("Achievements unlocked!",
-			B_TRANSLATE("You have unlocked new achievements - Check them out!"),
-			B_TRANSLATE("Cancel"), B_TRANSLATE("Achievements"));
+		achievementwin->SetTitle("New achievements unlocked!");
+		achievementwin->Show();
 	} else if (numAchieved == 1) {
-		achievementAlert = new BAlert("Achievement unlocked!",
-			B_TRANSLATE("You have unlocked an achievement - Check it out!"),
-			B_TRANSLATE("Cancel"), B_TRANSLATE("Achievements"));
-	}
-
-	if (achievementAlert && achievementAlert->Go() == 1) {
-		AchievementWindow *achievementwin = new AchievementWindow();
+		achievementwin->SetTitle("New achievement unlocked!");
 		achievementwin->Show();
 	}
 }
