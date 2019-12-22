@@ -36,6 +36,7 @@ public:
 	void	SetupGame(void);
 	void	SetFace(int32 value);
 	void	HighScoreCheck(void);
+	void	AchievementCheck(void);
 	void	SetTheme(const char *name);
 	void	AboutRequested(void);
 

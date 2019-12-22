@@ -44,6 +44,7 @@ SRCS = \
 	TimerView.cpp \
 	BitmapButton.cpp \
 	DWindow.cpp \
+	AchievementWindow.cpp \
 
 
 

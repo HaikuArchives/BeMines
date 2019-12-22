@@ -54,5 +54,8 @@ extern uint16 gCustomMines;
 extern HighScore *gBestTimes;
 
 extern int8	gGameState;
+extern bool gAchievements[4][2];
+
+extern int32 gGamesWon;
 
 #endif
