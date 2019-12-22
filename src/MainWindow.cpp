@@ -1,5 +1,4 @@
 #include <AboutWindow.h>
-#include <Alert.h>
 #include <Application.h>
 #include <Catalog.h>
 #include <File.h>
@@ -427,17 +426,17 @@ MainWindow::AchievementCheck(void)
 		gAchievements[gDifficulty][1] = true;
 		numAchieved++;
 	}
-
-	AchievementWindow *achievementwin = new AchievementWindow();
-	BString title;
-	static BStringFormat format(B_TRANSLATE("{0, plural,"
-		"=1{New achievement unlocked!}"
-		"other{New achievements unlocked!}}"));
-	format.Format(title, numAchieved);
-	achievementwin->SetTitle(title);
 	
-	if (numAchieved > 0)
+	if (numAchieved > 0) {
+		AchievementWindow *achievementwin = new AchievementWindow();
+		BString title;
+		static BStringFormat format(B_TRANSLATE("{0, plural,"
+			"=1{New achievement unlocked!}"
+			"other{New achievements unlocked!}}"));
+		format.Format(title, numAchieved);
+		achievementwin->SetTitle(title);
 		achievementwin->Show();
+	}
 }
 
 void

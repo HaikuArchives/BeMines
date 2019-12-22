@@ -1,13 +1,13 @@
 #include "AchievementWindow.h"
+#include "Globals.h"
+
 #include <Button.h>
 #include <Catalog.h>
-#include "Globals.h"
 #include <LayoutBuilder.h>
-
-#undef B_TRANSLATION_CONTEXT
 
 #define M_RESET_ACHIEVEMENTS 'rsac'
 
+#undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "AchievementWindow"
 
 AchievementWindow::AchievementWindow(void)

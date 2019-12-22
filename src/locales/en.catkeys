@@ -1,4 +1,4 @@
-1	English	application/x-vnd.dw-BeMines	628759224
+1	English	application/x-vnd.dw-BeMines	3943024322
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
 Unlocked!	AchievementWindow		Unlocked!
 OK	HelpWindow		OK
@@ -7,7 +7,6 @@ New	MainWindow		New
 Click to resume	FieldWindow		Click to resume
 Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Reveal what's under a tile. If it's a mine, the game is over!
 Expert	MainWindow		Expert
-You have unlocked an achievement - Check it out!	MainWindow		You have unlocked an achievement - Check it out!
 Game	MainWindow		Game
 Default	MainWindow	Theme name	Default
 Master Defuser - Win within 50 seconds	AchievementWindow		Master Defuser - Win within 50 seconds
@@ -47,6 +46,7 @@ Clicking with both buttons (or SHIFT + left click):	HelpWindow		Clicking with bo
 Difficulty	MainWindow		Difficulty
 Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Mine Zone Veteran - Win within 50 seconds
 Gray	MainWindow	Theme name	Gray
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}
 Difficulty: Expert	AchievementWindow		Difficulty: Expert
 Beginner	MainWindow		Beginner
 Intermediate	MainWindow		Intermediate
@@ -57,7 +57,6 @@ General	AchievementWindow		General
 Difficulty: Beginner	AchievementWindow		Difficulty: Beginner
 Help	HelpWindow		Help
 Help	MainWindow		Help
-Cancel	MainWindow		Cancel
 Expert:	ScoreWindow		Expert:
 Officer - Win within 100 seconds	AchievementWindow		Officer - Win within 100 seconds
 Achievements	MainWindow		Achievements
@@ -71,7 +70,6 @@ Pause	MainWindow		Pause
 Left click:	HelpWindow		Left click:
 Active Duty - Win 5 games	AchievementWindow		Active Duty - Win 5 games
 Beginner:	ScoreWindow		Beginner:
-You have unlocked new achievements - Check them out!	MainWindow		You have unlocked new achievements - Check them out!
 Reset	ScoreWindow		Reset
 BeMines	System name		BeMines
 OK	CustomWindow		OK
