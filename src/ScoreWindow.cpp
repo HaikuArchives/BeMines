@@ -2,6 +2,8 @@
 #include <Button.h>
 #include <Catalog.h>
 #include <LayoutBuilder.h>
+#include <StringFormat.h>
+
 #include "EscapeCancelFilter.h"
 #include "Globals.h"
 
@@ -85,11 +87,11 @@ ScoreWindow::_GetLabelForDifficulty(uint32 difficulty) const
 		(int)gBestTimes[difficulty].time == 999){
 		scoreLabel = B_UTF8_ELLIPSIS;
 	} else {
-		scoreLabel = B_TRANSLATE("%name%, %time% seconds ");
+		static BStringFormat format(B_TRANSLATE("{0, plural,"
+			"one{%name%, # second}"
+			"other{%name%, # seconds}}"));
+		format.Format(scoreLabel, gBestTimes[difficulty].time);
 		scoreLabel.ReplaceAll("%name%", gBestTimes[difficulty].name);
-		BString time;
-		time.SetToFormat("%d", gBestTimes[difficulty].time);
-		scoreLabel.ReplaceAll("%time%", time);
 	}
 	return scoreLabel;
 }

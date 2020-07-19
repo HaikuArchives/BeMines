@@ -6,6 +6,7 @@
 #include <Catalog.h>
 #include <LayoutBuilder.h>
 #include <Screen.h>
+#include <StringFormat.h>
 #include <stdlib.h>
 
 #include "EscapeCancelFilter.h"
@@ -160,12 +161,15 @@ CustomWindow::CheckValues(void)
 	}
 	else if (width > maxTileWidth)
 	{
-		BString errorMessage = B_TRANSLATE("For the current screen size and theme, you can have "
-											"a width of up to %maxTileWidth% tiles.");
-		BString maxTileWidthString;
-		maxTileWidthString.SetToFormat("%d", maxTileWidth);
-		errorMessage.ReplaceAll("%maxTileWidth%", maxTileWidthString);
-		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),errorMessage.String(),B_TRANSLATE("OK"));
+		BString errorMessage;
+		static BStringFormat format(B_TRANSLATE("{0, plural,"
+			"one{For the current screen size and theme, you can have a width "
+				"of up to # tile.}"
+			"other{For the current screen size and theme, you can have a width "
+				"of up to # tiles.}}"));
+		format.Format(errorMessage, maxTileWidth);
+		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),
+			errorMessage.String(),B_TRANSLATE("OK"));
 		alert->Go();
 		s = "";
 		s << (int)maxTileWidth;
@@ -188,13 +192,15 @@ CustomWindow::CheckValues(void)
 	}
 	else if (height > maxTileHeight)
 	{
-		BString errorMessage = B_TRANSLATE("For the current screen size and theme, you can have "
-											"a height of up to %maxTileHeight% tiles.");
-		BString maxTileHeightString;
-		maxTileHeightString.SetToFormat("%d", maxTileHeight);
-		errorMessage.ReplaceAll("%maxTileHeight%", maxTileHeightString);
-
-		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),errorMessage.String(),B_TRANSLATE("OK"));
+		BString errorMessage;
+		static BStringFormat format(B_TRANSLATE("{0, plural,"
+			"one{For the current screen size and theme, you can have a height "
+				"of up to # tile.}"
+			"other{For the current screen size and theme, you can have a height "
+				"of up to # tiles.}}"));
+		format.Format(errorMessage, maxTileHeight);
+		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),
+			errorMessage.String(),B_TRANSLATE("OK"));
 		alert->Go();
 		s = "";
 		s << (int)maxTileHeight;
@@ -214,12 +220,15 @@ CustomWindow::CheckValues(void)
 	count = atoi(s.String());
 	if (count > maxMines)
 	{
-		BString errorMessage = B_TRANSLATE("For the chosen width and height, you can't have more than "
-											"%maxMines% mines.");
-		BString maxMinesString;
-		maxMinesString.SetToFormat("%d", maxMines);
-		errorMessage.ReplaceAll("%maxMines%", maxMinesString);
-		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),errorMessage.String(),B_TRANSLATE("OK"));
+		BString errorMessage;
+		static BStringFormat format(B_TRANSLATE("{0, plural,"
+			"one{For the chosen width and height, you can't have more than "
+				"# mine.}"
+			"other{For the chosen width and height, you can't have more than "
+				"# mines.}}"));
+		format.Format(errorMessage, maxMines);
+		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),
+			errorMessage.String(),B_TRANSLATE("OK"));
 		alert->Go();
 		s = "";
 		s << (int)maxMines;

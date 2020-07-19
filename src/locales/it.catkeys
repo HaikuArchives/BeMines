@@ -1,59 +1,81 @@
-1	Italian	application/x-vnd.dw-BeMines	2293646823
-Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome.
-OK	HelpWindow		OK
-New high score	NewScoreWindow		Nuovo miglior punteggio
-New	MainWindow		Nuovo
-Click to resume	FieldWindow		Clicca per riprendere
-Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Reveal what's under a tile. If it's a mine, the game is over!
-Expert	MainWindow		Esperto
-Game	MainWindow		Gioco
-Default	MainWindow	Theme name	Predefinito
-A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.
-Gnome	MainWindow	Theme name	Gnome
-Height:	CustomWindow		Altezza:
-Classic	MainWindow	Theme name	Classico
-High scores	ScoreWindow		Punteggi migliori
-OK	FieldWindow		OK
-%name%, %time% seconds 	ScoreWindow		%name%, %time% secondi 
-About BeMines	MainWindow		Informazioni su BeMines
-Custom…	MainWindow		Personalizzato…
-You have made a new best time!	NewScoreWindow	First line text new record	Hai stabilito un nuovo record!
+1	English	application/x-vnd.dw-BeMines	305506157
 Sound effects	MainWindow		Effetti sonori
-Width:	CustomWindow		Larghezza:
-If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...
-Quit	MainWindow		Quit
-The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.
-Right click:	HelpWindow		Right click:
-Theme	MainWindow		Tema
-Anonymous	ScoreWindow		Anonimo
-PAUSED	FieldWindow		IN PAUSA
-Anonymous	Globals		Anonimo
-Middle click (or ALT + left click):	HelpWindow		Middle click (or ALT + left click):
-Clicking with both buttons (or SHIFT + left click):	HelpWindow		Clicking with both buttons (or SHIFT + left click):
-Difficulty	MainWindow		Difficoltà
-Gray	MainWindow	Theme name	Grigio
-Beginner	MainWindow		Principiante
-Intermediate	MainWindow		Intermedio
+Recruit - Win within 100 seconds	AchievementWindow		Recruit - Win within 100 seconds
+Please enter your name.	NewScoreWindow	Second line text new record	Per favore inserisci il tuo nome.
+Click to resume	FieldWindow		Clicca per riprendere
 Be	MainWindow	Theme name	Be
-For the chosen width and height, you can't have more than %maxMines% mines.	CustomWindow		Per la larghezza e altezza scelta, non puoi avere più di %maxMines% mine.
-High scores	MainWindow		Punteggi migliori
-Help	HelpWindow		Help
-Help	MainWindow		Help
-Expert:	ScoreWindow		Esperto:
-For the current screen size and theme, you can have a width of up to %maxTileWidth% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una larghezza massima di %maxTileHeight% piastrelle.
+You have made a new best time!	NewScoreWindow	First line text new record	Hai stabilito un nuovo record!
 OK	ScoreWindow		OK
-Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.
-OK	NewScoreWindow		OK
-You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Hai usato tutte le bandierine a tua disposizione. Togli una bandierina da una piestrella e possizionale su un'altra.
-Level settings	CustomWindow		Impostazioni livello
+OK	HelpWindow		OK
 Pause	MainWindow		Pausa
-Left click:	HelpWindow		Left click:
+Quit	MainWindow		Esci
+Difficulty	MainWindow		Difficoltà
+Unlocked!	AchievementWindow		Unlocked!
+Beginner	MainWindow		Principiante
 Beginner:	ScoreWindow		Principiante:
-Reset	ScoreWindow		Reset
+Commando - Win within 100 seconds	AchievementWindow		Commando - Win within 100 seconds
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Marca un settore come mina, con il punto interrogativo se non sei certo oppure ripulisci un settore già marcato in precedenza.
+{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}
+OK	FieldWindow		OK
+{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}
+New	MainWindow		Nuovo
+Gnome	MainWindow	Theme name	Gnome
+Theme	MainWindow		Tema
+Expert	MainWindow		Esperto
 BeMines	System name		BeMines
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Lo scopo del gioco è indicare con una bandierina tutte le mine nascoste nel campo di gioco.
+Default	MainWindow	Theme name	Predefinito
+High scores	MainWindow		Punteggi migliori
+Master Defuser - Win within 50 seconds	AchievementWindow		Master Defuser - Win within 50 seconds
+Difficulty: Intermediate	AchievementWindow		Difficulty: Intermediate
+OK	AchievementWindow		OK
+Active Duty - Win 5 games	AchievementWindow		Active Duty - Win 5 games
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Un impulso sonar rivela tutte le mine in un'area 3x3 senza il rischio di innescarle. Ciò avviene al costo di 20 secondi aggiunti al tuo tempo
+Level settings	CustomWindow		Impostazioni livello
 OK	CustomWindow		OK
-Settings	MainWindow		Impostazioni
-Cancel	CustomWindow		Annulla
-Intermediate:	ScoreWindow		Intermedio:
-For the current screen size and theme, you can have a height of up to %maxTileHeight% tiles.	CustomWindow		Per l'attuale tema e dimensione dello schermo puoi avere una altezza massima di %maxTileHeight% piastrelle.
 Mines:	CustomWindow		Mine:
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Click sound by Sebastian\nLose and win sounds by Mike Koenig
+High scores	ScoreWindow		Punteggi migliori
+OK	NewScoreWindow		OK
+Anonymous	ScoreWindow		Anonimo
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Svela cosa c'è sotto una casella. Se è una mina, il gioco termina!
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Se il settore ha un numero e l'appropriato valore di mine è stato già marcato, tutti i settori attorno al numero saranno rivelati. Se hai compiuto un errore, naturalmente, probabilmente innescherai una mina...
+Intermediate	MainWindow		Intermedio
+DarkWyrm (original author)	MainWindow		DarkWyrm (autore originale)
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Click con entrambi i bottoni (o SHIFT + click sinistro):
+Gray	MainWindow	Theme name	Grigio
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Mine Zone Veteran - Win within 50 seconds
+Classic	MainWindow	Theme name	Classico
+Bomb Buster - Win within 50 seconds	AchievementWindow		Bomb Buster - Win within 50 seconds
+Anonymous	Globals		Anonimo
+Achievements	MainWindow		Achievements
+Difficulty: Expert	AchievementWindow		Difficulty: Expert
+Expert:	ScoreWindow		Esperto:
+General	AchievementWindow		General
+Locked!	AchievementWindow		Locked!
+Basic Training - Win a game	AchievementWindow		Basic Training - Win a game
+Cancel	CustomWindow		Annulla
+Height:	CustomWindow		Altezza:
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # second}other{%name%, # seconds}}
+Right click:	HelpWindow		Click destro:
+Intermediate:	ScoreWindow		Intermedio:
+Help	MainWindow		Aiuto
+Middle click (or ALT + left click):	HelpWindow		Click centrale (o ALT + click sinistro):
+Help	HelpWindow		Aiuto
+PAUSED	FieldWindow		IN PAUSA
+Reset	ScoreWindow		Reimposta
+A themable, open-source rendition of Minesweeper.	MainWindow		Una versione open source del Campo Minato con supporto temi
+Difficulty: Beginner	AchievementWindow		Difficulty: Beginner
+Custom…	MainWindow		Personalizzato…
+Achievements	AchievementWindow		Achievements
+Width:	CustomWindow		Larghezza:
+{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}
+Game	MainWindow		Gioco
+Officer - Win within 100 seconds	AchievementWindow		Officer - Win within 100 seconds
+Settings	MainWindow		Impostazioni
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}
+New high score	NewScoreWindow		Nuovo miglior punteggio
+Left click:	HelpWindow		Click sinistro:
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Hai usato tutte le bandierine a tua disposizione. Togli una bandierina da una casella e posizionale su un'altra.
+About BeMines	MainWindow		Informazioni su BeMines
+Reset	AchievementWindow		Reset
