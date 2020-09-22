@@ -1,0 +1,81 @@
+1	Romanian	application/x-vnd.dw-BeMines	305506157
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Realizare nouă deblocată!}other{Realizări noi deblocate!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		O redare cu sursă deschisă, care se poate personaliza cu o temă, a Minesweeper.
+About BeMines	MainWindow		Despre BeMines
+Achievements	MainWindow		Realizări
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Începător
+Classic	MainWindow	Theme name	Clasic
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Sunet de clic de Sebastian\nSunete de pierdere și de câștig de Mike Koenig
+Custom…	MainWindow		Personalizare…
+DarkWyrm (original author)	MainWindow		DarkWyrm (autorul original)
+Default	MainWindow	Theme name	Implicit
+Difficulty	MainWindow		Dificultate
+Expert	MainWindow		Expert
+Game	MainWindow		Joc
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Gri
+Help	MainWindow		Ajutor
+High scores	MainWindow		Cele mai bune scoruri
+Intermediate	MainWindow		Intermediar
+New	MainWindow		Nou
+Pause	MainWindow		Pauzează
+Quit	MainWindow		Ieșire
+Settings	MainWindow		Configurări
+Sound effects	MainWindow		Efecte sonore
+Theme	MainWindow		Temă
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # secundă}other{%name%, # secunde}
+Anonymous	ScoreWindow		Anonim
+Beginner:	ScoreWindow		Începător:
+Expert:	ScoreWindow		Expert:
+High scores	ScoreWindow		Cele mai bune scoruri
+Intermediate:	ScoreWindow		Intermediar:
+OK	ScoreWindow		OK
+Reset	ScoreWindow		Restabilește
+{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Pentru lățimea și înălțimea alese, nu puteți avea mai mult de # mină.}other{Pentru lățimea și înălțimea alese, nu puteți avea mai mult de # mine.}}
+{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Pentru dimensiunea de ecran și tema curentă, puteți avea o înălțime până la # tilă.}other{Pentru dimensiunea de ecran și tema curentă, puteți avea o înălțime până la # tile.}}
+{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Pentru dimensiunea de ecran și tema curentă, puteți avea o lățime până la # tilă.}other{Pentru dimensiunea de ecran și tema curentă. puteți avea o lățime până la # tile.}}
+Cancel	CustomWindow		Anulează
+Height:	CustomWindow		Înălțime:
+Level settings	CustomWindow		Configurări nivel
+Mines:	CustomWindow		Mine:
+OK	CustomWindow		OK
+Width:	CustomWindow		Lățime:
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Un ping de sonar descoperă toate minele într-o zonă de dale 3x3 fără pericolul de a le declanșa. Această funcționalitate vine cu un cost de 20 de secunde adăugat la durata jocului.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Apăsarea clic cu amândouă butoanele (sau SHIFT + clic stânga):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Adăugați un steag pe o dală pentru a semnaliza o mină, stabiliți un semn de întrebare dacă nu sunteți sigur, sau ștergeți marcajul unei dale care era deja stabilită cu steag.
+Help	HelpWindow		Ajutor
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Dacă dala este un număr și numărul potrivit de mine din jurul acestuia au fost indicate prin steaguri, aceasta va elibera toate celelalte date în jurul numărului. Desigur, dacă ați făcut o greșeală, veți declanșa probabil o mină...
+Left click:	HelpWindow		Clic stânga:
+Middle click (or ALT + left click):	HelpWindow		Clic mijlociu (sau ALT + clic stânga):
+OK	HelpWindow		OK
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Descoperiți ce se află sub o dală. Dacă este o mină, jocul este terminat!
+Right click:	HelpWindow		Clic dreapta:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Scopul jocului este de a adăuga un steag tuturor minelor care sunt ascunse pe tablă. Contorul din colțul stânga sus arată numărul de mine încă ascunse, cel din dreapta numără secundele.
+Achievements	AchievementWindow		Realizări
+Active Duty - Win 5 games	AchievementWindow		Datorie activă - Câștigă 5 jocuri
+Basic Training - Win a game	AchievementWindow		Antrenament de bază - Câștigă un joc
+Bomb Buster - Win within 50 seconds	AchievementWindow		Distrugător de bombe - Câștigă în 50 de secunde
+Commando - Win within 100 seconds	AchievementWindow		Comando - Câștigă în 100 de secunde
+Difficulty: Beginner	AchievementWindow		Dificultate: Începător
+Difficulty: Expert	AchievementWindow		Dificultate: Expert
+Difficulty: Intermediate	AchievementWindow		Dificultate: Intermediar
+General	AchievementWindow		Generale
+Locked!	AchievementWindow		Blocat!
+Master Defuser - Win within 50 seconds	AchievementWindow		Dezamorsator master - Câștigă în 50 de secunde
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Veteran zonă minată - Câștigă în 50 de secunde
+Officer - Win within 100 seconds	AchievementWindow		Ofițer - Câștigă în 100 de secunde
+OK	AchievementWindow		OK
+Recruit - Win within 100 seconds	AchievementWindow		Recrut - Câștigă în 100 de secunde
+Reset	AchievementWindow		Restabilește
+Unlocked!	AchievementWindow		Deblocat!
+Anonymous	Globals		Anonim
+BeMines	System name		BeMines
+Click to resume	FieldWindow		Apăsați clic pentru a rezuma
+OK	FieldWindow		OK
+PAUSED	FieldWindow		PAUZAT
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Ați stabilit deja la fel de multe steaguri cât și mine. Eliminați steagul de pe o dală înainte de a adăuga un steag pe o alta.
+New high score	NewScoreWindow		Un nou scor cel mai bun
+OK	NewScoreWindow		OK
+Please enter your name.	NewScoreWindow	Second line text new record	Introduceți numele.
+You have made a new best time!	NewScoreWindow	First line text new record	Ați făcut un nou timp cel mai bun!

@@ -1,0 +1,81 @@
+1	Catalan	application/x-vnd.dw-BeMines	305506157
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Assoliment nou desblocat}other{Assoliments nous desblocats!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		Una representació tematitzable, de codi obert, del Minesweeper.
+About BeMines	MainWindow		Quant al BeMines
+Achievements	MainWindow		Assoliments
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Principiant
+Classic	MainWindow	Theme name	Clàssic
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		So de clic de Sebastian\nSons de victòria i derrota de Mike Koenig
+Custom…	MainWindow		Personalitzat...
+DarkWyrm (original author)	MainWindow		DarkWyrm (autor original)
+Default	MainWindow	Theme name	Per defecte
+Difficulty	MainWindow		Difucultat
+Expert	MainWindow		Expert
+Game	MainWindow		Joc
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Gris
+Help	MainWindow		Ajuda
+High scores	MainWindow		Puntuacions altes
+Intermediate	MainWindow		Intermèdies
+New	MainWindow		Nou
+Pause	MainWindow		Pausa
+Quit	MainWindow		Surt
+Settings	MainWindow		Paràmetres
+Sound effects	MainWindow		Efectes de so
+Theme	MainWindow		Tema
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # segon}other{%name%, # segons}}
+Anonymous	ScoreWindow		Anònim
+Beginner:	ScoreWindow		Principiant:
+Expert:	ScoreWindow		Expert:
+High scores	ScoreWindow		Puntuacions altes
+Intermediate:	ScoreWindow		Intermèdies:
+OK	ScoreWindow		D'acord
+Reset	ScoreWindow		Restableix
+{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Per l'amplada i l'alçada triades, només podeu tenir # mina.}other{Per l'amplada i l'alçada triades, no podeu tenir més de # mines.}}
+{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Per la mida i el tema actual de la pantalla, podeu tenir una alçada de fins a # rajola.}other{Per la mida i el tema actual de la pantalla, podeu tenir una alçada de fins a # rajoles.}}
+{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Per la mida i el tema actual de la pantalla, podeu tenir una amplada de fins a # rajola.}other{Per la mida i el tema actual de la pantalla, podeu tenir una amplada de fins a # rajoles.}}
+Cancel	CustomWindow		Cancel·la
+Height:	CustomWindow		Alçada:
+Level settings	CustomWindow		Paràmetres del nivell
+Mines:	CustomWindow		Mines:
+OK	CustomWindow		D'acord
+Width:	CustomWindow		Amplada:
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Un ping de sonar revela totes les mines en una zona de rajoles de 3x3 sense el perill de fer-les explotar. Ofereix un cost de 20 segons afegit al vostre temps.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Feu clic amb els dos botons (o Maj. + clic esquerre):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Marqueu una rajola com a mina, establiu-hi un signe d'interrogació si no n'esteu segur o desmarqueu un rajola ja marcada.
+Help	HelpWindow		Ajuda
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Si la rajola és un número i s'ha marcat el nombre adequat de mines al seu voltant, s'esborraran la resta de rajoles que hi ha al voltant. Per descomptat, si heu comès un error, probablement haureu activat una mina...
+Left click:	HelpWindow		Clic amb el botó esquerre:
+Middle click (or ALT + left click):	HelpWindow		Clic amb el botó del mig (o ALT + clic esquerre):
+OK	HelpWindow		D'acord
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Reveleu el que hi ha sota una rajola. Si és una mina, el joc s’ha acabat!
+Right click:	HelpWindow		Clic amb el botó dret:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		L’objectiu del joc és marcar totes les mines que s’amaguen al tauler. El comptador de la part superior esquerra mostra el nombre de mines encara ocultes, la de la dreta compta els segons.
+Achievements	AchievementWindow		Assoliments
+Active Duty - Win 5 games	AchievementWindow		Funció activa: guanya 5 jocs
+Basic Training - Win a game	AchievementWindow		Entrenament bàsic: guanya un partit
+Bomb Buster - Win within 50 seconds	AchievementWindow		Detonador de bombes: guanya en 50 segons
+Commando - Win within 100 seconds	AchievementWindow		Comando: guanya en 100 segons
+Difficulty: Beginner	AchievementWindow		Dificultat: principiant
+Difficulty: Expert	AchievementWindow		Dificultat: expert
+Difficulty: Intermediate	AchievementWindow		Dificultat: intermèdia
+General	AchievementWindow		General
+Locked!	AchievementWindow		Blocat!
+Master Defuser - Win within 50 seconds	AchievementWindow		Mestre desactivador: guanya en 50 segons
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Veterà de xona de mines: guanya en 50 segons
+Officer - Win within 100 seconds	AchievementWindow		Oficial: guanya en 100 segons
+OK	AchievementWindow		D'acord
+Recruit - Win within 100 seconds	AchievementWindow		Recluta: guanya en 100 segons
+Reset	AchievementWindow		Restableix
+Unlocked!	AchievementWindow		Desblocat!
+Anonymous	Globals		Anònim
+BeMines	System name		BeMines
+Click to resume	FieldWindow		Cliqueu per continuar
+OK	FieldWindow		D'acord
+PAUSED	FieldWindow		EN PAUSA
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Ja heu establert tantes banderes com mines. Desmarqueu una rajola abans d’intentar marcar-ne una altra.
+New high score	NewScoreWindow		Puntuació alta nova
+OK	NewScoreWindow		D'acord
+Please enter your name.	NewScoreWindow	Second line text new record	Si us plau, escriviu el nom.
+You have made a new best time!	NewScoreWindow	First line text new record	Heu fet una marca nova de temps!
