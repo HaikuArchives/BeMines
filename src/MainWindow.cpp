@@ -176,6 +176,7 @@ MainWindow::AboutRequested()
 		"Kevin Adams",
 		"Adrien Destugues",
 		"Humdinger",
+		"Raheem Idowu",
 		"Janus",
 		"Justin Stressman",
 		NULL
