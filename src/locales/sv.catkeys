@@ -1,0 +1,81 @@
+1	Swedish	application/x-vnd.dw-BeMines	305506157
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		En temabel, öppen källkodsföring av Minesweeper.
+About BeMines	MainWindow		Om BeMines
+Achievements	MainWindow		Prestationer
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Nybörjare
+Classic	MainWindow	Theme name	Klassisk
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Klicka ljud av Sebastian \ nFörlora och vinn ljud av Mike Koenig
+Custom…	MainWindow		Anpassa...
+DarkWyrm (original author)	MainWindow		DarkWyrm (ursprunglig upphovsman)
+Default	MainWindow	Theme name	Standard
+Difficulty	MainWindow		Svårighetsgrad
+Expert	MainWindow		Expert
+Game	MainWindow		Spel
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Grå
+Help	MainWindow		Hjälp
+High scores	MainWindow		Toppresultat
+Intermediate	MainWindow		Mellanliggande
+New	MainWindow		Ny
+Pause	MainWindow		Paus
+Quit	MainWindow		Avsluta
+Settings	MainWindow		Inställningar
+Sound effects	MainWindow		Ljudeffekter
+Theme	MainWindow		Tema
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # sekund}other{%name%, # sekunder}}
+Anonymous	ScoreWindow		Anonym
+Beginner:	ScoreWindow		Nybörjare:
+Expert:	ScoreWindow		Expert:
+High scores	ScoreWindow		Toplistan
+Intermediate:	ScoreWindow		Mellanliggande:
+OK	ScoreWindow		OK
+Reset	ScoreWindow		Återställ
+{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one {För vald bredd och höjd kan du inte ha mer än # min.}other{För vald bredd och höjd kan du inte ha mer än # minor.}}
+{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one {För den aktuella skärmstorleken och temat kan du ha en höjd på upp till # brickor.}other{För den aktuella skärmstorleken och temat kan du ha en höjd på upp till # brickor.}}
+{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one {För den aktuella skärmstorleken och temat kan du ha en bredd på upp till # brickor.}other{För den aktuella skärmstorleken och temat kan du ha en bredd på upp till # brickor.}}
+Cancel	CustomWindow		Avbryt
+Height:	CustomWindow		Höjd:
+Level settings	CustomWindow		Nivåinställningar
+Mines:	CustomWindow		Minor:
+OK	CustomWindow		OK
+Width:	CustomWindow		Bredd:
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		En sonarping avslöjar alla gruvor i ett 3x3-plattorområde utan risken att sätta igång dem. Det kommer med en 20 sekunders kostnad som läggs till din tid.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Klicka med båda knapparna (eller SHIFT + vänsterklick):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Flagga en ruta som en mina, sätt ett frågetecken om du är osäker, eller avmarkera en redan flaggad ruta.
+Help	HelpWindow		Hjälp
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Om brickan är ett nummer och det lämpliga antalet gruvor runt det har flaggats, kommer det att rensa alla andra brickor runt numret. Naturligtvis, om du har gjort ett misstag, kommer du förmodligen att sätta igång en gruva ...
+Left click:	HelpWindow		Vänsterklick:
+Middle click (or ALT + left click):	HelpWindow		Mittenklick (eller ALT + vänsterklick):
+OK	HelpWindow		OK
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Avslöja vad som är under en ruta. Om det är en mina, är spelet över!
+Right click:	HelpWindow		Högerklick:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Målet med spelet är att flagga alla gruvor som är dolda på brädet. Räknaren längst upp till vänster visar antalet fortfarande dolda gruvor, den till höger räknar upp sekunderna.
+Achievements	AchievementWindow		Prestationer
+Active Duty - Win 5 games	AchievementWindow		Aktiva Plikt - Vinn 5 spel
+Basic Training - Win a game	AchievementWindow		Grundläggande träning - Vinn ett spel
+Bomb Buster - Win within 50 seconds	AchievementWindow		Bomb Jägare - Vinn inom 50 sekunder
+Commando - Win within 100 seconds	AchievementWindow		Kommando - Vinn inom 100 sekunder
+Difficulty: Beginner	AchievementWindow		Svårighet: Nybörjare
+Difficulty: Expert	AchievementWindow		Svårighet: Expert
+Difficulty: Intermediate	AchievementWindow		Svårighet: Mellanliggande
+General	AchievementWindow		Allmän
+Locked!	AchievementWindow		Låst!
+Master Defuser - Win within 50 seconds	AchievementWindow		Mäster Desarmerare - Vinn inom 50 sekunder
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Min Zon Veteran - Vinn inom 50 sekunder
+Officer - Win within 100 seconds	AchievementWindow		Officer - Vinn inom 100 sekunder
+OK	AchievementWindow		OK
+Recruit - Win within 100 seconds	AchievementWindow		Rekryter - Vinn inom 100 sekunder
+Reset	AchievementWindow		Återställa
+Unlocked!	AchievementWindow		Upplåst!
+Anonymous	Globals		Anonym
+BeMines	System name		BeMines
+Click to resume	FieldWindow		Klicka för att fortsätta
+OK	FieldWindow		OK
+PAUSED	FieldWindow		PAUSAD
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Du har redan satt ut så många flaggor som det finns minor. Ta bort flaggan från en ruta innan du flaggar en annan.
+New high score	NewScoreWindow		Ny högsta poäng
+OK	NewScoreWindow		OK
+Please enter your name.	NewScoreWindow	Second line text new record	Vänligen ange ditt namn
+You have made a new best time!	NewScoreWindow	First line text new record	Du har gjort en ny bästa tid!

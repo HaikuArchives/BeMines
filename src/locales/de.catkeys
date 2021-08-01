@@ -1,5 +1,5 @@
 1	German	application/x-vnd.dw-BeMines	305506157
-{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Neue Errungenschaft!}other{Neue Errungenschaften!"}}
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Neue Errungenschaft!}other{Neue Errungenschaften!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		Eine Open-Source-Variante von Minesweeper.
 About BeMines	MainWindow		Über BeMines
 Achievements	MainWindow		Errungenschaften
@@ -53,22 +53,22 @@ Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Decke 
 Right click:	HelpWindow		Rechtsklick:
 The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Ziel des Spiels ist es, alle Minen zu markieren, die auf dem Spielfeld verborgen sind. Der Zähler oben links zeigt die Anzahl der noch versteckten Minen, der rechte zählt die Zeit in Sekunden.
 Achievements	AchievementWindow		Errungenschaften
-Active Duty - Win 5 games	AchievementWindow		Aktiver Dienst - 5 gewonnene Spiele
-Basic Training - Win a game	AchievementWindow		Grundausbildung - Ein gewonnenes Spiel
-Bomb Buster - Win within 50 seconds	AchievementWindow		Bombenjäger - Gewonnen in unter 50 Sekunden
-Commando - Win within 100 seconds	AchievementWindow		Kommando - Gewonnen in unter 100 Sekunden
+Active Duty - Win 5 games	AchievementWindow		Aktiver Dienst - Gewinne 5 Spiele
+Basic Training - Win a game	AchievementWindow		Grundausbildung - Gewinne ein Spiel
+Bomb Buster - Win within 50 seconds	AchievementWindow		Bombenjäger - Gewinne in unter 50 Sekunden
+Commando - Win within 100 seconds	AchievementWindow		Kommando - Gewinne in unter 100 Sekunden
 Difficulty: Beginner	AchievementWindow		Schwierigkeitsstufe: Anfänger
 Difficulty: Expert	AchievementWindow		Schwierigkeitsstufe: Experte
 Difficulty: Intermediate	AchievementWindow		Schwierigkeitsstufe: Fortgeschrittener
 General	AchievementWindow		Allgemein
-Locked!	AchievementWindow		Noch nicht erreicht.
-Master Defuser - Win within 50 seconds	AchievementWindow		Meister Entschärfer - Gewonnen in unter 50 Sekunden
-Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Minen-Veteran - Gewonnen in unter 50 Sekunden
-Officer - Win within 100 seconds	AchievementWindow		Offizier - Gewonnen in unter 100 Sekunden
+Locked!	AchievementWindow		Gesperrt!
+Master Defuser - Win within 50 seconds	AchievementWindow		Meister Entschärfer - Gewinne in unter 50 Sekunden
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Minen-Veteran - Gewinne in unter 50 Sekunden
+Officer - Win within 100 seconds	AchievementWindow		Offizier - Gewinne in unter 100 Sekunden
 OK	AchievementWindow		OK
-Recruit - Win within 100 seconds	AchievementWindow		Rekrut - Gewonnen in unter 100 Sekunden
+Recruit - Win within 100 seconds	AchievementWindow		Rekrut - Gewinne in unter 100 Sekunden
 Reset	AchievementWindow		Reset
-Unlocked!	AchievementWindow		Geschafft!
+Unlocked!	AchievementWindow		Freigeschaltet!
 Anonymous	Globals		Anonym
 BeMines	System name		BeMines
 Click to resume	FieldWindow		Klicken zum Weiterspielen

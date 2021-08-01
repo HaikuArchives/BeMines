@@ -1,0 +1,81 @@
+1	French	application/x-vnd.dw-BeMines	305506157
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Nouvelle récompense dévérouillée !}other{Nouvelles récompenses dévérouillées !}}
+A themable, open-source rendition of Minesweeper.	MainWindow		Une interprétation open-source du Démineur, avec des thèmes.
+About BeMines	MainWindow		À propos de BeMines
+Achievements	MainWindow		Récompenses
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Débutant
+Classic	MainWindow	Theme name	Classique
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Son des clicks par Sebastian\nSons de victoire et défaite par Mike Koenig
+Custom…	MainWindow		Personnalisé…
+DarkWyrm (original author)	MainWindow		DarkWyrm (auteur originel)
+Default	MainWindow	Theme name	Par défaut
+Difficulty	MainWindow		Difficulté
+Expert	MainWindow		Expert
+Game	MainWindow		Jeu
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Gris
+Help	MainWindow		Aide
+High scores	MainWindow		Meilleurs temps
+Intermediate	MainWindow		Intermédiaire
+New	MainWindow		Nouveau
+Pause	MainWindow		Pause
+Quit	MainWindow		Quitter
+Settings	MainWindow		Paramètres
+Sound effects	MainWindow		Effets sonores
+Theme	MainWindow		Thème
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # seconde}other{%name%, # secondes}}
+Anonymous	ScoreWindow		Anonyme
+Beginner:	ScoreWindow		Débutant :
+Expert:	ScoreWindow		Expert :
+High scores	ScoreWindow		Meilleurs temps
+Intermediate:	ScoreWindow		Intermédiaire :
+OK	ScoreWindow		D'accord
+Reset	ScoreWindow		Réinitialiser
+{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Pour les largeur et hauteur choisies, vous ne pouvez pas avoir plus d' # mine.}other{Pour les largeur et hauteur choisies, vous ne pouvez pas avoir plus d' # mines.}}
+{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Pour ce thème et la dimension d'écran courrante, la hauteur maximale est d'# tuile.}other{Pour ce thème et la dimension d'écran courrante, la hauteur maximale est de # tuiles.}}
+{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Pour ce thème et la dimension d'écran courrante, la largeur maximale est d'# tuile.}other{Pour ce thème et la dimension d'écran courrante, la largeur maximale est de # tuiles.}}
+Cancel	CustomWindow		Abandon
+Height:	CustomWindow		Hauteur :
+Level settings	CustomWindow		Paramètres du niveau
+Mines:	CustomWindow		Mines :
+OK	CustomWindow		D'accord
+Width:	CustomWindow		Largeur :
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Un écho sonar révèle toutes les mines dans une zone de tuiles de 3x3 sans danger de les faire exploser. Le coût est 20 secondes ajoutées à votre temps.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Cliquer avec les deux boutons (ou SHIFT + clic gauche) :
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Signale une tuile minée, pose un point d'interrogation en cas de doute, ou enlève le drapeau d'une mine déjà signalée.
+Help	HelpWindow		Aide
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Si la tuile est un chiffre et que le nombre approprié de mines autour d'elle a été signalé, cela nettoiera toutes les autres tuiles autour du chiffre. Bien sûr, en cas d'erreur, vous ferez probablement exploser une mine...
+Left click:	HelpWindow		Clic gauche :
+Middle click (or ALT + left click):	HelpWindow		Clic du milieu (ou ALT + clic gauche) :
+OK	HelpWindow		D'accord
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Révèle ce qu'il y a sous une tuile. Si c'est une mine, le jeu est fini !
+Right click:	HelpWindow		Clic droit :
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Le but du jeu est de signaler toutes les mines cachées sur le plateau. Le compteur en haut à gauche indique le nombre de mines encore cachées, celui de droite compte les secondes.
+Achievements	AchievementWindow		Récompenses
+Active Duty - Win 5 games	AchievementWindow		Service actif - Gagner 5 parties
+Basic Training - Win a game	AchievementWindow		Entrainement de base - Gagner une partie
+Bomb Buster - Win within 50 seconds	AchievementWindow		Briseur de mines - Gagner en moins de 50 secondes
+Commando - Win within 100 seconds	AchievementWindow		Commando - Gagner en moins de 100 secondes
+Difficulty: Beginner	AchievementWindow		Difficulté : Débutant
+Difficulty: Expert	AchievementWindow		Difficulté : Expert
+Difficulty: Intermediate	AchievementWindow		Difficulté : Intermédiaire
+General	AchievementWindow		Général
+Locked!	AchievementWindow		Vérrouillée !
+Master Defuser - Win within 50 seconds	AchievementWindow		Maître désamorceur - Gagner en moins de 50 secondes
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Vétéran de zone minée - Gagner en moins de 50 secondes
+Officer - Win within 100 seconds	AchievementWindow		Officier - Gagner en moins de 100 secondes
+OK	AchievementWindow		D'accord
+Recruit - Win within 100 seconds	AchievementWindow		Recrue - Gagner en moins de 100 secondes
+Reset	AchievementWindow		Réinitialiser
+Unlocked!	AchievementWindow		Déverrouilée !
+Anonymous	Globals		Anonyme
+BeMines	System name		BeMines
+Click to resume	FieldWindow		Cliquer pour reprendre
+OK	FieldWindow		D'accord
+PAUSED	FieldWindow		EN PAUSE
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Vous avez déjà posé autant de drapeaux qu'il y a de mines. Enlevez un drapeau d'une tuile avant d'essayer d'en poser un autre.
+New high score	NewScoreWindow		Nouveau record
+OK	NewScoreWindow		D'accord
+Please enter your name.	NewScoreWindow	Second line text new record	Veuillez entrer votre nom.
+You have made a new best time!	NewScoreWindow	First line text new record	Vous avez réalisé un nouveau temps record !
