@@ -441,7 +441,7 @@ MainWindow::AchievementCheck()
 		gAchievements[gDifficulty][0] = true;
 		numAchieved++;
 	}
-	if (gDifficulty < DIFFICULTY_CUSTOM && seconds < 50 && !gAchievements[gDifficulty][0]) {
+	if (gDifficulty < DIFFICULTY_CUSTOM && seconds < 50 && !gAchievements[gDifficulty][1]) {
 		gAchievements[gDifficulty][1] = true;
 		numAchieved++;
 	}
