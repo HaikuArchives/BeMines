@@ -44,6 +44,7 @@ public:
 
 extern bool gCheatMode;
 extern bool gPlaySounds;
+extern uint16 gScale;
 extern BString gThemeName;
 extern int32 gDifficulty;
 
