@@ -119,7 +119,7 @@ BitmapButton::Draw(BRect update)
 {
 	if (!IsEnabled()) {
 		if (fDisabled)
-			DrawBitmap(fDisabled, BPoint(0,0));
+			DrawBitmap(fDisabled, update);
 		else
 			StrokeRect(Bounds());
 		return;
@@ -128,32 +128,33 @@ BitmapButton::Draw(BRect update)
 	if (Value() == B_CONTROL_ON) {
 		if (IsFocus()) {
 			if (fFocusDown)
-				DrawBitmap(fFocusDown, BPoint(0,0));
+				DrawBitmap(fFocusDown, update);
 			else {
 				if (fDown)
-					DrawBitmap(fUp, BPoint(0,0));
+					DrawBitmap(fUp, update);
 				SetHighColor(ui_color(B_KEYBOARD_NAVIGATION_COLOR));
 				StrokeRect(Bounds());
 			}
 		} else {
 			if (fDown)
-				DrawBitmap(fDown, BPoint(0,0));
+				DrawBitmap(fDown, update);
 			else
 				StrokeRect(Bounds());
 		}
 	} else {
 		if (IsFocus()) {
 			if (fFocusUp)
-				DrawBitmap(fFocusUp, BPoint(0,0));
+				DrawBitmap(fFocusUp, update);
 			else {
 				if (fUp)
-					DrawBitmap(fUp, BPoint(0,0));
+					DrawBitmap(fUp, update);
 				SetHighColor(ui_color(B_KEYBOARD_NAVIGATION_COLOR));
 				StrokeRect(Bounds());
 			}
 		} else {
+
 			if (fUp)
-				DrawBitmap(fUp, BPoint(0,0));
+				DrawBitmap(fUp, update);
 			else
 				StrokeRect(Bounds());
 		}

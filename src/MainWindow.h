@@ -45,6 +45,7 @@ private:
 	void	ResetLayout(void);
 	void	LoadSettings(void);
 	void	SaveSettings(void);
+	bool 	CanScale(void);
 
 	BitmapButton	*fSmileyButton;
 	int8			fSmileyState;

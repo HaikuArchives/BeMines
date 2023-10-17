@@ -1,4 +1,5 @@
 #include <AboutWindow.h>
+#include <Alert.h>
 #include <Application.h>
 #include <Catalog.h>
 #include <File.h>
@@ -6,6 +7,7 @@
 #include <MenuBar.h>
 #include <MenuItem.h>
 #include <Message.h>
+#include <Screen.h>
 #include <View.h>
 #include <stdio.h>
 
@@ -28,6 +30,7 @@ enum
 	M_SHOW_HELP = 'help',
 	M_SET_THEME = 'stth',
 	M_SHOW_SCORES = 'shsc',
+	M_TOGGLE_SCALING = 'tgsc',
 	M_TOGGLE_SOUNDS = 'tgsn',
 	M_SHOW_CUSTOM = 'shcs',
 	M_SHOW_ACHIEVEMENTS = 'shac'
@@ -113,6 +116,10 @@ MainWindow::MainWindow(BRect frame)
 	if (item)
 		item->SetMarked(true);
 
+	item = new BMenuItem(B_TRANSLATE("Scale 2x"), new BMessage(M_TOGGLE_SCALING));
+	menu->AddItem(item);
+	item->SetMarked(gScale == 2);
+
 	menu->AddSeparatorItem();
 
 	item = new BMenuItem(B_TRANSLATE("Sound effects"),new BMessage(M_TOGGLE_SOUNDS));
@@ -128,6 +135,9 @@ MainWindow::MainWindow(BRect frame)
 	top->AddChild(fCounterView);
 
 	r = gGameStyle->SmileyUp()->Bounds();
+	r.right = r.left + r.Width() * gScale;
+	r.bottom = r.top + r.Height() * gScale;
+
 	fSmileyButton = new BitmapButton(r,"smiley",gGameStyle->SmileyUp(),
 									gGameStyle->SmileyDown(), new BMessage(M_NEW_GAME),false,
 									B_FOLLOW_TOP | B_FOLLOW_H_CENTER);
@@ -318,6 +328,22 @@ MainWindow::MessageReceived(BMessage *msg)
 				item->SetMarked(!item->IsMarked());
 			break;
 		}
+		case M_TOGGLE_SCALING:
+		{
+			// Don't allow 2x scaling if the custom board won't fit on screen
+			if (!CanScale())
+				break;
+
+			gScale = 3 - gScale; // Toggle between 1 and 2
+			fFieldView->StyleChanged();
+			fCounterView->StyleChanged();
+			fTimerView->StyleChanged();
+			ResetLayout();
+			BMenuItem *item = fMenuBar->FindItem(M_TOGGLE_SCALING);
+			if (item)
+				item->SetMarked(!item->IsMarked());
+			break;
+		}
 		default:
 		{
 			BWindow::MessageReceived(msg);
@@ -430,7 +456,7 @@ MainWindow::AchievementCheck(void)
 		gAchievements[gDifficulty][1] = true;
 		numAchieved++;
 	}
-	
+
 	if (numAchieved > 0) {
 		AchievementWindow *achievementwin = new AchievementWindow();
 		BString title;
@@ -507,6 +533,9 @@ MainWindow::ResetLayout(void)
 
 	BRect smileRect = gGameStyle->SmileyUp()->Bounds();
 
+	smileRect.right = smileRect.left + smileRect.Width() * gScale;
+	smileRect.bottom = smileRect.top + smileRect.Height() * gScale;
+
 	float smileHeight = smileRect.Height();
 	float toolBarHeight = MAX(heightCounter, smileHeight);
 
@@ -516,11 +545,10 @@ MainWindow::ResetLayout(void)
 	fTimerView->MoveTo(Bounds().right - 10 - fTimerView->Bounds().Width(),
 						fCounterView->Frame().top + offsetCounter);
 
-
 	fSmileyButton->ResizeTo(smileRect.Width(),smileRect.Height());
+
 	fSmileyButton->MoveTo( (Bounds().Width() - smileRect.Width()) / 2.0,
 							fCounterView->Frame().top + offsetSmile);
-
 	fCounterView->MoveBy(0, offsetCounter);
 
 	float bottom  = MAX(fCounterView->Frame().bottom,
@@ -554,6 +582,10 @@ MainWindow::LoadSettings(void)
 		bool b;
 		if (settings.FindBool("playsounds",&b) == B_OK)
 			gPlaySounds = b;
+
+		uint16 scale;
+		if (settings.FindInt16("scale",(int16*)&scale) == B_OK)
+			gScale = scale;
 
 		uint16 seconds;
 		if (settings.FindInt16("begbest",(int16*)&seconds) == B_OK)
@@ -617,6 +649,7 @@ MainWindow::SaveSettings(void)
 {
 	BMessage settings;
 	settings.AddBool("playsounds",gPlaySounds);
+	settings.AddInt16("scale", gScale);
 	settings.AddInt32("level",gDifficulty);
 	settings.AddString("theme",gGameStyle->StyleName());
 	settings.AddInt16("begbest",gBestTimes[DIFFICULTY_BEGINNER].time);
@@ -647,4 +680,36 @@ MainWindow::SaveSettings(void)
 	if (file.InitCheck() != B_OK)
 		return;
 	settings.Flatten(&file);
+}
+
+bool
+MainWindow::CanScale(void)
+{
+	if (gDifficulty == 3 && gScale == 1)
+	{
+		BRect screen = BScreen().Frame();
+		BRect trect = gGameStyle->TileSize();
+		uint16 maxTileWidth = uint16((screen.Width() * .9) / trect.Width()) / 2;
+		maxTileWidth = maxTileWidth > 80 ? 80 : maxTileWidth;
+		// Also compensate for stuff like the menu, smiley button, and titlebar height
+
+		float usableHeight = (screen.Height() * .9) - 20 - 20 -
+								gGameStyle->SmileyUp()->Bounds().Height();
+		uint16 maxTileHeight = uint16(usableHeight / trect.Height()) / 2;
+		maxTileHeight = maxTileHeight > 80 ? 80 : maxTileHeight;
+
+		if (gCustomWidth > maxTileWidth || gCustomHeight > maxTileHeight)
+		{
+			BString errorMessage;
+			errorMessage = (B_TRANSLATE("Your current game would not fit your"
+				" current screen size if scaled.\n\nPlease set the custom board to no more than"
+				" %d tiles wide and %d tiles high before scaling."));
+			errorMessage.SetToFormat(errorMessage, maxTileWidth, maxTileHeight);
+			BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),
+				errorMessage.String(),B_TRANSLATE("OK"));
+			alert->Go();
+			return false;
+		}
+	}
+	return true;
 }

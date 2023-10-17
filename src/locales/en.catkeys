@@ -1,4 +1,4 @@
-1	English	application/x-vnd.dw-BeMines	305506157
+1	English	application/x-vnd.dw-BeMines	697776788
 Sound effects	MainWindow		Sound effects
 Recruit - Win within 100 seconds	AchievementWindow		Recruit - Win within 100 seconds
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
@@ -6,6 +6,7 @@ Click to resume	FieldWindow		Click to resume
 Be	MainWindow	Theme name	Be
 You have made a new best time!	NewScoreWindow	First line text new record	You have made a new best time!
 OK	ScoreWindow		OK
+OK	MainWindow		OK
 OK	HelpWindow		OK
 Pause	MainWindow		Pause
 Quit	MainWindow		Quit
@@ -27,6 +28,7 @@ The goal of the game is to flag all mines that are hidden on the board. The coun
 Default	MainWindow	Theme name	Default
 High scores	MainWindow		High scores
 Master Defuser - Win within 50 seconds	AchievementWindow		Master Defuser - Win within 50 seconds
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
 Difficulty: Intermediate	AchievementWindow		Difficulty: Intermediate
 OK	AchievementWindow		OK
 Active Duty - Win 5 games	AchievementWindow		Active Duty - Win 5 games
@@ -66,6 +68,7 @@ PAUSED	FieldWindow		PAUSED
 Reset	ScoreWindow		Reset
 A themable, open-source rendition of Minesweeper.	MainWindow		A themable, open-source rendition of Minesweeper.
 Difficulty: Beginner	AchievementWindow		Difficulty: Beginner
+Scale 2x	MainWindow		Scale 2x
 Custom…	MainWindow		Custom…
 Achievements	AchievementWindow		Achievements
 Width:	CustomWindow		Width:

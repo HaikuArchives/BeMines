@@ -16,7 +16,7 @@
 class BitmapButton : public BButton
 {
 public:
-						BitmapButton(const BRect &frame, const char *name, BBitmap *up, 
+						BitmapButton(const BRect &frame, const char *name, BBitmap *up,
 									BBitmap *down, BMessage *msg, bool own = true,
 									const int32 &resize = B_FOLLOW_LEFT | B_FOLLOW_TOP,
 									const int32 &flags = B_WILL_DRAW | B_NAVIGABLE);

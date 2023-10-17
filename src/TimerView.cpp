@@ -2,6 +2,7 @@
 #include <Messenger.h>
 #include <stdio.h>
 #include "GameStyle.h"
+#include "Globals.h"
 
 #define M_INC_TIMER 'inct'
 
@@ -16,7 +17,7 @@ TimerView::TimerView(void)
 		debugger("BUG: empty timer theme");
 
 	BBitmap *zero = fBitmaps[0];
-	ResizeTo(zero->Bounds().Width() * 3,zero->Bounds().Height());
+	ResizeTo(zero->Bounds().Width() * 3 * gScale,zero->Bounds().Height() * gScale);
 }
 
 
@@ -96,11 +97,15 @@ TimerView::Draw(BRect update)
 	sprintf(timestr,"%.3d",fTime);
 
 	BPoint pt(0,0);
-	DrawBitmap(fBitmaps[timestr[0] - 48],pt);
-	pt.x += fBitmaps[0]->Bounds().Width();
-	DrawBitmap(fBitmaps[timestr[1] - 48],pt);
+	BRect rect(pt.x,pt.y,pt.x + fBitmaps[0]->Bounds().Width() * gScale,
+		fBitmaps[0]->Bounds().Height() * gScale);
+	DrawBitmap(fBitmaps[timestr[0] - 48],rect);
+	pt.x += fBitmaps[0]->Bounds().Width() * gScale;
+	rect.OffsetTo(pt);
+	DrawBitmap(fBitmaps[timestr[1] - 48],rect);
 	pt.x += pt.x;
-	DrawBitmap(fBitmaps[timestr[2] - 48],pt);
+	rect.OffsetTo(pt);
+	DrawBitmap(fBitmaps[timestr[2] - 48],rect);
 }
 
 
@@ -109,7 +114,7 @@ TimerView::StyleChanged(void)
 {
 	fBitmaps = gGameStyle->LEDSprites();
 	BBitmap *zero = fBitmaps[0];
-	ResizeTo(zero->Bounds().Width() * 3,zero->Bounds().Height());
+	ResizeTo(zero->Bounds().Width() * 3 * gScale,zero->Bounds().Height() * gScale);
 }
 
 
