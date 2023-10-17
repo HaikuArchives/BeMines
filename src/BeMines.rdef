@@ -1318,71 +1318,71 @@ resource(1, "AboutBeMines.jpg") #'JPEG' array {
 
 resource file_types message;
 
-resource(1, "unmarked.png") #'PNG ' import "./themes/Default/unmarked.png" ;
+resource(1, "unmarked.png") #'PNG ' import "../themes/Default/unmarked.png" ;
 
-resource(2, "tilebase.png") #'PNG ' import "./themes/Default/tilebase.png" ;
+resource(2, "tilebase.png") #'PNG ' import "../themes/Default/tilebase.png" ;
 
-resource(3, "smileybasedown.png")  #'PNG ' import "./themes/Default/smileybasedown.png" ;
+resource(3, "smileybasedown.png")  #'PNG ' import "../themes/Default/smileybasedown.png" ;
 
-resource(4, "smileybase.png") #'PNG ' import "./themes/Default/smileybase.png" ;
+resource(4, "smileybase.png") #'PNG ' import "../themes/Default/smileybase.png" ;
 
-resource(5, "smiley-worry.png") #'PNG '  import "./themes/Default/smiley-worry.png" ;
+resource(5, "smiley-worry.png") #'PNG '  import "../themes/Default/smiley-worry.png" ;
 
-resource(6, "smiley-windown.png") #'PNG '  import "./themes/Default/smiley-windown.png" ;
+resource(6, "smiley-windown.png") #'PNG '  import "../themes/Default/smiley-windown.png" ;
 
-resource(7, "question.png") #'PNG '  import "./themes/Default/question.png" ;
+resource(7, "question.png") #'PNG '  import "../themes/Default/question.png" ;
 
-resource(8, "notmine.png") #'PNG '  import "./themes/Default/notmine.png" ;
+resource(8, "notmine.png") #'PNG '  import "../themes/Default/notmine.png" ;
 
-resource(9, "mine8.png") #'PNG '  import "./themes/Default/mine8.png" ;
+resource(9, "mine8.png") #'PNG '  import "../themes/Default/mine8.png" ;
 
-resource(10, "mine7.png") #'PNG '  import "./themes/Default/mine7.png" ;
+resource(10, "mine7.png") #'PNG '  import "../themes/Default/mine7.png" ;
 
-resource(11, "mine6.png") #'PNG ' import "./themes/Default/mine6.png" ;
+resource(11, "mine6.png") #'PNG ' import "../themes/Default/mine6.png" ;
 
-resource(12, "mine5.png") #'PNG 'import "./themes/Default/mine5.png" ;
+resource(12, "mine5.png") #'PNG 'import "../themes/Default/mine5.png" ;
 
-resource(13, "mine4.png") #'PNG ' import "./themes/Default/mine4.png" ;
+resource(13, "mine4.png") #'PNG ' import "../themes/Default/mine4.png" ;
 
-resource(14, "mine3.png") #'PNG ' import "./themes/Default/mine3.png" ;
+resource(14, "mine3.png") #'PNG ' import "../themes/Default/mine3.png" ;
 
-resource(15, "mine2.png") #'PNG ' import "./themes/Default/mine2.png" ;
+resource(15, "mine2.png") #'PNG ' import "../themes/Default/mine2.png" ;
 
-resource(16, "mine1.png") #'PNG ' import "./themes/Default/mine1.png" ;
+resource(16, "mine1.png") #'PNG ' import "../themes/Default/mine1.png" ;
 
-resource(17, "mine.png") #'PNG ' import "./themes/Default/mine.png" ;
+resource(17, "mine.png") #'PNG ' import "../themes/Default/mine.png" ;
 
-resource(18, "led9.png") #'PNG ' import "./themes/Default/led9.png" ;
+resource(18, "led9.png") #'PNG ' import "../themes/Default/led9.png" ;
 
-resource(19, "led8.png") #'PNG ' import "./themes/Default/led8.png" ;
+resource(19, "led8.png") #'PNG ' import "../themes/Default/led8.png" ;
 
-resource(20, "led7.png") #'PNG ' import "./themes/Default/led7.png" ;
+resource(20, "led7.png") #'PNG ' import "../themes/Default/led7.png" ;
 
-resource(21, "led6.png") #'PNG ' import "./themes/Default/led6.png" ;
+resource(21, "led6.png") #'PNG ' import "../themes/Default/led6.png" ;
 
-resource(22, "led5.png") #'PNG ' import "./themes/Default/led5.png" ;
+resource(22, "led5.png") #'PNG ' import "../themes/Default/led5.png" ;
 
-resource(23, "led4.png") #'PNG ' import "./themes/Default/led4.png" ;
+resource(23, "led4.png") #'PNG ' import "../themes/Default/led4.png" ;
 
-resource(24, "led3.png") #'PNG ' import "./themes/Default/led3.png" ;
+resource(24, "led3.png") #'PNG ' import "../themes/Default/led3.png" ;
 
-resource(25, "led2.png") #'PNG ' import "./themes/Default/led2.png" ;
+resource(25, "led2.png") #'PNG ' import "../themes/Default/led2.png" ;
 
-resource(26, "led1.png") #'PNG ' import "./themes/Default/led1.png" ;
+resource(26, "led1.png") #'PNG ' import "../themes/Default/led1.png" ;
 
-resource(27, "led0.png") #'PNG ' import "./themes/Default/led0.png" ;
+resource(27, "led0.png") #'PNG ' import "../themes/Default/led0.png" ;
 
-resource(28, "hit.png") #'PNG ' import "./themes/Default/hit.png" ;
+resource(28, "hit.png") #'PNG ' import "../themes/Default/hit.png" ;
 
-resource(29, "flag.png") #'PNG ' import "./themes/Default/flag.png" ;
+resource(29, "flag.png") #'PNG ' import "../themes/Default/flag.png" ;
 
-resource(30, "down.png") #'PNG ' import "./themes/Default/down.png" ;
+resource(30, "down.png") #'PNG ' import "../themes/Default/down.png" ;
 
-resource(31, "smiley-win.png") #'PNG ' import "./themes/Default/smiley-win.png" ;
+resource(31, "smiley-win.png") #'PNG ' import "../themes/Default/smiley-win.png" ;
 
-resource(32, "smiley-losedown.png") #'PNG ' import "./themes/Default/smiley-losedown.png" ;
+resource(32, "smiley-losedown.png") #'PNG ' import "../themes/Default/smiley-losedown.png" ;
 
-resource(33, "smiley-lose.png") #'PNG ' import "./themes/Default/smiley-lose.png" ;
+resource(33, "smiley-lose.png") #'PNG ' import "../themes/Default/smiley-lose.png" ;
 
 resource app_signature "application/x-vnd.dw-BeMines";
 

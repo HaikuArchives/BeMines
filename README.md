@@ -2,7 +2,7 @@
 
 It's about time we had more than a near-exact clone of the classic Windows game, Minesweeper.
 
-![BeMines](BeMines.png "BeMines")
+![BeMines](BeMines_screenshot.png "BeMines")
 
 ## Controls
 

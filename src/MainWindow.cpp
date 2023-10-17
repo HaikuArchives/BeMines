@@ -228,7 +228,7 @@ MainWindow::MessageReceived(BMessage* msg)
 		} break;
 		case M_SHOW_CUSTOM:
 		{
-			CustomWindow* cswin = new CustomWindow();
+			CustomWindow* cswin = new CustomWindow(Frame());
 			cswin->Show();
 			} break;
 		case M_NEW_GAME:
