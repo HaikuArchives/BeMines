@@ -1,22 +1,29 @@
 #ifndef CUSTOMWINDOW_H
 #define CUSTOMWINDOW_H
 
-#include "DWindow.h"
-#include <TextControl.h>
+#include "Window.h"
 
-class CustomWindow : public DWindow
+#include <Spinner.h>
+
+
+class CustomWindow : public BWindow
 {
 public:
-			CustomWindow(void);
-	void	MessageReceived(BMessage *msg);
+				CustomWindow(BRect frame);
+	void		MessageReceived(BMessage* msg);
 
 private:
-	void	MakeNumberBox(BTextControl *box);
-	void	CheckValues(void);
+	uint16		GetMaxWidth();
+	uint16		GetMaxHeight();
+	void		UpdateDifficulty();
 
-	BTextControl	*fWidth,
-					*fHeight,
-					*fMines;
+	uint16		fOrigWidth;
+	uint16		fOrigHeight;
+	uint16		fOrigMines;
+
+	BSpinner*	fWidth;
+	BSpinner*	fHeight;
+	BSpinner*	fMines;
 };
 
 #endif

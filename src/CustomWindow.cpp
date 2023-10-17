@@ -1,15 +1,15 @@
 #include "CustomWindow.h"
 
-#include <Alert.h>
 #include <Application.h>
 #include <Button.h>
 #include <Catalog.h>
 #include <LayoutBuilder.h>
 #include <Screen.h>
+#include <SeparatorView.h>
 #include <StringFormat.h>
+
 #include <stdlib.h>
 
-#include "EscapeCancelFilter.h"
 #include "GameStyle.h"
 #include "Globals.h"
 #include "MainWindow.h"
@@ -17,48 +17,47 @@
 #undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "CustomWindow"
 
-#define M_SET_CUSTOM 'stcs'
-#define M_CHECK_VALUE 'ckvl'
+#define M_CANCEL_CUSTOM	'cncs'
+#define M_SET_CUSTOM	'stcs'
+#define M_CHECK_VALUE	'ckvl'
 
-CustomWindow::CustomWindow(void)
-	:	DWindow(BRect(100,100,300,300), B_TRANSLATE("Level settings"),
-				B_TITLED_WINDOW, B_NOT_RESIZABLE | B_NOT_ZOOMABLE |
-				B_NOT_MINIMIZABLE | B_AUTO_UPDATE_SIZE_LIMITS)
+static const uint16 kMinTiles = 6;
+
+
+CustomWindow::CustomWindow(BRect frame)
+	:
+	BWindow(BRect(), B_TRANSLATE("Level settings"), B_TITLED_WINDOW,
+		B_NOT_RESIZABLE | B_NOT_ZOOMABLE | B_NOT_CLOSABLE
+		| B_NOT_MINIMIZABLE | B_AUTO_UPDATE_SIZE_LIMITS | B_CLOSE_ON_ESCAPE)
 {
-	AddCommonFilter(new EscapeCancelFilter());
+	fOrigWidth = gCustomWidth;
+	fOrigHeight = gCustomHeight;
+	fOrigMines = gCustomMines;
 
-	BView *top = GetBackgroundView();
+	fWidth = new BSpinner("width", B_TRANSLATE("Width:"), new BMessage(M_SET_CUSTOM));
+	fWidth->SetMinValue(kMinTiles);
+	fWidth->SetMaxValue(GetMaxWidth());
+	fWidth->SetValue(gCustomWidth);
 
-	BString s;
-	s << (int)gCustomWidth;
-	fWidth = new BTextControl("width", B_TRANSLATE("Width:"),s.String(),
-								new BMessage(M_CHECK_VALUE));
-	MakeNumberBox(fWidth);
+	fHeight = new BSpinner("height", B_TRANSLATE("Height:"), new BMessage(M_SET_CUSTOM));
+	fHeight->SetMinValue(kMinTiles);
+	fHeight->SetMaxValue(GetMaxHeight());
+	fHeight->SetValue(gCustomHeight);
 
-	s = "";
-	s << (int)gCustomHeight;
-	fHeight = new BTextControl("height", B_TRANSLATE("Height:"),s.String(),
-								new BMessage(M_CHECK_VALUE));
-	MakeNumberBox(fHeight);
+	fMines = new BSpinner("mines", B_TRANSLATE("Mines:"), new BMessage(M_SET_CUSTOM));
+	fMines->SetMinValue(1);
+	fMines->SetMaxValue(gCustomWidth * gCustomHeight  - 1);
+	fMines->SetValue(gCustomMines);
 
-	s = "";
-	s << (int)gCustomMines;
-	fMines = new BTextControl("mines", B_TRANSLATE("Mines:"),s.String(),
-								new BMessage(M_CHECK_VALUE));
-	MakeNumberBox(fMines);
-
-	// Initially set label to Cancel so that the buttons are the same size
-	BButton *ok = new BButton("ok",B_TRANSLATE("OK"),new BMessage(M_SET_CUSTOM));
+	BButton *ok = new BButton("ok",B_TRANSLATE("OK"), new BMessage(B_QUIT_REQUESTED));
 	ok->MakeDefault(true);
 
-	BButton *cancel = new BButton("cancel", B_TRANSLATE("Cancel"),
-								new BMessage(B_QUIT_REQUESTED));
+	BButton *cancel = new BButton("cancel", B_TRANSLATE("Cancel"), new BMessage(M_CANCEL_CUSTOM));
 
-	//ResizeTo(Bounds().Width(), fMines->Frame().bottom + 20.0 + ok->Frame().Height());
-
-	BLayoutBuilder::Group<>(top, B_VERTICAL, 0)
-		.SetInsets(B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING, B_USE_DEFAULT_SPACING)
+	BLayoutBuilder::Group<>(this, B_VERTICAL, 0)
 		.AddGrid()
+		.SetInsets(B_USE_WINDOW_INSETS, B_USE_WINDOW_INSETS,
+			B_USE_WINDOW_INSETS, B_USE_WINDOW_INSETS)
 			.Add(fWidth->CreateLabelLayoutItem(), 0, 0)
 			.Add(fWidth->CreateTextViewLayoutItem(), 1, 0)
 			.Add(fHeight->CreateLabelLayoutItem(), 0, 1)
@@ -66,16 +65,22 @@ CustomWindow::CustomWindow(void)
 			.Add(fMines->CreateLabelLayoutItem(), 0, 2)
 			.Add(fMines->CreateTextViewLayoutItem(), 1, 2)
 		.End()
-		.AddStrut(B_USE_DEFAULT_SPACING)
+		.Add(new BSeparatorView(B_HORIZONTAL))
 		.AddGroup(B_HORIZONTAL)
-			.AddGlue()
+			.SetInsets(B_USE_WINDOW_INSETS, B_USE_WINDOW_INSETS,
+				B_USE_WINDOW_INSETS, B_USE_WINDOW_INSETS)
 			.Add(cancel)
 			.Add(ok)
 		.End();
 
-
-	MakeCenteredOnShow(true);
 	fWidth->MakeFocus(true);
+
+	if (frame.IsValid()) {
+		frame.OffsetBy(20.0, 0.0);
+		MoveTo(frame.RightTop());
+		MoveOnScreen(B_MOVE_IF_PARTIALLY_OFFSCREEN);
+	} else
+		CenterOnScreen();
 }
 
 
@@ -86,153 +91,76 @@ CustomWindow::MessageReceived(BMessage *msg)
 	{
 		case M_SET_CUSTOM:
 		{
-			CheckValues();
-			gCustomWidth = atoi(fWidth->Text());
-			gCustomHeight = atoi(fHeight->Text());
-			gCustomMines = atoi(fMines->Text());
+			gCustomWidth = fWidth->Value();
+			gCustomHeight = fHeight->Value();
 
-			for (int32 i = 0; i < be_app->CountWindows(); i++)
-			{
-				if (strcmp(be_app->WindowAt(i)->Title(), B_TRANSLATE_SYSTEM_NAME("BeMines")) == 0)
-				{
-					BMessage setmsg(M_SET_DIFFICULTY);
-					setmsg.AddInt32("level",DIFFICULTY_CUSTOM);
-					be_app->WindowAt(i)->PostMessage(&setmsg);
-					break;
-				}
-			}
+			uint16 mines = fMines->Value();
+			uint16 maxMines = gCustomWidth * gCustomHeight  - 1;
+			fMines->SetMaxValue(maxMines);
 
+			gCustomMines = fMines->Value();
+
+			UpdateDifficulty();
+
+			break;
+		}
+		case M_CANCEL_CUSTOM:
+		{
+			gCustomWidth = fOrigWidth;
+			gCustomHeight = fOrigHeight;
+			gCustomMines = fOrigMines;
+
+			UpdateDifficulty();
 			PostMessage(B_QUIT_REQUESTED);
 
 			break;
 		}
-		case M_CHECK_VALUE:
-		{
-			CheckValues();
-			break;
-		}
+
 		default:
 		{
-			DWindow::MessageReceived(msg);
+			BWindow::MessageReceived(msg);
 			break;
 		}
 	}
 }
 
 
-void
-CustomWindow::MakeNumberBox(BTextControl *box)
+uint16
+CustomWindow::GetMaxHeight()
 {
-	char c;
-	for (c = 32; c < 48; c++)
-		box->TextView()->DisallowChar(c);
-	for (c = 58; c < 127; c++)
-		box->TextView()->DisallowChar(c);
+	BRect screen = BScreen().Frame();
+	BRect tileRect = gGameStyle->TileSize();
+	// Also compensate for stuff like the menu, smiley button, and titlebar height
+	float usableHeight = (screen.Height() * .9) - 20 - 20 -
+		gGameStyle->SmileyUp()->Bounds().Height();
+	uint16 maxTileHeight = uint16(usableHeight / tileRect.Height());
+	maxTileHeight = maxTileHeight > 80 ? 80 : maxTileHeight;
+
+	return maxTileHeight;
 }
 
 
-void
-CustomWindow::CheckValues(void)
+uint16
+CustomWindow::GetMaxWidth()
 {
 	BRect screen = BScreen().Frame();
 	BRect trect = gGameStyle->TileSize();
 	uint16 maxTileWidth = uint16((screen.Width() * .9) / trect.Width());
 	maxTileWidth = maxTileWidth > 80 ? 80 : maxTileWidth;
-	// Also compensate for stuff like the menu, smiley button, and titlebar height
 
-	float usableHeight = (screen.Height() * .9) - 20 - 20 -
-							gGameStyle->SmileyUp()->Bounds().Height();
-	uint16 maxTileHeight = uint16(usableHeight / trect.Height());
-	maxTileHeight = maxTileHeight > 80 ? 80 : maxTileHeight;
+	return maxTileWidth;
+}
 
-	uint16 width,height;
-	BString s = fWidth->Text();
-	if (s.CountChars() < 1)
-	{
-		fWidth->SetText("6");
-		s = "6";
-	}
 
-	width = atoi(s.String());
-	if (width < 6)
-	{
-		width = 6;
-		fWidth->SetText("6");
+void
+CustomWindow::UpdateDifficulty()
+{
+	for (int32 i = 0; i < be_app->CountWindows(); i++) {
+		if (strcmp(be_app->WindowAt(i)->Title(), B_TRANSLATE_SYSTEM_NAME("BeMines")) == 0) {
+			BMessage setmsg(M_SET_DIFFICULTY);
+			setmsg.AddInt32("level", DIFFICULTY_CUSTOM);
+			be_app->WindowAt(i)->PostMessage(&setmsg);
+			break;
+		}
 	}
-	else if (width > maxTileWidth)
-	{
-		BString errorMessage;
-		static BStringFormat format(B_TRANSLATE("{0, plural,"
-			"one{For the current screen size and theme, you can have a width "
-				"of up to # tile.}"
-			"other{For the current screen size and theme, you can have a width "
-				"of up to # tiles.}}"));
-		format.Format(errorMessage, maxTileWidth);
-		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),
-			errorMessage.String(),B_TRANSLATE("OK"));
-		alert->Go();
-		s = "";
-		s << (int)maxTileWidth;
-		fWidth->SetText(s.String());
-		width = maxTileWidth;
-	}
-
-	s = fHeight->Text();
-	if (s.CountChars() < 1)
-	{
-		fHeight->SetText("6");
-		s = "6";
-	}
-
-	height = atoi(s.String());
-	if (height < 6)
-	{
-		height = 6;
-		fHeight->SetText("6");
-	}
-	else if (height > maxTileHeight)
-	{
-		BString errorMessage;
-		static BStringFormat format(B_TRANSLATE("{0, plural,"
-			"one{For the current screen size and theme, you can have a height "
-				"of up to # tile.}"
-			"other{For the current screen size and theme, you can have a height "
-				"of up to # tiles.}}"));
-		format.Format(errorMessage, maxTileHeight);
-		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),
-			errorMessage.String(),B_TRANSLATE("OK"));
-		alert->Go();
-		s = "";
-		s << (int)maxTileHeight;
-		fHeight->SetText(s.String());
-		height = maxTileHeight;
-	}
-
-	uint16	count = 0,
-			maxMines = ((width * height) - 1);
-	maxMines = maxMines > 999 ? 999 : maxMines;
-	s = fMines->Text();
-	if (s.CountChars() < 1)
-	{
-		fMines->SetText("1");
-		s = "1";
-	}
-	count = atoi(s.String());
-	if (count > maxMines)
-	{
-		BString errorMessage;
-		static BStringFormat format(B_TRANSLATE("{0, plural,"
-			"one{For the chosen width and height, you can't have more than "
-				"# mine.}"
-			"other{For the chosen width and height, you can't have more than "
-				"# mines.}}"));
-		format.Format(errorMessage, maxMines);
-		BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),
-			errorMessage.String(),B_TRANSLATE("OK"));
-		alert->Go();
-		s = "";
-		s << (int)maxMines;
-		fMines->SetText(s.String());
-	}
-
 }
