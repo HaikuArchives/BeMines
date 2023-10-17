@@ -6,6 +6,7 @@
 #ifndef BITMAP_BUTTON_H
 #define BITMAP_BUTTON_H
 
+
 #include <Looper.h>
 #include <Application.h>
 #include <Window.h>
@@ -13,37 +14,38 @@
 #include <Bitmap.h>
 #include <Rect.h>
 
-class BitmapButton : public BButton
-{
+
+class BitmapButton : public BButton {
 public:
-						BitmapButton(const BRect &frame, const char *name, BBitmap *up,
-									BBitmap *down, BMessage *msg, bool own = true,
-									const int32 &resize = B_FOLLOW_LEFT | B_FOLLOW_TOP,
-									const int32 &flags = B_WILL_DRAW | B_NAVIGABLE);
-	virtual				~BitmapButton(void);
-
-			void 		SetBitmaps(BBitmap *up, BBitmap *down);
-			BBitmap *	UpBitmap(void);
-			BBitmap *	DownBitmap(void);
-
-			void 		SetDisabledBitmap(BBitmap *disabled);
-			BBitmap *	DisabledBitmap(void) const;
-
-			void 		SetFocusBitmaps(BBitmap *up, BBitmap *down);
-			BBitmap *	UpFocusBitmap(void);
-			BBitmap *	DownFocusBitmap(void);
+						BitmapButton(const BRect &frame, const char* name, BBitmap* up,
+									BBitmap* down, BMessage* msg, bool own = true,
+									const int32& resize = B_FOLLOW_LEFT | B_FOLLOW_TOP,
+									const int32& flags = B_WILL_DRAW | B_NAVIGABLE);
+	virtual				~BitmapButton();
 
 	virtual	void		Draw(BRect update);
+			void 		ResizeToPreferred();
 
-			void 		ResizeToPreferred(void);
+			void 		SetBitmaps(BBitmap* up, BBitmap *down);
+			BBitmap* 	UpBitmap();
+			BBitmap* 	DownBitmap();
+
+			void 		SetDisabledBitmap(BBitmap* disabled);
+			BBitmap* 	DisabledBitmap() const;
+
+			void 		SetFocusBitmaps(BBitmap* up, BBitmap* down);
+			BBitmap* 	UpFocusBitmap();
+			BBitmap* 	DownFocusBitmap();
+
+
 private:
-	bool	fOwnBitmaps;
+			bool		fOwnBitmaps;
 
-	BBitmap	*fUp,
-			*fDown,
-			*fDisabled,
-			*fFocusUp,
-			*fFocusDown;
+			BBitmap* 	fUp;
+			BBitmap* 	fDown;
+			BBitmap* 	fDisabled;
+			BBitmap* 	fFocusUp;
+			BBitmap* 	fFocusDown;
 };
 
 #endif

@@ -1,21 +1,25 @@
 #include "Minefield.h"
-#include <string.h>
-#include <stdlib.h>
+
 #include <OS.h>
 
+#include <stdlib.h>
+#include <string.h>
+
+
 Minefield::Minefield(uint16 width, uint16 height)
-	:	fWidth(width),
-		fHeight(height)
+	:
+	fWidth(width),
+	fHeight(height)
 {
 	fData = new uint8[width * height];
 	fDisplayData = new uint8[width * height];
 }
 
 
-Minefield::~Minefield(void)
+Minefield::~Minefield()
 {
-	delete [] fData;
-	delete [] fDisplayData;
+	delete[] fData;
+	delete[] fDisplayData;
 }
 
 
@@ -24,17 +28,15 @@ Minefield::Reset(const uint16 count)
 {
 	srand(system_time());
 	uint32 bufferSize = fHeight * fWidth;
-	memset(fData,0,bufferSize);
-	memset(fDisplayData,0,bufferSize);
+	memset(fData, 0, bufferSize);
+	memset(fDisplayData, 0, bufferSize);
 
 	fCount = count;
 
 	uint16 left = count;
-	while (left)
-	{
+	while (left) {
 		uint16 index = rand() % bufferSize;
-		if (fData[index] == 0)
-		{
+		if (fData[index] == 0) {
 			fData[index] = 1;
 			left--;
 		}
@@ -43,44 +45,43 @@ Minefield::Reset(const uint16 count)
 
 
 uint16
-Minefield::MineCount(void) const
+Minefield::MineCount() const
 {
 	return fCount;
 }
 
 
 uint16
-Minefield::Width(void) const
+Minefield::Width() const
 {
 	return fWidth;
 }
 
 
 uint16
-Minefield::Height(void) const
+Minefield::Height() const
 {
 	return fHeight;
 }
 
 
 uint8
-Minefield::TileDigit(const IntPoint &pt) const
+Minefield::TileDigit(const IntPoint& pt) const
 {
-	uint8 count = TileDigit(pt.x,pt.y);
+	uint8 count = TileDigit(pt.x, pt.y);
 	return count;
 }
 
 
 uint8
-Minefield::TileDigit(const uint16 &x, const uint16 &y) const
+Minefield::TileDigit(const uint16& x, const uint16& y) const
 {
 	if (x > fWidth || y > fHeight)
 		debugger("Invalid (x,y)");
 
 	uint8 mineCount = 0;
 
-	if (y > 0)
-	{
+	if (y > 0) {
 		if (x > 0 && IsMine(x - 1, y - 1))
 			mineCount++;
 
@@ -97,8 +98,7 @@ Minefield::TileDigit(const uint16 &x, const uint16 &y) const
 	if (x < (Width() - 1) && IsMine(x + 1, y))
 		mineCount++;
 
-	if (y < (Height() - 1))
-	{
+	if (y < (Height() - 1)) {
 		if (x > 0 && IsMine(x - 1, y + 1))
 			mineCount++;
 
@@ -114,15 +114,15 @@ Minefield::TileDigit(const uint16 &x, const uint16 &y) const
 
 
 bool
-Minefield::IsMine(const IntPoint &pt) const
+Minefield::IsMine(const IntPoint& pt) const
 {
-	bool value = IsMine(pt.x,pt.y);
+	bool value = IsMine(pt.x, pt.y);
 	return value;
 }
 
 
 bool
-Minefield::IsMine(const uint16 &x, const uint16 &y) const
+Minefield::IsMine(const uint16& x, const uint16& y) const
 {
 	if (x > fWidth || y > fHeight)
 		debugger("Invalid (x,y)");
@@ -132,20 +132,21 @@ Minefield::IsMine(const uint16 &x, const uint16 &y) const
 
 
 uint16
-Minefield::TilesInState(const BoxState &state)
+Minefield::TilesInState(const BoxState& state)
 {
 	uint32 bufferSize = fHeight * fWidth;
 	uint16 count = 0;
-	for (uint32 i = 0; i < bufferSize; i++)
+	for (uint32 i = 0; i < bufferSize; i++) {
 		if (fDisplayData[i] == state)
 			count++;
+	}
 
 	return count;
 }
 
 
 void
-Minefield::SetState(const IntPoint &pt, const BoxState &s)
+Minefield::SetState(const IntPoint& pt, const BoxState& s)
 {
 	if (pt.x > fWidth || pt.y > fHeight)
 		debugger("Invalid (x,y)");
@@ -155,24 +156,24 @@ Minefield::SetState(const IntPoint &pt, const BoxState &s)
 
 
 BoxState
-Minefield::GetState(const IntPoint &pt)
+Minefield::GetState(const IntPoint& pt)
 {
 	if (pt.x > fWidth || pt.y > fHeight)
 		debugger("Invalid (x,y)");
 
-	return (BoxState)fDisplayData[(fWidth * pt.y) + pt.x];
+	return (BoxState) fDisplayData[(fWidth * pt.y) + pt.x];
 }
 
 
 BoxState
-Minefield::GetState(const uint16 &x, const uint16 &y)
+Minefield::GetState(const uint16& x, const uint16& y)
 {
-	return GetState(IntPoint(x,y));
+	return GetState(IntPoint(x, y));
 }
 
 
 void
-Minefield::TeleportMine(const IntPoint &pt)
+Minefield::TeleportMine(const IntPoint& pt)
 {
 	if (pt.x > fWidth || pt.y > fHeight || !IsMine(pt))
 		return;
@@ -181,11 +182,9 @@ Minefield::TeleportMine(const IntPoint &pt)
 	fData[(fWidth * pt.y) + pt.x] = 0;
 
 	bool done = false;
-	while (!done)
-	{
+	while (!done) {
 		uint16 index = rand() % bufferSize;
-		if (fData[index] == 0)
-		{
+		if (fData[index] == 0) {
 			fData[index] = 1;
 			done = true;
 		}
@@ -194,7 +193,7 @@ Minefield::TeleportMine(const IntPoint &pt)
 
 
 bool
-Minefield::FireSonar(const IntPoint &pt)
+Minefield::FireSonar(const IntPoint& pt)
 {
 	bool revealedNewBoxes = false;
 	uint16 x = pt.x;
@@ -204,10 +203,8 @@ Minefield::FireSonar(const IntPoint &pt)
 		return revealedNewBoxes;
 
 	IntPoint temp;
-	if (y > 0)
-	{
-		if (x > 0)
-		{
+	if (y > 0) {
+		if (x > 0) {
 			temp.x = x - 1;
 			temp.y = y - 1;
 
@@ -215,9 +212,9 @@ Minefield::FireSonar(const IntPoint &pt)
 				revealedNewBoxes = true;
 
 			if (IsMine(temp))
-				SetState(temp,BOX_MARKED);
+				SetState(temp, BOX_MARKED);
 			else
-				SetState(temp,BOX_REVEALED);
+				SetState(temp, BOX_REVEALED);
 		}
 
 		temp.x = x;
@@ -227,12 +224,11 @@ Minefield::FireSonar(const IntPoint &pt)
 			revealedNewBoxes = true;
 
 		if (IsMine(temp))
-			SetState(temp,BOX_MARKED);
+			SetState(temp, BOX_MARKED);
 		else
-			SetState(temp,BOX_REVEALED);
+			SetState(temp, BOX_REVEALED);
 
-		if (x < (Width() - 1))
-		{
+		if (x < (Width() - 1)) {
 			temp.x = x + 1;
 			temp.y = y - 1;
 
@@ -240,14 +236,13 @@ Minefield::FireSonar(const IntPoint &pt)
 				revealedNewBoxes = true;
 
 			if (IsMine(temp))
-				SetState(temp,BOX_MARKED);
+				SetState(temp, BOX_MARKED);
 			else
-				SetState(temp,BOX_REVEALED);
+				SetState(temp, BOX_REVEALED);
 		}
 	}
 
-	if (x > 0)
-	{
+	if (x > 0) {
 		temp.x = x - 1;
 		temp.y = y;
 
@@ -255,37 +250,34 @@ Minefield::FireSonar(const IntPoint &pt)
 			revealedNewBoxes = true;
 
 		if (IsMine(temp))
-			SetState(temp,BOX_MARKED);
+			SetState(temp, BOX_MARKED);
 		else
-			SetState(temp,BOX_REVEALED);
+			SetState(temp, BOX_REVEALED);
 	}
 
 	if (IsBoxBeingRevealed(pt))
 		revealedNewBoxes = true;
 
 	if (IsMine(pt))
-		SetState(pt,BOX_MARKED);
+		SetState(pt, BOX_MARKED);
 	else
-		SetState(pt,BOX_REVEALED);
+		SetState(pt, BOX_REVEALED);
 
-	if (x < (Width() - 1))
-	{
+	if (x < (Width() - 1)) {
 		temp.x = x + 1;
 		temp.y = y;
 
 		if (IsBoxBeingRevealed(temp))
-				revealedNewBoxes = true;
+			revealedNewBoxes = true;
 
 		if (IsMine(temp))
-			SetState(temp,BOX_MARKED);
+			SetState(temp, BOX_MARKED);
 		else
-			SetState(temp,BOX_REVEALED);
+			SetState(temp, BOX_REVEALED);
 	}
 
-	if (y > 0)
-	{
-		if (x > 0)
-		{
+	if (y > 0) {
+		if (x > 0) {
 			temp.x = x - 1;
 			temp.y = y + 1;
 
@@ -293,9 +285,9 @@ Minefield::FireSonar(const IntPoint &pt)
 				revealedNewBoxes = true;
 
 			if (IsMine(temp))
-				SetState(temp,BOX_MARKED);
+				SetState(temp, BOX_MARKED);
 			else
-				SetState(temp,BOX_REVEALED);
+				SetState(temp, BOX_REVEALED);
 		}
 
 		temp.x = x;
@@ -305,12 +297,11 @@ Minefield::FireSonar(const IntPoint &pt)
 			revealedNewBoxes = true;
 
 		if (IsMine(temp))
-			SetState(temp,BOX_MARKED);
+			SetState(temp, BOX_MARKED);
 		else
-			SetState(temp,BOX_REVEALED);
+			SetState(temp, BOX_REVEALED);
 
-		if (x < (Width() - 1))
-		{
+		if (x < (Width() - 1)) {
 			temp.x = x + 1;
 			temp.y = y + 1;
 
@@ -318,9 +309,9 @@ Minefield::FireSonar(const IntPoint &pt)
 				revealedNewBoxes = true;
 
 			if (IsMine(temp))
-				SetState(temp,BOX_MARKED);
+				SetState(temp, BOX_MARKED);
 			else
-				SetState(temp,BOX_REVEALED);
+				SetState(temp, BOX_REVEALED);
 		}
 	}
 
@@ -329,15 +320,11 @@ Minefield::FireSonar(const IntPoint &pt)
 
 
 bool
-Minefield::IsBoxBeingRevealed(const IntPoint &pt)
+Minefield::IsBoxBeingRevealed(const IntPoint& pt)
 {
-	if (GetState(pt) == BOX_MARKED
-		|| GetState(pt) == BOX_QUESTION
-		|| GetState(pt) == BOX_REVEALED
-		|| GetState(pt) == BOX_HIT
-		|| GetState(pt) == BOX_MINE
-		|| GetState(pt) == BOX_NOTMINE
-		|| GetState(pt) == BOX_INVALID){
+	if (GetState(pt) == BOX_MARKED || GetState(pt) == BOX_QUESTION || GetState(pt) == BOX_REVEALED
+		|| GetState(pt) == BOX_HIT || GetState(pt) == BOX_MINE || GetState(pt) == BOX_NOTMINE
+		|| GetState(pt) == BOX_INVALID) {
 		return false;
 	}
 
@@ -352,22 +339,22 @@ IntPoint::IntPoint(uint16 px, uint16 py)
 }
 
 
-IntPoint::IntPoint(void)
+IntPoint::IntPoint()
 {
 	x = 0;
 	y = 0;
 }
 
 
-IntPoint::IntPoint(const IntPoint &pt)
+IntPoint::IntPoint(const IntPoint& pt)
 {
 	x = pt.x;
 	y = pt.y;
 }
 
 
-IntPoint &
-IntPoint::operator=(const IntPoint &pt)
+IntPoint&
+IntPoint::operator=(const IntPoint& pt)
 {
 	x = pt.x;
 	y = pt.y;

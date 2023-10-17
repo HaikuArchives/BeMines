@@ -1,4 +1,5 @@
 #include "Globals.h"
+
 #include <Catalog.h>
 
 #undef B_TRANSLATION_CONTEXT
@@ -26,7 +27,7 @@ uint16 gCustomHeight = 8;
 uint16 gCustomMines = 10;
 
 static HighScore sBestTimes[3];
-HighScore *gBestTimes = &sBestTimes[0];
+HighScore* gBestTimes = &sBestTimes[0];
 
-bool gAchievements[4][2] = {{false,false},{false,false},{false,false}, {false,false}};
+bool gAchievements[4][2] = {{false, false}, {false, false}, {false, false}, {false, false}};
 int32 gGamesWon = 0;

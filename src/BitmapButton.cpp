@@ -5,27 +5,26 @@
 */
 #include "BitmapButton.h"
 
-BitmapButton::BitmapButton(const BRect &frame, const char *name, BBitmap *up,
-						BBitmap *down, BMessage *msg, bool own,
-						const int32 &resize,
-						const int32 &flags)
- :	BButton(frame, name, "", msg, resize, flags),
- 	fOwnBitmaps(own),
- 	fUp(up),
- 	fDown(down),
- 	fDisabled(NULL),
- 	fFocusUp(NULL),
- 	fFocusDown(NULL)
+
+BitmapButton::BitmapButton(const BRect& frame, const char* name, BBitmap* up, BBitmap* down,
+	BMessage* msg, bool own, const int32& resize, const int32& flags)
+	:
+	BButton(frame, name, "", msg, resize, flags),
+	fOwnBitmaps(own),
+	fUp(up),
+	fDown(down),
+	fDisabled(NULL),
+	fFocusUp(NULL),
+	fFocusDown(NULL)
 {
 	fUp = up;
 	fDown = down;
 }
 
 
-BitmapButton::~BitmapButton(void)
+BitmapButton::~BitmapButton()
 {
-	if (fOwnBitmaps)
-	{
+	if (fOwnBitmaps) {
 		delete fUp;
 		delete fDown;
 		delete fDisabled;
@@ -36,10 +35,9 @@ BitmapButton::~BitmapButton(void)
 
 
 void
-BitmapButton::SetBitmaps(BBitmap *up, BBitmap *down)
+BitmapButton::SetBitmaps(BBitmap* up, BBitmap* down)
 {
-	if (fOwnBitmaps)
-	{
+	if (fOwnBitmaps) {
 		delete fUp;
 		delete fDown;
 	}
@@ -52,22 +50,22 @@ BitmapButton::SetBitmaps(BBitmap *up, BBitmap *down)
 }
 
 
-BBitmap *
-BitmapButton::UpBitmap(void)
+BBitmap*
+BitmapButton::UpBitmap()
 {
 	return fUp;
 }
 
 
-BBitmap *
-BitmapButton::DownBitmap(void)
+BBitmap*
+BitmapButton::DownBitmap()
 {
 	return fDown;
 }
 
 
 void
-BitmapButton::SetDisabledBitmap(BBitmap *disabled)
+BitmapButton::SetDisabledBitmap(BBitmap* disabled)
 {
 	if (fOwnBitmaps)
 		delete fDisabled;
@@ -79,18 +77,17 @@ BitmapButton::SetDisabledBitmap(BBitmap *disabled)
 }
 
 
-BBitmap *
-BitmapButton::DisabledBitmap(void) const
+BBitmap*
+BitmapButton::DisabledBitmap() const
 {
 	return fDisabled;
 }
 
 
 void
-BitmapButton::SetFocusBitmaps(BBitmap *up, BBitmap *down)
+BitmapButton::SetFocusBitmaps(BBitmap* up, BBitmap* down)
 {
-	if (fOwnBitmaps)
-	{
+	if (fOwnBitmaps) {
 		delete fFocusUp;
 		delete fFocusDown;
 	}
@@ -100,15 +97,15 @@ BitmapButton::SetFocusBitmaps(BBitmap *up, BBitmap *down)
 }
 
 
-BBitmap *
-BitmapButton::UpFocusBitmap(void)
+BBitmap*
+BitmapButton::UpFocusBitmap()
 {
 	return fFocusUp;
 }
 
 
-BBitmap *
-BitmapButton::DownFocusBitmap(void)
+BBitmap*
+BitmapButton::DownFocusBitmap()
 {
 	return fFocusDown;
 }
@@ -141,34 +138,31 @@ BitmapButton::Draw(BRect update)
 			else
 				StrokeRect(Bounds());
 		}
-	} else {
-		if (IsFocus()) {
-			if (fFocusUp)
-				DrawBitmap(fFocusUp, update);
-			else {
-				if (fUp)
-					DrawBitmap(fUp, update);
-				SetHighColor(ui_color(B_KEYBOARD_NAVIGATION_COLOR));
-				StrokeRect(Bounds());
-			}
-		} else {
-
+	} else if (IsFocus()) {
+		if (fFocusUp)
+			DrawBitmap(fFocusUp, update);
+		else {
 			if (fUp)
 				DrawBitmap(fUp, update);
-			else
-				StrokeRect(Bounds());
+			SetHighColor(ui_color(B_KEYBOARD_NAVIGATION_COLOR));
+			StrokeRect(Bounds());
 		}
+	} else {
+		if (fUp)
+			DrawBitmap(fUp, update);
+		else
+			StrokeRect(Bounds());
 	}
 }
 
 
 void
-BitmapButton::ResizeToPreferred(void)
+BitmapButton::ResizeToPreferred()
 {
 	if (fUp)
-		ResizeTo(fUp->Bounds().Width(),fUp->Bounds().Height());
+		ResizeTo(fUp->Bounds().Width(), fUp->Bounds().Height());
 	else if (fDown)
-		ResizeTo(fDown->Bounds().Width(),fDown->Bounds().Height());
+		ResizeTo(fDown->Bounds().Width(), fDown->Bounds().Height());
 	else if (fDisabled)
-		ResizeTo(fDisabled->Bounds().Width(),fDisabled->Bounds().Height());
+		ResizeTo(fDisabled->Bounds().Width(), fDisabled->Bounds().Height());
 }

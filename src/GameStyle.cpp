@@ -1,35 +1,38 @@
 #include "GameStyle.h"
-#include <TranslationUtils.h>
+#include "Globals.h"
+
 #include <Application.h>
 #include <Catalog.h>
 #include <Directory.h>
 #include <Path.h>
 #include <Roster.h>
 #include <String.h>
+#include <TranslationUtils.h>
 #include <TranslatorFormats.h>
-#include "Globals.h"
 
 #undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "GameStyle"
 
-GameStyle::GameStyle(const char *path)
-	:	fSmileyUp(NULL),
-		fSmileyDown(NULL),
-		fWinUp(NULL),
-		fWinDown(NULL),
-		fLoseUp(NULL),
-		fLoseDown(NULL),
-		fWorry(NULL),
-		fBoxSprite(NULL),
-		fBoxDownSprite(NULL),
-		fBaseSprite(NULL),
-		fHitSprite(NULL),
-		fMineSprite(NULL),
-		fNotMineSprite(NULL),
-		fFlagSprite(NULL),
-		fQuestionSprite(NULL),
-		fStyleList(20,true),
-		fStyleName("Default")
+
+GameStyle::GameStyle(const char* path)
+	:
+	fSmileyUp(NULL),
+	fSmileyDown(NULL),
+	fWinUp(NULL),
+	fWinDown(NULL),
+	fLoseUp(NULL),
+	fLoseDown(NULL),
+	fWorry(NULL),
+	fBoxSprite(NULL),
+	fBoxDownSprite(NULL),
+	fBaseSprite(NULL),
+	fHitSprite(NULL),
+	fMineSprite(NULL),
+	fNotMineSprite(NULL),
+	fFlagSprite(NULL),
+	fQuestionSprite(NULL),
+	fStyleList(20, true),
+	fStyleName("Default")
 {
 	int32 i;
 	for (i = 0; i < 8; i++)
@@ -44,90 +47,82 @@ GameStyle::GameStyle(const char *path)
 }
 
 
-GameStyle::~GameStyle(void)
+GameStyle::~GameStyle()
 {
 	MakeEmpty();
 }
 
 
 int32
-GameStyle::CountStyles(void)
+GameStyle::CountStyles()
 {
 	return fStyleList.CountItems();
 }
 
 
-const char *
-GameStyle::StyleAt(const int32 &index)
+const char*
+GameStyle::StyleAt(const int32& index)
 {
-	StyleData *data = fStyleList.ItemAt(index);
+	StyleData* data = fStyleList.ItemAt(index);
 	return data ? data->name.String() : NULL;
 }
 
 
 bool
-GameStyle::SetStyle(const char *stylename)
+GameStyle::SetStyle(const char* stylename)
 {
-	StyleData *data = NULL;
+	StyleData* data = NULL;
 	entry_ref ref;
 
 	BString name;
-	if (stylename)
-	{
-		for (int32 i = 0; i < fStyleList.CountItems(); i++)
-		{
-			StyleData *item = fStyleList.ItemAt(i);
-			if (item->name.Compare(stylename) == 0)
-			{
+	if (stylename) {
+		for (int32 i = 0; i < fStyleList.CountItems(); i++) {
+			StyleData* item = fStyleList.ItemAt(i);
+			if (item->name.Compare(stylename) == 0) {
 				data = item;
 				break;
 			}
 		}
 
-		if (data)
-		{
+		if (data) {
 			BEntry entry(data->path.String());
 			entry.GetRef(&ref);
 			name = ref.name;
-		}
-		else
-		{
+		} else {
 			fStyleName = "Default";
 			return false;
 		}
 	}
 
 	MakeEmpty();
-	fBoxSprite = GetStyleBitmap(ref,"unmarked.png");
-	fBoxDownSprite = GetStyleBitmap(ref,"down.png");
-	fBaseSprite = GetStyleBitmap(ref,"tilebase.png");
-	fHitSprite = GetStyleBitmap(ref,"hit.png");
-	fMineSprite = GetStyleBitmap(ref,"mine.png");
-	fNotMineSprite = GetStyleBitmap(ref,"notmine.png");
-	fFlagSprite = GetStyleBitmap(ref,"flag.png");
-	fQuestionSprite = GetStyleBitmap(ref,"question.png");
+	fBoxSprite = GetStyleBitmap(ref, "unmarked.png");
+	fBoxDownSprite = GetStyleBitmap(ref, "down.png");
+	fBaseSprite = GetStyleBitmap(ref, "tilebase.png");
+	fHitSprite = GetStyleBitmap(ref, "hit.png");
+	fMineSprite = GetStyleBitmap(ref, "mine.png");
+	fNotMineSprite = GetStyleBitmap(ref, "notmine.png");
+	fFlagSprite = GetStyleBitmap(ref, "flag.png");
+	fQuestionSprite = GetStyleBitmap(ref, "question.png");
 
-	fSmileyUp = GetStyleBitmap(ref,"smileybase.png");
-	fSmileyDown = GetStyleBitmap(ref,"smileybasedown.png");
-	fWinUp = GetStyleBitmap(ref,"smiley-win.png");
-	fWinDown = GetStyleBitmap(ref,"smiley-windown.png");
-	fLoseUp = GetStyleBitmap(ref,"smiley-lose.png");
-	fLoseDown = GetStyleBitmap(ref,"smiley-losedown.png");
-	fWorry = GetStyleBitmap(ref,"smiley-worry.png");
+	fSmileyUp = GetStyleBitmap(ref, "smileybase.png");
+	fSmileyDown = GetStyleBitmap(ref, "smileybasedown.png");
+	fWinUp = GetStyleBitmap(ref, "smiley-win.png");
+	fWinDown = GetStyleBitmap(ref, "smiley-windown.png");
+	fLoseUp = GetStyleBitmap(ref, "smiley-lose.png");
+	fLoseDown = GetStyleBitmap(ref, "smiley-losedown.png");
+	fWorry = GetStyleBitmap(ref, "smiley-worry.png");
 
 	int32 i;
-	for (i = 1; i < 9; i++)
-	{
+	for (i = 1; i < 9; i++) {
 		BString bmpname = "mine";
 		bmpname << i << ".png";
-		fNumbers[i - 1] = GetStyleBitmap(ref,bmpname.String());
+		fNumbers[i - 1] = GetStyleBitmap(ref, bmpname.String());
 	}
 
-	for (i = 0; i < 10; i++)
-	{
+	for (i = 0; i < 10; i++) {
 		BString ledname = "led";
 		ledname << i << ".png";
-		fLEDNumbers[i] = GetStyleBitmap(ref,ledname.String());
+		fLEDNumbers[i] = GetStyleBitmap(ref, ledname.String());
 	}
 
 	fStyleName = data ? data->name : BString("Default");
@@ -135,18 +130,18 @@ GameStyle::SetStyle(const char *stylename)
 }
 
 
-const char *
-GameStyle::StyleName(void)
+const char*
+GameStyle::StyleName()
 {
 	return fStyleName.String();
 }
 
 
 BRect
-GameStyle::TileSize(void)
+GameStyle::TileSize()
 {
 	BRect r = fBoxSprite->Bounds();
-	r.Set(0,0,r.Width() * gScale, r.Height() * gScale);
+	r.Set(0, 0, r.Width() * gScale, r.Height() * gScale);
 	return r;
 }
 
@@ -155,74 +150,75 @@ BRect
 GameStyle::TileRect(int x, int y)
 {
 	BRect r = TileSize();
-	r.OffsetBy( ( (r.Width() + 1.0) * x), ( (r.Height() + 1.0) * y));
+	r.OffsetBy(((r.Width() + 1.0) * x), ((r.Height() + 1.0) * y));
 	return r;
 }
 
 
-BBitmap *
-GameStyle::BaseSprite(void)
+BBitmap*
+GameStyle::BaseSprite()
 {
 	return fBaseSprite;
 }
 
 
-BBitmap *
-GameStyle::BoxSprite(void)
+BBitmap*
+GameStyle::BoxSprite()
 {
 	return fBoxSprite;
 }
 
 
-BBitmap *
-GameStyle::BoxDownSprite(void)
+BBitmap*
+GameStyle::BoxDownSprite()
 {
 	return fBoxDownSprite;
 }
 
 
-BBitmap *
-GameStyle::MineSprite(void)
+BBitmap*
+GameStyle::MineSprite()
 {
 	return fMineSprite;
 }
 
 
-BBitmap *
-GameStyle::NotMineSprite(void)
+BBitmap*
+GameStyle::NotMineSprite()
 {
 	return fNotMineSprite;
 }
 
 
-BBitmap *
-GameStyle::QuestionSprite(void)
+BBitmap*
+GameStyle::QuestionSprite()
 {
 	return fQuestionSprite;
 }
 
 
-BBitmap *
-GameStyle::FlagSprite(void)
+BBitmap*
+GameStyle::FlagSprite()
 {
 	return fFlagSprite;
 }
 
 
-BBitmap *
-GameStyle::HitSprite(void)
+BBitmap*
+GameStyle::HitSprite()
 {
 	return fHitSprite;
 }
 
 
-BBitmap *
+BBitmap*
 GameStyle::LEDSprite(uint8 value)
 {
 	return fLEDNumbers[value];
 }
 
-BBitmap *
+
+BBitmap*
 GameStyle::NumberSprite(uint8 count)
 {
 	if (count < 1 || count > 8)
@@ -232,71 +228,71 @@ GameStyle::NumberSprite(uint8 count)
 }
 
 
-BBitmap *
-GameStyle::SmileyUp(void)
+BBitmap*
+GameStyle::SmileyUp()
 {
 	return fSmileyUp;
 }
 
 
-BBitmap *
-GameStyle::SmileyDown(void)
+BBitmap*
+GameStyle::SmileyDown()
 {
 	return fSmileyDown;
 }
 
 
-BBitmap *
-GameStyle::WinUp(void)
+BBitmap*
+GameStyle::WinUp()
 {
 	return fWinUp;
 }
 
 
-BBitmap *
-GameStyle::WinDown(void)
+BBitmap*
+GameStyle::WinDown()
 {
 	return fWinDown;
 }
 
 
-BBitmap *
-GameStyle::LoseUp(void)
+BBitmap*
+GameStyle::LoseUp()
 {
 	return fLoseUp;
 }
 
 
-BBitmap *
-GameStyle::LoseDown(void)
+BBitmap*
+GameStyle::LoseDown()
 {
 	return fLoseDown;
 }
 
 
-BBitmap *
-GameStyle::Worry(void)
+BBitmap*
+GameStyle::Worry()
 {
 	return fWorry;
 }
 
 
-BBitmap **
-GameStyle::LEDSprites(void)
+BBitmap**
+GameStyle::LEDSprites()
 {
 	return fLEDNumbers;
 }
 
 
-BBitmap **
-GameStyle::NumberSprites(void)
+BBitmap**
+GameStyle::NumberSprites()
 {
 	return fNumbers;
 }
 
 
 void
-GameStyle::MakeEmpty(void)
+GameStyle::MakeEmpty()
 {
 	delete fBoxSprite;
 	delete fBoxDownSprite;
@@ -317,9 +313,9 @@ GameStyle::MakeEmpty(void)
 
 
 void
-GameStyle::ScanStyles(void)
+GameStyle::ScanStyles()
 {
-	static const char * bitmapNames[] =
+	static const char* bitmapNames[] =
 	{
 		"tilebase.png",
 		"unmarked.png",
@@ -349,12 +345,11 @@ GameStyle::ScanStyles(void)
 	BDirectory dir(path.Path());
 	dir.Rewind();
 	BEntry entry;
-	while (dir.GetNextEntry(&entry) == B_OK)
-	{
+	while (dir.GetNextEntry(&entry) == B_OK) {
 		if (!entry.IsDirectory())
 			continue;
 
-		BString styleName,stylePath;
+		BString styleName, stylePath;
 		bool is_broken = false;
 
 		entry_ref ref;
@@ -367,84 +362,77 @@ GameStyle::ScanStyles(void)
 		// Scan for the existence of all the necessary files. We can function without
 		// a style being complete, but the user should be notified about the problems
 		BPath temppath;
-		for (int8 i = 0; bitmapNames[i] != NULL; i++)
-		{
+		for (int8 i = 0; bitmapNames[i] != NULL; i++) {
 			temppath.SetTo(&ref);
 			temppath.Append(bitmapNames[i]);
-			if (!BEntry(temppath.Path()).Exists())
-			{
+			if (!BEntry(temppath.Path()).Exists()) {
 				is_broken = true;
 				break;
 			}
 		}
 
 		int32 i;
-		if (!is_broken)
-		{
-			for (i = 1; i < 9; i++)
-			{
+		if (!is_broken) {
+			for (i = 1; i < 9; i++) {
 				BString bmpname = "mine";
 				bmpname << i << ".png";
 				temppath.SetTo(&ref);
 				bmpname.Prepend("/");
 				bmpname.Prepend(temppath.Path());
-				if (!BEntry(bmpname.String()).Exists())
-				{
+				if (!BEntry(bmpname.String()).Exists()) {
 					is_broken = true;
 					break;
 				}
-
 			}
 		}
 
-		if (!is_broken)
-		{
-			for (i = 0; i < 10; i++)
-			{
+		if (!is_broken) {
+			for (i = 0; i < 10; i++) {
 				BString ledname = "led";
 				ledname << i << ".png";
 				temppath.SetTo(&ref);
 				ledname.Prepend("/");
 				ledname.Prepend(temppath.Path());
-				if (!BEntry(ledname.String()).Exists())
-				{
+				if (!BEntry(ledname.String()).Exists()) {
 					is_broken = true;
 					break;
 				}
 			}
 		}
 
-		fStyleList.AddItem(new StyleData(styleName.String(),stylePath.String(),is_broken));
+		fStyleList.AddItem(new StyleData(styleName.String(), stylePath.String(), is_broken));
 
 	} // end style directory scanning loop
 }
 
 
-BBitmap	*
-GameStyle::GetStyleBitmap(entry_ref dir, const char *name)
+BBitmap*
+GameStyle::GetStyleBitmap(entry_ref dir, const char* name)
 {
 	BPath path(&dir);
 	path.Append(name);
 
-	BBitmap *bmp = NULL;
+	BBitmap* bmp = NULL;
 
 	bmp = BTranslationUtils::GetBitmap(path.Path());
 	if (!bmp)
-		bmp = BTranslationUtils::GetBitmap(B_PNG_FORMAT,name);
+		bmp = BTranslationUtils::GetBitmap(B_PNG_FORMAT, name);
 
 	return bmp;
 }
 
 
-StyleData::StyleData(void)
-	:	broken(false)
+StyleData::StyleData()
+	:
+	broken(false)
 {
 }
 
 
-StyleData::	StyleData(const char *stylename, const char *stylepath, bool is_broken)
-	:	name(stylename),
-		path(stylepath),
-		broken(is_broken)
+StyleData::StyleData(const char* stylename, const char* stylepath, bool is_broken)
+	:
+	name(stylename),
+	path(stylepath),
+	broken(is_broken)
 {
 }

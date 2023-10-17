@@ -13,31 +13,29 @@
 	and that is all that is necessary.
 */
 
-#include <MessageFilter.h>
 #include <Handler.h>
+#include <MessageFilter.h>
 
-class EscapeCancelFilter : public BMessageFilter
-{
+
+class EscapeCancelFilter : public BMessageFilter {
 public:
-					EscapeCancelFilter(void)
-						: BMessageFilter(B_PROGRAMMED_DELIVERY,
-										B_ANY_SOURCE,B_KEY_DOWN)
-					{
-					}
+					EscapeCancelFilter()
+						: BMessageFilter(B_PROGRAMMED_DELIVERY, B_ANY_SOURCE,B_KEY_DOWN)
+					{}
 
-					~EscapeCancelFilter(void)
-					{
-					}
+					~EscapeCancelFilter()
+					{}
 
-	filter_result	Filter(BMessage *msg, BHandler **target)
+	filter_result	Filter(BMessage* msg, BHandler** target)
 	{
-		int32 rawchar,mod;
-		msg->FindInt32("raw_char",&rawchar);
-		msg->FindInt32("modifiers",&mod);
+		int32 rawchar;
+		int32 mod;
+		msg->FindInt32("raw_char", &rawchar);
+		msg->FindInt32("modifiers", &mod);
 
-		if (rawchar == B_ESCAPE && (mod & (B_SHIFT_KEY | B_COMMAND_KEY | 
-				B_OPTION_KEY | B_CONTROL_KEY)) == 0) {
-			BLooper *loop = (*target)->Looper();
+		if (rawchar == B_ESCAPE && (mod & (B_SHIFT_KEY | B_COMMAND_KEY
+				| B_OPTION_KEY | B_CONTROL_KEY)) == 0) {
+			BLooper* loop = (*target)->Looper();
 			if (loop) {
 				BMessenger msgr(loop);
 				msgr.SendMessage(B_QUIT_REQUESTED);
@@ -46,7 +44,6 @@ public:
 		}
 		return B_DISPATCH_MESSAGE;
 	}
-
 };
 
 

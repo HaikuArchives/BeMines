@@ -1,3 +1,17 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Humdinger
+ *		Johan Wagenheim
+ *		Janus2
+ *		JStressman
+ */
+
+
 #include "CustomWindow.h"
 
 #include <Application.h>
@@ -85,10 +99,9 @@ CustomWindow::CustomWindow(BRect frame)
 
 
 void
-CustomWindow::MessageReceived(BMessage *msg)
+CustomWindow::MessageReceived(BMessage* msg)
 {
-	switch (msg->what)
-	{
+	switch (msg->what) {
 		case M_SET_CUSTOM:
 		{
 			gCustomWidth = fWidth->Value();
@@ -101,9 +114,7 @@ CustomWindow::MessageReceived(BMessage *msg)
 			gCustomMines = fMines->Value();
 
 			UpdateDifficulty();
-
-			break;
-		}
+		} break;
 		case M_CANCEL_CUSTOM:
 		{
 			gCustomWidth = fOrigWidth;
@@ -112,14 +123,11 @@ CustomWindow::MessageReceived(BMessage *msg)
 
 			UpdateDifficulty();
 			PostMessage(B_QUIT_REQUESTED);
-
-			break;
-		}
+		} break;
 
 		default:
 		{
 			BWindow::MessageReceived(msg);
-			break;
 		}
 	}
 }
