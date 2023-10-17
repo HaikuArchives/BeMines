@@ -1,3 +1,16 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Humdinger
+ *		Janus2
+ *		JStressman
+ */
+
+
 #include "NewScoreWindow.h"
 #include "Globals.h"
 

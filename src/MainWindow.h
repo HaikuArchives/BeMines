@@ -1,3 +1,19 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Diver
+ *		Humdinger
+ *		Johan Wagenheim
+ *		Janus2
+ *		JStressman
+ *		KevinAdams05
+ *		Raheem Idowu
+ */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

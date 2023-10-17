@@ -1,3 +1,12 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		Humdinger
+ */
+
 #include <Button.h>
 #include <Catalog.h>
 #include <LayoutBuilder.h>

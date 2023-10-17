@@ -1,3 +1,14 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Janus2
+ *		JStressman
+ */
+
 #ifndef DWINDOW_H
 #define DWINDOW_H
 

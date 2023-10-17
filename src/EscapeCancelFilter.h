@@ -1,8 +1,14 @@
 /*
-	EscapeCancelFilter.h: An easy way to quit with the Escape key
-	Written by DarkWyrm <darkwyrm@earthlink.net>, Copyright 2007
-	Released under the MIT license.
-*/
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		JStressman
+ */
+
+
 #ifndef ESCAPE_CANCEL_FILTER_H
 #define ESCAPE_CANCEL_FILTER_H
 
