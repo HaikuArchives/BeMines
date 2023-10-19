@@ -220,7 +220,7 @@ MainWindow::MessageReceived(BMessage *msg)
 		}
 		case M_SHOW_CUSTOM:
 		{
-			CustomWindow *cswin = new CustomWindow();
+			CustomWindow *cswin = new CustomWindow(Frame());
 			cswin->Show();
 			break;
 		}
