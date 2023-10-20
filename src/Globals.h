@@ -1,7 +1,20 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Humdinger
+ *		Johan Wagenheim
+ *		Raheem Idowu
+ */
+
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
 #include <String.h>
+
 
 enum
 {
@@ -10,6 +23,7 @@ enum
 	GAME_STARTED = 1,
 	GAME_PAUSED = 2
 };
+
 
 enum
 {
@@ -20,10 +34,10 @@ enum
 	DIFFICULTY_END
 };
 
-class HighScore
-{
+
+class HighScore {
 public:
-	HighScore(void)
+	HighScore()
 	{
 		Reset();
 	}
@@ -32,7 +46,7 @@ public:
 		time = scoretime;
 		name = scorename;
 	}
-	void Reset(void)
+	void Reset()
 	{
 		time = 999;
 		name = "Anonymous";
@@ -42,21 +56,22 @@ public:
 	BString name;
 };
 
-extern bool gCheatMode;
-extern bool gPlaySounds;
-extern uint16 gScale;
-extern BString gThemeName;
-extern int32 gDifficulty;
 
-extern uint16 gCustomWidth;
-extern uint16 gCustomHeight;
-extern uint16 gCustomMines;
+extern bool 	gCheatMode;
+extern bool 	gPlaySounds;
+extern uint16 	gScale;
+extern BString 	gThemeName;
+extern int32 	gDifficulty;
 
-extern HighScore *gBestTimes;
+extern uint16 	gCustomWidth;
+extern uint16 	gCustomHeight;
+extern uint16 	gCustomMines;
 
-extern int8	gGameState;
-extern bool gAchievements[4][2];
+extern HighScore* gBestTimes;
 
-extern int32 gGamesWon;
+extern int8		gGameState;
+extern bool 	gAchievements[4][2];
+
+extern int32 	gGamesWon;
 
 #endif

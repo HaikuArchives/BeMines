@@ -1,4 +1,19 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Humdinger
+ *		Janus2
+ *		JStressman
+ *		KevinAdams05
+ */
+
+
 #include "FieldView.h"
+
 #include <Alert.h>
 #include <Application.h>
 #include <Catalog.h>
@@ -14,17 +29,19 @@
 #undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "FieldWindow"
 
+
 FieldView::FieldView(int32 level)
-	:	BView(BRect(0,0,1,1),"fieldview",B_FOLLOW_LEFT | B_FOLLOW_TOP,
-				B_WILL_DRAW | B_FULL_UPDATE_ON_RESIZE | B_ASYNCHRONOUS_CONTROLS),
-		fField(NULL),
-		fTracking(false),
-		fFlagCount(0),
-		fMainWin(NULL),
-		fPauseMode(false),
-		fWinPlayer(NULL),
-		fLosePlayer(NULL),
-		fClickPlayer(NULL)
+	:
+	BView(BRect(0, 0, 1, 1), "fieldview", B_FOLLOW_LEFT | B_FOLLOW_TOP,
+		B_WILL_DRAW | B_FULL_UPDATE_ON_RESIZE | B_ASYNCHRONOUS_CONTROLS),
+	fField(NULL),
+	fTracking(false),
+	fFlagCount(0),
+	fMainWin(NULL),
+	fPauseMode(false),
+	fWinPlayer(NULL),
+	fLosePlayer(NULL),
+	fClickPlayer(NULL)
 {
 	SetDifficulty(level);
 	SetDrawingMode(B_OP_ALPHA);
@@ -39,7 +56,7 @@ FieldView::FieldView(int32 level)
 }
 
 
-FieldView::~FieldView(void)
+FieldView::~FieldView()
 {
 	delete fWinPlayer;
 	delete fLosePlayer;
@@ -48,20 +65,19 @@ FieldView::~FieldView(void)
 
 
 void
-FieldView::AttachedToWindow(void)
+FieldView::AttachedToWindow()
 {
-	fMainWin = (MainWindow*)Window();
+	fMainWin = (MainWindow*) Window();
 }
 
 
 void
 FieldView::Draw(BRect update)
 {
-	if (fPauseMode)
-	{
-		SetHighColor(128,128,128);
+	if (fPauseMode) {
+		SetHighColor(128, 128, 128);
 		FillRect(Bounds());
-		SetHighColor(255,255,255);
+		SetHighColor(255, 255, 255);
 		SetDrawingMode(B_OP_ALPHA);
 
 		BFont font;
@@ -71,16 +87,14 @@ FieldView::Draw(BRect update)
 		float width = font.StringWidth(B_TRANSLATE("PAUSED"));
 		SetFont(&font);
 		float y = (Bounds().Height() / 3) + fh.ascent;
-		DrawString(B_TRANSLATE("PAUSED"),BPoint( (Bounds().Width() - width) / 2.0,y));
+		DrawString(B_TRANSLATE("PAUSED"), BPoint((Bounds().Width() - width) / 2.0, y));
 		SetFont(be_plain_font);
 		y += fh.descent + fh.leading + 10.0;
 		width = be_plain_font->StringWidth(B_TRANSLATE("Click to resume"));
-		DrawString(B_TRANSLATE("Click to resume"),BPoint( (Bounds().Width() - width) / 2.0,y));
-	}
-	else
-	{
+		DrawString(B_TRANSLATE("Click to resume"), BPoint((Bounds().Width() - width) / 2.0, y));
+	} else {
 		// The corresponding box numbers for the update rectangle
-		uint16 leftx,rightx,topy,bottomy;
+		uint16 leftx, rightx, topy, bottomy;
 
 		BRect r = gGameStyle->TileSize();
 
@@ -93,101 +107,20 @@ FieldView::Draw(BRect update)
 		topy = uint16(update.top / tileheight);
 		bottomy = uint16(update.bottom / tileheight);
 
-		for (uint16 y = topy; y <= bottomy; y++)
-			for (uint16 x = leftx; x <= rightx; x++)
-			{
+		for (uint16 y = topy; y <= bottomy; y++) {
+			for (uint16 x = leftx; x <= rightx; x++) {
 				bool down = false;
 				if (fTracking && fSelection.x == x && fSelection.y == y)
 					down = true;
-				DrawBox(x,y, down);
+				DrawBox(x, y, down);
 			}
+		}
 
-		if (gGameState == GAME_OVER)
-		{
-			SetHighColor(64,64,64,72);
+		if (gGameState == GAME_OVER) {
+			SetHighColor(64, 64, 64, 72);
 			FillRect(Bounds());
 		}
 	}
-}
-
-
-void
-FieldView::DrawBox(uint16 x, uint16 y, bool down)
-{
-	BoxState state = fField->GetState(IntPoint(x,y));
-
-	BRect r(gGameStyle->TileRect(x,y));
-
-	switch (state)
-	{
-		case BOX_UNMARKED:
-		{
-			if (down)
-				DrawBitmap(gGameStyle->BoxDownSprite(),r);
-			else
-				DrawBitmap(gGameStyle->BoxSprite(),r);
-			break;
-		}
-		case BOX_HIT:
-		{
-			DrawBitmap(gGameStyle->HitSprite(),r);
-			break;
-		}
-		case BOX_REVEALED:
-		{
-			uint8 count = fField->TileDigit(IntPoint(x,y));
-			if (count > 0)
-				DrawBitmap(gGameStyle->NumberSprite(count),r);
-			else
-				DrawBitmap(gGameStyle->BaseSprite(),r);
-			break;
-		}
-		case BOX_MARKED:
-		{
-			DrawBitmap(gGameStyle->FlagSprite(),r);
-			break;
-		}
-		case BOX_MINE:
-		{
-			DrawBitmap(gGameStyle->MineSprite(),r);
-			break;
-		}
-		case BOX_NOTMINE:
-		{
-			DrawBitmap(gGameStyle->NotMineSprite(),r);
-			break;
-		}
-		case BOX_QUESTION:
-		{
-			DrawBitmap(gGameStyle->QuestionSprite(),r);
-			break;
-		}
-		default:
-		{
-			break;
-		}
-	}
-
-	if (gCheatMode && fField->IsMine(IntPoint(x,y)))
-	{
-		SetHighColor(255,0,0,64);
-		FillRect(r);
-	}
-
-}
-
-
-uint16
-FieldView::MineCount(void)
-{
-	return fField->MineCount();
-}
-
-
-uint16
-FieldView::FlagCount(void)
-{
-	return fFlagCount;
 }
 
 
@@ -201,8 +134,7 @@ FieldView::MouseDown(BPoint pt)
 	fTracking = true;
 
 	GetMouse(&pt, &fButtons, true);
-	if (gGameState == GAME_STOPPED)
-	{
+	if (gGameState == GAME_STOPPED) {
 		Window()->PostMessage(M_START_TIMER);
 		IntPoint tilePt;
 		BRect r(gGameStyle->TileSize());
@@ -222,7 +154,7 @@ FieldView::MouseDown(BPoint pt)
 
 
 void
-FieldView::MouseMoved(BPoint pt, uint32 transit, const BMessage *msg)
+FieldView::MouseMoved(BPoint pt, uint32 transit, const BMessage* msg)
 {
 	if (!fTracking)
 		return;
@@ -250,7 +182,77 @@ FieldView::MouseUp(BPoint pt)
 
 
 void
-FieldView::InvokeTile(const BPoint &pt, uint32 button)
+FieldView::DrawBox(uint16 x, uint16 y, bool down)
+{
+	BoxState state = fField->GetState(IntPoint(x, y));
+
+	BRect r(gGameStyle->TileRect(x, y));
+
+	switch (state) {
+		case BOX_UNMARKED:
+		{
+			if (down)
+				DrawBitmap(gGameStyle->BoxDownSprite(), r);
+			else
+				DrawBitmap(gGameStyle->BoxSprite(), r);
+		} break;
+		case BOX_HIT:
+		{
+			DrawBitmap(gGameStyle->HitSprite(), r);
+		} break;
+		case BOX_REVEALED:
+		{
+			uint8 count = fField->TileDigit(IntPoint(x, y));
+			if (count > 0)
+				DrawBitmap(gGameStyle->NumberSprite(count), r);
+			else
+				DrawBitmap(gGameStyle->BaseSprite(), r);
+		} break;
+		case BOX_MARKED:
+		{
+			DrawBitmap(gGameStyle->FlagSprite(), r);
+		} break;
+		case BOX_MINE:
+		{
+			DrawBitmap(gGameStyle->MineSprite(), r);
+		} break;
+		case BOX_NOTMINE:
+		{
+			DrawBitmap(gGameStyle->NotMineSprite(), r);
+		} break;
+		case BOX_QUESTION:
+		{
+			DrawBitmap(gGameStyle->QuestionSprite(), r);
+		} break;
+		default:
+		{
+			break;
+		}
+	}
+
+	if (gCheatMode && fField->IsMine(IntPoint(x, y))) {
+		SetHighColor(255, 0, 0, 64);
+		FillRect(r);
+	}
+}
+
+
+uint16
+FieldView::MineCount()
+{
+	return fField->MineCount();
+}
+
+
+uint16
+FieldView::FlagCount()
+{
+	return fFlagCount;
+}
+
+
+void
+FieldView::InvokeTile(const BPoint& pt, uint32 button)
 {
 	// This function handles click events on the grid
 	IntPoint tilePt;
@@ -258,12 +260,12 @@ FieldView::InvokeTile(const BPoint &pt, uint32 button)
 	tilePt.x = uint16(pt.x / (r.Width() + 1.0));
 	tilePt.y = uint16(pt.y / (r.Height() + 1.0));
 
-	InvokeTile(tilePt,button);
+	InvokeTile(tilePt, button);
 }
 
 
 void
-FieldView::InvokeTile(const IntPoint &tilePt, uint32 button)
+FieldView::InvokeTile(const IntPoint& tilePt, uint32 button)
 {
 	if (tilePt.x >= fField->Width() || tilePt.y >= fField->Height())
 		return;
@@ -273,131 +275,120 @@ FieldView::InvokeTile(const IntPoint &tilePt, uint32 button)
 
 	fMainWin->SetFace(FACE_NORMAL);
 
-	if (button & B_PRIMARY_MOUSE_BUTTON)
-	{
+	if (button & B_PRIMARY_MOUSE_BUTTON) {
 		int32 mod = modifiers();
 
-		if ( (button & B_SECONDARY_MOUSE_BUTTON) || (mod & B_SHIFT_KEY) )
+		if ((button & B_SECONDARY_MOUSE_BUTTON) || (mod & B_SHIFT_KEY))
 			NumberReveal(tilePt);
 		else if (mod & B_COMMAND_KEY)
 			DoSonar(tilePt);
 		else
 			ClickBox(tilePt);
-	}
-	else if (button == B_SECONDARY_MOUSE_BUTTON)
+	} else if (button == B_SECONDARY_MOUSE_BUTTON)
 		ToggleBox(tilePt);
 	else if (button == B_TERTIARY_MOUSE_BUTTON)
 		DoSonar(tilePt);
+
 }
 
 
 void
-FieldView::SelectTile(const BPoint &pt)
+FieldView::SelectTile(const BPoint& pt)
 {
 	BRect r(gGameStyle->TileSize());
 
-	IntPoint oldSelection(fSelection.x,fSelection.y);
+	IntPoint oldSelection(fSelection.x, fSelection.y);
 	fSelection.x = uint16(pt.x / (r.Width() + 1.0));
 	fSelection.y = uint16(pt.y / (r.Height() + 1.0));
 
-	Invalidate(gGameStyle->TileRect(oldSelection.x,oldSelection.y));
-	Invalidate(gGameStyle->TileRect(fSelection.x,fSelection.y));
+	Invalidate(gGameStyle->TileRect(oldSelection.x, oldSelection.y));
+	Invalidate(gGameStyle->TileRect(fSelection.x, fSelection.y));
 	Window()->UpdateIfNeeded();
 }
 
 
 IntPoint
-FieldView::GetSelection(void) const
+FieldView::GetSelection() const
 {
 	return fSelection;
 }
 
 
 void
-FieldView::ClickBox(const IntPoint &pt)
+FieldView::ClickBox(const IntPoint& pt)
 {
 	if (pt.x >= fField->Width() || pt.y >= fField->Height())
 		return;
 
-	if (fField->TileDigit(pt) == 0)
-	{
+	if (fField->TileDigit(pt) == 0) {
 		FloodReveal(pt);
 		Window()->UpdateIfNeeded();
-	}
-	else
+	} else
 		OpenBox(pt);
 }
 
 
 void
-FieldView::ToggleBox(const IntPoint &pt)
+FieldView::ToggleBox(const IntPoint& pt)
 {
-	switch (fField->GetState(pt))
-	{
+	switch (fField->GetState(pt)) {
 		case BOX_MARKED:
 		{
-			fField->SetState(pt,BOX_QUESTION);
+			fField->SetState(pt, BOX_QUESTION);
 			fFlagCount--;
 			Window()->PostMessage(M_UPDATE_COUNT);
-			break;
-		}
+		} break;
 		case BOX_QUESTION:
 		{
-			fField->SetState(pt,BOX_UNMARKED);
-			break;
-		}
+			fField->SetState(pt, BOX_UNMARKED);
+		} break;
 		case BOX_UNMARKED:
 		{
-			if (fFlagCount == fField->MineCount())
-			{
-				BAlert *alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),B_TRANSLATE("You have already set as many "
-									"flags as there are mines. Unflag a tile "
-									"before trying to flag another one."),B_TRANSLATE("OK"));
+			if (fFlagCount == fField->MineCount()) {
+				BAlert* alert = new BAlert(B_TRANSLATE_SYSTEM_NAME("BeMines"),
+					B_TRANSLATE("You have already set as many "
+								"flags as there are mines. Unflag a tile "
+								"before trying to flag another one."),
+					B_TRANSLATE("OK"));
 				alert->Go();
 				break;
 			}
 
-			fField->SetState(pt,BOX_MARKED);
+			fField->SetState(pt, BOX_MARKED);
 			fFlagCount++;
 			Window()->PostMessage(M_UPDATE_COUNT);
 
-			if (CheckWin())
-			{
+			if (CheckWin()) {
 				DoWin();
 				break;
 			}
-			break;
-		}
+		} break;
 		default:
 		{
 			break;
 		}
 	}
-	Invalidate(gGameStyle->TileRect(pt.x,pt.y));
+	Invalidate(gGameStyle->TileRect(pt.x, pt.y));
 }
 
 
 void
-FieldView::OpenBox(const IntPoint &pt)
+FieldView::OpenBox(const IntPoint& pt)
 {
-	if (pt.x >= fField->Width() || pt.y >= fField->Height() )
+	if (pt.x >= fField->Width() || pt.y >= fField->Height())
 		return;
 
-	if (fField->GetState(pt) == BOX_UNMARKED)
-	{
-		if (fField->IsMine(pt))
-		{
-			fField->SetState(pt,BOX_HIT);
+	if (fField->GetState(pt) == BOX_UNMARKED) {
+		if (fField->IsMine(pt)) {
+			fField->SetState(pt, BOX_HIT);
 			DoLose();
-		}
-		else
-		{
-			fField->SetState(pt,BOX_REVEALED);
+		} else {
+			fField->SetState(pt, BOX_REVEALED);
 			if (CheckWin())
 				DoWin();
 		}
 	}
-	Invalidate(gGameStyle->TileRect(pt.x,pt.y));
+	Invalidate(gGameStyle->TileRect(pt.x, pt.y));
 }
 
 
@@ -407,15 +398,12 @@ FieldView::FloodReveal(IntPoint pt)
 	OpenBox(pt);
 
 	IntPoint temppt;
-	if (pt.y > 0)
-	{
-		if (pt.x > 0)
-		{
+	if (pt.y > 0) {
+		if (pt.x > 0) {
 			temppt = pt;
 			temppt.x--;
 			temppt.y--;
-			if (fField->GetState(temppt) == BOX_UNMARKED)
-			{
+			if (fField->GetState(temppt) == BOX_UNMARKED) {
 				if (fField->TileDigit(temppt) == 0)
 					FloodReveal(temppt);
 				else
@@ -425,21 +413,18 @@ FieldView::FloodReveal(IntPoint pt)
 
 		temppt = pt;
 		temppt.y--;
-		if (fField->GetState(temppt) == BOX_UNMARKED)
-		{
+		if (fField->GetState(temppt) == BOX_UNMARKED) {
 			if (fField->TileDigit(temppt) == 0)
 				FloodReveal(temppt);
 			else
 				OpenBox(temppt);
 		}
 
-		if (pt.x < (fField->Width() - 1))
-		{
+		if (pt.x < (fField->Width() - 1)) {
 			temppt = pt;
 			temppt.x++;
 			temppt.y--;
-			if (fField->GetState(temppt) == BOX_UNMARKED)
-			{
+			if (fField->GetState(temppt) == BOX_UNMARKED) {
 				if (fField->TileDigit(temppt) == 0)
 					FloodReveal(temppt);
 				else
@@ -448,12 +433,10 @@ FieldView::FloodReveal(IntPoint pt)
 		}
 	}
 
-	if (pt.x > 0)
-	{
+	if (pt.x > 0) {
 		temppt = pt;
 		temppt.x--;
-		if (fField->GetState(temppt) == BOX_UNMARKED)
-		{
+		if (fField->GetState(temppt) == BOX_UNMARKED) {
 			if (fField->TileDigit(temppt) == 0)
 				FloodReveal(temppt);
 			else
@@ -461,12 +444,10 @@ FieldView::FloodReveal(IntPoint pt)
 		}
 	}
 
-	if (pt.x < (fField->Width() - 1))
-	{
+	if (pt.x < (fField->Width() - 1)) {
 		temppt = pt;
 		temppt.x++;
-		if (fField->GetState(temppt) == BOX_UNMARKED)
-		{
+		if (fField->GetState(temppt) == BOX_UNMARKED) {
 			if (fField->TileDigit(temppt) == 0)
 				FloodReveal(temppt);
 			else
@@ -474,15 +455,12 @@ FieldView::FloodReveal(IntPoint pt)
 		}
 	}
 
-	if (pt.y < (fField->Height() - 1))
-	{
-		if (pt.x > 0)
-		{
+	if (pt.y < (fField->Height() - 1)) {
+		if (pt.x > 0) {
 			temppt = pt;
 			temppt.x--;
 			temppt.y++;
-			if (fField->GetState(temppt) == BOX_UNMARKED)
-			{
+			if (fField->GetState(temppt) == BOX_UNMARKED) {
 				if (fField->TileDigit(temppt) == 0)
 					FloodReveal(temppt);
 				else
@@ -492,21 +470,18 @@ FieldView::FloodReveal(IntPoint pt)
 
 		temppt = pt;
 		temppt.y++;
-		if (fField->GetState(temppt) == BOX_UNMARKED)
-		{
+		if (fField->GetState(temppt) == BOX_UNMARKED) {
 			if (fField->TileDigit(temppt) == 0)
 				FloodReveal(temppt);
 			else
 				OpenBox(temppt);
 		}
 
-		if (pt.x < (fField->Width() - 1))
-		{
+		if (pt.x < (fField->Width() - 1)) {
 			temppt = pt;
 			temppt.x++;
 			temppt.y++;
-			if (fField->GetState(temppt) == BOX_UNMARKED)
-			{
+			if (fField->GetState(temppt) == BOX_UNMARKED) {
 				if (fField->TileDigit(temppt) == 0)
 					FloodReveal(temppt);
 				else
@@ -520,9 +495,8 @@ FieldView::FloodReveal(IntPoint pt)
 void
 FieldView::NumberReveal(IntPoint pt)
 {
-	if (fField->GetState(pt) != BOX_REVEALED)
-	{
-		Invalidate(gGameStyle->TileRect(pt.x,pt.y));
+	if (fField->GetState(pt) != BOX_REVEALED) {
+		Invalidate(gGameStyle->TileRect(pt.x, pt.y));
 		return;
 	}
 
@@ -533,8 +507,7 @@ FieldView::NumberReveal(IntPoint pt)
 
 	uint8 flagCount = 0;
 
-	if (pt.y > 0)
-	{
+	if (pt.y > 0) {
 		if (pt.x > 0 && fField->GetState(pt.x - 1, pt.y - 1) == BOX_MARKED)
 			flagCount++;
 
@@ -551,8 +524,7 @@ FieldView::NumberReveal(IntPoint pt)
 	if (pt.x < (fField->Width() - 1) && fField->GetState(pt.x + 1, pt.y) == BOX_MARKED)
 		flagCount++;
 
-	if (pt.y < (fField->Height() - 1))
-	{
+	if (pt.y < (fField->Height() - 1)) {
 		if (pt.x > 0 && fField->GetState(pt.x - 1, pt.y + 1) == BOX_MARKED)
 			flagCount++;
 
@@ -563,8 +535,7 @@ FieldView::NumberReveal(IntPoint pt)
 			flagCount++;
 	}
 
-	if (mineCount == flagCount)
-	{
+	if (mineCount == flagCount) {
 		ClickBox(IntPoint(pt.x - 1, pt.y - 1));
 		ClickBox(IntPoint(pt.x, pt.y - 1));
 		ClickBox(IntPoint(pt.x + 1, pt.y - 1));
@@ -585,7 +556,7 @@ FieldView::DoSonar(IntPoint pt)
 	bool revealedNewBoxes = fField->FireSonar(pt);
 	Invalidate();
 
-	if(revealedNewBoxes == true)
+	if (revealedNewBoxes == true)
 		Window()->PostMessage(M_SONAR_PENALTY);
 
 	fFlagCount = fField->TilesInState(BOX_MARKED);
@@ -594,21 +565,21 @@ FieldView::DoSonar(IntPoint pt)
 
 
 bool
-FieldView::CheckWin(void)
+FieldView::CheckWin()
 {
-	for (uint16 y = 0; y < fField->Height(); y++)
-		for (uint16 x = 0; x < fField->Width(); x++)
-		{
-			BoxState state = fField->GetState(IntPoint(x,y));
-			if (state != BOX_REVEALED && !fField->IsMine(x,y))
+	for (uint16 y = 0; y < fField->Height(); y++) {
+		for (uint16 x = 0; x < fField->Width(); x++) {
+			BoxState state = fField->GetState(IntPoint(x, y));
+			if (state != BOX_REVEALED && !fField->IsMine(x, y))
 				return false;
 		}
+	}
 	return true;
 }
 
 
 void
-FieldView::DoWin(void)
+FieldView::DoWin()
 {
 	if (gPlaySounds)
 		fWinPlayer->StartPlaying();
@@ -618,8 +589,9 @@ FieldView::DoWin(void)
 	Invalidate();
 }
 
+
 void
-FieldView::DoLose(void)
+FieldView::DoLose()
 {
 	if (gPlaySounds)
 		fLosePlayer->StartPlaying();
@@ -632,43 +604,40 @@ FieldView::DoLose(void)
 	// This should yield an acceptable result
 	int32 tileCount = fField->Height() * fField->Width();
 	bigtime_t snoozeTime = (300000 / tileCount) - 580;
-	for (uint16 y = 0; y < fField->Height(); y++)
-		for (uint16 x = 0; x < fField->Width(); x++)
-		{
-			IntPoint pt(x,y);
+	for (uint16 y = 0; y < fField->Height(); y++) {
+		for (uint16 x = 0; x < fField->Width(); x++) {
+			IntPoint pt(x, y);
 			BoxState state = fField->GetState(pt);
-			switch (state)
-			{
+			switch (state) {
 				case BOX_QUESTION:
 				case BOX_UNMARKED:
 				{
 					if (fField->IsMine(pt))
-						fField->SetState(pt,BOX_MINE);
+						fField->SetState(pt, BOX_MINE);
 					else
-						fField->SetState(pt,BOX_REVEALED);
-					break;
-				}
+						fField->SetState(pt, BOX_REVEALED);
+				} break;
 				case BOX_MARKED:
 				{
 					if (fField->IsMine(pt))
-						fField->SetState(pt,BOX_MINE);
+						fField->SetState(pt, BOX_MINE);
 					else
-						fField->SetState(pt,BOX_NOTMINE);
-				}
+						fField->SetState(pt, BOX_NOTMINE);
+				} break;
 				default:
 				{
 					break;
 				}
 			}
 
-			if (tileCount < 500)
-			{
-				Invalidate(gGameStyle->TileRect(pt.x,pt.y));
+			if (tileCount < 500) {
+				Invalidate(gGameStyle->TileRect(pt.x, pt.y));
 				Window()->UpdateIfNeeded();
 				if (snoozeTime > 100)
 					snooze(snoozeTime);
 			}
 		}
+	}
 
 	if (tileCount >= 500)
 		Invalidate();
@@ -678,35 +647,29 @@ FieldView::DoLose(void)
 void
 FieldView::SetDifficulty(uint8 level)
 {
-	switch (level)
-	{
+	switch (level) {
 		case DIFFICULTY_BEGINNER:
 		{
 			fDifficulty = level;
-			SetBoard(8,8,10);
-			break;
-		}
+			SetBoard(8, 8, 10);
+		} break;
 		case DIFFICULTY_INTERMEDIATE:
 		{
 			fDifficulty = level;
-			SetBoard(16,16,40);
-			break;
-		}
+			SetBoard(16, 16, 40);
+		} break;
 		case DIFFICULTY_EXPERT:
 		{
 			fDifficulty = level;
-			SetBoard(30,16,99);
-			break;
-		}
+			SetBoard(30, 16, 99);
+		} break;
 		case DIFFICULTY_CUSTOM:
 		{
 			fDifficulty = level;
-			SetBoard(gCustomWidth,gCustomHeight,gCustomMines);
-			break;
-		}
+			SetBoard(gCustomWidth, gCustomHeight, gCustomMines);
+		} break;
 		default:
 		{
-			return;
 			break;
 		}
 	}
@@ -724,13 +687,12 @@ FieldView::SetBoard(uint16 width, uint16 height, uint16 count)
 		height = 2;
 
 	BRect r = gGameStyle->TileSize();
-	ResizeTo(((r.Width() + 1.0) * width) - 1.0,
-			((r.Height() + 1.0) * height) - 1.0);
+	ResizeTo(((r.Width() + 1.0) * width) - 1.0, ((r.Height() + 1.0) * height) - 1.0);
 
 	gGameState = 0;
 	fFlagCount = 0;
 
-	fField = new Minefield(width,height);
+	fField = new Minefield(width, height);
 	fField->Reset(count);
 	if (Window())
 		Window()->PostMessage(M_SIZE_CHANGED);
@@ -739,12 +701,12 @@ FieldView::SetBoard(uint16 width, uint16 height, uint16 count)
 
 
 void
-FieldView::StyleChanged(void)
+FieldView::StyleChanged()
 {
 	SetSoundRefs();
 	BRect r = gGameStyle->TileSize();
-	ResizeTo(((r.Width() + 1.0) * fField->Width()) - 1.0,
-			((r.Height() + 1.0) * fField->Height()) - 1.0);
+	ResizeTo(
+		((r.Width() + 1.0) * fField->Width()) - 1.0, ((r.Height() + 1.0) * fField->Height()) - 1.0);
 
 	if (Window())
 		Window()->PostMessage(M_SIZE_CHANGED);
@@ -761,14 +723,14 @@ FieldView::SetPauseMode(bool paused)
 
 
 int8
-FieldView::GetGameState(void) const
+FieldView::GetGameState() const
 {
 	return gGameState;
 }
 
 
 void
-FieldView::SetSoundRefs(void)
+FieldView::SetSoundRefs()
 {
 	BPath winpath(fThemePath.String());
 	winpath.Append(gGameStyle->StyleName());

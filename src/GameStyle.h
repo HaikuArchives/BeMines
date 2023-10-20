@@ -1,5 +1,17 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Johan Wagenheim
+ *		JStressman
+ */
+
 #ifndef GAMESTYLE_H
 #define GAMESTYLE_H
+
 
 #include <Bitmap.h>
 #include <Entry.h>
@@ -7,82 +19,81 @@
 #include <String.h>
 
 
-class StyleData
-{
+class StyleData {
 public:
-	StyleData(void);
-	StyleData(const char *stylename, const char *stylepath, bool is_broken);
+					StyleData();
+					StyleData(const char* stylename, const char* stylepath, bool is_broken);
 
-	BString name;
-	BString path;
-	bool	broken;
+		BString 	name;
+		BString 	path;
+		bool		broken;
 };
 
-class GameStyle
-{
+
+class GameStyle {
 public:
-				GameStyle(const char *path = NULL);
-				~GameStyle(void);
+					GameStyle(const char* path = NULL);
+					~GameStyle();
 
-	int32		CountStyles(void);
-	const char *StyleAt(const int32 &index);
-	bool		SetStyle(const char *name = NULL);
-	const char *StyleName(void);
+	int32			CountStyles();
+	const char*		StyleAt(const int32& index);
+	bool			SetStyle(const char* name = NULL);
+	const char*		StyleName();
 
-	BRect		TileSize(void);
-	BRect		TileRect(int x, int y);
+	BRect			TileSize();
+	BRect			TileRect(int x, int y);
 
-	BBitmap *	BaseSprite(void);
-	BBitmap *	BoxSprite(void);
-	BBitmap *	BoxDownSprite(void);
-	BBitmap *	MineSprite(void);
-	BBitmap *	NotMineSprite(void);
-	BBitmap *	QuestionSprite(void);
-	BBitmap *	FlagSprite(void);
-	BBitmap *	HitSprite(void);
-	BBitmap *	LEDSprite(uint8 value);
-	BBitmap *	NumberSprite(uint8 count);
+	BBitmap* 		BaseSprite();
+	BBitmap* 		BoxSprite();
+	BBitmap* 		BoxDownSprite();
+	BBitmap* 		MineSprite();
+	BBitmap* 		NotMineSprite();
+	BBitmap* 		QuestionSprite();
+	BBitmap* 		FlagSprite();
+	BBitmap* 		HitSprite();
+	BBitmap* 		LEDSprite(uint8 value);
+	BBitmap* 		NumberSprite(uint8 count);
 
-	BBitmap *	SmileyUp(void);
-	BBitmap *	SmileyDown(void);
-	BBitmap *	WinUp(void);
-	BBitmap *	WinDown(void);
-	BBitmap *	LoseUp(void);
-	BBitmap *	LoseDown(void);
-	BBitmap *	Worry(void);
+	BBitmap* 		SmileyUp();
+	BBitmap* 		SmileyDown();
+	BBitmap* 		WinUp();
+	BBitmap* 		WinDown();
+	BBitmap* 		LoseUp();
+	BBitmap* 		LoseDown();
+	BBitmap* 		Worry();
 
-	BBitmap **	LEDSprites(void);
-	BBitmap **	NumberSprites(void);
+	BBitmap**		LEDSprites();
+	BBitmap**		NumberSprites();
 
 private:
-	void		MakeEmpty(void);
-	void		ScanStyles(void);
-	BBitmap	*	GetStyleBitmap(entry_ref dir, const char *name);
+	void			MakeEmpty();
+	void			ScanStyles();
+	BBitmap*		GetStyleBitmap(entry_ref dir, const char* name);
 
-	BBitmap		*fSmileyUp,
-				*fSmileyDown,
-				*fWinUp,
-				*fWinDown,
-				*fLoseUp,
-				*fLoseDown,
-				*fWorry;
+	BBitmap*		fSmileyUp;
+	BBitmap*		fSmileyDown;
+	BBitmap*		fWinUp;
+	BBitmap*		fWinDown;
+	BBitmap*		fLoseUp;
+	BBitmap*		fLoseDown;
+	BBitmap*		fWorry;
 
-	BBitmap		*fBoxSprite,
-				*fBoxDownSprite,
-				*fBaseSprite,
-				*fHitSprite,
-				*fMineSprite,
-				*fNotMineSprite,
-				*fFlagSprite,
-				*fQuestionSprite,
-				*fNumbers[8],
-				*fLEDNumbers[10];
+	BBitmap*		fBoxSprite;
+	BBitmap*		fBoxDownSprite;
+	BBitmap*		fBaseSprite;
+	BBitmap*		fHitSprite;
+	BBitmap*		fMineSprite;
+	BBitmap*		fNotMineSprite;
+	BBitmap*		fFlagSprite;
+	BBitmap*		fQuestionSprite;
+	BBitmap*		fNumbers[8];
+	BBitmap*		fLEDNumbers[10];
 
 	BObjectList<StyleData>	fStyleList;
 
-	BString		fStyleName;
+	BString			fStyleName;
 };
 
-extern GameStyle *gGameStyle;
+extern GameStyle* gGameStyle;
 
 #endif

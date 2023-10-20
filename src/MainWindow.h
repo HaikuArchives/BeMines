@@ -1,11 +1,30 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Diver
+ *		Humdinger
+ *		Johan Wagenheim
+ *		Janus2
+ *		JStressman
+ *		KevinAdams05
+ *		Raheem Idowu
+ */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 
 #include <MessageFilter.h>
 #include <Messenger.h>
 #include <Handler.h>
 #include <Window.h>
+
 #include "GameStyle.h"
+
 
 class BitmapButton;
 class CounterView;
@@ -20,65 +39,65 @@ enum
 	FACE_LOSE
 };
 
+
 enum
 {
 	M_PAUSE_GAME = 'psgm',
 	M_SET_DIFFICULTY = 'stdf'
 };
 
-class MainWindow : public BWindow
-{
+
+class MainWindow : public BWindow {
 public:
-			MainWindow(BRect r);
-	bool	QuitRequested(void);
-	void	MessageReceived(BMessage *msg);
-	void	WindowActivated(bool active);
-	void	SetupGame(void);
-	void	SetFace(int32 value);
-	void	HighScoreCheck(void);
-	void	AchievementCheck(void);
-	void	SetTheme(const char *name);
-	void	AboutRequested(void);
+					MainWindow(BRect frame);
+
+		void		AboutRequested();
+		bool		QuitRequested();
+		void		MessageReceived(BMessage* msg);
+		void		WindowActivated(bool active);
+
+		void		SetupGame();
+		void		SetFace(int32 value);
+		void		HighScoreCheck();
+		void		AchievementCheck();
+		void		SetTheme(const char *name);
 
 private:
-	const char* TranslateWellKnownThemes(const char *name);
-	void	ResetLayout(void);
-	void	LoadSettings(void);
-	void	SaveSettings(void);
-	bool 	CanScale(void);
+		const char* TranslateWellKnownThemes(const char* name);
+		void		ResetLayout();
+		void		LoadSettings();
+		void		SaveSettings();
+		bool 		CanScale();
 
-	BitmapButton	*fSmileyButton;
+	BitmapButton*	fSmileyButton;
 	int8			fSmileyState;
-	TimerView		*fTimerView;
-	FieldView		*fFieldView;
-	CounterView		*fCounterView;
-	BMenuBar		*fMenuBar;
+	TimerView*		fTimerView;
+	FieldView*		fFieldView;
+	CounterView*	fCounterView;
+	BMenuBar*		fMenuBar;
 };
 
 
-
-class SpaceBarFilter : public BMessageFilter
-{
+class SpaceBarFilter : public BMessageFilter {
 public:
 	SpaceBarFilter(uint32 command)
 	:
-	BMessageFilter(B_PROGRAMMED_DELIVERY,
-		B_ANY_SOURCE,B_KEY_DOWN),
+	BMessageFilter(B_PROGRAMMED_DELIVERY, B_ANY_SOURCE,B_KEY_DOWN),
 	fCommand(command)
 	{
 	}
-	~SpaceBarFilter(void)
+	~SpaceBarFilter()
 	{
 	}
 
 	filter_result
-	Filter(BMessage *msg, BHandler **target)
+	Filter(BMessage* msg, BHandler** target)
 	{
 		int32 rawchar;
-		msg->FindInt32("raw_char",&rawchar);
+		msg->FindInt32("raw_char", &rawchar);
 
 		if (rawchar == B_SPACE) {
-			BLooper *loop = (*target)->Looper();
+			BLooper* loop = (*target)->Looper();
 			if (loop) {
 				BMessenger msgr(loop);
 				msgr.SendMessage(fCommand);

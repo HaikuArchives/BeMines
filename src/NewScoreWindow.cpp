@@ -1,28 +1,40 @@
+/*
+ * Copyright 2007, DarkWyrm
+ * Copyright 2013-2023, HaikuArchives Team
+ * Distributed under the terms of the MIT License.
+ *
+ * Authors:
+ *		DarkWyrm (original author)
+ *		Humdinger
+ *		Janus2
+ *		JStressman
+ */
+
+
 #include "NewScoreWindow.h"
+#include "Globals.h"
+
 #include <Catalog.h>
 #include <LayoutBuilder.h>
 #include <Screen.h>
 #include <StringView.h>
-#include "Globals.h"
-
-enum
-{
-	M_CHANGE_NAME = 'chgn'
-};
 
 #undef B_TRANSLATION_CONTEXT
 #define B_TRANSLATION_CONTEXT "NewScoreWindow"
 
-NewScoreWindow::NewScoreWindow(uint16 time, int32 difficulty)
-	:	DWindow(BRect(0,0,300,300), B_TRANSLATE("New high score"), B_TITLED_WINDOW,
-				B_ASYNCHRONOUS_CONTROLS | B_NOT_RESIZABLE
-				| B_AUTO_UPDATE_SIZE_LIMITS),
-		fDifficulty(difficulty),
-		fSeconds(time)
-{
-	BView *top = GetBackgroundView();
+#define M_CHANGE_NAME 'chgn'
 
-	fTextBox = new BTextControl("scorename","",gBestTimes[difficulty].name.String(), NULL);
+
+NewScoreWindow::NewScoreWindow(uint16 time, int32 difficulty)
+	:
+	DWindow(BRect(0, 0, 300, 300), B_TRANSLATE("New high score"), B_TITLED_WINDOW,
+		B_ASYNCHRONOUS_CONTROLS | B_NOT_RESIZABLE | B_AUTO_UPDATE_SIZE_LIMITS),
+	fDifficulty(difficulty),
+	fSeconds(time)
+{
+	BView* top = GetBackgroundView();
+
+	fTextBox = new BTextControl("scorename", "", gBestTimes[difficulty].name.String(), NULL);
 	fTextBox->MakeFocus(true);
 	fTextBox->TextView()->SelectAll();
 	fTextBox->SetModificationMessage(new BMessage(M_CHANGE_NAME));
@@ -30,13 +42,14 @@ NewScoreWindow::NewScoreWindow(uint16 time, int32 difficulty)
 	BLayoutBuilder::Group<>(top, B_VERTICAL, B_USE_SMALL_INSETS)
 		.SetInsets(B_USE_WINDOW_INSETS, B_USE_WINDOW_INSETS,
 			B_USE_WINDOW_INSETS, B_USE_WINDOW_INSETS)
-		.Add(new BStringView("label1", B_TRANSLATE_COMMENT("You have made a new best time!", "First line text new record")))
-		.Add(new BStringView("lable2", B_TRANSLATE_COMMENT("Please enter your name.", "Second line text new record")))
+		.Add(new BStringView("label1",
+			B_TRANSLATE_COMMENT("You have made a new best time!", "First line text new record")))
+		.Add(new BStringView("lable2",
+			B_TRANSLATE_COMMENT("Please enter your name.", "Second line text new record")))
 		.Add(fTextBox)
 		.AddGroup(B_HORIZONTAL)
 			.AddGlue()
-			.Add(fClose = new BButton("ok", B_TRANSLATE("OK"),
-				new BMessage(B_QUIT_REQUESTED)));
+			.Add(fClose = new BButton("ok", B_TRANSLATE("OK"), new BMessage(B_QUIT_REQUESTED)));
 
 	fClose->MakeDefault(true);
 
@@ -45,7 +58,7 @@ NewScoreWindow::NewScoreWindow(uint16 time, int32 difficulty)
 
 
 bool
-NewScoreWindow::QuitRequested(void)
+NewScoreWindow::QuitRequested()
 {
 	BString name = fTextBox->Text();
 
@@ -57,10 +70,9 @@ NewScoreWindow::QuitRequested(void)
 
 
 void
-NewScoreWindow::MessageReceived(BMessage *msg)
+NewScoreWindow::MessageReceived(BMessage* msg)
 {
-	switch (msg->what)
-	{
+	switch (msg->what) {
 		case M_CHANGE_NAME:
 		{
 			BString name = fTextBox->Text();
@@ -68,13 +80,10 @@ NewScoreWindow::MessageReceived(BMessage *msg)
 				fClose->SetEnabled(false);
 			else
 				fClose->SetEnabled(true);
-			break;
-		}
+		} break;
 		default:
 		{
 			BWindow::MessageReceived(msg);
-			break;
 		}
 	}
 }
-
