@@ -181,21 +181,22 @@ MainWindow::AboutRequested()
 	BAboutWindow* about
 		= new BAboutWindow(B_TRANSLATE_SYSTEM_NAME("BeMines"), "application/x-vnd.dw-BeMines");
 
-	const char* kCopyright = "Kevin Adams, Humdinger, Janus";
+	const char* kCopyright = "The HaikuArchives Team";
 
-	const char* kExtraCopyrights[] = {"2015 Justin Stressman", "2009 DarkWyrm", NULL};
+	const char* kExtraCopyrights[] = {"2009 DarkWyrm", NULL};
 
 	const char* kAuthors[] = { B_TRANSLATE(
 		"DarkWyrm (original author)"),
-		"Kevin Adams",
 		"Adrien Destugues",
 		"Humdinger",
-		"Raheem Idowu",
+		"Johan Wagenheim",
 		"Janus",
 		"Justin Stressman",
+		"Kevin Adams",
+		"Raheem Idowu",
 		NULL};
 	about->AddDescription(B_TRANSLATE("A themable, open-source rendition of Minesweeper."));
-	about->AddCopyright(2018, kCopyright, kExtraCopyrights);
+	about->AddCopyright(2015, kCopyright, kExtraCopyrights);
 	about->AddAuthors(kAuthors);
 	about->AddExtraInfo(B_TRANSLATE(
 		"Click sound by Sebastian\n"

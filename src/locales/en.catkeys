@@ -1,4 +1,4 @@
-1	English	application/x-vnd.dw-BeMines	697776788
+1	English	application/x-vnd.dw-BeMines	3773789843
 Sound effects	MainWindow		Sound effects
 Recruit - Win within 100 seconds	AchievementWindow		Recruit - Win within 100 seconds
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
@@ -11,32 +11,29 @@ OK	HelpWindow		OK
 Pause	MainWindow		Pause
 Quit	MainWindow		Quit
 Difficulty	MainWindow		Difficulty
-Unlocked!	AchievementWindow		Unlocked!
 Beginner	MainWindow		Beginner
+Unlocked!	AchievementWindow		Unlocked!
 Beginner:	ScoreWindow		Beginner:
 Commando - Win within 100 seconds	AchievementWindow		Commando - Win within 100 seconds
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.
-{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}
 OK	FieldWindow		OK
-{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}
 New	MainWindow		New
 Gnome	MainWindow	Theme name	Gnome
 Theme	MainWindow		Theme
 Expert	MainWindow		Expert
 BeMines	System name		BeMines
-The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.
 Default	MainWindow	Theme name	Default
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.
 High scores	MainWindow		High scores
 Master Defuser - Win within 50 seconds	AchievementWindow		Master Defuser - Win within 50 seconds
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
 Difficulty: Intermediate	AchievementWindow		Difficulty: Intermediate
 OK	AchievementWindow		OK
+Level settings	CustomWindow		Level settings
 Active Duty - Win 5 games	AchievementWindow		Active Duty - Win 5 games
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.
-Level settings	CustomWindow		Level settings
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Click sound by Sebastian\nLose and win sounds by Mike Koenig
 OK	CustomWindow		OK
 Mines:	CustomWindow		Mines:
-Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Click sound by Sebastian\nLose and win sounds by Mike Koenig
 High scores	ScoreWindow		High scores
 OK	NewScoreWindow		OK
 Anonymous	ScoreWindow		Anonymous
@@ -51,32 +48,32 @@ Classic	MainWindow	Theme name	Classic
 Bomb Buster - Win within 50 seconds	AchievementWindow		Bomb Buster - Win within 50 seconds
 Anonymous	Globals		Anonymous
 Achievements	MainWindow		Achievements
-Difficulty: Expert	AchievementWindow		Difficulty: Expert
 Expert:	ScoreWindow		Expert:
+Difficulty: Expert	AchievementWindow		Difficulty: Expert
 General	AchievementWindow		General
 Locked!	AchievementWindow		Locked!
-Basic Training - Win a game	AchievementWindow		Basic Training - Win a game
 Cancel	CustomWindow		Cancel
+Basic Training - Win a game	AchievementWindow		Basic Training - Win a game
 Height:	CustomWindow		Height:
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # second}other{%name%, # seconds}}
 Right click:	HelpWindow		Right click:
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than%d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than%d tiles wide and %d tiles high before scaling.
 Intermediate:	ScoreWindow		Intermediate:
 Help	MainWindow		Help
 Middle click (or ALT + left click):	HelpWindow		Middle click (or ALT + left click):
-Help	HelpWindow		Help
 PAUSED	FieldWindow		PAUSED
+Help	HelpWindow		Help
 Reset	ScoreWindow		Reset
 A themable, open-source rendition of Minesweeper.	MainWindow		A themable, open-source rendition of Minesweeper.
 Difficulty: Beginner	AchievementWindow		Difficulty: Beginner
 Scale 2x	MainWindow		Scale 2x
 Custom…	MainWindow		Custom…
-Achievements	AchievementWindow		Achievements
 Width:	CustomWindow		Width:
-{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}
+Achievements	AchievementWindow		Achievements
 Game	MainWindow		Game
 Officer - Win within 100 seconds	AchievementWindow		Officer - Win within 100 seconds
-Settings	MainWindow		Settings
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}
+Settings	MainWindow		Settings
 New high score	NewScoreWindow		New high score
 Left click:	HelpWindow		Left click:
 You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.
