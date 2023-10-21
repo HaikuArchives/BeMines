@@ -330,6 +330,8 @@ MainWindow::MessageReceived(BMessage* msg)
 			fCounterView->StyleChanged();
 			fTimerView->StyleChanged();
 			ResetLayout();
+			MoveOnScreen(B_MOVE_IF_PARTIALLY_OFFSCREEN);
+
 			BMenuItem* item = fMenuBar->FindItem(M_TOGGLE_SCALING);
 			if (item)
 				item->SetMarked(!item->IsMarked());
