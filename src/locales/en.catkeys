@@ -1,4 +1,4 @@
-1	English	application/x-vnd.dw-BeMines	3773789843
+1	English	application/x-vnd.dw-BeMines	3850086887
 Sound effects	MainWindow		Sound effects
 Recruit - Win within 100 seconds	AchievementWindow		Recruit - Win within 100 seconds
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
@@ -26,6 +26,7 @@ Default	MainWindow	Theme name	Default
 The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.
 High scores	MainWindow		High scores
 Master Defuser - Win within 50 seconds	AchievementWindow		Master Defuser - Win within 50 seconds
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
 Difficulty: Intermediate	AchievementWindow		Difficulty: Intermediate
 OK	AchievementWindow		OK
 Level settings	CustomWindow		Level settings
@@ -57,7 +58,6 @@ Basic Training - Win a game	AchievementWindow		Basic Training - Win a game
 Height:	CustomWindow		Height:
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # second}other{%name%, # seconds}}
 Right click:	HelpWindow		Right click:
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than%d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than%d tiles wide and %d tiles high before scaling.
 Intermediate:	ScoreWindow		Intermediate:
 Help	MainWindow		Help
 Middle click (or ALT + left click):	HelpWindow		Middle click (or ALT + left click):

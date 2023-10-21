@@ -673,7 +673,7 @@ MainWindow::CanScale()
 			BString errorMessage;
 			errorMessage = (B_TRANSLATE(
 				"Your current game would not fit your current screen size if scaled.\n\n"
-				"Please set the custom board to no more than"
+				"Please set the custom board to no more than "
 				"%d tiles wide and %d tiles high before scaling."));
 			errorMessage.SetToFormat(errorMessage, maxTileWidth, maxTileHeight);
 			BAlert* alert = new BAlert(
