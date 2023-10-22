@@ -55,6 +55,7 @@ public:
 		bool		QuitRequested();
 		void		MessageReceived(BMessage* msg);
 		void		WindowActivated(bool active);
+virtual	void		Zoom(BPoint origin, float width, float height);
 
 		void		SetupGame();
 		void		SetFace(int32 value);

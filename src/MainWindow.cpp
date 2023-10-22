@@ -357,6 +357,13 @@ MainWindow::WindowActivated(bool active)
 
 
 void
+MainWindow::Zoom(BPoint origin, float width, float height)
+{
+	PostMessage(M_TOGGLE_SCALING);
+}
+
+
+void
 MainWindow::SetupGame()
 {
 	BMenuItem* item = fMenuBar->FindItem(M_PAUSE_GAME);
