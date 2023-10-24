@@ -1,0 +1,81 @@
+1	Norwegian	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Ny prestasjon låst opp!}other{Nye prestasjoner låst opp!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		En stilbar, åpen kildekode-gjengivelse av Minesweeper.
+About BeMines	MainWindow		Om BeMines
+Achievements	MainWindow		Prestasjoner
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Nybegynner
+Classic	MainWindow	Theme name	Klassisk
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Klikk-lyd av Sebastian\nTap- og vinn-lyder av Mike Koenig
+Custom…	MainWindow		Tilpasset…
+DarkWyrm (original author)	MainWindow		DarkWyrm (opprinnelig forfatter)
+Default	MainWindow	Theme name	Standard
+Difficulty	MainWindow		Vanskelighetsgrad
+Expert	MainWindow		Ekspert
+Game	MainWindow		Spill
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Grå
+Help	MainWindow		Hjelp
+High scores	MainWindow		Beste poengsummer
+Intermediate	MainWindow		Middels
+New	MainWindow		Ny
+OK	MainWindow		OK
+Pause	MainWindow		Pause
+Quit	MainWindow		Avslutt
+Scale 2x	MainWindow		Skaler 2x
+Settings	MainWindow		Innstillinger
+Sound effects	MainWindow		Lydeffekter
+Theme	MainWindow		Tema
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Det nåværende brettet vil ikke få plass på din nåværende skjermstørrelse hvis det skaleres.\n\nVennligst reduser brettstørrelsen til under %d fliser bred og %d fliser høy før skalering.
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # sekund}other{%name%, # sekunder}}
+Anonymous	ScoreWindow		Anonym
+Beginner:	ScoreWindow		Nybegynner:
+Expert:	ScoreWindow		Ekspert:
+High scores	ScoreWindow		Rekorder
+Intermediate:	ScoreWindow		Middels:
+OK	ScoreWindow		OK
+Reset	ScoreWindow		Tilbakestill
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Et ekkolodd-ping viser alle miner i et 3x3 flisområde uten fare for å aktivere dem. Det kommer med en pris på 20 sekunder lagt til tiden din.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Klikk med begge knappene (eller SHIFT + venstreklikk):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Merk en flis som en mine, sett et spørsmålstegn hvis du er usikker, eller fjern merket for en allerede merket flis.
+Help	HelpWindow		Hjelp
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Hvis flisen er et tall og det aktuelle antallet miner rundt den er merket, vil den fjerne alle de andre flisene rundt tallet. Hvis du har gjort en feil, vil du sannsynligvis aktivere en mine ...
+Left click:	HelpWindow		Venstreklikk:
+Middle click (or ALT + left click):	HelpWindow		Klikk på musehjulet (eller ALT + venstreklikk):
+OK	HelpWindow		OK
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Vis hva som er under en flis. Hvis det er en mine er spillet slutt!
+Right click:	HelpWindow		Høyreklikk:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Spillets mål er å merke alle minene som er skjult på brettet. Telleren øverst til venstre viser antall skjulte miner, den til høyre teller opp sekundene.
+Achievements	AchievementWindow		Prestasjoner
+Active Duty - Win 5 games	AchievementWindow		Aktiv Tjeneste - Vinn 5 spill
+Basic Training - Win a game	AchievementWindow		Grunntrening - Vinn et spill
+Bomb Buster - Win within 50 seconds	AchievementWindow		Bomb Buster - Vinn på under 50 sekunder
+Commando - Win within 100 seconds	AchievementWindow		Commando - Vinn på under 100 sekunder
+Difficulty: Beginner	AchievementWindow		Vanskelighetsgrad: Nybegynner
+Difficulty: Expert	AchievementWindow		Vanskelighetsgrad: Ekspert
+Difficulty: Intermediate	AchievementWindow		Vanskelighetsgrad: Middels
+General	AchievementWindow		Generell
+Locked!	AchievementWindow		Låst!
+Master Defuser - Win within 50 seconds	AchievementWindow		Desarmeringsekspert - Vinn på under 50 sekunder
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Minesone-veteran - Vinn på under 50 sekunder
+Officer - Win within 100 seconds	AchievementWindow		Offiser - Vinn på under 100 sekunder
+OK	AchievementWindow		OK
+Recruit - Win within 100 seconds	AchievementWindow		Rekrutt - Vinn på under 100 sekunder
+Reset	AchievementWindow		Tilbakestill
+Unlocked!	AchievementWindow		Låst opp!
+Anonymous	Globals		Anonym
+BeMines	System name		BeMines
+Cancel	CustomWindow		Avbryt
+Height:	CustomWindow		Høyde:
+Level settings	CustomWindow		Nivåinnstillinger
+Mines:	CustomWindow		Miner:
+OK	CustomWindow		OK
+Width:	CustomWindow		Bredde:
+Click to resume	FieldWindow		Klikk for å fortsette
+OK	FieldWindow		OK
+PAUSED	FieldWindow		PAUSE
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Du har allerede satt like mange flagg som det er miner. Fjern flagget for en flis før du prøver å flagge en annen.
+New high score	NewScoreWindow		Ny record
+OK	NewScoreWindow		OK
+Please enter your name.	NewScoreWindow	Second line text new record	Vennligst skriv inn navnet ditt.
+You have made a new best time!	NewScoreWindow	First line text new record	Du har en ny beste tid!

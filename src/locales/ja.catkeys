@@ -1,0 +1,81 @@
+1	Japanese	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{新しい功績が解除された!}other{新しい功績が解除された!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		テーマをサポートした、Minesweeper のオープンソース表現
+About BeMines	MainWindow		BeMines について
+Achievements	MainWindow		功績
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		初級
+Classic	MainWindow	Theme name	クラシック
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Click sound by Sebastian\nLose and win sounds by Mike Koenig
+Custom…	MainWindow		カスタム…
+DarkWyrm (original author)	MainWindow		DarkWyrm (原作者)
+Default	MainWindow	Theme name	デフォルト
+Difficulty	MainWindow		難易度
+Expert	MainWindow		上級
+Game	MainWindow		ゲーム
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	グレイ
+Help	MainWindow		ヘルプ
+High scores	MainWindow		ハイスコア
+Intermediate	MainWindow		中級
+New	MainWindow		新規ゲーム
+OK	MainWindow		OK
+Pause	MainWindow		中断
+Quit	MainWindow		終了
+Scale 2x	MainWindow		Scale 2x
+Settings	MainWindow		設定
+Sound effects	MainWindow		サウンド効果
+Theme	MainWindow		テーマ
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # second}other{%name%, # seconds}}
+Anonymous	ScoreWindow		Anonymous
+Beginner:	ScoreWindow		初級:
+Expert:	ScoreWindow		上級:
+High scores	ScoreWindow		ハイスコア
+Intermediate:	ScoreWindow		中級:
+OK	ScoreWindow		OK
+Reset	ScoreWindow		リセット
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		ソナー ping は、3x3 タイル範囲のすべての地雷を起動させる危険を侵さずに明らかにします。それはプレイヤー時間に 20 秒のコスト追加を伴います。
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		左右ボタンの同時クリック (または SHIFT + 左クリック):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		地雷としてタイルに旗を立てます。よくわからない場合はクエスチョンマークをセットします。またはすでにある旗を外します。
+Help	HelpWindow		ヘルプ
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		もし、タイルが数字で、その周りに割り当てられた数の地雷に旗が立てられたなら、数字の周りのタイルはクリアされるでしょう。もちろん、間違えた場合は、おそらく地雷を作動させるでしょう。
+Left click:	HelpWindow		左クリック:
+Middle click (or ALT + left click):	HelpWindow		中クリック (または ALT + 左クリック):
+OK	HelpWindow		OK
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		タイルの下にあるものを表示します。もしそれが地雷なら、ゲームは終了します!
+Right click:	HelpWindow		右クリック:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		ゲームのゴールは、ボードの下に隠されたすべての地雷に旗を立てることです。左上隅のカウンターはまだ隠されている地雷の数を、右隅のカウンターは、秒をカウントします。
+Achievements	AchievementWindow		功績
+Active Duty - Win 5 games	AchievementWindow		現役兵 - 5 つのゲームに勝利せよ
+Basic Training - Win a game	AchievementWindow		基礎訓練 - ゲームに勝利せよ
+Bomb Buster - Win within 50 seconds	AchievementWindow		爆弾処理班 - 50 秒以内に勝利せよ
+Commando - Win within 100 seconds	AchievementWindow		特殊部隊- 100 秒以内に勝利せよ
+Difficulty: Beginner	AchievementWindow		難度: 初心者
+Difficulty: Expert	AchievementWindow		難度: 専門家
+Difficulty: Intermediate	AchievementWindow		難度: 中間
+General	AchievementWindow		一般
+Locked!	AchievementWindow		ロックされた!
+Master Defuser - Win within 50 seconds	AchievementWindow		熟練地雷解除兵 - 50 秒以内に勝利せよ
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		地雷地帯古参兵 - 50 秒以内に勝利せよ
+Officer - Win within 100 seconds	AchievementWindow		将校 - 100 秒以内に勝利せよ
+OK	AchievementWindow		OK
+Recruit - Win within 100 seconds	AchievementWindow		陸士 - 100 秒以内に勝利せよ
+Reset	AchievementWindow		リセット
+Unlocked!	AchievementWindow		ロック解除された!
+Anonymous	Globals		Anonymous
+BeMines	System name		BeMines
+Cancel	CustomWindow		キャンセル
+Height:	CustomWindow		高さ:
+Level settings	CustomWindow		レベル設定
+Mines:	CustomWindow		地雷:
+OK	CustomWindow		OK
+Width:	CustomWindow		幅:
+Click to resume	FieldWindow		クリックして再開
+OK	FieldWindow		OK
+PAUSED	FieldWindow		中断
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		すでに地雷と同じ数の旗を立てています。ほかのタイルに旗を立てる前に旗を外してください。
+New high score	NewScoreWindow		新しいハイスコア
+OK	NewScoreWindow		OK
+Please enter your name.	NewScoreWindow	Second line text new record	名前を入れてください。
+You have made a new best time!	NewScoreWindow	First line text new record	新しいベストタイムです!

@@ -1,4 +1,4 @@
-1	Romanian	application/x-vnd.dw-BeMines	305506157
+1	Romanian	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Realizare nouă deblocată!}other{Realizări noi deblocate!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		O redare cu sursă deschisă, care se poate personaliza cu o temă, a Minesweeper.
 About BeMines	MainWindow		Despre BeMines
@@ -19,11 +19,14 @@ Help	MainWindow		Ajutor
 High scores	MainWindow		Cele mai bune scoruri
 Intermediate	MainWindow		Intermediar
 New	MainWindow		Nou
+OK	MainWindow		OK
 Pause	MainWindow		Pauzează
 Quit	MainWindow		Ieșire
+Scale 2x	MainWindow		Scale 2x
 Settings	MainWindow		Configurări
 Sound effects	MainWindow		Efecte sonore
 Theme	MainWindow		Temă
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # secundă}other{%name%, # secunde}
 Anonymous	ScoreWindow		Anonim
 Beginner:	ScoreWindow		Începător:
@@ -32,15 +35,6 @@ High scores	ScoreWindow		Cele mai bune scoruri
 Intermediate:	ScoreWindow		Intermediar:
 OK	ScoreWindow		OK
 Reset	ScoreWindow		Restabilește
-{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Pentru lățimea și înălțimea alese, nu puteți avea mai mult de # mină.}other{Pentru lățimea și înălțimea alese, nu puteți avea mai mult de # mine.}}
-{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Pentru dimensiunea de ecran și tema curentă, puteți avea o înălțime până la # tilă.}other{Pentru dimensiunea de ecran și tema curentă, puteți avea o înălțime până la # tile.}}
-{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Pentru dimensiunea de ecran și tema curentă, puteți avea o lățime până la # tilă.}other{Pentru dimensiunea de ecran și tema curentă. puteți avea o lățime până la # tile.}}
-Cancel	CustomWindow		Anulează
-Height:	CustomWindow		Înălțime:
-Level settings	CustomWindow		Configurări nivel
-Mines:	CustomWindow		Mine:
-OK	CustomWindow		OK
-Width:	CustomWindow		Lățime:
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Un ping de sonar descoperă toate minele într-o zonă de dale 3x3 fără pericolul de a le declanșa. Această funcționalitate vine cu un cost de 20 de secunde adăugat la durata jocului.
 Clicking with both buttons (or SHIFT + left click):	HelpWindow		Apăsarea clic cu amândouă butoanele (sau SHIFT + clic stânga):
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Adăugați un steag pe o dală pentru a semnaliza o mină, stabiliți un semn de întrebare dacă nu sunteți sigur, sau ștergeți marcajul unei dale care era deja stabilită cu steag.
@@ -71,6 +65,12 @@ Reset	AchievementWindow		Restabilește
 Unlocked!	AchievementWindow		Deblocat!
 Anonymous	Globals		Anonim
 BeMines	System name		BeMines
+Cancel	CustomWindow		Anulează
+Height:	CustomWindow		Înălțime:
+Level settings	CustomWindow		Configurări nivel
+Mines:	CustomWindow		Mine:
+OK	CustomWindow		OK
+Width:	CustomWindow		Lățime:
 Click to resume	FieldWindow		Apăsați clic pentru a rezuma
 OK	FieldWindow		OK
 PAUSED	FieldWindow		PAUZAT

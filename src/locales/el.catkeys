@@ -1,0 +1,81 @@
+1	Greek (Modern)	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Ξεκλειδώθηκε νέο επίτευγμα!}other{Ξεκλειδώθηκαν νέα επιτεύγματα!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		Μια ανοιχτού κώδικα εκδοχή του Ναρκαλιευτή που υποστηρίζει θέματα.
+About BeMines	MainWindow		Σχετικά με το BeMines
+Achievements	MainWindow		Επιτεύγματα
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Αρχάριος
+Classic	MainWindow	Theme name	Κλασικό
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Ήχος κλικ από τον Sebastian\nΕφέ νίκης και ήττας από τον Mike Koenig
+Custom…	MainWindow		Προσαρμογή...
+DarkWyrm (original author)	MainWindow		DarkWyrm (δημιουργός)
+Default	MainWindow	Theme name	Προεπιλεγμένο
+Difficulty	MainWindow		Δυσκολία
+Expert	MainWindow		Έμπειρος
+Game	MainWindow		Παιχνίδι
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Γκρι
+Help	MainWindow		Βοήθεια
+High scores	MainWindow		Ρεκόρ
+Intermediate	MainWindow		Μέτριος
+New	MainWindow		Νέο
+OK	MainWindow		OK
+Pause	MainWindow		Παύση
+Quit	MainWindow		Έξοδος
+Scale 2x	MainWindow		Scale 2x
+Settings	MainWindow		Ρυθμίσεις
+Sound effects	MainWindow		Ηχητικά εφέ
+Theme	MainWindow		Θέμα
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # δευτ.}other{%name%, # δευτ.}}
+Anonymous	ScoreWindow		Ανώνυμος
+Beginner:	ScoreWindow		Αρχάριος:
+Expert:	ScoreWindow		Έμπειρος:
+High scores	ScoreWindow		Ρεκόρ
+Intermediate:	ScoreWindow		Μέτριος:
+OK	ScoreWindow		Εντάξει
+Reset	ScoreWindow		Απαλοιφή
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Το σήμα ραντάρ εντοπίζει όλες τις νάρκεις σε μια περιοχή 3x3 tile αποφεύγοντας τον κίνδυνο της ενεργοποίησής τους. Προκαλεί ποινή χρόνου 20 δευτερολέπτων.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Κλικ και με τα δυο κουμπιά (ή SHIFT + αριστερό κλικ):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Τοποθετήστε σημαία σε ένα κελί όπου πιστεύετε ότι κρύβεται μια νάρκη ή ερωτηματικό, αν δεν είστε σίγουρος/-η ή βγάλτε τη σημαία από ένα ήδη σημειωμένο κελί.
+Help	HelpWindow		Βοήθεια
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Αν το κελί περιέχει έναν αριθμό και ο αντίστοιχος αριθμός κελιών γύρω από αυτό περιέχει σημαίες, όλα τα υπόλοιπα κελιά γύρω από αυτό θα ανοίξουν. Φυσικά, σε περίπτωση λάθους, είναι εξαιρετικά πιθανό να ενεργοποιήσετε μια νάρκη...
+Left click:	HelpWindow		Αριστερό κλικ:
+Middle click (or ALT + left click):	HelpWindow		Μεσαίο κλικ (ή ALT + αριστερό κλικ):
+OK	HelpWindow		Εντάξει
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Εμφάνιση κελιού. Αν το κελί περιέχει νάρκη, το παιχνίδι τελειώνει.
+Right click:	HelpWindow		Δεξί κλικ:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Σκοπός του παιχνιδιού είναι να σημειώσετε με σημαίες όλα τα κελιά που περιέχουν νάρκεις. Ο μετρητής πάνω αριστερά δείχνει τον αριθμό των ναρκών που πρέπει ακόμα να εντοπιστούν, ενώ ο μετρητής στα δεξιά μετρά τα δευτερόλεπτα.
+Achievements	AchievementWindow		Επιτεύγματα
+Active Duty - Win 5 games	AchievementWindow		Εν Ενεργεία - Κερδίστε 5 παιχνίδια
+Basic Training - Win a game	AchievementWindow		Βασική Εξάσκηση - Κερδίστε ένα παιχνίδι
+Bomb Buster - Win within 50 seconds	AchievementWindow		Πυροτεχνουργός - Νικήστε μέσα σε 50 δευτερόλεπτα
+Commando - Win within 100 seconds	AchievementWindow		Κομάντο - Νικήστε μέσα σε 100 δευτερόλεπτα
+Difficulty: Beginner	AchievementWindow		Δυσκολία: Για αρχάριους
+Difficulty: Expert	AchievementWindow		Δυσκολία: Για ειδικούς
+Difficulty: Intermediate	AchievementWindow		Δυσκολία: Για προχωρημένους
+General	AchievementWindow		Γενικά
+Locked!	AchievementWindow		Κλειδωμένο!
+Master Defuser - Win within 50 seconds	AchievementWindow		Έμπειρος Πυροτεχνουργός - Νικήστε μέσα σε 50 δευτερόλεπτα
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Βετεράνος Ναρκοπεδίου - Νικήστε μέσα σε 50 δευτερόλεπτα
+Officer - Win within 100 seconds	AchievementWindow		Αξιωματικός - Νικήστε μέσα σε 100 δευτερόλεπτα
+OK	AchievementWindow		Εντάξει
+Recruit - Win within 100 seconds	AchievementWindow		Δόκιμος - Νικήστε μέσα σε 100 δευτερόλεπτα
+Reset	AchievementWindow		Επαναφορά
+Unlocked!	AchievementWindow		Ξεκλειδώθηκε!
+Anonymous	Globals		Ανώνυμος
+BeMines	System name		BeMines
+Cancel	CustomWindow		Ακύρωση
+Height:	CustomWindow		Ύψος:
+Level settings	CustomWindow		Ρυθμίσεις επιπέδου
+Mines:	CustomWindow		Νάρκες:
+OK	CustomWindow		Εντάξει
+Width:	CustomWindow		Πλάτος:
+Click to resume	FieldWindow		Πατήστε για να συνεχίσετε
+OK	FieldWindow		ΕΝΤΑΞΕΙ
+PAUSED	FieldWindow		ΠΑΥΣΗ
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Έχετε ήδη τοποθετήσει τόσες σημαίες όσες είναι οι νάρκεις. Βγάλτε τη σημαία από ένα κελί πριν ξαναπροσπαθήσετε να βάλετε σημαία σε άλλο.
+New high score	NewScoreWindow		Νέο ρεκόρ
+OK	NewScoreWindow		Εντάξει
+Please enter your name.	NewScoreWindow	Second line text new record	Παρακαλώ εισάγετε το όνομά σας.
+You have made a new best time!	NewScoreWindow	First line text new record	Έχετε σπάσει ρεκόρ χρόνου!

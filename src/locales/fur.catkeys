@@ -1,4 +1,4 @@
-1	Friulian	application/x-vnd.dw-BeMines	305506157
+1	Friulian	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Gnûf travuart sblocât!}other{Gnûfs travuarts sblocâts!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		A interpretazion open-source cun temis di Minesweeper.
 About BeMines	MainWindow		Informazions su BeMines
@@ -19,11 +19,14 @@ Help	MainWindow		Jutori
 High scores	MainWindow		Miôrs risultâts
 Intermediate	MainWindow		Intermedi
 New	MainWindow		Gnûf
+OK	MainWindow		OK
 Pause	MainWindow		Pause
 Quit	MainWindow		Jes
+Scale 2x	MainWindow		Scale 2x
 Settings	MainWindow		Impostazions
 Sound effects	MainWindow		Efiets sonôrs
 Theme	MainWindow		Teme
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # secont}other{%name%, # seconts}}
 Anonymous	ScoreWindow		Anonim
 Beginner:	ScoreWindow		Principiant:
@@ -32,15 +35,6 @@ High scores	ScoreWindow		Miôrs risultâts
 Intermediate:	ScoreWindow		Intermedi:
 OK	ScoreWindow		Va ben
 Reset	ScoreWindow		Azere
-{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Pe largjece e altece sielte, no tu puedis vê plui di # mine.}other{Pe largjece e altece sielte, no tu puedis vê plui di # minis.}}
-{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Pal teme e pe dimension di schermi atuâl, tu puedis vê une altece fin a # piastrele.}other{Pal teme e pe dimension di schermi atuâl, tu puedis vê une altece fin a # piastrelis.}}
-{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Pal teme e pe dimension di schermi atuâl, tu puedis vê une largjece fin a # piastrele.}other{Pal teme e pe dimension di schermi atuâl, tu puedis vê une largjece fin a # piastrelis.}}
-Cancel	CustomWindow		Anule
-Height:	CustomWindow		Altece:
-Level settings	CustomWindow		Impostazions nivel
-Mines:	CustomWindow		Minis:
-OK	CustomWindow		Va ben
-Width:	CustomWindow		Largjece:
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Une cinglinade e palese dutis lis minis intal rai di 3x3 piastrelis cence il pericul di fâlis tonâ. Chest al ven fat al cost di 20 seconts in plui su to timp cumulât.
 Clicking with both buttons (or SHIFT + left click):	HelpWindow		Fasint clic cun ducj i doi i botons (o MAIUSC + clic di çampe):
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Met la bandiere suntune piastrele par indicâ une mine, met un pont di domande se no tu sês sigûr, o gjave il segn di une piastrele che e à za une bandiere.
@@ -71,6 +65,12 @@ Reset	AchievementWindow		Ristabilìs
 Unlocked!	AchievementWindow		Sblocât!
 Anonymous	Globals		Anonim
 BeMines	System name		BeMines
+Cancel	CustomWindow		Anule
+Height:	CustomWindow		Altece:
+Level settings	CustomWindow		Impostazions nivel
+Mines:	CustomWindow		Minis:
+OK	CustomWindow		Va ben
+Width:	CustomWindow		Largjece:
 Click to resume	FieldWindow		Fâs clic par continuâ
 OK	FieldWindow		Va ben
 PAUSED	FieldWindow		IN PAUSE

@@ -1,4 +1,4 @@
-1	German	application/x-vnd.dw-BeMines	305506157
+1	German	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Neue Errungenschaft!}other{Neue Errungenschaften!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		Eine Open-Source-Variante von Minesweeper.
 About BeMines	MainWindow		Über BeMines
@@ -19,11 +19,14 @@ Help	MainWindow		Hilfe
 High scores	MainWindow		Highscores
 Intermediate	MainWindow		Fortgeschrittener
 New	MainWindow		Neu
+OK	MainWindow		OK
 Pause	MainWindow		Pause
 Quit	MainWindow		Beenden
+Scale 2x	MainWindow		Zoom 2x
 Settings	MainWindow		Einstellungen
 Sound effects	MainWindow		Soundeffekte
 Theme	MainWindow		Stil
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Die aktuelle Spielbrettgröße würde bei 2x Zoom größer als die momentane Bildschirmauflösung .\n\nDie Spielfeld darf vor dem Zoom nicht größer als %d Felder breit und %d hoch sein.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # Sekunde}other{%name%, # Sekunden}}
 Anonymous	ScoreWindow		Anonym
 Beginner:	ScoreWindow		Anfänger:
@@ -32,15 +35,6 @@ High scores	ScoreWindow		Highscores
 Intermediate:	ScoreWindow		Fortgeschrittener:
 OK	ScoreWindow		OK
 Reset	ScoreWindow		Reset
-{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Bei der gewählten Höhe und Breite kann max. # Mine gesetzt werden.}other{Bei der gewählten Höhe und Breite können max. # Minen gesetzt werden.}}
-{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Die aktuelle Bildschirmauflösung erlaubt bei dem verwendeten Stil nur eine Höhe von einem Feld}other{Die aktuelle Bildschirmauflösung erlaubt bei dem verwendeten Stil nur eine Höhe von max. # Feldern.}}
-{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Die aktuelle Bildschirmauflösung erlaubt bei dem verwendeten Stil nur eine Breite von einem Feld.}other{Die aktuelle Bildschirmauflösung erlaubt bei dem verwendeten Stil nur eine Breite von max. # Feldern.}}
-Cancel	CustomWindow		Abbrechen
-Height:	CustomWindow		Höhe:
-Level settings	CustomWindow		Level-Einstellungen
-Mines:	CustomWindow		Minen:
-OK	CustomWindow		OK
-Width:	CustomWindow		Breite:
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Ein Sonar-Ping zeigt alle Minen in einem 3x3-Umkreis an ohne sie dabei auszulösen. Das kostet allerdings 20 Sekunden.
 Clicking with both buttons (or SHIFT + left click):	HelpWindow		Klicken beider Maustasten (oder SHIFT + Linksklick):
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Markiere ein Feld als Mine, setze ein Fragezeichen bei einem unsicheren Feld oder entferne die Markierung.
@@ -71,11 +65,17 @@ Reset	AchievementWindow		Reset
 Unlocked!	AchievementWindow		Freigeschaltet!
 Anonymous	Globals		Anonym
 BeMines	System name		BeMines
+Cancel	CustomWindow		Abbrechen
+Height:	CustomWindow		Höhe:
+Level settings	CustomWindow		Level-Einstellungen
+Mines:	CustomWindow		Minen:
+OK	CustomWindow		OK
+Width:	CustomWindow		Breite:
 Click to resume	FieldWindow		Klicken zum Weiterspielen
 OK	FieldWindow		OK
 PAUSED	FieldWindow		PAUSE
 You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Es wurden bereits so viele Flaggen gesetzt wie es Minen gibt. Bevor ein weiteres Feld markiert werden kann, muss die Flagge eines anderen entfernt werden.
 New high score	NewScoreWindow		Neuer Highscore
-OK	NewScoreWindow		Pause
+OK	NewScoreWindow		OK
 Please enter your name.	NewScoreWindow	Second line text new record	Bitte Namen eingeben.
 You have made a new best time!	NewScoreWindow	First line text new record	Neue Bestzeit!

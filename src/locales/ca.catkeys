@@ -1,4 +1,4 @@
-1	Catalan	application/x-vnd.dw-BeMines	305506157
+1	Catalan	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Assoliment nou desblocat}other{Assoliments nous desblocats!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		Una representació tematitzable, de codi obert, del Minesweeper.
 About BeMines	MainWindow		Quant al BeMines
@@ -19,11 +19,14 @@ Help	MainWindow		Ajuda
 High scores	MainWindow		Puntuacions altes
 Intermediate	MainWindow		Intermèdies
 New	MainWindow		Nou
+OK	MainWindow		D'acord
 Pause	MainWindow		Pausa
 Quit	MainWindow		Surt
+Scale 2x	MainWindow		Escala 2x
 Settings	MainWindow		Paràmetres
 Sound effects	MainWindow		Efectes de so
 Theme	MainWindow		Tema
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		El joc actual no s'adaptaria a la mida de pantalla actual si s'escalava.\n\nConfigureu el tauler personalitzat a no més de %d fitxes d'ample i %d fitxes d'alçada abans d'escalar-lo.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # segon}other{%name%, # segons}}
 Anonymous	ScoreWindow		Anònim
 Beginner:	ScoreWindow		Principiant:
@@ -32,15 +35,6 @@ High scores	ScoreWindow		Puntuacions altes
 Intermediate:	ScoreWindow		Intermèdies:
 OK	ScoreWindow		D'acord
 Reset	ScoreWindow		Restableix
-{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Per l'amplada i l'alçada triades, només podeu tenir # mina.}other{Per l'amplada i l'alçada triades, no podeu tenir més de # mines.}}
-{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Per la mida i el tema actual de la pantalla, podeu tenir una alçada de fins a # rajola.}other{Per la mida i el tema actual de la pantalla, podeu tenir una alçada de fins a # rajoles.}}
-{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Per la mida i el tema actual de la pantalla, podeu tenir una amplada de fins a # rajola.}other{Per la mida i el tema actual de la pantalla, podeu tenir una amplada de fins a # rajoles.}}
-Cancel	CustomWindow		Cancel·la
-Height:	CustomWindow		Alçada:
-Level settings	CustomWindow		Paràmetres del nivell
-Mines:	CustomWindow		Mines:
-OK	CustomWindow		D'acord
-Width:	CustomWindow		Amplada:
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Un ping de sonar revela totes les mines en una zona de rajoles de 3x3 sense el perill de fer-les explotar. Ofereix un cost de 20 segons afegit al vostre temps.
 Clicking with both buttons (or SHIFT + left click):	HelpWindow		Feu clic amb els dos botons (o Maj. + clic esquerre):
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Marqueu una rajola com a mina, establiu-hi un signe d'interrogació si no n'esteu segur o desmarqueu un rajola ja marcada.
@@ -71,6 +65,12 @@ Reset	AchievementWindow		Restableix
 Unlocked!	AchievementWindow		Desblocat!
 Anonymous	Globals		Anònim
 BeMines	System name		BeMines
+Cancel	CustomWindow		Cancel·la
+Height:	CustomWindow		Alçada:
+Level settings	CustomWindow		Paràmetres del nivell
+Mines:	CustomWindow		Mines:
+OK	CustomWindow		D'acord
+Width:	CustomWindow		Amplada:
 Click to resume	FieldWindow		Cliqueu per continuar
 OK	FieldWindow		D'acord
 PAUSED	FieldWindow		EN PAUSA

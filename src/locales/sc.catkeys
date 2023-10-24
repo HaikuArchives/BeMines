@@ -1,0 +1,81 @@
+1	Sardinian	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Lompimentu nou afrancadu!}other{Lompimentos noos afrancados!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		Una ispertada a còdighe abertu de Minesweeper cun temas.
+About BeMines	MainWindow		A subra de BeMines
+Achievements	MainWindow		Lompimentos
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Noitzolu
+Classic	MainWindow	Theme name	Clàssicu
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Sonos: Sebastian (incarcada)\nMike Koenig (pèrdida e bitoria)
+Custom…	MainWindow		Personale…
+DarkWyrm (original author)	MainWindow		DarkWyrm (autore originale)
+Default	MainWindow	Theme name	De base
+Difficulty	MainWindow		Dificultade
+Expert	MainWindow		Abbistu
+Game	MainWindow		Partida
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Murru
+Help	MainWindow		Agiudu
+High scores	MainWindow		Puntos Majores
+Intermediate	MainWindow		Mesanu
+New	MainWindow		Nou
+OK	MainWindow		OK
+Pause	MainWindow		Pasa
+Quit	MainWindow		Essi
+Scale 2x	MainWindow		Scale 2x
+Settings	MainWindow		Manìgios
+Sound effects	MainWindow		Efetos sonoros
+Theme	MainWindow		Tema
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # segundu}other{%name%, # segundos}}
+Anonymous	ScoreWindow		Chena númene
+Beginner:	ScoreWindow		Noitzolu:
+Expert:	ScoreWindow		Abbistu:
+High scores	ScoreWindow		Puntos majores
+Intermediate:	ScoreWindow		Mesanu:
+OK	ScoreWindow		Eja
+Reset	ScoreWindow		Torra a nou
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Unu ping sonar isvelat totu is minas in un'àrea de 3x3 ragiolas chena perìgulu de las fàghere tzacare. Custu costat 20 segundos agiuntos a su tempus tuo.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Carchende cun ambos is butones (o SHIFT + incarcada a manca):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Sinna una ragiola comente mina, pone unu puntu de pregunta si no ses seguru, o boga su sinnu dae una ragiola giae sinnada.
+Help	HelpWindow		Agiudu
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Si sa ragiola tenet unu nùmeru e deghet a su nùmeru de minas chi est istadu sinnadu a inghìriu  de custa, custu at a limpiare totu is àteras ragiolas a inghìriu de su nùmeru. Est a nàrrere chi, si as faddidu, est probàbile chi as a tzacare una mina…
+Left click:	HelpWindow		Incarcada a manca:
+Middle click (or ALT + left click):	HelpWindow		Incarcada in mesu (o ALT + incarcada a manca):
+OK	HelpWindow		Eja
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Iscòvia ite b'at suta una ragiola. Si est una mina, sa partida est acabada!
+Right click:	HelpWindow		Incarcada a dereta:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Sa tarea de su giogu est ponnere banderas subra totu is minas cuadas in sa tàula. Su nùmeru a manca a susu mustrat cantu minas sunt ancora cuadas, su chi est a dereta contat is segundos
+Achievements	AchievementWindow		Lompiméntos
+Active Duty - Win 5 games	AchievementWindow		Servìtziu ativu - Binche 5 giogos
+Basic Training - Win a game	AchievementWindow		Imparu de base - Binche unu giogu
+Bomb Buster - Win within 50 seconds	AchievementWindow		Mere de is Bombas - Binche in 50 segundos
+Commando - Win within 100 seconds	AchievementWindow		Commando - Binche in 100 segundos
+Difficulty: Beginner	AchievementWindow		Dificultade : Noitzolu
+Difficulty: Expert	AchievementWindow		Dificultade : Abbistu
+Difficulty: Intermediate	AchievementWindow		Dificultade : Mesanu
+General	AchievementWindow		Generale
+Locked!	AchievementWindow		Siddadu!
+Master Defuser - Win within 50 seconds	AchievementWindow		Maistu de Istudu - Win within 50 seconds
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Veteranu de Zona Minada - Binche in 50 segundos
+Officer - Win within 100 seconds	AchievementWindow		Ufitziale - Binche in 100 segundos
+OK	AchievementWindow		Eja
+Recruit - Win within 100 seconds	AchievementWindow		Récluta - Binche in 100 segundos
+Reset	AchievementWindow		Torra a nou
+Unlocked!	AchievementWindow		Francadu!
+Anonymous	Globals		Chena númene
+BeMines	System name		BeMines
+Cancel	CustomWindow		Cassa
+Height:	CustomWindow		Altària:
+Level settings	CustomWindow		Cuncorda su paris
+Mines:	CustomWindow		Minas:
+OK	CustomWindow		Eja
+Width:	CustomWindow		Largària:
+Click to resume	FieldWindow		Carca pro pigare torra
+OK	FieldWindow		Eja
+PAUSED	FieldWindow		PASADU
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		As postu tantu banderas che ragiolas. Boga una bandera antes de nde pònnere un'àtera.
+New high score	NewScoreWindow		Puntos majores noos
+OK	NewScoreWindow		Eja
+Please enter your name.	NewScoreWindow	Second line text new record	Inserta su númene.
+You have made a new best time!	NewScoreWindow	First line text new record	As fatu su tempus primore nou!

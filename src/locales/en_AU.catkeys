@@ -1,4 +1,4 @@
-1	English (British)	application/x-vnd.dw-BeMines	3850086887
+1	English (Australian)	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		A themable, open-source rendition of Minesweeper.
 About BeMines	MainWindow		About BeMines
@@ -14,12 +14,12 @@ Difficulty	MainWindow		Difficulty
 Expert	MainWindow		Expert
 Game	MainWindow		Game
 Gnome	MainWindow	Theme name	Gnome
-Gray	MainWindow	Theme name	Gray
+Gray	MainWindow	Theme name	Grey
 Help	MainWindow		Help
 High scores	MainWindow		High scores
 Intermediate	MainWindow		Intermediate
 New	MainWindow		New
-OK	MainWindow		Alright
+OK	MainWindow		OK
 Pause	MainWindow		Pause
 Quit	MainWindow		Quit
 Scale 2x	MainWindow		Scale 2x
@@ -33,7 +33,7 @@ Beginner:	ScoreWindow		Beginner:
 Expert:	ScoreWindow		Expert:
 High scores	ScoreWindow		High scores
 Intermediate:	ScoreWindow		Intermediate:
-OK	ScoreWindow		Alright
+OK	ScoreWindow		OK
 Reset	ScoreWindow		Reset
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.
 Clicking with both buttons (or SHIFT + left click):	HelpWindow		Clicking with both buttons (or SHIFT + left click):
@@ -42,7 +42,7 @@ Help	HelpWindow		Help
 If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...
 Left click:	HelpWindow		Left click:
 Middle click (or ALT + left click):	HelpWindow		Middle click (or ALT + left click):
-OK	HelpWindow		Alright
+OK	HelpWindow		OK
 Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Reveal what's under a tile. If it's a mine, the game is over!
 Right click:	HelpWindow		Right click:
 The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.
@@ -59,7 +59,7 @@ Locked!	AchievementWindow		Locked!
 Master Defuser - Win within 50 seconds	AchievementWindow		Master Defuser - Win within 50 seconds
 Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Mine Zone Veteran - Win within 50 seconds
 Officer - Win within 100 seconds	AchievementWindow		Officer - Win within 100 seconds
-OK	AchievementWindow		Alright
+OK	AchievementWindow		OK
 Recruit - Win within 100 seconds	AchievementWindow		Recruit - Win within 100 seconds
 Reset	AchievementWindow		Reset
 Unlocked!	AchievementWindow		Unlocked!
@@ -69,13 +69,13 @@ Cancel	CustomWindow		Cancel
 Height:	CustomWindow		Height:
 Level settings	CustomWindow		Level settings
 Mines:	CustomWindow		Mines:
-OK	CustomWindow		Alright
+OK	CustomWindow		OK
 Width:	CustomWindow		Width:
 Click to resume	FieldWindow		Click to resume
-OK	FieldWindow		Alright
+OK	FieldWindow		OK
 PAUSED	FieldWindow		PAUSED
 You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.
 New high score	NewScoreWindow		New high score
-OK	NewScoreWindow		Alright
+OK	NewScoreWindow		OK
 Please enter your name.	NewScoreWindow	Second line text new record	Please enter your name.
 You have made a new best time!	NewScoreWindow	First line text new record	You have made a new best time!

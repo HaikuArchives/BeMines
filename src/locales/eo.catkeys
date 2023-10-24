@@ -1,4 +1,4 @@
-1	Esperanto	application/x-vnd.dw-BeMines	305506157
+1	Esperanto	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Nova venksigno akirita!}other{Novaj venksignoj akiritaj!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		Etosoŝanĝebla, libera versio de Minbalaŝipo.
 About BeMines	MainWindow		Pri BeMinoj
@@ -19,11 +19,14 @@ Help	MainWindow		Helpo
 High scores	MainWindow		Altaj poentaroj
 Intermediate	MainWindow		Meznivela
 New	MainWindow		Nova
+OK	MainWindow		OK
 Pause	MainWindow		Paŭzi
 Quit	MainWindow		Ĉesi
+Scale 2x	MainWindow		Scale 2x
 Settings	MainWindow		Agordoj
 Sound effects	MainWindow		Sonefikoj
 Theme	MainWindow		Etoso
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # sekundo}other{%name%, # sekundoj}}
 Anonymous	ScoreWindow		Sennomulo
 Beginner:	ScoreWindow		Komencenta:
@@ -32,15 +35,6 @@ High scores	ScoreWindow		Altaj poentaroj
 Intermediate:	ScoreWindow		Meznivela:
 OK	ScoreWindow		Bone
 Reset	ScoreWindow		Reŝarĝi
-{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Je la nuna larĝeco kaj alteco, ne enmeteblas pli ol # mino.}other{Je la elektita larĝeco k alteco, ne enmeteblas pli ol # minoj.}}
-{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Je la nuna ekranogrando kaj estoso, montreblas alteco nepli ol # tegoleto.}other{Je la nuna ekrangrando kaj etoso, montreblas alteco nepli ol # tegoletoj.}}
-{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Je la nuna ekranogrando kaj etoso, montreblas larĝeco nepli ol # tegoleto.}other{Je la nuna ekranogrando kaj etoso, montreblas larĝeco nepli ol # tegoletoj.}}
-Cancel	CustomWindow		Rezigni
-Height:	CustomWindow		Alteco:
-Level settings	CustomWindow		Defionivelaj Agordoj
-Mines:	CustomWindow		Minoj:
-OK	CustomWindow		Bone
-Width:	CustomWindow		Larĝeco:
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Eĥosondante, montriĝas ĉiuj minoj en 3x3 zono, sendanĝere, tutsekure. Tamen, la kosto estas 20 sekundoj aldonitaj vian daŭrotempon.
 Clicking with both buttons (or SHIFT + left click):	HelpWindow		Klakante ambaŭ butonojn (aŭ SHIFT + maldekstera klako):
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Marki tegoleton kiel mino, marki per demandosigno se vi ne certas, aŭ malmarki jammarkitan tegoleton.
@@ -71,6 +65,12 @@ Reset	AchievementWindow		Reŝarĝi
 Unlocked!	AchievementWindow		Malŝlosita!
 Anonymous	Globals		Sennomulo
 BeMines	System name		BeMinoj
+Cancel	CustomWindow		Rezigni
+Height:	CustomWindow		Alteco:
+Level settings	CustomWindow		Defionivelaj Agordoj
+Mines:	CustomWindow		Minoj:
+OK	CustomWindow		Bone
+Width:	CustomWindow		Larĝeco:
 Click to resume	FieldWindow		Klaki por daŭrigi
 OK	FieldWindow		Bone
 PAUSED	FieldWindow		PAŬZITA

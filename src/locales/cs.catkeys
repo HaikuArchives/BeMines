@@ -1,4 +1,4 @@
-1	Czech	application/x-vnd.dw-BeMines	305506157
+1	Czech	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Nový úspěch!}other{Nové úspěchy!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		Varianta Hledání min s otevřeným zdrojovým kódem.
 About BeMines	MainWindow		O aplikaci BeMines
@@ -19,11 +19,14 @@ Help	MainWindow		Nápověda
 High scores	MainWindow		Nejvyšší skóre
 Intermediate	MainWindow		Pokročilý
 New	MainWindow		Nový
+OK	MainWindow		OK
 Pause	MainWindow		Pauza
 Quit	MainWindow		Ukončit
+Scale 2x	MainWindow		Scale 2x
 Settings	MainWindow		Nastavení
 Sound effects	MainWindow		Zvukové efekty
 Theme	MainWindow		Motiv
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # sekunda}few{%name%, # sekundy}other{%name%, # sekund}}
 Anonymous	ScoreWindow		Anonymní
 Beginner:	ScoreWindow		Začátečník:
@@ -32,15 +35,6 @@ High scores	ScoreWindow		Nejvyšší skóre
 Intermediate:	ScoreWindow		Pokročilý:
 OK	ScoreWindow		OK
 Reset	ScoreWindow		Znovu
-{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Pro zvolenou šířku a výšku nemůžete mít více než # minu.}few{Pro zvolenou šířku a výšku nemůžete mít více než # miny.}other{Pro zvolenou šířku a výšku nemůžete mít více než # min.}}
-{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Pro současný motiv a velikost obrazovky můžete mít na výšku pouze jedno pole.}few{Pro současný motiv a velikost obrazovky můžete mít na výšku pouze # pole.}other{Pro současný motiv a velikost obrazovky můžete mít na výšku pouze # polí.}}
-{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Pro současný motiv a velikost obrazovky můžete mít na šířku pouze jedno pole.}few{Pro současný motiv a velikost obrazovky můžete mít na šířku pouze # pole.}other{Pro současný motiv a velikost obrazovky můžete mít na šířku pouze # polí.}}
-Cancel	CustomWindow		Zrušit
-Height:	CustomWindow		Výška:
-Level settings	CustomWindow		Nastavení úrovně
-Mines:	CustomWindow		Miny:
-OK	CustomWindow		OK
-Width:	CustomWindow		Šířka:
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Sonar ukazje miny v okruhu 3x3 políček, aniž by je spustil. Vyjde vás to na 20 sekund času.
 Clicking with both buttons (or SHIFT + left click):	HelpWindow		Klikněte na obě tlačítka myši (nebo podržte SHIFT a klikněte levým tlačítkem myši):
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Označte pole jako minu, otazníkem označte podezřelé pole, nebo značku odeberte.
@@ -71,6 +65,12 @@ Reset	AchievementWindow		Znovu
 Unlocked!	AchievementWindow		Odemčeno!
 Anonymous	Globals		Anonymní
 BeMines	System name		BeMines
+Cancel	CustomWindow		Zrušit
+Height:	CustomWindow		Výška:
+Level settings	CustomWindow		Nastavení úrovně
+Mines:	CustomWindow		Miny:
+OK	CustomWindow		OK
+Width:	CustomWindow		Šířka:
 Click to resume	FieldWindow		Kliknutím pokračovat
 OK	FieldWindow		OK
 PAUSED	FieldWindow		PAUZA

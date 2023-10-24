@@ -1,4 +1,4 @@
-1	Turkish	application/x-vnd.dw-BeMines	305506157
+1	Turkish	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Yeni başarı kilidi açıldı!}other{Yeni başarıların kilidi açıldı!}}
 A themable, open-source rendition of Minesweeper.	MainWindow		Minesweeper'ın görünümü değiştirilebilen açık kaynaklı bir sürümü.
 About BeMines	MainWindow		Mayın Tarlası hakkında
@@ -19,11 +19,14 @@ Help	MainWindow		Yardım
 High scores	MainWindow		Yüksek skorlar
 Intermediate	MainWindow		Deneyimli
 New	MainWindow		Yeni
+OK	MainWindow		Tamam
 Pause	MainWindow		Duraklat
 Quit	MainWindow		Çık
+Scale 2x	MainWindow		2x ölçekle
 Settings	MainWindow		Ayarlar
 Sound effects	MainWindow		Ses efektleri
 Theme	MainWindow		Görünüm
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Ölçeklenirse geçerli oyununuz ekranınıza sığmayacaktır.\n\nÖlçeklemeden önce özelleştirilmiş tahtanızı %d karo genişlikten ve %d karo yükseklikten fazla olmayacak biçimde ayarlayın.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # saniye}other{%name%, # saniye}}
 Anonymous	ScoreWindow		Anonim
 Beginner:	ScoreWindow		Acemi:
@@ -32,15 +35,6 @@ High scores	ScoreWindow		Yüksek skorlar
 Intermediate:	ScoreWindow		Deneyimli:
 OK	ScoreWindow		Tamam
 Reset	ScoreWindow		Sıfırla
-{0, plural,one{For the chosen width and height, you can't have more than # mine.}other{For the chosen width and height, you can't have more than # mines.}}	CustomWindow		{0, plural,one{Seçili genişlik ve yükseklik için # mayından daha fazlası kullanılamaz.}other{Seçili genişlik ve yükseklik için # mayından daha fazlası kullanılamaz.}}
-{0, plural,one{For the current screen size and theme, you can have a height of up to # tile.}other{For the current screen size and theme, you can have a height of up to # tiles.}}	CustomWindow		{0, plural,one{Geçerli ekran boyutu ve tema için # karoluk bir yükseklik kullanabilirsiniz.}other{Geçerli ekran boyutu ve tema için # karoluk bir yükseklik kullanabilirsiniz.}}
-{0, plural,one{For the current screen size and theme, you can have a width of up to # tile.}other{For the current screen size and theme, you can have a width of up to # tiles.}}	CustomWindow		{0, plural,one{Geçerli ekran boyutu ve tema için # karoluk bir genişlik kullanabilirsiniz.}other{Geçerli ekran boyutu ve tema için # karoluk bir genişlik kullanabilirsiniz.}}
-Cancel	CustomWindow		İptal
-Height:	CustomWindow		Yükseklik:
-Level settings	CustomWindow		Düzey ayarları
-Mines:	CustomWindow		Mayın:
-OK	CustomWindow		Tamam
-Width:	CustomWindow		Genişlik:
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Bir sualtı radarı dalgası 3x3 karoluk bir alandaki mayınları onları patlatmadan gösterir. Bu size ek 20 saniyeye mal olur.
 Clicking with both buttons (or SHIFT + left click):	HelpWindow		Her iki düğme ile tıklama (veya SHIFT + sol tık)
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Bir karoyu mayın olarak imleyin, emin değilseniz soru imi koyun, veya konulmuş bir bayrağı kaldırın.
@@ -71,6 +65,12 @@ Reset	AchievementWindow		Sıfırla
 Unlocked!	AchievementWindow		Kilit açıldı!
 Anonymous	Globals		Anonim
 BeMines	System name		Mayın Tarlası
+Cancel	CustomWindow		İptal
+Height:	CustomWindow		Yükseklik:
+Level settings	CustomWindow		Düzey ayarları
+Mines:	CustomWindow		Mayın:
+OK	CustomWindow		Tamam
+Width:	CustomWindow		Genişlik:
 Click to resume	FieldWindow		Sürdürmek için tıklayın
 OK	FieldWindow		Tamam
 PAUSED	FieldWindow		DURAKLATILDI

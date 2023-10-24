@@ -1,0 +1,81 @@
+1	Spanish (Latin American)	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{¡Nuevo logro desbloqueado!}other{¡Nuevos logros desbloqueados!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		Una edición personalizable, open-source de "Buscaminas".
+About BeMines	MainWindow		Acerca de BeMines
+Achievements	MainWindow		Logros
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Principiante
+Classic	MainWindow	Theme name	Clásico
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Sonido de clic por Sebastian\nLose y sonidos de victoria por Mike Koenig
+Custom…	MainWindow		Personalizado…
+DarkWyrm (original author)	MainWindow		DarkWyrm (autor original)
+Default	MainWindow	Theme name	Por defecto
+Difficulty	MainWindow		Dificultad
+Expert	MainWindow		Experto
+Game	MainWindow		Juego
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Gris
+Help	MainWindow		Ayuda
+High scores	MainWindow		Puntajes altos
+Intermediate	MainWindow		Intermedio
+New	MainWindow		Nuevo
+OK	MainWindow		Aceptar
+Pause	MainWindow		Pausa
+Quit	MainWindow		Salir
+Scale 2x	MainWindow		Escalar 2x
+Settings	MainWindow		Ajustes
+Sound effects	MainWindow		Efectos de sonido
+Theme	MainWindow		Tema
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Tu juego actual no se ajustará al tamaño de tu pantalla actual si lo escalas.\n\nConfigura el tablero personalizado en no más de %d baldosas de ancho y %d baldosas de alto antes de escalar.
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # segundo}other{%name%, # segundos}}
+Anonymous	ScoreWindow		Anónimo
+Beginner:	ScoreWindow		Principiante:
+Expert:	ScoreWindow		Experto:
+High scores	ScoreWindow		Puntajes altos
+Intermediate:	ScoreWindow		Intermedio:
+OK	ScoreWindow		Aceptar
+Reset	ScoreWindow		Reiniciar
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Un sonar revelar todas las minas en un área de 3x3, sin riesgo de explotarlas. Tiene un costo añadido de 20 segundos a tu tiempo.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Clic con ambos botones (o SHIFT/MAYÚS + clic izquierdo)
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Marca una baldosa como mina, escoge una marca de interrogación si no estás seguro, o deselecciona una baldosa ya marcada.
+Help	HelpWindow		Ayuda
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Si la baldosa es un número, y la cantidad apropiada de minas a su alrededor ya están marcadas, esto quitará todas las otras baldosas alrededor del número. Por supuesto, si has cometido un error es probable que detones una mina...
+Left click:	HelpWindow		Clic izquierdo
+Middle click (or ALT + left click):	HelpWindow		Clic central (o ALT + clic izquierdo):
+OK	HelpWindow		Aceptar
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Muestra qué hay bajo una baldosa. Si es una mina, ¡el juego se termina!
+Right click:	HelpWindow		Clic derecho:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		El objetivo del juego es encontrar todas las minas ocultas en el tablero. El contador arriba a la izquierda muestra el número de minas que falta encontrar, y el de la derecha cuenta los segundos.
+Achievements	AchievementWindow		Logros
+Active Duty - Win 5 games	AchievementWindow		Servicio Activo - Ganar 5 rondas
+Basic Training - Win a game	AchievementWindow		Entrenamiento Básico - Ganar una ronda
+Bomb Buster - Win within 50 seconds	AchievementWindow		Destructor de Bombas - Ganar en 50 segundos o menos
+Commando - Win within 100 seconds	AchievementWindow		Comando - Ganar dentro de 100 segundos
+Difficulty: Beginner	AchievementWindow		Dificultad: Principiante
+Difficulty: Expert	AchievementWindow		Dificultad: Experto
+Difficulty: Intermediate	AchievementWindow		Dificultad: Intermedio
+General	AchievementWindow		General
+Locked!	AchievementWindow		¡Bloqueado!
+Master Defuser - Win within 50 seconds	AchievementWindow		Desactivador Maestro - Ganar dentro de 50 segundos
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Veterano de Zona Minada - Ganar dentro de 50 segundos
+Officer - Win within 100 seconds	AchievementWindow		Oficial - Ganar dentro de 100 segundos
+OK	AchievementWindow		Aceptar
+Recruit - Win within 100 seconds	AchievementWindow		Recluta - Ganar dentro de 100 segundos
+Reset	AchievementWindow		Reiniciar
+Unlocked!	AchievementWindow		¡Desbloqueado!
+Anonymous	Globals		Anónimo
+BeMines	System name		BeMines
+Cancel	CustomWindow		Cancelar
+Height:	CustomWindow		Altura:
+Level settings	CustomWindow		Ajustes de nivel
+Mines:	CustomWindow		Minas:
+OK	CustomWindow		Aceptar
+Width:	CustomWindow		Ancho:
+Click to resume	FieldWindow		Clic para continuar
+OK	FieldWindow		Aceptar
+PAUSED	FieldWindow		EN PAUSA
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Has definido tantas banderas como minas. Quita una bandera antes de poner otra.
+New high score	NewScoreWindow		Nuevo puntaje alto
+OK	NewScoreWindow		Aceptar
+Please enter your name.	NewScoreWindow	Second line text new record	Por favor, escribe tu nombre.
+You have made a new best time!	NewScoreWindow	First line text new record	¡Has hecho un nuevo mejor tiempo!
