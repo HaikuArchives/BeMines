@@ -1,0 +1,25 @@
+v1.2
+
+* Added 2x scale option
+* Let Zoom button toggle 2x scaling
+* Have custom difficulty board size to use spinners
+* Added shortcuts to menu items
+* New and updated translations
+
+
+v1.1.1
+
+* New translations
+
+
+v1.1
+
+* Fixed sound effect playback
+* Added additional sound files
+* Added achievements window (#38)
+* Added help window
+* Added Haiku theme
+* Added localization
+* New translations
+* Vector icon
+* Bug fixes
