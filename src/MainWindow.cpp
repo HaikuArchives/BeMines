@@ -89,7 +89,7 @@ MainWindow::MainWindow(BRect frame)
 
 	menu->AddSeparatorItem();
 
-	menu->AddItem(new BMenuItem(B_TRANSLATE("Help"), new BMessage(M_SHOW_HELP)));
+	menu->AddItem(new BMenuItem(B_TRANSLATE("Help"), new BMessage(M_SHOW_HELP), 'H'));
 	menu->AddItem(new BMenuItem(B_TRANSLATE("About BeMines"), new BMessage(B_ABOUT_REQUESTED)));
 
 	menu->AddSeparatorItem();
@@ -134,13 +134,13 @@ MainWindow::MainWindow(BRect frame)
 	if (item)
 		item->SetMarked(true);
 
-	item = new BMenuItem(B_TRANSLATE("Scale 2x"), new BMessage(M_TOGGLE_SCALING));
+	item = new BMenuItem(B_TRANSLATE("Scale 2x"), new BMessage(M_TOGGLE_SCALING), '2');
 	menu->AddItem(item);
 	item->SetMarked(gScale == 2);
 
 	menu->AddSeparatorItem();
 
-	item = new BMenuItem(B_TRANSLATE("Sound effects"), new BMessage(M_TOGGLE_SOUNDS));
+	item = new BMenuItem(B_TRANSLATE("Sound effects"), new BMessage(M_TOGGLE_SOUNDS), 'S');
 	menu->AddItem(item);
 	item->SetMarked(gPlaySounds);
 
