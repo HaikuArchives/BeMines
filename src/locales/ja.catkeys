@@ -1,12 +1,12 @@
 1	Japanese	application/x-vnd.dw-BeMines	3850086887
 {0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{新しい功績が解除された!}other{新しい功績が解除された!}}
-A themable, open-source rendition of Minesweeper.	MainWindow		テーマをサポートした、Minesweeper のオープンソース表現
+A themable, open-source rendition of Minesweeper.	MainWindow		テーマをサポートした、Minesweeper のオープンソース版
 About BeMines	MainWindow		BeMines について
 Achievements	MainWindow		功績
 Be	MainWindow	Theme name	Be
 Beginner	MainWindow		初級
 Classic	MainWindow	Theme name	クラシック
-Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Click sound by Sebastian\nLose and win sounds by Mike Koenig
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		クリック音は Sebastian 作\n勝敗のサウンドは Mike Koenig 作
 Custom…	MainWindow		カスタム…
 DarkWyrm (original author)	MainWindow		DarkWyrm (原作者)
 Default	MainWindow	Theme name	デフォルト
@@ -22,13 +22,13 @@ New	MainWindow		新規ゲーム
 OK	MainWindow		OK
 Pause	MainWindow		中断
 Quit	MainWindow		終了
-Scale 2x	MainWindow		Scale 2x
+Scale 2x	MainWindow		拡大表示 2x
 Settings	MainWindow		設定
 Sound effects	MainWindow		サウンド効果
 Theme	MainWindow		テーマ
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
-{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # second}other{%name%, # seconds}}
-Anonymous	ScoreWindow		Anonymous
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		現在のゲームを拡大表示した場合、画面のサイズに合いません。\n\n拡大表示する前に、カスタムボードを幅 %d 幅、高さ %d 以下に設定してください。
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # 秒}other{%name%, # 秒}}
+Anonymous	ScoreWindow		匿名
 Beginner:	ScoreWindow		初級:
 Expert:	ScoreWindow		上級:
 High scores	ScoreWindow		ハイスコア
@@ -63,7 +63,7 @@ OK	AchievementWindow		OK
 Recruit - Win within 100 seconds	AchievementWindow		陸士 - 100 秒以内に勝利せよ
 Reset	AchievementWindow		リセット
 Unlocked!	AchievementWindow		ロック解除された!
-Anonymous	Globals		Anonymous
+Anonymous	Globals		匿名
 BeMines	System name		BeMines
 Cancel	CustomWindow		キャンセル
 Height:	CustomWindow		高さ:

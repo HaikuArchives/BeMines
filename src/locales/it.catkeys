@@ -26,7 +26,7 @@ Scale 2x	MainWindow		Scale 2x
 Settings	MainWindow		Impostazioni
 Sound effects	MainWindow		Effetti sonori
 Theme	MainWindow		Tema
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		La risoluzione attuale dello schermo non conterrebbe la partita attuale in caso di ridimensionamento.\n\nImposta la scacchiera personalizzata con non più di %d caselle in larghezza e %d in altezza prima di ridimensionarla.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # secondo}other{%name%, # secondi}}
 Anonymous	ScoreWindow		Anonimo
 Beginner:	ScoreWindow		Principiante:

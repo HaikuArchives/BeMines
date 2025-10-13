@@ -1,0 +1,81 @@
+1	Korean	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{새 도전과제가 열렸습니다!}other{새 도전과제가 열렸습니다!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		테마가 있는 지뢰찾기의 오픈소스 버전
+About BeMines	MainWindow		BeMines에 대하여
+Achievements	MainWindow		달성 업적
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		초보자
+Classic	MainWindow	Theme name	클래식
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		클릭 사운드 제공 : Sebastian\n성공 및 실패 소리 제공 : Mike Koenig
+Custom…	MainWindow		사용자 설정…
+DarkWyrm (original author)	MainWindow		DarkWyrm (원본 제작자)
+Default	MainWindow	Theme name	기본
+Difficulty	MainWindow		난이도
+Expert	MainWindow		전문가
+Game	MainWindow		게임
+Gnome	MainWindow	Theme name	그놈
+Gray	MainWindow	Theme name	회색
+Help	MainWindow		도움
+High scores	MainWindow		최고점수
+Intermediate	MainWindow		중급자
+New	MainWindow		새 게임
+OK	MainWindow		확인
+Pause	MainWindow		일시정지
+Quit	MainWindow		종료
+Scale 2x	MainWindow		2배 크기
+Settings	MainWindow		설정
+Sound effects	MainWindow		사운드 효과
+Theme	MainWindow		테마
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		창 사이즈를 바꿀 경우 진행 중인 게임이 현재 화면 크기에 맞지 않을 수 있습니다.\n\n창 사이즈를 바꾸기 전에 사용자 설정 보드 크기를 가로 %d 타일, 세로 %d타일보다 작은 크기로 설정 해주세요.
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, #초}other{%name%, #초}}
+Anonymous	ScoreWindow		무명
+Beginner:	ScoreWindow		초보자:
+Expert:	ScoreWindow		전문가:
+High scores	ScoreWindow		최고점수
+Intermediate:	ScoreWindow		중급자:
+OK	ScoreWindow		확인
+Reset	ScoreWindow		재설정
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		소나 신호는 폭발 위험 없이 주변 3x3칸 안의 모든 지뢰를 보여줍니다. 사용 시 20초의 시간 패널티가 발생합니다.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		양쪽 버튼으로 동시에 클릭(또는 SHIFT + 왼쪽 버튼):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		타일을 지뢰로 표시하거나 확실하지 않은 칸을 물음표로 설정하며, 미이 표시된 칸의 표식을 지울 수 있습니다.
+Help	HelpWindow		도움말
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		현재 타일이 숫자 타일이며, 주변의 지뢰 표식 갯수가 숫자와 일치하는 경우 주변의 모든 타일을 엽니다. 당연하겠지만 실수하면 지뢰를 터트릴 수 있습니다...
+Left click:	HelpWindow		왼쪽 클릭:
+Middle click (or ALT + left click):	HelpWindow		가운데 클릭 (또는 ALT + 왼쪽 버튼):
+OK	HelpWindow		확인
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		타일을 열어 무엇이 있는지 확인합니다. 만약 지뢰가 나온다면 게임은 끝입니다!
+Right click:	HelpWindow		오른쪽 클릭:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		보드에 숨어있는 모든 지뢰를 찾는 것이 이 게임의 목적입니다. 좌상단의 카운터는 아직 찾지 못한 지뢰의 갯수이며, 우상단에는 현재 흐른 시간이 초 단위로 표시됩니다.
+Achievements	AchievementWindow		도전 과제
+Active Duty - Win 5 games	AchievementWindow		현역 복무 - 5게임 성공하기
+Basic Training - Win a game	AchievementWindow		기본 훈련 - 1게임 성공하기
+Bomb Buster - Win within 50 seconds	AchievementWindow		폭발물 처리반 - 50초 안에 성공하기
+Commando - Win within 100 seconds	AchievementWindow		특수부대 - 100초 안에 성공하기
+Difficulty: Beginner	AchievementWindow		난이도 : 초보자
+Difficulty: Expert	AchievementWindow		난이도 : 전문가
+Difficulty: Intermediate	AchievementWindow		난이도 : 중급자
+General	AchievementWindow		General
+Locked!	AchievementWindow		Locked!
+Master Defuser - Win within 50 seconds	AchievementWindow		해체 전문가 - 50초 안에 성공하기
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		지뢰밭 베테랑 - 50초 안에 성공하기
+Officer - Win within 100 seconds	AchievementWindow		장교 - 100초 안에 성공하기
+OK	AchievementWindow		확인
+Recruit - Win within 100 seconds	AchievementWindow		모병관 - 100초 안에 성공하기
+Reset	AchievementWindow		재설정
+Unlocked!	AchievementWindow		Unlocked!
+Anonymous	Globals		무명
+BeMines	System name		BeMines
+Cancel	CustomWindow		취소
+Height:	CustomWindow		높이:
+Level settings	CustomWindow		레벨 설정
+Mines:	CustomWindow		지뢰 갯수:
+OK	CustomWindow		확인
+Width:	CustomWindow		폭:
+Click to resume	FieldWindow		클릭하여 이어하기
+OK	FieldWindow		확인
+PAUSED	FieldWindow		일시정지
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		이미 지뢰 갯수 만큼 지뢰 표식을 사용했습니다. 새 지뢰 표식을 사용하려면 다른 타일에 설정된 지뢰 표식을 지워야 합니다.
+New high score	NewScoreWindow		새로운 최고점수
+OK	NewScoreWindow		확인
+Please enter your name.	NewScoreWindow	Second line text new record	이름을 입력 해주세요.
+You have made a new best time!	NewScoreWindow	First line text new record	새로운 최고 시간을 갱신했습니다!

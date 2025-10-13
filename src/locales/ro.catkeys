@@ -22,11 +22,11 @@ New	MainWindow		Nou
 OK	MainWindow		OK
 Pause	MainWindow		Pauzează
 Quit	MainWindow		Ieșire
-Scale 2x	MainWindow		Scale 2x
+Scale 2x	MainWindow		Scalează 2x
 Settings	MainWindow		Configurări
 Sound effects	MainWindow		Efecte sonore
 Theme	MainWindow		Temă
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Jocul actual nu s-ar potrivi cu dimensiunea actuală a ecranului dacă este scalat.\n\nStabiliți masa personalizată la maximum %d dale lățime și %d dale înălțime înainte de a scala.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # secundă}other{%name%, # secunde}
 Anonymous	ScoreWindow		Anonim
 Beginner:	ScoreWindow		Începător:

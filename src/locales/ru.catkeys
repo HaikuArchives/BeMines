@@ -1,0 +1,81 @@
+1	Russian	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Открыто новое достижение!}other{Открыты новые достижения!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		Версия "Сапера" с поддержкой тем и открытым кодом.
+About BeMines	MainWindow		О программе
+Achievements	MainWindow		Достижения
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Новичок
+Classic	MainWindow	Theme name	Классическая
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Звук щелчка от Себастьяна\nЗвуки проигрыша и победы от Майка Кенига
+Custom…	MainWindow		Настроить…
+DarkWyrm (original author)	MainWindow		DarkWyrm (первоначальный автор)
+Default	MainWindow	Theme name	По умолчанию
+Difficulty	MainWindow		Сложность
+Expert	MainWindow		Профессионал
+Game	MainWindow		Игра
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Серая
+Help	MainWindow		Помощь
+High scores	MainWindow		Рекорды
+Intermediate	MainWindow		Любитель
+New	MainWindow		Новая игра
+OK	MainWindow		OK
+Pause	MainWindow		Пауза
+Quit	MainWindow		Выйти
+Scale 2x	MainWindow		Масштаб 2x
+Settings	MainWindow		Настройки
+Sound effects	MainWindow		Звуки
+Theme	MainWindow		Тема
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Ваша текущая игра не будет соответствовать текущему размеру экрана при масштабировании.\n\nПеред масштабированием установите пользовательскую доску шириной не более %d плиток и высотой %d плиток.
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # секунда}few{%name%, # секунды}other{%name%, # секунд}}
+Anonymous	ScoreWindow		Аноним
+Beginner:	ScoreWindow		Новичок:
+Expert:	ScoreWindow		Профессионал:
+High scores	ScoreWindow		Рекорды
+Intermediate:	ScoreWindow		Любитель:
+OK	ScoreWindow		OK
+Reset	ScoreWindow		Перезапустить
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Сонар открывает все мины в области 3х3 клетки, не взрывая их. К вашему времени добавляется 20 секунд.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Клик двумя кнопками (или SHIFT + левый клик):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Отметить флагом клетку с миной, поставить знак вопроса, если вы не уверены или снять флаг с отмеченной клетки.
+Help	HelpWindow		Помощь
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Если в клетке есть число и вокруг клетки отмечено соответствующее количество мин, это действие откроет все остальные клетки вокруг числа. Конечно, если вы ошиблись, то можете подорваться на мине...
+Left click:	HelpWindow		Левый клик:
+Middle click (or ALT + left click):	HelpWindow		Средний клик (или ALT + левый клик):
+OK	HelpWindow		OK
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Посмотреть, что в клетке. Если это мина, то игра окончена!
+Right click:	HelpWindow		Правый клик:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Цель игры - отметить все мины, спрятанные на поле. Счетчик вверху слева показывает, сколько осталось неотмеченных мин, счетчик справа отсчитывает время.
+Achievements	AchievementWindow		Достижения
+Active Duty - Win 5 games	AchievementWindow		Active Duty — выиграйте 5 игр
+Basic Training - Win a game	AchievementWindow		Базовая тренировка — выиграйте игру
+Bomb Buster - Win within 50 seconds	AchievementWindow		Уничтожитель бомб — победите за 50 секунд
+Commando - Win within 100 seconds	AchievementWindow		Коммандос - победите за 100 секунд
+Difficulty: Beginner	AchievementWindow		Сложность: Новичок
+Difficulty: Expert	AchievementWindow		Сложность: Эксперт
+Difficulty: Intermediate	AchievementWindow		Сложность: Средняя
+General	AchievementWindow		Общий
+Locked!	AchievementWindow		Заблокировано!
+Master Defuser - Win within 50 seconds	AchievementWindow		Мастер обезвреживания - Победите за 50 секунд
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Ветеран шахтной зоны — победите за 50 секунд
+Officer - Win within 100 seconds	AchievementWindow		Офицер - Победите за 100 секунд
+OK	AchievementWindow		OK
+Recruit - Win within 100 seconds	AchievementWindow		Рекрут - Победите за 100 секунд.
+Reset	AchievementWindow		Перезапуск
+Unlocked!	AchievementWindow		Разблокировано!
+Anonymous	Globals		Аноним
+BeMines	System name		BeMines
+Cancel	CustomWindow		Отмена
+Height:	CustomWindow		Высота:
+Level settings	CustomWindow		Настройки уровня
+Mines:	CustomWindow		Мины:
+OK	CustomWindow		OK
+Width:	CustomWindow		Ширина:
+Click to resume	FieldWindow		Нажмите, чтобы продолжить
+OK	FieldWindow		OK
+PAUSED	FieldWindow		ПАУЗА
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Вы уже выставили столько же флагов, сколько на поле мин. Снимите флаг, прежде чем ставить следующий.
+New high score	NewScoreWindow		Новый рекорд
+OK	NewScoreWindow		OK
+Please enter your name.	NewScoreWindow	Second line text new record	Пожалуйста, введите свое имя.
+You have made a new best time!	NewScoreWindow	First line text new record	Вы установили новый рекорд!

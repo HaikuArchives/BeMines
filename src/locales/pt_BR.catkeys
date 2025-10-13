@@ -22,11 +22,11 @@ New	MainWindow		Novo
 OK	MainWindow		OK
 Pause	MainWindow		Pausa
 Quit	MainWindow		Sair
-Scale 2x	MainWindow		Scale 2x
+Scale 2x	MainWindow		Escala 2x
 Settings	MainWindow		Definições
 Sound effects	MainWindow		Efeitos de som
 Theme	MainWindow		Tema
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		O jogo atual não iria caber no tamanho de tela atual se fosse escalado.\n\nFavor definir o tabuleiro atual para não mais que %d quadros de largura e %d quadros de altura antes de aumentar a escala.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # second}other{%name%, # seconds}}
 Anonymous	ScoreWindow		Anônimo
 Beginner:	ScoreWindow		Iniciante:

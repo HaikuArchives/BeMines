@@ -22,11 +22,11 @@ New	MainWindow		Nový
 OK	MainWindow		OK
 Pause	MainWindow		Pauza
 Quit	MainWindow		Ukončit
-Scale 2x	MainWindow		Scale 2x
+Scale 2x	MainWindow		Měřítko 2x
 Settings	MainWindow		Nastavení
 Sound effects	MainWindow		Zvukové efekty
 Theme	MainWindow		Motiv
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Vaše aktuální hra by se při změně velikosti nevešla na vaši aktuální velikost obrazovky.\n\nPřed změnou nastavte prosím vlastní hrací plochu na šířku maximálně %d dlaždice a %d dlaždice na výšku.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # sekunda}few{%name%, # sekundy}other{%name%, # sekund}}
 Anonymous	ScoreWindow		Anonymní
 Beginner:	ScoreWindow		Začátečník:

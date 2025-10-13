@@ -19,14 +19,14 @@ Help	MainWindow		Aide
 High scores	MainWindow		Meilleurs temps
 Intermediate	MainWindow		Intermédiaire
 New	MainWindow		Nouveau
-OK	MainWindow		OK
+OK	MainWindow		D'accord
 Pause	MainWindow		Pause
 Quit	MainWindow		Quitter
-Scale 2x	MainWindow		Scale 2x
+Scale 2x	MainWindow		Échelle double
 Settings	MainWindow		Paramètres
 Sound effects	MainWindow		Effets sonores
 Theme	MainWindow		Thème
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Votre jeu actuel dépasserait la résolution d'écran courante s'il était agrandi.\n\nVeuillez ne pas définir un plateau personnalisé ayant plus de %d tuiles de large et %d tuiles de haut avant de mettre à l'échelle.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # seconde}other{%name%, # secondes}}
 Anonymous	ScoreWindow		Anonyme
 Beginner:	ScoreWindow		Débutant :

@@ -1,0 +1,81 @@
+1	Ukrainian	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{Нове досягнення розблоковано!}other{Нові досягнення розблоковано!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		Версія "Сапера" з підтримкою тем і відкритим кодом.
+About BeMines	MainWindow		Про програму
+Achievements	MainWindow		Досягнення
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		Новачок
+Classic	MainWindow	Theme name	Класична
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		Звук клацання від Себастьяна\nЗвуки програшу та перемоги від Майка Кеніга
+Custom…	MainWindow		Власне…
+DarkWyrm (original author)	MainWindow		DarkWyrm (автор)
+Default	MainWindow	Theme name	За умовчанням
+Difficulty	MainWindow		Складність
+Expert	MainWindow		Професіонал
+Game	MainWindow		Гра
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	Сіра
+Help	MainWindow		Довідка
+High scores	MainWindow		Рекорди
+Intermediate	MainWindow		Любитель
+New	MainWindow		Нова гра
+OK	MainWindow		OK
+Pause	MainWindow		Пауза
+Quit	MainWindow		Вийти
+Scale 2x	MainWindow		Масштаб 2x
+Settings	MainWindow		Параметри
+Sound effects	MainWindow		Звуки
+Theme	MainWindow		Тема
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Ваша поточна гра не поміститься на поточний розмір екрана, якщо її масштабувати.\n\nБудь ласка, встановіть для власної дошки не більше %d плиток завширшки та %d плиток заввишки перед масштабуванням.
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # секунда}other{%name%, # сукгнд}}
+Anonymous	ScoreWindow		Анонім
+Beginner:	ScoreWindow		Новачок:
+Expert:	ScoreWindow		Професіонал:
+High scores	ScoreWindow		Рекорди
+Intermediate:	ScoreWindow		Любитель:
+OK	ScoreWindow		OK
+Reset	ScoreWindow		Скинути
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		Сонар відкриває усі міни в області 3х3 клітинки, без їх вибуху. До вашого часу додається 20 секунд.
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Клік двома кнопками (або SHIFT + лівий клік):
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Позначити клітинку з міною, поставити знак питання, якщо ви не впевнені або зняти прапорець з вже позначеної клітинки.
+Help	HelpWindow		Довідка
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Якщо в клітинці є число і навколо клітинки позначено відповідну кількість мін, ця дія відкриє усі інші клітинки навколо числа. Звичайно, якщо ви помилилися, то можете підірватися на міні...
+Left click:	HelpWindow		Лівий клік:
+Middle click (or ALT + left click):	HelpWindow		Середній клік (або ALT + лівий клік):
+OK	HelpWindow		OK
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		Подивитися, що в клітинці. Якщо це міна, то гру закінчено!
+Right click:	HelpWindow		Правий клік:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		Мета гри - позначити усі міни, заховані на полі. Лічильник вгорі ліворуч показує, скільки залишилося непозначених мін, лічильник праворуч відлічує час.
+Achievements	AchievementWindow		Досягнення
+Active Duty - Win 5 games	AchievementWindow		Активна служба - Виграти 5 ігор
+Basic Training - Win a game	AchievementWindow		Базова підготовка – Виграй гру
+Bomb Buster - Win within 50 seconds	AchievementWindow		Знищувач бомб – Перемога протягом 50 секунд
+Commando - Win within 100 seconds	AchievementWindow		Командос - Перемога протягом 100 секунд
+Difficulty: Beginner	AchievementWindow		Складність: Початківець
+Difficulty: Expert	AchievementWindow		Складність: Експерт
+Difficulty: Intermediate	AchievementWindow		Складність: Середняк
+General	AchievementWindow		Загальне
+Locked!	AchievementWindow		Заблоковано!
+Master Defuser - Win within 50 seconds	AchievementWindow		Майстер знешкодження – Перемога протягом 50 секунд
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Ветеран мінної зони – Перемога протягом 50 секунд
+Officer - Win within 100 seconds	AchievementWindow		Офіцер - Перемога протягом 100 секунд
+OK	AchievementWindow		OK
+Recruit - Win within 100 seconds	AchievementWindow		Рекрут - Перемога протягом 100 секунд
+Reset	AchievementWindow		Скинути
+Unlocked!	AchievementWindow		Розблоковано!
+Anonymous	Globals		Анонім
+BeMines	System name		BeMines
+Cancel	CustomWindow		Скасувати
+Height:	CustomWindow		Висота:
+Level settings	CustomWindow		Параметри рівня
+Mines:	CustomWindow		Міни:
+OK	CustomWindow		OK
+Width:	CustomWindow		Ширина:
+Click to resume	FieldWindow		Натисніть, щоб продовжити
+OK	FieldWindow		OK
+PAUSED	FieldWindow		ПАУЗА
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Ви вже виставили стільки ж прапорців, скільки на полі мін. Зніміть прапорець, перш ніж ставити наступний.
+New high score	NewScoreWindow		Новий рекорд
+OK	NewScoreWindow		OK
+Please enter your name.	NewScoreWindow	Second line text new record	Будь ласка, введіть своє ім'я.
+You have made a new best time!	NewScoreWindow	First line text new record	Ви встановили новий рекорд!

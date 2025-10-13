@@ -19,14 +19,14 @@ Help	MainWindow		Jutori
 High scores	MainWindow		Miôrs risultâts
 Intermediate	MainWindow		Intermedi
 New	MainWindow		Gnûf
-OK	MainWindow		OK
+OK	MainWindow		Va ben
 Pause	MainWindow		Pause
 Quit	MainWindow		Jes
-Scale 2x	MainWindow		Scale 2x
+Scale 2x	MainWindow		Scjale 2x
 Settings	MainWindow		Impostazions
 Sound effects	MainWindow		Efiets sonôrs
 Theme	MainWindow		Teme
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Il zûc atuâl nol starà dentri de dimension dal schermi atuâl se metût in scjale.\n\nPar plasê stabilìs che la taule personalizade no superi %d piastrelis in largjece e %d piastrelis in altece prime di meti in scjale.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # secont}other{%name%, # seconts}}
 Anonymous	ScoreWindow		Anonim
 Beginner:	ScoreWindow		Principiant:

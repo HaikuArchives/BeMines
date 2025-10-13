@@ -1,0 +1,81 @@
+1	Chinese (simplified)	application/x-vnd.dw-BeMines	3850086887
+{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}	MainWindow		{0, plural,=1{New achievement unlocked!}other{New achievements unlocked!}}
+A themable, open-source rendition of Minesweeper.	MainWindow		扫雷的主题化开源版本。
+About BeMines	MainWindow		关于 Be扫雷
+Achievements	MainWindow		成就
+Be	MainWindow	Theme name	Be
+Beginner	MainWindow		新手
+Classic	MainWindow	Theme name	经典
+Click sound by Sebastian\nLose and win sounds by Mike Koenig	MainWindow		点击声作者Sebastian\n胜负声作者Mike Koenig
+Custom…	MainWindow		自定义…
+DarkWyrm (original author)	MainWindow		DarkWyrm (原作者)
+Default	MainWindow	Theme name	默认
+Difficulty	MainWindow		困难
+Expert	MainWindow		专家
+Game	MainWindow		游戏
+Gnome	MainWindow	Theme name	Gnome
+Gray	MainWindow	Theme name	灰
+Help	MainWindow		帮助
+High scores	MainWindow		最高分
+Intermediate	MainWindow		中级
+New	MainWindow		新建
+OK	MainWindow		OK
+Pause	MainWindow		暂停
+Quit	MainWindow		退出
+Scale 2x	MainWindow		Scale 2x
+Settings	MainWindow		设置
+Sound effects	MainWindow		音效
+Theme	MainWindow		主题
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		如果缩放，您当前的游戏将不适合当前的屏幕尺寸。\n\n缩放前请将定制板设置为小于%d 格宽 和 %d 格高。
+{0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # 秒}other{%name%, # 秒}}
+Anonymous	ScoreWindow		匿名
+Beginner:	ScoreWindow		新手:
+Expert:	ScoreWindow		专家:
+High scores	ScoreWindow		最高分
+Intermediate:	ScoreWindow		中级:
+OK	ScoreWindow		确定
+Reset	ScoreWindow		重置
+A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		声纳脉冲可以显示 3x3 方块区域内的所有地雷，而不会造成引爆的危险。它会增加您 20 秒的时间。
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		使用两个按钮单击（或 SHIFT + 左键单击）：
+Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		将某个图块标记为地雷，如果不确定，请设置问号，或者取消标记已标记的图块。
+Help	HelpWindow		帮助
+If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		如果该图块是一个数字，并且它周围的适当数量的地雷已被标记，它将清除该数字周围的所有其他图块。当然，如果你犯了一个错误，你可能会引爆地雷......
+Left click:	HelpWindow		左键点击:
+Middle click (or ALT + left click):	HelpWindow		中键点击(或ALT +左键点击):
+OK	HelpWindow		确定
+Reveal what's under a tile. If it's a mine, the game is over!	HelpWindow		揭示瓷砖下面的内容。如果是地雷，游戏就结束了！
+Right click:	HelpWindow		右键点击:
+The goal of the game is to flag all mines that are hidden on the board. The counter on the top left shows the number of still hidden mines, the one on the right counts up the seconds.	HelpWindow		游戏的目标是标记棋盘上隐藏的所有地雷。左上角的计数器显示仍然隐藏的地雷数量，右侧的计数器计算秒数。
+Achievements	AchievementWindow		成就
+Active Duty - Win 5 games	AchievementWindow		Active Duty - 赢5场游戏
+Basic Training - Win a game	AchievementWindow		基础训练 — 赢得一场比赛
+Bomb Buster - Win within 50 seconds	AchievementWindow		Bomb Buster - 在50秒内获胜
+Commando - Win within 100 seconds	AchievementWindow		Commando - 在100秒内获胜
+Difficulty: Beginner	AchievementWindow		难度：新手
+Difficulty: Expert	AchievementWindow		难度：专家
+Difficulty: Intermediate	AchievementWindow		难度：中级
+General	AchievementWindow		基本
+Locked!	AchievementWindow		已锁定！
+Master Defuser - Win within 50 seconds	AchievementWindow		Master Defuser - 在100秒内获胜
+Mine Zone Veteran - Win within 50 seconds	AchievementWindow		Mine Zone Veteran - 在50秒内获胜
+Officer - Win within 100 seconds	AchievementWindow		Officer - 在100秒内获胜
+OK	AchievementWindow		确定
+Recruit - Win within 100 seconds	AchievementWindow		新兵 — 100秒内获胜
+Reset	AchievementWindow		重置
+Unlocked!	AchievementWindow		解锁!
+Anonymous	Globals		匿名
+BeMines	System name		Be扫雷
+Cancel	CustomWindow		取消
+Height:	CustomWindow		高:
+Level settings	CustomWindow		关卡设置
+Mines:	CustomWindow		地雷:
+OK	CustomWindow		确定
+Width:	CustomWindow		宽:
+Click to resume	FieldWindow		点击继续
+OK	FieldWindow		确定
+PAUSED	FieldWindow		暂停
+You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		你已经设置了和地雷一样多的标志。添加标志之前请取消一个之前的标志。
+New high score	NewScoreWindow		新纪录
+OK	NewScoreWindow		确定
+Please enter your name.	NewScoreWindow	Second line text new record	请输入你的名字。
+You have made a new best time!	NewScoreWindow	First line text new record	您已赢得一个新的最佳时间！

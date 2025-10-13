@@ -16,27 +16,27 @@ Game	MainWindow		Juego
 Gnome	MainWindow	Theme name	Gnome
 Gray	MainWindow	Theme name	Gris
 Help	MainWindow		Ayuda
-High scores	MainWindow		Puntajes
+High scores	MainWindow		Puntuaciones
 Intermediate	MainWindow		Intermedio
 New	MainWindow		Nuevo
-OK	MainWindow		OK
+OK	MainWindow		Aceptar
 Pause	MainWindow		Pausa
-Quit	MainWindow		Abandonar
-Scale 2x	MainWindow		Scale 2x
+Quit	MainWindow		Salir
+Scale 2x	MainWindow		Escalar 2x
 Settings	MainWindow		Configuración
 Sound effects	MainWindow		Efectos de sonido
 Theme	MainWindow		Tema
-Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.
+Your current game would not fit your current screen size if scaled.\n\nPlease set the custom board to no more than %d tiles wide and %d tiles high before scaling.	MainWindow		Su partida actual no se ajustará al tamaño actual de la pantalla si la escala.\n\nPor favor, configure el tablero personalizado en no más de %d baldosas de ancho y %d baldosas de alto antes de escalar.
 {0, plural,one{%name%, # second}other{%name%, # seconds}}	ScoreWindow		{0, plural,one{%name%, # segundo}other{%name%, # segundos}}
 Anonymous	ScoreWindow		Anónimo
 Beginner:	ScoreWindow		Principiante
 Expert:	ScoreWindow		Experto:
 High scores	ScoreWindow		Mejores puntuaciones
 Intermediate:	ScoreWindow		Intermedio:
-OK	ScoreWindow		OK
+OK	ScoreWindow		Aceptar
 Reset	ScoreWindow		Reiniciar
 A sonar ping reveals all mines in a 3x3 tile area without the danger of setting them off. It comes with a 20 second cost added to your time.	HelpWindow		El silbido de un sonar revela todas las minas en un área de 3x3 baldosas sin el riesgo de explotarlas. Va con el coste añadido de 20 segundos a tu tiempo.
-Clicking with both buttons (or SHIFT + left click):	HelpWindow		Clic con ambos botones (o MAYÚS + clic izquierdo:
+Clicking with both buttons (or SHIFT + left click):	HelpWindow		Clic con ambos botones (o MAYÚS + clic izquierdo):
 Flag a tile as a mine, set a question mark if you're unsure, or unmark an already flagged tile.	HelpWindow		Señala una baldosa con bandera si piensas que es una mina, elige un interrogante si no estás seguro, o deselecciona una baldosa ya señalada.
 Help	HelpWindow		Ayuda
 If the tile is a number and the appropriate number of mines around it have been flagged, it will clear all the other tiles around the number. Of course, if you've made a mistake, you'll probably set off a mine...	HelpWindow		Si la baldosa es un número y el número apropiado de minas al rededor ha sido señalado con una bandera, estarán claras todas las demás baldosas al rededor del número. Por supuesto, si has cometido un error, probablemente detonarás una mina...
@@ -75,7 +75,7 @@ Click to resume	FieldWindow		Clic para continuar
 OK	FieldWindow		Aceptar
 PAUSED	FieldWindow		En pausa
 You have already set as many flags as there are mines. Unflag a tile before trying to flag another one.	FieldWindow		Has definido tantas banderas como minas. Elimina una bandera antes de colocar otra.
-New high score	NewScoreWindow		Nueva puntuación máxima
+New high score	NewScoreWindow		Nuevo récord
 OK	NewScoreWindow		Aceptar
 Please enter your name.	NewScoreWindow	Second line text new record	Por favor introduce tu nombre.
 You have made a new best time!	NewScoreWindow	First line text new record	¡Has hecho un nuevo mejor tiempo!
